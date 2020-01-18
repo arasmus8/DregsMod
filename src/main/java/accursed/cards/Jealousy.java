@@ -1,7 +1,7 @@
 package accursed.cards;
 
 import accursed.AccursedMod;
-import accursed.SealCardAction;
+import accursed.actions.SealCardAction;
 import accursed.characters.Accursed;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;

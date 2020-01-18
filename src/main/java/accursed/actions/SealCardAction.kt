@@ -1,5 +1,6 @@
-package accursed
+package accursed.actions
 
+import accursed.AccursedMod
 import com.megacrit.cardcrawl.actions.AbstractGameAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.CardGroup
@@ -7,7 +8,7 @@ import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect
 
-class SealCardAction(val card: AbstractCard, val group: CardGroup) : AbstractGameAction() {
+class SealCardAction(val card: AbstractCard, private val group: CardGroup) : AbstractGameAction() {
 
     init {
         duration = Settings.ACTION_DUR_FAST
