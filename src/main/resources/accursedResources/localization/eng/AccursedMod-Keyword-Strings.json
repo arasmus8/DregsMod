@@ -1,0 +1,21 @@
+[
+  {
+    "PROPER_NAME": "Sealed",
+    "NAMES": [
+      "seal",
+      "sealed,",
+      "sealed."
+    ],
+    "DESCRIPTION": "Sealed cards are held in a separate pile. After you shuffle, all sealed cards are added to your discard pile. Sealing a card triggers any exhaust or discard effects. Sealed Curses may still be Cleansed."
+  },
+  {
+    "PROPER_NAME": "Cleanse",
+    "NAMES": [
+      "cleanse:",
+      "cleansed",
+      "cleansed,",
+      "cleansed."
+    ],
+    "DESCRIPTION": "Some Curses can be Cleansed by fulfilling the condition on the card. When fullfilled, the curse can be replaced with your choice of card from another class."
+  }
+]
