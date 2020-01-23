@@ -1,0 +1,21 @@
+{
+  "dregsmod:AdaptabilityPower": {
+    "NAME": "Adaptability",
+    "DESCRIPTIONS": [
+      "Whenever you draw a Curse, gain #b",
+      " Block."
+    ]
+  },
+  "dregsmod:ChaosTheoryPower": {
+    "NAME": "Chaos Theory",
+    "DESCRIPTIONS": [
+      "Add a copy of a random card from your master deck to your hand each turn."
+    ]
+  },
+  "dregsmod:CursedPower": {
+    "NAME": "Cursed",
+    "DESCRIPTIONS": [
+      "This enemy heals 10% of its missing HP at the start of its turn. If #yCursed exceeds its HP, it will be killed and transformed into a curse."
+    ]
+  }
+}

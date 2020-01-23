@@ -1,0 +1,33 @@
+[
+  {
+    "PROPER_NAME": "Sealed",
+    "NAMES": [
+      "seal",
+      "sealed,",
+      "sealed.",
+      "Sealed,",
+      "Sealed."
+    ],
+    "DESCRIPTION": "Sealed cards remain in the discard pile when you shuffle and are un-sealed. Sealing a card triggers any exhaust or discard effects."
+  },
+  {
+    "PROPER_NAME": "Cleanse",
+    "NAMES": [
+      "cleanse:",
+      "cleansed",
+      "cleansed,",
+      "cleansed."
+    ],
+    "DESCRIPTION": "Some Curses can be Cleansed by fulfilling the condition on the card. When fulfilled, the curse can be replaced with your choice of card from another class."
+  },
+  {
+    "PROPER_NAME": "Cursed",
+    "NAMES": [
+      "cursed",
+      "cursed,",
+      "cursed.",
+      "cursed:"
+    ],
+    "DESCRIPTION": "When Cursed exceeds an enemy's current HP, it will be killed and transformed into a special card. Cursed enemies will heal 10% of their missing HP each turn."
+  }
+]

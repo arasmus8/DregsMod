@@ -1,0 +1,9 @@
+{
+  "dregsmod:CurseBrand": {
+    "NAME": "Curse Brand",
+    "FLAVOR": "This mark is reserved for the failed and fallen.",
+    "DESCRIPTIONS": [
+      "Whenever you draw a curse, deal 3 damage to all enemies."
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "BASIC": {},
+  "dregsmod:DregsDefend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "dregsmod:DregsStrike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "dregsmod:Adaptability": {
+    "NAME": "Adaptability",
+    "DESCRIPTION": "Whenever you draw a Curse, gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Innate NL Whenever you draw a Curse, gain !M! Block."
+  },
+  "dregsmod:Jealousy": {
+    "NAME": "Jealousy",
+    "DESCRIPTION": "Cannot be removed from your deck. NL Seal a random Curse."
+  },
+  "dregsmod:LashOut": {
+    "NAME": "Lash Out",
+    "DESCRIPTION": "Discard all Curses. Deal !D! Damage, plus !M! for each Curse discarded."
+  },
+  "COMMON": {},
+  "dregsmod:Curate": {
+    "NAME": "Curate",
+    "DESCRIPTION": "Draw !M! cards. Discard a card. If you discard a Curse, gain !B! Block."
+  },
+  "dregsmod:CursedNeedle": {
+    "NAME": "Cursed Needle",
+    "DESCRIPTION": "Deal !D! Damage. Inflict !M! dregsmod:Cursed."
+  },
+  "dregsmod:Gash": {
+    "NAME": "Gash",
+    "DESCRIPTION": "Inflict !M! Vulnerable. Deal !D! Damage twice."
+  },
+  "UNCOMMON": {},
+  "dregsmod:Asylum": {
+    "NAME": "Asylum",
+    "DESCRIPTION": "Gain !M! Regen."
+  },
+  "dregsmod:CursedScroll": {
+    "NAME": "Cursed Scroll",
+    "DESCRIPTION": "The target loses 2 Strength. Inflict !M! dregsmod:Cursed. NL Exhaust"
+  },
+  "dregsmod:Fear": {
+    "NAME": "Fear",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. dregsmod:Seal this card."
+  },
+  "RARE": {},
+  "dregsmod:ChaosTheory": {
+    "NAME": "Chaos Theory",
+    "DESCRIPTION": "Each turn, add !M! copy of a random card from your master deck to your hand."
+  },
+  "dregsmod:Entropy": {
+    "NAME": "Entropy",
+    "DESCRIPTION": "Unplayable NL While this card is dregsmod:Sealed, gain !B! Block each turn."
+  },
+  "dregsmod:LastHope": {
+    "NAME": "Last Hope",
+    "DESCRIPTION": "Innate NL Deal !D! Damage. Choose a card in your draw pile to move to the top. NL Exhaust"
+  },
+  "CURSE": {},
+  "dregsmod:Catastrophe": {
+    "NAME": "Catastrophe",
+    "DESCRIPTION": "Ethereal NL Inflict !M! dregsmod:Cursed to all enemies."
+  },
+  "dregsmod:Doom": {
+    "NAME": "Doom",
+    "DESCRIPTION": "Inflict !M! dregsmod:Cursed to the target. NL Exhaust"
+  },
+  "dregsmod:Gloom": {
+    "NAME": "Gloom",
+    "DESCRIPTION": "Inflict !M! dregsmod:Cursed to the target. NL Exhaust"
+  }
+}
