@@ -62,13 +62,14 @@ public class CardList {
 
         //Rare Attacks
         allCards.add(new LastHope());
+        allCards.add(new MeanLook());
+        allCards.add(new PowerUp());
+        allCards.add(new Redemption());
 
         //Rare Skills
         allCards.add(new Entropy());
         allCards.add(new Indestructible());
-        allCards.add(new MeanLook());
         allCards.add(new Overcome());
-        allCards.add(new PowerUp());
 
         //Rare Powers
         allCards.add(new ChaosTheory());

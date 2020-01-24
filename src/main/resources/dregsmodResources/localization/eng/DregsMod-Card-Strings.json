@@ -121,6 +121,10 @@
     "NAME": "Power Up",
     "DESCRIPTION": "Deal !D! Damage. Gain !M! dregsmod:Might."
   },
+  "dregsmod:Redemption": {
+    "NAME": "Redemption",
+    "DESCRIPTION": "Deal !D! Damage. Fatal: Permanently remove a random Curse from your deck. NL Exhaust"
+  },
   "CURSE": {},
   "dregsmod:Catastrophe": {
     "NAME": "Catastrophe",
