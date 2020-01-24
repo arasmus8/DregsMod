@@ -46,6 +46,7 @@ public class CardList {
         allCards.add(new Curate());
         allCards.add(new Plague());
         allCards.add(new Quarantine());
+        allCards.add(new RitualJar());
 
         //Uncommon Attacks
         allCards.add(new Fear());

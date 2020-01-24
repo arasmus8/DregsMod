@@ -50,6 +50,10 @@
     "NAME": "Quarantine",
     "DESCRIPTION": "Draw !M! cards. dregsmod:Seal a card."
   },
+  "dregsmod:RitualJar": {
+    "NAME": "Ritual Jar",
+    "DESCRIPTION": "Inflict !M! dregsmod:Cursed."
+  },
   "UNCOMMON": {},
   "dregsmod:Asylum": {
     "NAME": "Asylum",

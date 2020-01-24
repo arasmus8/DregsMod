@@ -82,6 +82,6 @@ public class CursedPower extends AbstractPower implements CloneablePowerInterfac
 
     @Override
     public Color getColor() {
-        return CardHelper.getColor(12, 0, 20);
+        return CardHelper.getColor(36, 11, 71);
     }
 }
