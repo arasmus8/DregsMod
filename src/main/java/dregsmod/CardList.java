@@ -68,6 +68,7 @@ public class CardList {
         allCards.add(new Indestructible());
         allCards.add(new MeanLook());
         allCards.add(new Overcome());
+        allCards.add(new PowerUp());
 
         //Rare Powers
         allCards.add(new ChaosTheory());

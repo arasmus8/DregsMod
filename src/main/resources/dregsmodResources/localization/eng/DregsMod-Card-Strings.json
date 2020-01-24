@@ -60,7 +60,7 @@
   },
   "dregsmod:ShallowGrave": {
     "NAME": "Shallow Grave",
-    "DESCRIPTION": "Gain !M! dregsmod:Sturdiness. Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. Gain !M! dregsmod:Sturdiness."
   },
   "dregsmod:SharpShadows": {
     "NAME": "Sharp Shadows",
@@ -116,6 +116,10 @@
     "NAME": "Overcome",
     "DESCRIPTION": "Gain X dregsmod:Fortitude, dregsmod:Might, and dregsmod:Sturdiness.",
     "UPGRADE_DESCRIPTION": "Gain X + 1 dregsmod:Fortitude, dregsmod:Might, and dregsmod:Sturdiness."
+  },
+  "dregsmod:PowerUp": {
+    "NAME": "Power Up",
+    "DESCRIPTION": "Deal !D! Damage. Gain !M! dregsmod:Might."
   },
   "CURSE": {},
   "dregsmod:Catastrophe": {
