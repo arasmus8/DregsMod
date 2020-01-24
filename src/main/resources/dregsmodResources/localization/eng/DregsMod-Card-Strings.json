@@ -38,6 +38,10 @@
     "NAME": "Icy Touch",
     "DESCRIPTION": "Deal !D! Damage. If you're holding a Curse, channel a Frost Orb."
   },
+  "dregsmod:Improvise": {
+    "NAME": "Improvise",
+    "DESCRIPTION": "Deal !D! Damage. If you're holding a Curse, draw a card and dregsmod:Seal this card."
+  },
   "UNCOMMON": {},
   "dregsmod:Asylum": {
     "NAME": "Asylum",
@@ -58,7 +62,7 @@
   },
   "dregsmod:Entropy": {
     "NAME": "Entropy",
-    "DESCRIPTION": "Unplayable NL While this card is dregsmod:Sealed , gain !B! Block each turn."
+    "DESCRIPTION": "Unplayable NL While this card is dregsmod:Sealed, gain !B! Block each turn."
   },
   "dregsmod:LastHope": {
     "NAME": "Last Hope",

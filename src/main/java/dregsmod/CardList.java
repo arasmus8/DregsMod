@@ -5,10 +5,7 @@ import dregsmod.cards.Adaptability;
 import dregsmod.cards.DregsDefend;
 import dregsmod.cards.DregsStrike;
 import dregsmod.cards.LashOut;
-import dregsmod.cards.common.Curate;
-import dregsmod.cards.common.CursedNeedle;
-import dregsmod.cards.common.Gash;
-import dregsmod.cards.common.IcyTouch;
+import dregsmod.cards.common.*;
 import dregsmod.cards.curses.Catastrophe;
 import dregsmod.cards.curses.Doom;
 import dregsmod.cards.curses.Gloom;
@@ -45,6 +42,7 @@ public class CardList {
         allCards.add(new CursedNeedle());
         allCards.add(new Gash());
         allCards.add(new IcyTouch());
+        allCards.add(new Improvise());
 
         //Common Skills
         allCards.add(new Curate());

@@ -52,7 +52,7 @@ public class Curate extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(magicNumber));
+        addToBot(new DrawCardAction(p, magicNumber));
         addToBot(new DiscardAndPerformAction(1, false, new CurateAction(p, block)));
     }
 
