@@ -108,6 +108,10 @@
     "NAME": "Indestructible",
     "DESCRIPTION": "Gain !M! Temporary HP. NL Exhaust"
   },
+  "dregsmod:MeanLook": {
+    "NAME": "Mean Look",
+    "DESCRIPTION": "Deal !D! Damage. Double the target's dregsmod:Cursed. NL Exhaust"
+  },
   "dregsmod:Overcome": {
     "NAME": "Overcome",
     "DESCRIPTION": "Gain X dregsmod:Fortitude, dregsmod:Might, and dregsmod:Sturdiness.",
