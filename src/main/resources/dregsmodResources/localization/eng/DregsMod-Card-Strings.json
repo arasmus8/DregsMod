@@ -129,6 +129,10 @@
     "NAME": "Retribution",
     "DESCRIPTION": "Each time you lose HP, your next attack deals !M! additional Damage."
   },
+  "dregsmod:Ritual": {
+    "NAME": "Ritual",
+    "DESCRIPTION": "Inflict !M! dregsmod:Cursed to all enemies. NL Exhaust"
+  },
   "CURSE": {},
   "dregsmod:Catastrophe": {
     "NAME": "Catastrophe",

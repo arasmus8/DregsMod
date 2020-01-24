@@ -70,6 +70,7 @@ public class CardList {
         allCards.add(new Entropy());
         allCards.add(new Indestructible());
         allCards.add(new Overcome());
+        allCards.add(new Ritual());
 
         //Rare Powers
         allCards.add(new ChaosTheory());
