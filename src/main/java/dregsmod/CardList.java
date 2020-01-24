@@ -43,6 +43,7 @@ public class CardList {
         allCards.add(new IcyTouch());
         allCards.add(new Improvise());
         allCards.add(new Ruin());
+        allCards.add(new SharpShadows());
 
         //Common Skills
         allCards.add(new Curate());
