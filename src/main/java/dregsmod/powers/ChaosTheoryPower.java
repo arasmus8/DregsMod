@@ -35,6 +35,7 @@ public class ChaosTheoryPower extends AbstractPower implements CloneablePowerInt
     @Override
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            flash();
             for (int i = 0; i < amount; ++i) {
                 AbstractCard card = ((AbstractPlayer) owner).masterDeck.getRandomCard(AbstractDungeon.cardRandomRng);
                 addToBot(new MakeTempCardInHandAction(card.makeCopy(), 1, false));
