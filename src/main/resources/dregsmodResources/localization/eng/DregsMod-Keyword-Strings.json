@@ -30,5 +30,32 @@
       "cursed:"
     ],
     "DESCRIPTION": "When Cursed exceeds an enemy's current HP, it will be killed and transformed into a special card. Cursed enemies will heal 10% of their missing HP each turn."
+  },
+  {
+    "PROPER_NAME": "Fortitude",
+    "NAMES": [
+      "fortitude",
+      "fortitude.",
+      "fortitude,"
+    ],
+    "DESCRIPTION": "Opposite of Vulnerable. Decreases Damage taken by 25%"
+  },
+  {
+    "PROPER_NAME": "Might",
+    "NAMES": [
+      "might",
+      "might.",
+      "might,"
+    ],
+    "DESCRIPTION": "Opposite of Weak. Increases Damage dealt by 25%"
+  },
+  {
+    "PROPER_NAME": "Sturdiness",
+    "NAMES": [
+      "sturdiness",
+      "sturdiness.",
+      "sturdiness,"
+    ],
+    "DESCRIPTION": "Opposite of Frail. Increases Block gained by 25%"
   }
 ]

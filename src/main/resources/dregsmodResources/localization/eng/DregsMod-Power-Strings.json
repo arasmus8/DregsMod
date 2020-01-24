@@ -33,5 +33,29 @@
       "The first enemy you damage each turn is inflicted with #b",
       " #yCursed."
     ]
+  },
+  "dregsmod:FortitudePower": {
+    "NAME": "Fortitude",
+    "DESCRIPTIONS": [
+      "Opposite of #yVulnerable. Take 25% less damage for #b",
+      " turn.",
+      " turns."
+    ]
+  },
+  "dregsmod:MightPower": {
+    "NAME": "Might",
+    "DESCRIPTIONS": [
+      "Opposite of #yWeak. Your attacks deal 25% more damage for #b",
+      " turn.",
+      " turns."
+    ]
+  },
+  "dregsmod:SturdinessPower": {
+    "NAME": "Sturdiness",
+    "DESCRIPTIONS": [
+      "Opposite of #yFrail. You gain 25% more Block from cards for #b",
+      " turn.",
+      " turns."
+    ]
   }
 }

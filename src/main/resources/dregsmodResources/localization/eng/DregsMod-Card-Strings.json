@@ -58,6 +58,10 @@
     "NAME": "Ruin",
     "DESCRIPTION": "Deal !D! Damage. If the target is dregsmod:Cursed, damage it again."
   },
+  "dregsmod:ShallowGrave": {
+    "NAME": "Shallow Grave",
+    "DESCRIPTION": "Gain !M! dregsmod:Sturdiness. Gain !B! Block."
+  },
   "dregsmod:SharpShadows": {
     "NAME": "Sharp Shadows",
     "DESCRIPTION": "Deal !D! Damage for each other card in your hand."
