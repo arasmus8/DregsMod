@@ -63,6 +63,14 @@
     "NAME": "Fear",
     "DESCRIPTION": "Deal !D! Damage to all enemies. dregsmod:Seal this card."
   },
+  "dregsmod:Glare": {
+    "NAME": "Glare",
+    "DESCRIPTION": "Gain !B! Block. If you're holding a Curse, draw a card."
+  },
+  "dregsmod:Sarcophagus": {
+    "NAME": "Sarcophagus",
+    "DESCRIPTION": "Gain !B! Block. dregsmod:Seal a card."
+  },
   "RARE": {},
   "dregsmod:ChaosTheory": {
     "NAME": "Chaos Theory",

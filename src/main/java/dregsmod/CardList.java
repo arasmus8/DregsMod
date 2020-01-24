@@ -13,9 +13,7 @@ import dregsmod.cards.curses.Jealousy;
 import dregsmod.cards.rare.ChaosTheory;
 import dregsmod.cards.rare.Entropy;
 import dregsmod.cards.rare.LastHope;
-import dregsmod.cards.uncommon.Asylum;
-import dregsmod.cards.uncommon.CursedScroll;
-import dregsmod.cards.uncommon.Fear;
+import dregsmod.cards.uncommon.*;
 
 import java.util.ArrayList;
 
@@ -54,6 +52,8 @@ public class CardList {
 
         //Uncommon Skills
         allCards.add(new CursedScroll());
+        allCards.add(new Glare());
+        allCards.add(new Sarcophagus());
 
         //Uncommon Powers
         allCards.add(new Asylum());
