@@ -12,6 +12,7 @@ import dregsmod.cards.curses.Gloom;
 import dregsmod.cards.curses.Jealousy;
 import dregsmod.cards.rare.ChaosTheory;
 import dregsmod.cards.rare.Entropy;
+import dregsmod.cards.rare.Incantation;
 import dregsmod.cards.rare.LastHope;
 import dregsmod.cards.uncommon.*;
 
@@ -41,6 +42,7 @@ public class CardList {
         allCards.add(new Gash());
         allCards.add(new IcyTouch());
         allCards.add(new Improvise());
+        allCards.add(new Ruin());
 
         //Common Skills
         allCards.add(new Curate());
@@ -67,5 +69,6 @@ public class CardList {
 
         //Rare Powers
         allCards.add(new ChaosTheory());
+        allCards.add(new Incantation());
     }
 }

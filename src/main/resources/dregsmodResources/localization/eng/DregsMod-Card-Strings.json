@@ -54,6 +54,10 @@
     "NAME": "Ritual Jar",
     "DESCRIPTION": "Inflict !M! dregsmod:Cursed."
   },
+  "dregsmod:Ruin": {
+    "NAME": "Ruin",
+    "DESCRIPTION": "Deal !D! Damage. If the target is dregsmod:Cursed, damage it again."
+  },
   "UNCOMMON": {},
   "dregsmod:Asylum": {
     "NAME": "Asylum",
@@ -87,6 +91,10 @@
   "dregsmod:LastHope": {
     "NAME": "Last Hope",
     "DESCRIPTION": "Innate NL Deal !D! Damage. Choose a card in your draw pile to move to the top. NL Exhaust"
+  },
+  "dregsmod:Incantation": {
+    "NAME": "Incantation",
+    "DESCRIPTION": "The first enemy you damage each turn is inflicted with !M! dregsmod:Cursed."
   },
   "CURSE": {},
   "dregsmod:Catastrophe": {

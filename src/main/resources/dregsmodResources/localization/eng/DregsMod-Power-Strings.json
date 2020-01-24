@@ -26,5 +26,12 @@
     "DESCRIPTIONS": [
       "This enemy heals 10% of its missing HP at the start of its turn. If #yCursed exceeds its HP, it will be killed and transformed into a curse."
     ]
+  },
+  "dregsmod:IncantationPower": {
+    "NAME": "Incantation",
+    "DESCRIPTIONS": [
+      "The first enemy you damage each turn is inflicted with #b",
+      " #yCursed."
+    ]
   }
 }
