@@ -1,15 +1,12 @@
 package dregsmod.cards.curses;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
-import dregsmod.actions.SealCardAction;
+import dregsmod.actions.SealAndPerformAction;
 import dregsmod.cards.AbstractCurseHoldingCard;
 import dregsmod.characters.Dregs;
-
-import java.util.Optional;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static dregsmod.DregsMod.makeCardPath;
@@ -46,12 +43,13 @@ public class Jealousy extends AbstractCurseHoldingCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (holdingCurse) {
-            Optional<AbstractCard> curse = p.hand.group.stream()
-                    .filter(card -> card.type == CardType.CURSE)
-                    .filter(card -> card != this)
-                    .limit(1)
-                    .findFirst();
-            curse.ifPresent(card -> addToBot(new SealCardAction(card)));
+            addToBot(new SealAndPerformAction(
+                    1,
+                    true,
+                    p.hand,
+                    card -> card != this && card.type == CardType.CURSE,
+                    null
+            ));
         }
     }
 

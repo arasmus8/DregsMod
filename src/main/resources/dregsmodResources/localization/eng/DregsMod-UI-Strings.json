@@ -1,7 +1,9 @@
 {
-  "potionbrewer:BottomlessFlaskAction": {
+  "dregsmod:SealAndPerformAction": {
     "TEXT": [
-      "Select a card to add to your deck:"
+      "Select a card to Seal:",
+      "Select ",
+      " cards to Seal:"
     ]
   }
 }

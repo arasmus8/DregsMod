@@ -7,8 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
-import dregsmod.actions.DiscardAndPerformAction;
-import dregsmod.actions.SetCardSealedAction;
+import dregsmod.actions.SealAndPerformAction;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
@@ -48,7 +47,10 @@ public class Quarantine extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, magicNumber));
-        addToBot(new DiscardAndPerformAction(1, new SetCardSealedAction()));
+        addToBot(new SealAndPerformAction(
+                1,
+                null
+        ));
     }
 
     // Upgraded stats.
