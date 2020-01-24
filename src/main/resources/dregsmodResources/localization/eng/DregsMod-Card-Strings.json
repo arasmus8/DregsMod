@@ -125,6 +125,10 @@
     "NAME": "Redemption",
     "DESCRIPTION": "Deal !D! Damage. Fatal: Permanently remove a random Curse from your deck. NL Exhaust"
   },
+  "dregsmod:Retribution": {
+    "NAME": "Retribution",
+    "DESCRIPTION": "Each time you lose HP, your next attack deals !M! additional Damage."
+  },
   "CURSE": {},
   "dregsmod:Catastrophe": {
     "NAME": "Catastrophe",

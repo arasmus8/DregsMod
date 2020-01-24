@@ -50,6 +50,13 @@
       " turns."
     ]
   },
+  "dregsmod:RetributionPower": {
+    "NAME": "Retribution",
+    "DESCRIPTIONS": [
+      "Whenever you lose HP, your next attack deals #b",
+      " additional damage."
+    ]
+  },
   "dregsmod:SturdinessPower": {
     "NAME": "Sturdiness",
     "DESCRIPTIONS": [
