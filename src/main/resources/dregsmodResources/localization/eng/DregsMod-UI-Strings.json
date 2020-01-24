@@ -1,9 +1,7 @@
 {
   "dregsmod:SealAndPerformAction": {
     "TEXT": [
-      "Select a card to Seal:",
-      "Select ",
-      " cards to Seal:"
+      "Seal:"
     ]
   }
 }

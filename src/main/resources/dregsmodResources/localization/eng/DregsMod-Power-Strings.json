@@ -6,6 +6,15 @@
       " Block."
     ]
   },
+  "dregsmod:AsylumPower": {
+    "NAME": "Asylum",
+    "DESCRIPTIONS": [
+      "Each turn, choose #b",
+      " card",
+      " cards",
+      " to Seal. You heal equal to its energy cost."
+    ]
+  },
   "dregsmod:ChaosTheoryPower": {
     "NAME": "Chaos Theory",
     "DESCRIPTIONS": [

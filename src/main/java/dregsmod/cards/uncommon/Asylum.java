@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
 import dregsmod.DregsMod;
 import dregsmod.characters.Dregs;
+import dregsmod.powers.AsylumPower;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static dregsmod.DregsMod.makeCardPath;
@@ -25,8 +26,8 @@ public class Asylum extends CustomCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 4;
-    private static final int UPGRADE_MAGIC = 1;
+    private static final int MAGIC = 1;
+    private static final int UPGRADED_COST = 0;
 
     public Asylum() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
@@ -35,14 +36,14 @@ public class Asylum extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new RegenPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new AsylumPower(p, magicNumber), magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

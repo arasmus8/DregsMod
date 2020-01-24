@@ -217,6 +217,7 @@ public class Dregs extends CustomPlayer {
         discardPile.group.stream()
                 .filter(card -> CardSealed.isSealed.get(card) && card instanceof AbstractSealedCard)
                 .forEach(card -> ((AbstractSealedCard) card).triggerWhileSealed(this));
+        super.applyStartOfTurnPostDrawPowers();
     }
 
     @Override

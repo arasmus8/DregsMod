@@ -42,6 +42,10 @@
     "NAME": "Improvise",
     "DESCRIPTION": "Deal !D! Damage. If you're holding a Curse, draw a card and dregsmod:Seal this card."
   },
+  "dregsmod:Plague": {
+    "NAME": "Plague",
+    "DESCRIPTION": "Unplayable NL While dregsmod:Sealed, deal !M! Damage to all enemies each turn."
+  },
   "dregsmod:Quarantine": {
     "NAME": "Quarantine",
     "DESCRIPTION": "Draw !M! cards. dregsmod:Seal a card."
@@ -49,7 +53,7 @@
   "UNCOMMON": {},
   "dregsmod:Asylum": {
     "NAME": "Asylum",
-    "DESCRIPTION": "Gain !M! Regen."
+    "DESCRIPTION": "Each turn, choose a card to dregsmod:Seal. You gain HP equal to its energy cost."
   },
   "dregsmod:CursedScroll": {
     "NAME": "Cursed Scroll",

@@ -98,7 +98,7 @@ public class SealAndPerformAction extends AbstractGameAction {
             if (!isRandom) {
                 if (group == p.hand) {
                     if (amount < 0) {
-                        AbstractDungeon.handCardSelectScreen.open(TEXT[1] + TEXT[2], 99, true, true);
+                        AbstractDungeon.handCardSelectScreen.open(TEXT[0], 99, true, true);
                         p.hand.applyPowers();
                         tickDuration();
                         return;
@@ -114,7 +114,7 @@ public class SealAndPerformAction extends AbstractGameAction {
                     CardGroup filtered = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                     filtered.group.addAll(filteredList);
                     if (amount < 0) {
-                        AbstractDungeon.gridSelectScreen.open(filtered, 99, true, TEXT[1] + TEXT[2]);
+                        AbstractDungeon.gridSelectScreen.open(filtered, 99, true, TEXT[0]);
                     } else {
                         AbstractDungeon.gridSelectScreen.open(filtered, amount, TEXT[0], false, false, false, false);
                     }
