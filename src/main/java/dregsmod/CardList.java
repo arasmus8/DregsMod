@@ -65,6 +65,7 @@ public class CardList {
 
         //Rare Skills
         allCards.add(new Entropy());
+        allCards.add(new Indestructible());
         allCards.add(new Overcome());
 
         //Rare Powers

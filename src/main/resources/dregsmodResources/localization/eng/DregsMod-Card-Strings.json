@@ -104,6 +104,10 @@
     "NAME": "Incantation",
     "DESCRIPTION": "The first enemy you damage each turn is inflicted with !M! dregsmod:Cursed."
   },
+  "dregsmod:Indestructible": {
+    "NAME": "Indestructible",
+    "DESCRIPTION": "Gain !M! Temporary HP. NL Exhaust"
+  },
   "dregsmod:Overcome": {
     "NAME": "Overcome",
     "DESCRIPTION": "Gain X dregsmod:Fortitude, dregsmod:Might, and dregsmod:Sturdiness.",
