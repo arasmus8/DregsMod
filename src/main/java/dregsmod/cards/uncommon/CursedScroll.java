@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import dregsmod.DregsMod;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.CursedPower;
@@ -48,7 +48,7 @@ public class CursedScroll extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p, new LoseStrengthPower(m, 2), 2));
+        addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -2), -2));
         addToBot(new ApplyPowerAction(m, p, new CursedPower(m, magicNumber), magicNumber));
     }
 

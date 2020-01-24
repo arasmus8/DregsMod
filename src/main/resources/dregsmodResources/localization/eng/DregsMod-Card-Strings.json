@@ -15,7 +15,7 @@
   },
   "dregsmod:Jealousy": {
     "NAME": "Jealousy",
-    "DESCRIPTION": "Cannot be removed from your deck. NL Seal a random Curse."
+    "DESCRIPTION": "Cannot be removed from your deck. NL dregsmod:Seal a random Curse."
   },
   "dregsmod:LashOut": {
     "NAME": "Lash Out",
@@ -33,6 +33,10 @@
   "dregsmod:Gash": {
     "NAME": "Gash",
     "DESCRIPTION": "Inflict !M! Vulnerable. Deal !D! Damage twice."
+  },
+  "dregsmod:IcyTouch": {
+    "NAME": "Icy Touch",
+    "DESCRIPTION": "Deal !D! Damage. If you're holding a Curse, channel a Frost Orb."
   },
   "UNCOMMON": {},
   "dregsmod:Asylum": {
@@ -54,7 +58,7 @@
   },
   "dregsmod:Entropy": {
     "NAME": "Entropy",
-    "DESCRIPTION": "Unplayable NL While this card is dregsmod:Sealed, gain !B! Block each turn."
+    "DESCRIPTION": "Unplayable NL While this card is dregsmod:Sealed , gain !B! Block each turn."
   },
   "dregsmod:LastHope": {
     "NAME": "Last Hope",

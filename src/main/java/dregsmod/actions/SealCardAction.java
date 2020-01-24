@@ -6,16 +6,20 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 import dregsmod.patches.variables.CardSealed;
+import dregsmod.vfx.SealCardEffect;
+
+import java.util.logging.Logger;
 
 public class SealCardAction extends AbstractGameAction {
+    private static final Logger logger = Logger.getLogger(SealCardAction.class.getName());
     private AbstractCard card;
     private CardGroup group;
 
     public SealCardAction(AbstractCard card, CardGroup group) {
         duration = Settings.ACTION_DUR_FASTER;
         setValues(AbstractDungeon.player, AbstractDungeon.player, 1);
+        actionType = ActionType.DISCARD;
         this.card = card;
         this.group = group;
     }
@@ -26,22 +30,21 @@ public class SealCardAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (duration == Settings.ACTION_DUR_FASTER) {
-            if (group.contains(card)) {
-                // TODO make card sealing vfx -- see SoundMaster "KEY_OBTAIN"
-                AbstractDungeon.effectList.add(new ExhaustCardEffect(card));
+        isDone = true;
+        if (group.contains(card)) {
+            AbstractDungeon.effectList.add(new SealCardEffect(card));
 
-                CardSealed.isSealed.set(card, true);
-                card.exhaustOnUseOnce = false;
-                card.freeToPlayOnce = false;
+            CardSealed.isSealed.set(card, true);
+            card.exhaustOnUseOnce = false;
+            card.freeToPlayOnce = false;
 
-                group.moveToDiscardPile(card);
-                GameActionManager.incrementDiscard(false);
+            group.moveToDiscardPile(card);
+            GameActionManager.incrementDiscard(false);
 
-                card.triggerOnExhaust();
-                card.triggerOnManualDiscard();
-            }
-
+            card.triggerOnExhaust();
+            card.triggerOnManualDiscard();
         }
+
+        tickDuration();
     }
 }

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -33,6 +34,7 @@ public class CursedPower extends AbstractPower implements CloneablePowerInterfac
 
         loadRegion("fading");
         updateDescription();
+        type = PowerType.DEBUFF;
     }
 
     @Override
@@ -40,29 +42,26 @@ public class CursedPower extends AbstractPower implements CloneablePowerInterfac
         this.flash();
         int healAmount = (owner.maxHealth - owner.currentHealth) / 10;
         addToBot(new HealAction(owner, owner, healAmount));
-    }
-
-    @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if (!isPlayer) {
-            if (amount >= owner.currentHealth) {
-                addToBot(new InstantKillAction(owner));
-                addToBot(new FastShakeAction(owner, 0.5F, 0.2F));// 119
-                AbstractMonster.EnemyType type = ((AbstractMonster) owner).type;
-                AbstractCard curseToAdd;
-                switch (type) {
-                    case BOSS:
-                        curseToAdd = new Catastrophe();
-                        break;
-                    case ELITE:
-                        curseToAdd = new Doom();
-                        break;
-                    default:
-                        curseToAdd = new Gloom();
-                        break;
-                }
-                addToBot(new AddCardToDeckAction(curseToAdd));
+        if (amount >= owner.currentHealth) {
+            addToBot(new InstantKillAction(owner));
+            addToBot(new FastShakeAction(owner, 0.5F, 0.2F));// 119
+            AbstractMonster.EnemyType type = ((AbstractMonster) owner).type;
+            AbstractCard curseToAdd;
+            if (owner.hasPower("Minion")) {
+                return;
             }
+            switch (type) {
+                case BOSS:
+                    curseToAdd = new Catastrophe();
+                    break;
+                case ELITE:
+                    curseToAdd = new Doom();
+                    break;
+                default:
+                    curseToAdd = new Gloom();
+                    break;
+            }
+            addToBot(new AddCardToDeckAction(curseToAdd));
         }
     }
 
@@ -83,6 +82,6 @@ public class CursedPower extends AbstractPower implements CloneablePowerInterfac
 
     @Override
     public Color getColor() {
-        return Color.BLACK.cpy();
+        return CardHelper.getColor(12, 0, 20);
     }
 }

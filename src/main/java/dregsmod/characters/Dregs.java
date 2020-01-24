@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import dregsmod.DregsMod;
 import dregsmod.cards.*;
+import dregsmod.cards.curses.Jealousy;
 import dregsmod.patches.variables.CardSealed;
 import dregsmod.relics.CurseBrand;
 

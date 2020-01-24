@@ -28,7 +28,7 @@ public class Entropy extends AbstractSealedCard {
 // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
@@ -47,6 +47,11 @@ public class Entropy extends AbstractSealedCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return false;
     }
 
     @Override

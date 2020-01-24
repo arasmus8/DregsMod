@@ -13,7 +13,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -29,6 +28,8 @@ import dregsmod.util.TextureLoader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Logger;
 
 @SpireInitializer
@@ -49,8 +50,6 @@ public class DregsMod implements
     private static String modID;
 
     private static final Logger logger = Logger.getLogger(DregsMod.class.getName());
-    public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
-    private static final String DELIM = ", ";
     public static SpireConfig config;
 
     private static final String MODNAME = "TheDregs";
@@ -109,7 +108,7 @@ public class DregsMod implements
         return getModID() + "Resources/images/events/" + resourcePath;
     }
 
-    public static CardGroup sealedPile;
+    public static Map<String, Texture> uiTextures = new HashMap<>();
 
     public DregsMod() {
         logger.info("Subscribe to BaseMod hooks");
@@ -228,6 +227,16 @@ public class DregsMod implements
 
         logger.info("Done loading badge Image and mod options");
 
+        // UI / VFX preload
+
+        Texture cardSeal = TextureLoader.getTexture("dregsmodResources/images/ui/card_seal.png");
+        Texture cardSealBottom = TextureLoader.getTexture("dregsmodResources/images/ui/card_seal_bottom.png");
+        Texture cardSealTop = TextureLoader.getTexture("dregsmodResources/images/ui/card_seal_top.png");
+
+        uiTextures.put("cardSeal", cardSeal);
+        uiTextures.put("cardSealBottom", cardSealBottom);
+        uiTextures.put("cardSealTop", cardSealTop);
+
         // Console Commands
 
         // Save/Load fields
@@ -344,7 +353,6 @@ public class DregsMod implements
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        sealedPile = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
     }
 
     @Override

@@ -42,6 +42,7 @@ public class Adaptability extends CustomCard {
         if (!upgraded) {
             isInnate = true;
             upgradeName();
+            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

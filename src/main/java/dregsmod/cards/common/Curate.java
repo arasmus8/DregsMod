@@ -1,6 +1,7 @@
 package dregsmod.cards.common;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -51,6 +52,7 @@ public class Curate extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new DrawCardAction(magicNumber));
         addToBot(new DiscardAndPerformAction(1, false, new CurateAction(p, block)));
     }
 

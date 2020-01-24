@@ -1,12 +1,12 @@
-package dregsmod.cards;
+package dregsmod.cards.curses;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.actions.SealCardAction;
+import dregsmod.cards.AbstractCurseHoldingCard;
 import dregsmod.characters.Dregs;
 
 import java.util.Optional;
@@ -14,7 +14,7 @@ import java.util.Optional;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Jealousy extends CustomCard {
+public class Jealousy extends AbstractCurseHoldingCard {
 
 // TEXT DECLARATION
 
@@ -45,11 +45,19 @@ public class Jealousy extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Optional<AbstractCard> curse = p.hand.group.stream()
-                .filter(card -> card.type == CardType.CURSE)
-                .limit(1)
-                .findFirst();
-        curse.ifPresent(card -> addToBot(new SealCardAction(card)));
+        if (holdingCurse) {
+            Optional<AbstractCard> curse = p.hand.group.stream()
+                    .filter(card -> card.type == CardType.CURSE)
+                    .filter(card -> card != this)
+                    .limit(1)
+                    .findFirst();
+            curse.ifPresent(card -> addToBot(new SealCardAction(card)));
+        }
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return holdingCurse;
     }
 
     @Override

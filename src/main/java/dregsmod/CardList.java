@@ -1,10 +1,18 @@
 package dregsmod;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import dregsmod.cards.*;
+import dregsmod.cards.Adaptability;
+import dregsmod.cards.DregsDefend;
+import dregsmod.cards.DregsStrike;
+import dregsmod.cards.LashOut;
 import dregsmod.cards.common.Curate;
 import dregsmod.cards.common.CursedNeedle;
 import dregsmod.cards.common.Gash;
+import dregsmod.cards.common.IcyTouch;
+import dregsmod.cards.curses.Catastrophe;
+import dregsmod.cards.curses.Doom;
+import dregsmod.cards.curses.Gloom;
+import dregsmod.cards.curses.Jealousy;
 import dregsmod.cards.rare.ChaosTheory;
 import dregsmod.cards.rare.Entropy;
 import dregsmod.cards.rare.LastHope;
@@ -26,11 +34,17 @@ public class CardList {
         allCards.add(new Jealousy());
         allCards.add(new LashOut());
 
+        // Curses
+        allCards.add(new Catastrophe());
+        allCards.add(new Doom());
+        allCards.add(new Gloom());
+
         // Special Cards
 
         // Common Attacks
         allCards.add(new CursedNeedle());
         allCards.add(new Gash());
+        allCards.add(new IcyTouch());
 
         //Common Skills
         allCards.add(new Curate());
