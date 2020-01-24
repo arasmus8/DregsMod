@@ -104,6 +104,11 @@
     "NAME": "Incantation",
     "DESCRIPTION": "The first enemy you damage each turn is inflicted with !M! dregsmod:Cursed."
   },
+  "dregsmod:Overcome": {
+    "NAME": "Overcome",
+    "DESCRIPTION": "Gain X dregsmod:Fortitude, dregsmod:Might, and dregsmod:Sturdiness.",
+    "UPGRADE_DESCRIPTION": "Gain X + 1 dregsmod:Fortitude, dregsmod:Might, and dregsmod:Sturdiness."
+  },
   "CURSE": {},
   "dregsmod:Catastrophe": {
     "NAME": "Catastrophe",

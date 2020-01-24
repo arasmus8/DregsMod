@@ -10,10 +10,7 @@ import dregsmod.cards.curses.Catastrophe;
 import dregsmod.cards.curses.Doom;
 import dregsmod.cards.curses.Gloom;
 import dregsmod.cards.curses.Jealousy;
-import dregsmod.cards.rare.ChaosTheory;
-import dregsmod.cards.rare.Entropy;
-import dregsmod.cards.rare.Incantation;
-import dregsmod.cards.rare.LastHope;
+import dregsmod.cards.rare.*;
 import dregsmod.cards.uncommon.*;
 
 import java.util.ArrayList;
@@ -68,6 +65,7 @@ public class CardList {
 
         //Rare Skills
         allCards.add(new Entropy());
+        allCards.add(new Overcome());
 
         //Rare Powers
         allCards.add(new ChaosTheory());
