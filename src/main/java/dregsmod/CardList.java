@@ -46,6 +46,7 @@ public class CardList {
 
         //Common Skills
         allCards.add(new Curate());
+        allCards.add(new Quarantine());
 
         //Uncommon Attacks
         allCards.add(new Fear());

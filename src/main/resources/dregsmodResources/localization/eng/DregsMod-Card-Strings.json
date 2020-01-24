@@ -42,6 +42,10 @@
     "NAME": "Improvise",
     "DESCRIPTION": "Deal !D! Damage. If you're holding a Curse, draw a card and dregsmod:Seal this card."
   },
+  "dregsmod:Quarantine": {
+    "NAME": "Quarantine",
+    "DESCRIPTION": "Draw !M! cards. dregsmod:Seal a card."
+  },
   "UNCOMMON": {},
   "dregsmod:Asylum": {
     "NAME": "Asylum",

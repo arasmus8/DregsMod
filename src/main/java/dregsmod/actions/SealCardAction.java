@@ -9,10 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import dregsmod.patches.variables.CardSealed;
 import dregsmod.vfx.SealCardEffect;
 
-import java.util.logging.Logger;
-
 public class SealCardAction extends AbstractGameAction {
-    private static final Logger logger = Logger.getLogger(SealCardAction.class.getName());
     private AbstractCard card;
     private CardGroup group;
 
