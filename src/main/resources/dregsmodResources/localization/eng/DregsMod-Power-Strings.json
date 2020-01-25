@@ -27,6 +27,13 @@
       "This enemy heals 10% of its missing HP at the start of its turn. If #yCursed exceeds its HP, it will be killed and transformed into a curse."
     ]
   },
+  "dregsmod:DefiancePower": {
+    "NAME": "Defiance",
+    "DESCRIPTIONS": [
+      "Whenever you are inflicted with #yWeak, #yFrail, or #yVulnerable, gain #b",
+      " #yStrength"
+    ]
+  },
   "dregsmod:IncantationPower": {
     "NAME": "Incantation",
     "DESCRIPTIONS": [

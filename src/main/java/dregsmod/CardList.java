@@ -59,6 +59,7 @@ public class CardList {
 
         //Uncommon Powers
         allCards.add(new Asylum());
+        allCards.add(new Defiance());
 
         //Rare Attacks
         allCards.add(new LastHope());

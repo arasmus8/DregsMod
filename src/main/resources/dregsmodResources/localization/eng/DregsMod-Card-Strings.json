@@ -75,6 +75,10 @@
     "NAME": "Cursed Scroll",
     "DESCRIPTION": "The target loses 2 Strength. Inflict !M! dregsmod:Cursed. NL Exhaust"
   },
+  "dregsmod:Defiance": {
+    "NAME": "Defiance",
+    "DESCRIPTION": "Whenever you are inflicted with Weak, Frail, or Vulnerable, gain !M! Strength."
+  },
   "dregsmod:Fear": {
     "NAME": "Fear",
     "DESCRIPTION": "Deal !D! Damage to all enemies. dregsmod:Seal this card."
