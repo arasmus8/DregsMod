@@ -67,6 +67,10 @@
     "DESCRIPTION": "Deal !D! Damage for each other card in your hand."
   },
   "UNCOMMON": {},
+  "dregsmod:Ascetic": {
+    "NAME": "Ascetic",
+    "DESCRIPTION": "Unplayable NL While dregsmod:Sealed, gain !M! Mantra each turn."
+  },
   "dregsmod:Asylum": {
     "NAME": "Asylum",
     "DESCRIPTION": "Each turn, choose a card to dregsmod:Seal. You gain HP equal to its energy cost."

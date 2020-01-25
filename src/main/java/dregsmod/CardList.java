@@ -54,6 +54,7 @@ public class CardList {
         allCards.add(new Unlucky());
 
         //Uncommon Skills
+        allCards.add(new Ascetic());
         allCards.add(new CursedScroll());
         allCards.add(new EmbraceDarkness());
         allCards.add(new Glare());
