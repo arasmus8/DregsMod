@@ -83,6 +83,11 @@
     "NAME": "Embrace Darkness",
     "DESCRIPTION": "Gain !M! dregsmod:Fortitude. If you're holding a Curse, channel a Dark Orb."
   },
+  "dregsmod:Excess": {
+    "NAME": "Excess",
+    "DESCRIPTION": "Whenever you draw a Curse, draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Whenever you draw a Curse, draw !M! cards."
+  },
   "dregsmod:Fear": {
     "NAME": "Fear",
     "DESCRIPTION": "Deal !D! Damage to all enemies. dregsmod:Seal this card."

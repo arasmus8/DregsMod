@@ -34,6 +34,14 @@
       " #yStrength"
     ]
   },
+  "dregsmod:ExcessPower": {
+    "NAME": "Excess",
+    "DESCRIPTIONS": [
+      "When you draw a #yCurse, draw #b",
+      " card.",
+      " cards."
+    ]
+  },
   "dregsmod:IncantationPower": {
     "NAME": "Incantation",
     "DESCRIPTIONS": [
