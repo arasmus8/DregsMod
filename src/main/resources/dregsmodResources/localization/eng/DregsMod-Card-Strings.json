@@ -96,9 +96,17 @@
     "NAME": "Glare",
     "DESCRIPTION": "Gain !B! Block. If you're holding a Curse, draw a card."
   },
+  "dregsmod:HardLuck": {
+    "NAME": "Hard Luck",
+    "DESCRIPTION": "Gain !B! Block. Costs 1 less for each Curse in your deck."
+  },
   "dregsmod:Sarcophagus": {
     "NAME": "Sarcophagus",
     "DESCRIPTION": "Gain !B! Block. dregsmod:Seal a card."
+  },
+  "dregsmod:Unlucky": {
+    "NAME": "Unlucky",
+    "DESCRIPTION": "Deal !D! Damage. Costs 1 less for each Curse in your deck."
   },
   "RARE": {},
   "dregsmod:ChaosTheory": {

@@ -51,11 +51,13 @@ public class CardList {
 
         //Uncommon Attacks
         allCards.add(new Fear());
+        allCards.add(new Unlucky());
 
         //Uncommon Skills
         allCards.add(new CursedScroll());
         allCards.add(new EmbraceDarkness());
         allCards.add(new Glare());
+        allCards.add(new HardLuck());
         allCards.add(new Sarcophagus());
 
         //Uncommon Powers
