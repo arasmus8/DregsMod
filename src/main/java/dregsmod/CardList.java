@@ -58,6 +58,7 @@ public class CardList {
         allCards.add(new EmbraceDarkness());
         allCards.add(new Glare());
         allCards.add(new HardLuck());
+        allCards.add(new Pinprick());
         allCards.add(new Sarcophagus());
 
         //Uncommon Powers

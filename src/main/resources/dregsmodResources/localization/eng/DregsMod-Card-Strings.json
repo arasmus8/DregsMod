@@ -100,6 +100,10 @@
     "NAME": "Hard Luck",
     "DESCRIPTION": "Gain !B! Block. Costs 1 less for each Curse in your deck."
   },
+  "dregsmod:Pinprick": {
+    "NAME": "Pinprick",
+    "DESCRIPTION": "Inflict 2 Vulnerable. If you're holding a Curse, apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark."
+  },
   "dregsmod:Sarcophagus": {
     "NAME": "Sarcophagus",
     "DESCRIPTION": "Gain !B! Block. dregsmod:Seal a card."
@@ -115,7 +119,7 @@
   },
   "dregsmod:EclipseForm": {
     "NAME": "Eclipse Form",
-    "DESCRIPTION": "Unplayable curse cards can be played. When played, gain !M! Block and deal !M! Damage to all enemies."
+    "DESCRIPTION": "Unplayable Curse cards can be played. When played, gain !M! Block and deal !M! Damage to all enemies."
   },
   "dregsmod:Entropy": {
     "NAME": "Entropy",

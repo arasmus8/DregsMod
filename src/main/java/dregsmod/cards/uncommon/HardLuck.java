@@ -1,12 +1,14 @@
 package dregsmod.cards.uncommon;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import dregsmod.DregsMod;
 import dregsmod.characters.Dregs;
 
@@ -44,7 +46,7 @@ public class HardLuck extends CustomCard {
     }
 
     public void configureCostsOnNewCard() {
-        if (CardCrawlGame.dungeon != null) {
+        if (CardCrawlGame.dungeon != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             int curseCount = (int) AbstractDungeon.player.masterDeck.group.stream()
                     .filter(card -> card.type == CardType.CURSE)
                     .count();

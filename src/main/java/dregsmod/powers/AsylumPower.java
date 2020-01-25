@@ -26,7 +26,7 @@ public class AsylumPower extends AbstractPower implements CloneablePowerInterfac
         ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.priority = 15;
+        this.priority = 3;
 
         loadRegion("mantra");
         updateDescription();
