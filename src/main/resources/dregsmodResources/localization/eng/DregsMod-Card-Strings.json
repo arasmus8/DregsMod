@@ -79,6 +79,10 @@
     "NAME": "Defiance",
     "DESCRIPTION": "Whenever you are inflicted with Weak, Frail, or Vulnerable, gain !M! Strength."
   },
+  "dregsmod:EmbraceDarkness": {
+    "NAME": "Embrace Darkness",
+    "DESCRIPTION": "Gain !M! dregsmod:Fortitude. If you're holding a Curse, channel a Dark Orb."
+  },
   "dregsmod:Fear": {
     "NAME": "Fear",
     "DESCRIPTION": "Deal !D! Damage to all enemies. dregsmod:Seal this card."

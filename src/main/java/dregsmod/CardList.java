@@ -54,6 +54,7 @@ public class CardList {
 
         //Uncommon Skills
         allCards.add(new CursedScroll());
+        allCards.add(new EmbraceDarkness());
         allCards.add(new Glare());
         allCards.add(new Sarcophagus());
 
