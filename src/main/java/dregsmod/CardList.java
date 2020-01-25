@@ -71,6 +71,8 @@ public class CardList {
         allCards.add(new Indestructible());
         allCards.add(new Overcome());
         allCards.add(new Ritual());
+        allCards.add(new SeeNoEvil());
+        allCards.add(new Twilight());
 
         //Rare Powers
         allCards.add(new ChaosTheory());

@@ -133,6 +133,15 @@
     "NAME": "Ritual",
     "DESCRIPTION": "Inflict !M! dregsmod:Cursed to all enemies. NL Exhaust"
   },
+  "dregsmod:SeeNoEvil": {
+    "NAME": "See No Evil",
+    "DESCRIPTION": "dregsmod:Seal any number of cards in your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate NL dregsmod:Seal any number of cards in your draw pile."
+  },
+  "dregsmod:Twilight": {
+    "NAME": "Twilight",
+    "DESCRIPTION": "Deal !D! Damage to all enemies."
+  },
   "CURSE": {},
   "dregsmod:Catastrophe": {
     "NAME": "Catastrophe",
