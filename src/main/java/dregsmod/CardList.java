@@ -81,6 +81,7 @@ public class CardList {
 
         //Rare Powers
         allCards.add(new ChaosTheory());
+        allCards.add(new EclipseForm());
         allCards.add(new Incantation());
         allCards.add(new Retribution());
     }

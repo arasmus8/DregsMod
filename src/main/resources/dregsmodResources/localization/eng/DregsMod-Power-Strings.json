@@ -34,6 +34,14 @@
       " #yStrength"
     ]
   },
+  "dregsmod:EclipseFormPower": {
+    "NAME": "Eclipse Form",
+    "DESCRIPTIONS": [
+      "Unplayable curse cards can be played. When played, gain #b",
+      " Block and deal #b",
+      " Damage to all enemies."
+    ]
+  },
   "dregsmod:ExcessPower": {
     "NAME": "Excess",
     "DESCRIPTIONS": [
