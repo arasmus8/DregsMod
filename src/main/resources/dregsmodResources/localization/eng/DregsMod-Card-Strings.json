@@ -108,6 +108,11 @@
     "NAME": "Hard Luck",
     "DESCRIPTION": "Gain !B! Block. Costs 1 less for each Curse in your deck."
   },
+  "dregsmod:Jinx": {
+    "NAME": "Jinx",
+    "DESCRIPTION": "Inflict X Vulnerable, Weak, and dregsmod:Cursed on an enemy.",
+    "UPGRADE_DESCRIPTION": "Inflict X + 1 Vulnerable, Weak, and dregsmod:Cursed on an enemy."
+  },
   "dregsmod:Pinprick": {
     "NAME": "Pinprick",
     "DESCRIPTION": "Inflict 2 Vulnerable. If you're holding a Curse, apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark."
