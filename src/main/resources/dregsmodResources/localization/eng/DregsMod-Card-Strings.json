@@ -117,6 +117,10 @@
     "NAME": "Malediction",
     "DESCRIPTION": "dregsmod:Seal X random Curses. Deal !D! damage for each Curse sealed."
   },
+  "dregsmod:MidnightManacles": {
+    "NAME": "Midnight Manacles",
+    "DESCRIPTION": "The target loses !M! Strength this turn."
+  },
   "dregsmod:Pinprick": {
     "NAME": "Pinprick",
     "DESCRIPTION": "Inflict 2 Vulnerable. If you're holding a Curse, apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark."
