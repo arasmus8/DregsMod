@@ -28,7 +28,7 @@ public class AbstractCardRender {
                 vec.rotate(__instance.angle);
                 float x = __instance.current_x + vec.x;
                 float y = __instance.current_y + vec.y;
-                float scale = __instance.drawScale * 0.55F;
+                float scale = __instance.drawScale * 0.55F * Settings.scale;
                 sb.draw(img, x, y, 0F, 0F, 325.0F, 325.0F, scale, scale, 0.0F, 0, 0, 325, 325, false, false);
                 sb.setColor(Color.WHITE.cpy());
             }

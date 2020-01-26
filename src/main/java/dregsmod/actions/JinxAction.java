@@ -26,7 +26,7 @@ public class JinxAction extends AbstractGameAction {
         p = AbstractDungeon.player;
         this.freeToPlayOnce = freeToPlayOnce;
         this.energyOnUse = energyOnUse;
-        setValues(p, p, amount);
+        setValues(m, p, amount);
         duration = Settings.ACTION_DUR_XFAST;
         actionType = ActionType.SPECIAL;
     }
