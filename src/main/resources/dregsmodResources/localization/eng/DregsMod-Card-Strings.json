@@ -100,6 +100,10 @@
     "NAME": "Glare",
     "DESCRIPTION": "Gain !B! Block. If you're holding a Curse, draw a card."
   },
+  "dregsmod:Guardian": {
+    "NAME": "Guardian",
+    "DESCRIPTION": "Gain !B! Block. If you seal this card, gain !M! Block."
+  },
   "dregsmod:HardLuck": {
     "NAME": "Hard Luck",
     "DESCRIPTION": "Gain !B! Block. Costs 1 less for each Curse in your deck."

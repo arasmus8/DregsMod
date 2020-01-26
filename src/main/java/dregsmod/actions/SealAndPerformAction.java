@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import dregsmod.DregsMod;
+import dregsmod.cards.uncommon.Guardian;
 import dregsmod.patches.variables.CardSealed;
 
 import java.util.ArrayList;
@@ -87,6 +88,9 @@ public class SealAndPerformAction extends AbstractGameAction {
                     group.moveToDiscardPile(card);
                     card.triggerOnManualDiscard();
                     card.triggerOnExhaust();
+                    if(card.cardID.equals(Guardian.ID)) {
+                        ((Guardian)card).triggerOnSealed();
+                    }
                     GameActionManager.incrementDiscard(false);
                 });
 
@@ -133,6 +137,9 @@ public class SealAndPerformAction extends AbstractGameAction {
                     group.moveToDiscardPile(card);
                     card.triggerOnManualDiscard();
                     card.triggerOnExhaust();
+                    if(card.cardID.equals(Guardian.ID)) {
+                        ((Guardian)card).triggerOnSealed();
+                    }
                     GameActionManager.incrementDiscard(false);
                     endActionWithFollowUp();
                 }
@@ -147,6 +154,9 @@ public class SealAndPerformAction extends AbstractGameAction {
                     p.hand.moveToDiscardPile(card);
                     card.triggerOnManualDiscard();
                     card.triggerOnExhaust();
+                    if(card.cardID.equals(Guardian.ID)) {
+                        ((Guardian)card).triggerOnSealed();
+                    }
                     GameActionManager.incrementDiscard(false);
                 }
                 AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
@@ -161,6 +171,9 @@ public class SealAndPerformAction extends AbstractGameAction {
                     group.moveToDiscardPile(card);
                     card.triggerOnManualDiscard();
                     card.triggerOnExhaust();
+                    if(card.cardID.equals(Guardian.ID)) {
+                        ((Guardian)card).triggerOnSealed();
+                    }
                     GameActionManager.incrementDiscard(false);
                 }
 
