@@ -51,6 +51,7 @@ public class CardList {
 
         //Uncommon Attacks
         allCards.add(new Fear());
+        allCards.add(new Malediction());
         allCards.add(new Misfortune());
         allCards.add(new Unlucky());
 
@@ -62,8 +63,8 @@ public class CardList {
         allCards.add(new Guardian());
         allCards.add(new HardLuck());
         allCards.add(new Jinx());
-        allCards.add(new Malediction());
         allCards.add(new MidnightManacles());
+        allCards.add(new Obstruct());
         allCards.add(new Pinprick());
         allCards.add(new Sarcophagus());
 

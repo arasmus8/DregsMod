@@ -125,6 +125,10 @@
     "NAME": "Misfortune",
     "DESCRIPTION": "Deal !D! Damage. Can only be used if you're holding a Curse."
   },
+  "dregsmod:Obstruct": {
+    "NAME": "Obstruct",
+    "DESCRIPTION": "If the target intends to Attack, inflict Weak and gain !M! dregsmod:Sturdiness."
+  },
   "dregsmod:Pinprick": {
     "NAME": "Pinprick",
     "DESCRIPTION": "Inflict 2 Vulnerable. If you're holding a Curse, apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark."
