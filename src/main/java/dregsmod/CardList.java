@@ -51,6 +51,7 @@ public class CardList {
 
         //Uncommon Attacks
         allCards.add(new Fear());
+        allCards.add(new Misfortune());
         allCards.add(new Unlucky());
 
         //Uncommon Skills

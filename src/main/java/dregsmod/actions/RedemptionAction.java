@@ -11,7 +11,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
+import dregsmod.cards.uncommon.HardLuck;
+import dregsmod.cards.uncommon.Unlucky;
 
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class RedemptionAction extends AbstractGameAction {
@@ -42,6 +45,18 @@ public class RedemptionAction extends AbstractGameAction {
                     CardCrawlGame.sound.play("CARD_EXHAUST");
                     AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(curseToRemove, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
                     AbstractDungeon.player.masterDeck.removeCard(curseToRemove);
+                    ArrayList<AbstractCard> cards = new ArrayList<>();
+                    cards.addAll(AbstractDungeon.player.hand.group);
+                    cards.addAll(AbstractDungeon.player.drawPile.group);
+                    cards.addAll(AbstractDungeon.player.discardPile.group);
+                    cards.addAll(AbstractDungeon.player.exhaustPile.group);
+                    for (AbstractCard c : cards) {
+                        if (c instanceof HardLuck) {
+                            ((HardLuck) c).configureCostsOnNewCard();
+                        } else if (c instanceof Unlucky) {
+                            ((Unlucky) c).configureCostsOnNewCard();
+                        }
+                    }
                 }
             }
 
