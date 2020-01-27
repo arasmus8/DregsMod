@@ -133,6 +133,10 @@
     "NAME": "Pinprick",
     "DESCRIPTION": "Inflict 2 Vulnerable. If you're holding a Curse, apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark."
   },
+  "dregsmod:RiteOfPurification": {
+    "NAME": "Rite of Purification",
+    "DESCRIPTION": "Deal !D! Damage. Exhaust a card. If you exhaust a Curse, draw a card and return this to your hand."
+  },
   "dregsmod:Sarcophagus": {
     "NAME": "Sarcophagus",
     "DESCRIPTION": "Gain !B! Block. dregsmod:Seal a card."
