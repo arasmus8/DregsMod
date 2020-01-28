@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import dregsmod.actions.CleansedCurseAction;
 import dregsmod.characters.Dregs;
 import dregsmod.relics.CurseBrand;
 import dregsmod.util.IDCheckDontTouchPls;
@@ -242,6 +243,7 @@ public class DregsMod implements
         // Console Commands
 
         // Save/Load fields
+        BaseMod.addSaveField(CleansedCurseAction.ID, new CleansedCurseAction(null));
 
         // Events
     }

@@ -238,6 +238,10 @@
     "DESCRIPTION": "Deal !D! Damage to all enemies."
   },
   "CURSE": {},
+  "dregsmod:CleansedCurse": {
+    "NAME": "Cleansed Curse",
+    "DESCRIPTION": "Choose 1 of 20 cards from other colors. Permanently replace this card with your choice."
+  },
   "dregsmod:Catastrophe": {
     "NAME": "Catastrophe",
     "DESCRIPTION": "Ethereal NL Inflict !M! dregsmod:Cursed to all enemies."

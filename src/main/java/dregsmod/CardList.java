@@ -1,10 +1,7 @@
 package dregsmod;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import dregsmod.cards.Adaptability;
-import dregsmod.cards.DregsDefend;
-import dregsmod.cards.DregsStrike;
-import dregsmod.cards.LashOut;
+import dregsmod.cards.*;
 import dregsmod.cards.common.*;
 import dregsmod.cards.curses.Catastrophe;
 import dregsmod.cards.curses.Doom;
@@ -33,6 +30,7 @@ public class CardList {
         allCards.add(new Gloom());
 
         // Special Cards
+        allCards.add(new CleansedCurse());
 
         // Common Attacks
         allCards.add(new CursedNeedle());

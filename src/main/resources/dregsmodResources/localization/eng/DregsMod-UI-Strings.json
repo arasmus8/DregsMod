@@ -1,4 +1,9 @@
 {
+  "dregsmod:CleansedCurseAction": {
+    "TEXT": [
+      "add Permanently to your Deck:"
+    ]
+  },
   "dregsmod:SealAndPerformAction": {
     "TEXT": [
       "Seal:"
