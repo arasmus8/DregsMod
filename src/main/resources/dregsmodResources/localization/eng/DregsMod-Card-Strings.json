@@ -42,6 +42,10 @@
     "NAME": "Improvise",
     "DESCRIPTION": "Deal !D! Damage. If you're holding a Curse, draw a card and dregsmod:Seal this card."
   },
+  "dregsmod:Misery": {
+    "NAME": "Misery",
+    "DESCRIPTION": "Play another card in your hand and Exhaust it."
+  },
   "dregsmod:Plague": {
     "NAME": "Plague",
     "DESCRIPTION": "Unplayable NL While dregsmod:Sealed, deal !M! Damage to all enemies each turn."

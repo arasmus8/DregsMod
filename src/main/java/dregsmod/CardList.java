@@ -44,6 +44,7 @@ public class CardList {
 
         //Common Skills
         allCards.add(new Curate());
+        allCards.add(new Misery());
         allCards.add(new Plague());
         allCards.add(new Quarantine());
         allCards.add(new RitualJar());
