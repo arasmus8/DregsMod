@@ -253,5 +253,9 @@
   "dregsmod:Gloom": {
     "NAME": "Gloom",
     "DESCRIPTION": "Inflict !M! dregsmod:Cursed to the target. NL Exhaust"
+  },
+  "dregsmod:Death": {
+    "NAME": "Death",
+    "DESCRIPTION": "Increase this card's cost by 1. Unless played, take 100 Damage. NL dregsmod:Cleanse: Spend !M! [E]"
   }
 }

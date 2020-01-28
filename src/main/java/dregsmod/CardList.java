@@ -3,10 +3,7 @@ package dregsmod;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import dregsmod.cards.*;
 import dregsmod.cards.common.*;
-import dregsmod.cards.curses.Catastrophe;
-import dregsmod.cards.curses.Doom;
-import dregsmod.cards.curses.Gloom;
-import dregsmod.cards.curses.Jealousy;
+import dregsmod.cards.curses.*;
 import dregsmod.cards.rare.*;
 import dregsmod.cards.uncommon.*;
 
@@ -28,6 +25,7 @@ public class CardList {
         allCards.add(new Catastrophe());
         allCards.add(new Doom());
         allCards.add(new Gloom());
+        allCards.add(new Death());
 
         // Special Cards
         allCards.add(new CleansedCurse());
