@@ -149,6 +149,10 @@
     "NAME": "Scapegoat",
     "DESCRIPTION": "When you Exhuast a card, inflict !M! dregsmod:Cursed on a random enemy."
   },
+  "dregsmod:SealedEnergy": {
+    "NAME": "Sealed Energy",
+    "DESCRIPTION": "Deal !D! Damage. Increase Damage by !M! for each dregsmod:Sealed Curse."
+  },
   "dregsmod:Unlucky": {
     "NAME": "Unlucky",
     "DESCRIPTION": "Deal !D! Damage. Costs 1 less for each Curse in your deck."
