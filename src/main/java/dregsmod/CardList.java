@@ -58,6 +58,7 @@ public class CardList {
         allCards.add(new SealedEnergy());
         allCards.add(new SealingWish());
         allCards.add(new Unlucky());
+        allCards.add(new WaveOfDarkness());
 
         //Uncommon Skills
         allCards.add(new Ascetic());

@@ -45,6 +45,7 @@ public class SealingWish extends CustomCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         isMultiDamage = true;
+        exhaust = true;
     }
 
     private Optional<AbstractGameAction> sealCurseFromGroupIfPresent(CardGroup group) {
