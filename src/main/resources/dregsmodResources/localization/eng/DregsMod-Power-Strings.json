@@ -57,22 +57,6 @@
       " #yCursed."
     ]
   },
-  "dregsmod:FortitudePower": {
-    "NAME": "Fortitude",
-    "DESCRIPTIONS": [
-      "Opposite of #yVulnerable. Take 25% less damage for #b",
-      " turn.",
-      " turns."
-    ]
-  },
-  "dregsmod:MightPower": {
-    "NAME": "Might",
-    "DESCRIPTIONS": [
-      "Opposite of #yWeak. Your attacks deal 25% more damage for #b",
-      " turn.",
-      " turns."
-    ]
-  },
   "dregsmod:RetributionPower": {
     "NAME": "Retribution",
     "DESCRIPTIONS": [
@@ -92,6 +76,28 @@
     "DESCRIPTIONS": [
       "Whenever you draw a #yCurse, inflict #b",
       " #yWeak on a random enemy."
+    ]
+  },
+  "dregsmod:TheVaultPower": {
+    "NAME": "The Vault",
+    "DESCRIPTIONS": [
+      "When you would discard a #yCurse, #ySeal it instead."
+    ]
+  },
+  "dregsmod:FortitudePower": {
+    "NAME": "Fortitude",
+    "DESCRIPTIONS": [
+      "Opposite of #yVulnerable. Take 25% less damage for #b",
+      " turn.",
+      " turns."
+    ]
+  },
+  "dregsmod:MightPower": {
+    "NAME": "Might",
+    "DESCRIPTIONS": [
+      "Opposite of #yWeak. Your attacks deal 25% more damage for #b",
+      " turn.",
+      " turns."
     ]
   },
   "dregsmod:SturdinessPower": {

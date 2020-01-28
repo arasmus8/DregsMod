@@ -5,6 +5,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import dregsmod.DregsMod;
 import dregsmod.patches.variables.CardSealed;
 
 import java.util.ArrayList;
@@ -23,6 +24,8 @@ public class EmptyDeckShuffleActionPatches {
                     sealedCards.add(card);
                 }
             }
+            DregsMod.postSealedCards.clear();
+            DregsMod.postSealedCards.addAll(sealedCards);
             for (AbstractCard card : sealedCards) {
                 CardSealed.isSealed.set(card, false);
                 AbstractDungeon.player.drawPile.moveToDiscardPile(card);

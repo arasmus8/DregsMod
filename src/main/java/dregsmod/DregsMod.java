@@ -28,6 +28,7 @@ import dregsmod.util.TextureLoader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -109,6 +110,7 @@ public class DregsMod implements
     }
 
     public static Map<String, Texture> uiTextures = new HashMap<>();
+    public static ArrayList<AbstractCard> postSealedCards = new ArrayList<>();
 
     public DregsMod() {
         logger.info("Subscribe to BaseMod hooks");

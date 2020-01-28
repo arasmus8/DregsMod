@@ -161,6 +161,10 @@
     "NAME": "Shifting Sands",
     "DESCRIPTION": "When you draw a Curse, inflict !M! Weak on a random enemy."
   },
+  "dregsmod:TheVault": {
+    "NAME": "The Vault",
+    "DESCRIPTION": "When you discard a Curse, dregsmod:Seal it instead."
+  },
   "dregsmod:Unlucky": {
     "NAME": "Unlucky",
     "DESCRIPTION": "Deal !D! Damage. Costs 1 less for each Curse in your deck."
