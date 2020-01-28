@@ -87,6 +87,13 @@
       " #yCursed on a random enemy."
     ]
   },
+  "dregsmod:ShiftingSandsPower": {
+    "NAME": "Shifting Sands",
+    "DESCRIPTIONS": [
+      "Whenever you draw a #yCurse, inflict #b",
+      " #yWeak on a random enemy."
+    ]
+  },
   "dregsmod:SturdinessPower": {
     "NAME": "Sturdiness",
     "DESCRIPTIONS": [

@@ -157,6 +157,10 @@
     "NAME": "Sealing Wish",
     "DESCRIPTION": "Deal !D! Damage to all enemies. dregsmod:Seal a random Curse. NL Exhaust"
   },
+  "dregsmod:ShiftingSands": {
+    "NAME": "Shifting Sands",
+    "DESCRIPTION": "When you draw a Curse, inflict !M! Weak on a random enemy."
+  },
   "dregsmod:Unlucky": {
     "NAME": "Unlucky",
     "DESCRIPTION": "Deal !D! Damage. Costs 1 less for each Curse in your deck."
