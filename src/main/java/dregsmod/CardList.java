@@ -56,6 +56,7 @@ public class CardList {
         allCards.add(new Misfortune());
         allCards.add(new RiteOfPurification());
         allCards.add(new SealedEnergy());
+        allCards.add(new SealingWish());
         allCards.add(new Unlucky());
 
         //Uncommon Skills
