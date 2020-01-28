@@ -165,6 +165,11 @@
     "NAME": "The Vault",
     "DESCRIPTION": "When you discard a Curse, dregsmod:Seal it instead."
   },
+  "dregsmod:Torment": {
+    "NAME": "Torment",
+    "DESCRIPTION": "Unplayable NL While dregsmod:Sealed, gain [E] each turn.",
+    "UPGRADE_DESCRIPTION": "Unplayable NL While dregsmod:Sealed, gain [E] [E] each turn."
+  },
   "dregsmod:Unlucky": {
     "NAME": "Unlucky",
     "DESCRIPTION": "Deal !D! Damage. Costs 1 less for each Curse in your deck."

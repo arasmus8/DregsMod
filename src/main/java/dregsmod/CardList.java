@@ -71,6 +71,7 @@ public class CardList {
         allCards.add(new Obstruct());
         allCards.add(new Pinprick());
         allCards.add(new Sarcophagus());
+        allCards.add(new Torment());
 
         //Uncommon Powers
         allCards.add(new Asylum());
