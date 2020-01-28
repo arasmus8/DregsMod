@@ -145,6 +145,10 @@
     "NAME": "Sarcophagus",
     "DESCRIPTION": "Gain !B! Block. dregsmod:Seal a card."
   },
+  "dregsmod:Scapegoat": {
+    "NAME": "Scapegoat",
+    "DESCRIPTION": "When you Exhuast a card, inflict !M! dregsmod:Cursed on a random enemy."
+  },
   "dregsmod:Unlucky": {
     "NAME": "Unlucky",
     "DESCRIPTION": "Deal !D! Damage. Costs 1 less for each Curse in your deck."

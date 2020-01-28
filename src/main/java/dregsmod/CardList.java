@@ -74,6 +74,7 @@ public class CardList {
         allCards.add(new Asylum());
         allCards.add(new Defiance());
         allCards.add(new Excess());
+        allCards.add(new Scapegoat());
 
         //Rare Attacks
         allCards.add(new LastHope());
