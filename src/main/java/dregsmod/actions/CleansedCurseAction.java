@@ -83,17 +83,29 @@ public class CleansedCurseAction extends AbstractGameAction implements CustomSav
     public void update() {
         if (duration == startDuration) {
             CardGroup randomCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            for (int i = 0; i < 5; ++i) {
-                randomCards.addToTop(getRandomCardOfColor(CardLibrary.LibraryType.RED));
+            while (randomCards.size() < 5) {
+                AbstractCard randomCard = getRandomCardOfColor(CardLibrary.LibraryType.RED);
+                if (!randomCards.contains(randomCard)) {
+                    randomCards.addToTop(randomCard);
+                }
             }
-            for (int i = 0; i < 5; ++i) {
-                randomCards.addToTop(getRandomCardOfColor(CardLibrary.LibraryType.GREEN));
+            while (randomCards.size() < 10) {
+                AbstractCard randomCard = getRandomCardOfColor(CardLibrary.LibraryType.GREEN);
+                if (!randomCards.contains(randomCard)) {
+                    randomCards.addToTop(randomCard);
+                }
             }
-            for (int i = 0; i < 5; ++i) {
-                randomCards.addToTop(getRandomCardOfColor(CardLibrary.LibraryType.BLUE));
+            while (randomCards.size() < 15) {
+                AbstractCard randomCard = getRandomCardOfColor(CardLibrary.LibraryType.BLUE);
+                if (!randomCards.contains(randomCard)) {
+                    randomCards.addToTop(randomCard);
+                }
             }
-            for (int i = 0; i < 5; ++i) {
-                randomCards.addToTop(getRandomCardOfColor(CardLibrary.LibraryType.PURPLE));
+            while (randomCards.size() < 20) {
+                AbstractCard randomCard = getRandomCardOfColor(CardLibrary.LibraryType.PURPLE);
+                if (!randomCards.contains(randomCard)) {
+                    randomCards.addToTop(randomCard);
+                }
             }
             AbstractDungeon.gridSelectScreen.open(randomCards, 1, TEXT[0], false, false, false, false);
         } else if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {

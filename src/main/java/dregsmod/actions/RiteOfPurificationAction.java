@@ -29,12 +29,10 @@ public class RiteOfPurificationAction extends AbstractGameAction {
                 isDone = true;
             } else if (AbstractDungeon.player.hand.size() == 1) {
                 boolean curseExhausted = false;
-                for (AbstractCard card : AbstractDungeon.player.hand.group) {
-                    AbstractDungeon.player.hand.addToTop(card);
-                    addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
-                    if (card.type == AbstractCard.CardType.CURSE) {
-                        curseExhausted = true;
-                    }
+                AbstractCard card = AbstractDungeon.player.hand.getTopCard();
+                addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
+                if (card.type == AbstractCard.CardType.CURSE) {
+                    curseExhausted = true;
                 }
 
                 if (curseExhausted) {
