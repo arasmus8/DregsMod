@@ -26,6 +26,7 @@ public class CardList {
         allCards.add(new Doom());
         allCards.add(new Gloom());
         allCards.add(new Death());
+        allCards.add(new Tower());
 
         // Special Cards
         allCards.add(new CleansedCurse());

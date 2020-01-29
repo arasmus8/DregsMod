@@ -257,5 +257,9 @@
   "dregsmod:Death": {
     "NAME": "Death",
     "DESCRIPTION": "Increase this card's cost by 1. Unless played, take 100 Damage. NL dregsmod:Cleanse: Spend !M! [E]"
+  },
+  "dregsmod:Tower": {
+    "NAME": "Tower",
+    "DESCRIPTION": "Innate NL Retain NL dregsmod:Cleanse: Play !M! cards."
   }
 }
