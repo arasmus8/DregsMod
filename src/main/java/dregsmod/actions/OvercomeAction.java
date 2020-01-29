@@ -39,9 +39,11 @@ public class OvercomeAction extends AbstractGameAction {
 
         effect += amount;
 
-        addToBot(new ApplyPowerAction(p, p, new FortitudePower(p, effect), effect));
-        addToBot(new ApplyPowerAction(p, p, new MightPower(p, effect), effect));
-        addToBot(new ApplyPowerAction(p, p, new SturdinessPower(p, effect), effect));
+        if(effect > 0) {
+            addToBot(new ApplyPowerAction(p, p, new FortitudePower(p, effect), effect));
+            addToBot(new ApplyPowerAction(p, p, new MightPower(p, effect), effect));
+            addToBot(new ApplyPowerAction(p, p, new SturdinessPower(p, effect), effect));
+        }
 
         if (!freeToPlayOnce) {
             p.energy.use(EnergyPanel.totalCount);

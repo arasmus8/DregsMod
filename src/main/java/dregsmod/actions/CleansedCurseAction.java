@@ -101,10 +101,9 @@ public class CleansedCurseAction extends AbstractGameAction implements CustomSav
 
             for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
                 addToBot(new MakeTempCardInHandAction(card.makeCopy()));
-                p.masterDeck.addToTop(card);
+                p.masterDeck.addToTop(card.makeCopy());
                 card.lighten(false);
                 card.unhover();
-                p.drawPile.moveToDeck(card, false);
             }
 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
@@ -115,6 +114,7 @@ public class CleansedCurseAction extends AbstractGameAction implements CustomSav
 
     @Override
     public Integer onSave() {
+        rng = Optional.ofNullable(rng).orElse(new Random(Settings.seed));
         return rng.counter;
     }
 

@@ -265,5 +265,13 @@
   "dregsmod:Judgement": {
     "NAME": "Judgement",
     "DESCRIPTION": "Retain NL When Retained, inflict 1 Vulnerable on all combatants. NL dregsmod:Cleanse: Exhaust this !M! times"
+  },
+  "dregsmod:Dread": {
+    "NAME": "Dread",
+    "DESCRIPTION": "Retain NL If you lose HP, lose 2 more. NL dregsmod:Cleanse: Play this !M! times"
+  },
+  "dregsmod:Cower": {
+    "NAME": "Cower",
+    "DESCRIPTION": "Retain NL When Retained, Your enemies heal 5 HP. NL dregsmod:Cleanse: Defeat !M! enemies"
   }
 }

@@ -25,7 +25,28 @@ public class RiteOfPurificationAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.duration == this.startDuration) {
-            AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, false, false);
+            if(AbstractDungeon.player.hand.size() < 1) {
+                isDone = true;
+            } else if (AbstractDungeon.player.hand.size() == 1) {
+                boolean curseExhausted = false;
+                for (AbstractCard card : AbstractDungeon.player.hand.group) {
+                    AbstractDungeon.player.hand.addToTop(card);
+                    addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
+                    if (card.type == AbstractCard.CardType.CURSE) {
+                        curseExhausted = true;
+                    }
+                }
+
+                if (curseExhausted) {
+                    riteCard.returnToHand = true;
+                    addToTop(new DrawCardAction(AbstractDungeon.player, 1));
+                } else {
+                    riteCard.returnToHand = false;
+                }
+                isDone = true;
+            } else {
+                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, false, false);
+            }
         } else if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             boolean curseExhausted = false;
             for (AbstractCard card : AbstractDungeon.handCardSelectScreen.selectedCards.group) {

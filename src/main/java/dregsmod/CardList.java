@@ -28,6 +28,8 @@ public class CardList {
         allCards.add(new Death());
         allCards.add(new Tower());
         allCards.add(new Judgement());
+        allCards.add(new Dread());
+        allCards.add(new Cower());
 
         // Special Cards
         allCards.add(new CleansedCurse());
