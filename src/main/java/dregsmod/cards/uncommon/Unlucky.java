@@ -3,6 +3,7 @@ package dregsmod.cards.uncommon;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -37,16 +38,22 @@ public class Unlucky extends CustomCard {
     public Unlucky() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        configureCostsOnNewCard();
+        configureCost();
     }
 
-    public void configureCostsOnNewCard() {
+    public void configureCost() {
         if (CardCrawlGame.dungeon != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             int curseCount = (int) AbstractDungeon.player.masterDeck.group.stream()
                     .filter(card -> card.type == CardType.CURSE)
                     .count();
             updateCost(-curseCount);
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        configureCost();
     }
 
     @Override
@@ -59,8 +66,13 @@ public class Unlucky extends CustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
-            configureCostsOnNewCard();
+            configureCost();
             initializeDescription();
         }
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new Unlucky();
     }
 }

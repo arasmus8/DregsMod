@@ -52,9 +52,9 @@ public class RedemptionAction extends AbstractGameAction {
                     cards.addAll(AbstractDungeon.player.exhaustPile.group);
                     for (AbstractCard c : cards) {
                         if (c instanceof HardLuck) {
-                            ((HardLuck) c).configureCostsOnNewCard();
+                            ((HardLuck) c).configureCost();
                         } else if (c instanceof Unlucky) {
-                            ((Unlucky) c).configureCostsOnNewCard();
+                            ((Unlucky) c).configureCost();
                         }
                     }
                 }

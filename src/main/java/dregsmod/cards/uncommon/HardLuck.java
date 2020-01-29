@@ -1,8 +1,8 @@
 package dregsmod.cards.uncommon;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -42,16 +42,22 @@ public class HardLuck extends CustomCard {
     public HardLuck() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
-        configureCostsOnNewCard();
+        configureCost();
     }
 
-    public void configureCostsOnNewCard() {
+    public void configureCost() {
         if (CardCrawlGame.dungeon != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             int curseCount = (int) AbstractDungeon.player.masterDeck.group.stream()
                     .filter(card -> card.type == CardType.CURSE)
                     .count();
             updateCost(-curseCount);
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        configureCost();
     }
 
     // Actions the card should do.
@@ -66,8 +72,13 @@ public class HardLuck extends CustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
-            configureCostsOnNewCard();
+            configureCost();
             initializeDescription();
         }
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new HardLuck();
     }
 }
