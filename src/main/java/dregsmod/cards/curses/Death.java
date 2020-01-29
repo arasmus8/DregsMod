@@ -34,7 +34,7 @@ public class Death extends AbstractCleansingCurse {
 
     private static final int DAMAGE = 100;
     private static final int COST = 0;
-    private static final int CLEANSE_AMOUNT = 30;
+    private static final int CLEANSE_AMOUNT = 20;
 
 // /STAT DECLARATION/
 

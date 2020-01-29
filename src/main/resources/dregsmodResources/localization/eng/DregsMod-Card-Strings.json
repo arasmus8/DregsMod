@@ -273,5 +273,13 @@
   "dregsmod:Cower": {
     "NAME": "Cower",
     "DESCRIPTION": "Retain NL When Retained, Your enemies heal 5 HP. NL dregsmod:Cleanse: Defeat !M! enemies"
+  },
+  "dregsmod:Greed": {
+    "NAME": "Greed",
+    "DESCRIPTION": "When drawn, lose 5 Gold. NL dregsmod:Cleanse: Draw this !M! times"
+  },
+  "dregsmod:Envy": {
+    "NAME": "Envy",
+    "DESCRIPTION": "Retain NL When Retained, you are inflicted with Weak if you have at least 75% HP. NL dregsmod:Cleanse: Discard this !M! times"
   }
 }

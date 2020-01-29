@@ -30,6 +30,8 @@ public class CardList {
         allCards.add(new Judgement());
         allCards.add(new Dread());
         allCards.add(new Cower());
+        allCards.add(new Greed());
+        allCards.add(new Envy());
 
         // Special Cards
         allCards.add(new CleansedCurse());

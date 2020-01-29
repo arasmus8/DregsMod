@@ -31,7 +31,7 @@ public class Dread extends AbstractCleansingCurse {
     public static final CardColor COLOR = CardColor.CURSE;
 
     private static final int COST = 1;
-    private static final int CLEANSE_AMOUNT = 25;
+    private static final int CLEANSE_AMOUNT = 10;
 
     private boolean suspendDamage = false;
 
