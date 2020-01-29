@@ -32,6 +32,7 @@ public class CardList {
         allCards.add(new Cower());
         allCards.add(new Greed());
         allCards.add(new Envy());
+        allCards.add(new Infection());
 
         // Special Cards
         allCards.add(new CleansedCurse());
