@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.Optional;
 
+import static dregsmod.patches.enums.CustomCardTags.CLEANSE_CURSE;
+
 public abstract class AbstractCleansingCurse extends CustomCard {
     public int cleanseAmount;
 
@@ -16,6 +18,7 @@ public abstract class AbstractCleansingCurse extends CustomCard {
         super(id, name, img, cost, rawDescription, CardType.CURSE, CardColor.CURSE, CardRarity.CURSE, target);
         this.cleanseAmount = cleanseAmount;
         baseMagicNumber = magicNumber = cleanseAmount - misc;
+        tags.add(CLEANSE_CURSE);
     }
 
     public void cleanseBy(int amount) {
