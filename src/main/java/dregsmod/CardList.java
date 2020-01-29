@@ -27,6 +27,7 @@ public class CardList {
         allCards.add(new Gloom());
         allCards.add(new Death());
         allCards.add(new Tower());
+        allCards.add(new Judgement());
 
         // Special Cards
         allCards.add(new CleansedCurse());

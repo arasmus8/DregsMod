@@ -261,5 +261,9 @@
   "dregsmod:Tower": {
     "NAME": "Tower",
     "DESCRIPTION": "Innate NL Retain NL dregsmod:Cleanse: Play !M! cards."
+  },
+  "dregsmod:Judgement": {
+    "NAME": "Judgement",
+    "DESCRIPTION": "Retain NL When Retained, inflict 1 Vulnerable on all combatants. NL dregsmod:Cleanse: Exhaust this !M! times"
   }
 }

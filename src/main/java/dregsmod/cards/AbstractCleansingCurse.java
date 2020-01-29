@@ -29,8 +29,9 @@ public abstract class AbstractCleansingCurse extends CustomCard {
                     .filter(c -> c.uuid.equals(uuid))
                     .findFirst();
             original.ifPresent(card -> AbstractDungeon.player.masterDeck.removeCard(card));
-            AbstractDungeon.player.masterDeck.addToTop(new CleansedCurse());
-            addToTop(new MakeTempCardInHandAction(new CleansedCurse()));
+            AbstractCard cleansedCurse = new CleansedCurse();
+            AbstractDungeon.player.masterDeck.addToTop(cleansedCurse.makeSameInstanceOf());
+            addToTop(new MakeTempCardInHandAction(cleansedCurse.makeSameInstanceOf()));
             addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
             AbstractDungeon.player.hand.refreshHandLayout();
         }
