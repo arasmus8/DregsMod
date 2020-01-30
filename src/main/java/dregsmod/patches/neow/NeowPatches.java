@@ -115,8 +115,8 @@ public class NeowPatches {
             Logger logger = Logger.getLogger(DregsReward.class.getName());
             int category;
             if(isFirst) {
-                type = NeowRewardType.THREE_CARDS;
-                category = 0;
+                type = NeowRewardType.HUNDRED_GOLD;
+                category = 1;
             } else {
                 type = NeowRewardType.TEN_PERCENT_HP_BONUS;
                 category = 3;

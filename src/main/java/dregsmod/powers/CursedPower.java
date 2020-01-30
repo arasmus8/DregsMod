@@ -41,7 +41,6 @@ public class CursedPower extends AbstractPower implements CloneablePowerInterfac
     public void atStartOfTurn() {
         this.flash();
         int healAmount = (owner.maxHealth - owner.currentHealth) / 10;
-        addToBot(new HealAction(owner, owner, healAmount));
         if (amount >= owner.currentHealth) {
             addToBot(new InstantKillAction(owner));
             addToBot(new FastShakeAction(owner, 0.5F, 0.2F));// 119
@@ -62,6 +61,8 @@ public class CursedPower extends AbstractPower implements CloneablePowerInterfac
                     break;
             }
             addToBot(new AddCardToDeckAction(curseToAdd));
+        } else {
+            addToBot(new HealAction(owner, owner, healAmount));
         }
     }
 

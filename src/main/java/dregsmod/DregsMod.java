@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import dregsmod.actions.CleansedCurseAction;
 import dregsmod.characters.Dregs;
 import dregsmod.relics.CurseBrand;
+import dregsmod.relics.DeathBrand;
 import dregsmod.relics.NeowsHatred;
 import dregsmod.util.IDCheckDontTouchPls;
 import dregsmod.util.TextureLoader;
@@ -264,8 +265,10 @@ public class DregsMod implements
 
         BaseMod.addRelicToCustomPool(new CurseBrand(), Dregs.Enums.COLOR_BLACK);
         BaseMod.addRelicToCustomPool(new NeowsHatred(), Dregs.Enums.COLOR_BLACK);
+        BaseMod.addRelicToCustomPool(new DeathBrand(), Dregs.Enums.COLOR_BLACK);
 
         UnlockTracker.markRelicAsSeen(NeowsHatred.ID);
+        UnlockTracker.markRelicAsSeen(DeathBrand.ID);
 
         // UnlockTracker.markRelicAsSeen(AlchemistKit.ID);
         // BaseMod.addRelic(new AlchemistFlask(), RelicType.SHARED);
