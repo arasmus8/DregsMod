@@ -3,7 +3,7 @@
     "NAME": "Banana Peel",
     "FLAVOR": "Covered in Go-Kart tracks.",
     "DESCRIPTIONS": [
-      "When you are inflicted with Weak, inflict 1 Weak on all enemies."
+      "When you are inflicted with #yWeak, inflict 1 #yWeak on all enemies."
     ]
   },
   "dregsmod:CurseBrand": {
@@ -11,6 +11,13 @@
     "FLAVOR": "This mark is reserved for the failed and fallen.",
     "DESCRIPTIONS": [
       "Whenever you draw a Curse, deal 3 damage to all enemies."
+    ]
+  },
+  "dregsmod:CursedLocket": {
+    "NAME": "Cursed Locket",
+    "FLAVOR": "Sealed with dark energy, it burns to the touch.",
+    "DESCRIPTIONS": [
+      "Whenever you inflict #yCursed, inflict 3 more."
     ]
   },
   "dregsmod:DeathBrand": {
@@ -32,6 +39,13 @@
     "FLAVOR": "It feels like you were brought back just to fail.",
     "DESCRIPTIONS": [
       "Whenever you enter a Rest Site, add a Curse to your deck."
+    ]
+  },
+  "dregsmod:StickyBarb": {
+    "NAME": "Sticky Barb",
+    "FLAVOR": "Impossible to remove from socks.",
+    "DESCRIPTIONS": [
+      "When you are inflicted with #yVulnerable, inflict 1 #yVulnerable on all enemies."
     ]
   }
 }

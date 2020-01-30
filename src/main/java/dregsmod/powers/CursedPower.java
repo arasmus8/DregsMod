@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,6 +19,7 @@ import dregsmod.DregsMod;
 import dregsmod.cards.curses.Catastrophe;
 import dregsmod.cards.curses.Doom;
 import dregsmod.cards.curses.Gloom;
+import dregsmod.relics.CursedLocket;
 
 public class CursedPower extends AbstractPower implements CloneablePowerInterface, HealthBarRenderPower {
 
@@ -35,6 +37,19 @@ public class CursedPower extends AbstractPower implements CloneablePowerInterfac
         loadRegion("fading");
         updateDescription();
         type = PowerType.DEBUFF;
+        if (AbstractDungeon.player.hasRelic(CursedLocket.ID)) {
+            AbstractDungeon.player.getRelic(CursedLocket.ID).flash();
+            this.amount += 3;
+        }
+    }
+
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+        if (AbstractDungeon.player.hasRelic(CursedLocket.ID)) {
+            AbstractDungeon.player.getRelic(CursedLocket.ID).flash();
+            amount += 3;
+        }
     }
 
     @Override

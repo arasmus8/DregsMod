@@ -113,6 +113,7 @@ public class DregsMod implements
 
     public static Map<String, Texture> uiTextures = new HashMap<>();
     public static ArrayList<AbstractCard> postSealedCards = new ArrayList<>();
+    public static boolean keywordsSetup = false;
 
     public DregsMod() {
         logger.info("Subscribe to BaseMod hooks");
@@ -271,8 +272,13 @@ public class DregsMod implements
 
         BaseMod.addRelic(new LuckyClover(), RelicType.SHARED);
         BaseMod.addRelic(new BananaPeel(), RelicType.SHARED);
+        BaseMod.addRelic(new StickyBarb(), RelicType.SHARED);
+        BaseMod.addRelic(new CursedLocket(), RelicType.SHARED);
+
         UnlockTracker.markRelicAsSeen(LuckyClover.ID);
         UnlockTracker.markRelicAsSeen(BananaPeel.ID);
+        UnlockTracker.markRelicAsSeen(StickyBarb.ID);
+        UnlockTracker.markRelicAsSeen(CursedLocket.ID);
 
         logger.info("Done adding relics!");
     }
@@ -350,6 +356,7 @@ public class DregsMod implements
                 BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+        keywordsSetup = true;
     }
 
     @Override

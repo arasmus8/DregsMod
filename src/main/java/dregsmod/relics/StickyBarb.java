@@ -9,22 +9,22 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import dregsmod.DregsMod;
 import dregsmod.util.TextureLoader;
 
 import static dregsmod.DregsMod.makeRelicOutlinePath;
 import static dregsmod.DregsMod.makeRelicPath;
 
-public class BananaPeel extends CustomRelic implements OnReceivePowerRelic {
+public class StickyBarb extends CustomRelic implements OnReceivePowerRelic {
 
-    public static final String ID = DregsMod.makeID(BananaPeel.class.getSimpleName());
+    public static final String ID = DregsMod.makeID(StickyBarb.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BananaPeel.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BananaPeel.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("StickyBarb.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("StickyBarb.png"));
 
-    public BananaPeel() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.FLAT);
+    public StickyBarb() {
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.SOLID);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
         initializeTips();
@@ -37,11 +37,11 @@ public class BananaPeel extends CustomRelic implements OnReceivePowerRelic {
 
     @Override
     public int onReceivePowerStacks(AbstractPower power, AbstractCreature source, int stackAmount) {
-        if (power.ID.equals(WeakPower.POWER_ID)) {
+        if (power.ID.equals(VulnerablePower.POWER_ID)) {
             boolean isSourceMonster = !source.isPlayer;
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                 if (!m.isDeadOrEscaped()) {
-                    addToBot(new ApplyPowerAction(m, source, new WeakPower(m, 1, isSourceMonster), 1));
+                    addToBot(new ApplyPowerAction(m, source, new VulnerablePower(m, 1, isSourceMonster), 1));
                 }
             }
             flash();
