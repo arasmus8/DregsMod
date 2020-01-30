@@ -23,7 +23,6 @@ public class CleansedCurseAction extends AbstractGameAction implements CustomSav
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
     public static final String ID = DregsMod.makeID(CleansedCurseAction.class.getSimpleName());
-    private AbstractCard cardToReplace;
 
     private static final int RARE_CHANCE;
     private static final int UNCOMMON_CHANCE;
@@ -31,7 +30,6 @@ public class CleansedCurseAction extends AbstractGameAction implements CustomSav
     private static final int SKILL_CHANCE;
 
     public CleansedCurseAction(AbstractCard cardToReplace) {
-        this.cardToReplace = cardToReplace;
         setValues(AbstractDungeon.player, AbstractDungeon.player);
         duration = startDuration = Settings.ACTION_DUR_XFAST;
         actionType = ActionType.CARD_MANIPULATION;

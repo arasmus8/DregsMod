@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "Whenever you draw a curse, deal 3 damage to all enemies."
     ]
+  },
+  "dregsmod:NeowsHatred": {
+    "NAME": "Neow's Hatred",
+    "FLAVOR": "It feels like you were brought back just to fail.",
+    "DESCRIPTIONS": [
+      "Whenever you enter a Rest Site, add a Curse to your deck."
+    ]
   }
 }

@@ -285,5 +285,9 @@
   "dregsmod:Infection": {
     "NAME": "Infection",
     "DESCRIPTION": "Retain NL When Retained, shuffle a copy into your draw pile. NL dregsmod:Cleanse: Retain this !M! times NL Exhaust"
+  },
+  "dregsmod:WeakPoint": {
+    "NAME": "Weak Point",
+    "DESCRIPTION": "Retain NL When Retained, a random enemy gains 2 Strength this turn. NL dregsmod:Cleanse: gain !M! Block"
   }
 }
