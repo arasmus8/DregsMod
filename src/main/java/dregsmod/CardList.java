@@ -19,7 +19,8 @@ public class CardList {
         ArrayList<AbstractCard> cleanseCurses = allCards.stream()
                 .filter(card -> card.hasTag(CustomCardTags.CLEANSE_CURSE))
                 .collect(Collectors.toCollection(ArrayList::new));
-        return cleanseCurses.get(AbstractDungeon.cardRng.random(0, cleanseCurses.size() - 1));
+        AbstractCard randomChoice = cleanseCurses.get(AbstractDungeon.cardRng.random(0, cleanseCurses.size() - 1));
+        return randomChoice.makeCopy();
     }
 
     static {

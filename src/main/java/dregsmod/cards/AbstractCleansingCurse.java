@@ -68,7 +68,7 @@ public abstract class AbstractCleansingCurse extends CustomCard {
 
     @Override
     public void applyPowers() {
-        baseMagicNumber = magicNumber = Math.max(cleanseAmount - misc, cleanseAmount);
+        baseMagicNumber = magicNumber = cleanseAmount - misc;
         super.applyPowers();
         initializeDescription();
         if (isCleansed) {
