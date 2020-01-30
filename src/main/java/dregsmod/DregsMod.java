@@ -23,10 +23,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import dregsmod.actions.CleansedCurseAction;
 import dregsmod.characters.Dregs;
-import dregsmod.relics.CurseBrand;
-import dregsmod.relics.DeathBrand;
-import dregsmod.relics.LuckyClover;
-import dregsmod.relics.NeowsHatred;
+import dregsmod.relics.*;
 import dregsmod.util.IDCheckDontTouchPls;
 import dregsmod.util.TextureLoader;
 
@@ -273,7 +270,9 @@ public class DregsMod implements
         UnlockTracker.markRelicAsSeen(DeathBrand.ID);
 
         BaseMod.addRelic(new LuckyClover(), RelicType.SHARED);
+        BaseMod.addRelic(new BananaPeel(), RelicType.SHARED);
         UnlockTracker.markRelicAsSeen(LuckyClover.ID);
+        UnlockTracker.markRelicAsSeen(BananaPeel.ID);
 
         logger.info("Done adding relics!");
     }

@@ -1,4 +1,11 @@
 {
+  "dregsmod:BananaPeel": {
+    "NAME": "Banana Peel",
+    "FLAVOR": "Covered in Go-Kart tracks.",
+    "DESCRIPTIONS": [
+      "When you are inflicted with Weak, inflict 1 Weak on all enemies."
+    ]
+  },
   "dregsmod:CurseBrand": {
     "NAME": "Curse Brand",
     "FLAVOR": "This mark is reserved for the failed and fallen.",
