@@ -13,6 +13,13 @@
       "Replaces Curse Brand. Whenever you draw a Curse, deal 5 damage to all enemies."
     ]
   },
+  "dregsmod:LuckyClover": {
+    "NAME": "Lucky Clover",
+    "FLAVOR": "It's magical and delightful.",
+    "DESCRIPTIONS": [
+      "At the beginning of each combat, gain 1 Plated Armor for each unique curse in your deck."
+    ]
+  },
   "dregsmod:NeowsHatred": {
     "NAME": "Neow's Hatred",
     "FLAVOR": "It feels like you were brought back just to fail.",

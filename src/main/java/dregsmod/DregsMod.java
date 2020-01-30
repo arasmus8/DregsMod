@@ -3,6 +3,7 @@ package dregsmod;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -24,6 +25,7 @@ import dregsmod.actions.CleansedCurseAction;
 import dregsmod.characters.Dregs;
 import dregsmod.relics.CurseBrand;
 import dregsmod.relics.DeathBrand;
+import dregsmod.relics.LuckyClover;
 import dregsmod.relics.NeowsHatred;
 import dregsmod.util.IDCheckDontTouchPls;
 import dregsmod.util.TextureLoader;
@@ -270,8 +272,9 @@ public class DregsMod implements
         UnlockTracker.markRelicAsSeen(NeowsHatred.ID);
         UnlockTracker.markRelicAsSeen(DeathBrand.ID);
 
-        // UnlockTracker.markRelicAsSeen(AlchemistKit.ID);
-        // BaseMod.addRelic(new AlchemistFlask(), RelicType.SHARED);
+        BaseMod.addRelic(new LuckyClover(), RelicType.SHARED);
+        UnlockTracker.markRelicAsSeen(LuckyClover.ID);
+
         logger.info("Done adding relics!");
     }
 
