@@ -179,6 +179,13 @@
     "DESCRIPTION": "Deal !D! Damage to all enemies. Gain !B! Block."
   },
   "RARE": {},
+  "dregsmod:BadOmen": {
+    "NAME": "Bad Omen",
+    "DESCRIPTION": "Can only be used if either your draw or discard pile contains exactly 13 cards. NL Deal !D! Damage to all enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "Must have exactly 13 cards..."
+    ]
+  },
   "dregsmod:ChaosTheory": {
     "NAME": "Chaos Theory",
     "DESCRIPTION": "Each turn, add !M! copy of a random card from your master deck to your hand."

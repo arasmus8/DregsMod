@@ -98,6 +98,7 @@ public class CardList {
         allCards.add(new TheVault());
 
         //Rare Attacks
+        allCards.add(new BadOmen());
         allCards.add(new LastHope());
         allCards.add(new MeanLook());
         allCards.add(new PowerUp());
