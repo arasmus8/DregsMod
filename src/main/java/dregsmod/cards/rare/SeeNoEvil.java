@@ -34,6 +34,7 @@ public class SeeNoEvil extends CustomCard {
 
     public SeeNoEvil() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        exhaust = true;
     }
 
     // Actions the card should do.
@@ -52,7 +53,7 @@ public class SeeNoEvil extends CustomCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            isInnate = true;
+            exhaust = false;
             rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             upgradeName();
             initializeDescription();
