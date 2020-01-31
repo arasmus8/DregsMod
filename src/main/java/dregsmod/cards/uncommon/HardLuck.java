@@ -41,7 +41,6 @@ public class HardLuck extends CustomCard {
     public HardLuck() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
-        configureCost();
     }
 
     public void configureCost() {

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import dregsmod.DregsMod;
 import dregsmod.cards.uncommon.Guardian;
 import dregsmod.patches.variables.CardSealed;
+import dregsmod.vfx.SealCardEffect;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;
@@ -85,6 +86,7 @@ public class SealAndPerformAction extends AbstractGameAction {
                 sealedCards.addAll(filteredList);
                 filteredList.forEach(card -> {
                     CardSealed.isSealed.set(card, true);
+                    AbstractDungeon.effectList.add(new SealCardEffect(card.makeStatEquivalentCopy()));
                     group.moveToDiscardPile(card);
                     card.triggerOnManualDiscard();
                     card.triggerOnExhaust();
@@ -132,6 +134,7 @@ public class SealAndPerformAction extends AbstractGameAction {
                 filtered.group.addAll(filteredList);
                 for (int i = 0; i < amount; ++i) {
                     card = filtered.getRandomCard(AbstractDungeon.cardRandomRng);
+                    AbstractDungeon.effectList.add(new SealCardEffect(card.makeStatEquivalentCopy()));
                     sealedCards.add(card);
                     CardSealed.isSealed.set(card, true);
                     group.moveToDiscardPile(card);
@@ -149,6 +152,7 @@ public class SealAndPerformAction extends AbstractGameAction {
         if (group == p.hand) {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 for (AbstractCard card : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
+                    AbstractDungeon.effectList.add(new SealCardEffect(card.makeStatEquivalentCopy()));
                     sealedCards.add(card);
                     CardSealed.isSealed.set(card, true);
                     p.hand.moveToDiscardPile(card);
@@ -166,6 +170,7 @@ public class SealAndPerformAction extends AbstractGameAction {
         } else {
             if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
                 for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
+                    AbstractDungeon.effectList.add(new SealCardEffect(card.makeStatEquivalentCopy()));
                     sealedCards.add(card);
                     CardSealed.isSealed.set(card, true);
                     group.moveToDiscardPile(card);
