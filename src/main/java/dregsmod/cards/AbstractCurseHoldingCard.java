@@ -28,6 +28,13 @@ public abstract class AbstractCurseHoldingCard extends CustomCard {
     }
 
     @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        AbstractCurseHoldingCard copy = (AbstractCurseHoldingCard) super.makeStatEquivalentCopy();
+        copy.holdingCurse = holdingCurse;
+        return copy;
+    }
+
+    @Override
     public void applyPowers() {
         super.applyPowers();
         holdingCurse = checkForCurse();

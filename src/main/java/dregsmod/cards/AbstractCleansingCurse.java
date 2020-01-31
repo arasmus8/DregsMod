@@ -82,4 +82,12 @@ public abstract class AbstractCleansingCurse extends CustomCard {
             }
         }
     }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        AbstractCleansingCurse copy = (AbstractCleansingCurse) super.makeStatEquivalentCopy();
+        copy.cleanseAmount = cleanseAmount;
+        copy.isCleansed = isCleansed;
+        return copy;
+    }
 }
