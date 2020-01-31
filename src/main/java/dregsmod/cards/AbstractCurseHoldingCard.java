@@ -12,8 +12,8 @@ public abstract class AbstractCurseHoldingCard extends CustomCard {
     }
 
     private boolean checkForCurse() {
-        long curseCount = AbstractDungeon.player.hand.group.stream()
-                .filter(card -> card != this && card.type == CardType.CURSE)
+        long curseCount = AbstractDungeon.player.hand.getCardsOfType(CardType.CURSE).group.stream()
+                .filter(card -> card != this)
                 .count();
         return curseCount > 0;
     }

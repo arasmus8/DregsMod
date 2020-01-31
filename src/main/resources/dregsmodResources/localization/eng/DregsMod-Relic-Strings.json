@@ -27,6 +27,13 @@
       "Replaces Curse Brand. Whenever you draw a Curse, deal 5 damage to all enemies."
     ]
   },
+  "dregsmod:EvilEye": {
+    "NAME": "Evil Eye",
+    "FLAVOR": "Likes to kick puppies.",
+    "DESCRIPTIONS": [
+      "After each battle, heal 1 HP for each #yCurse remaining in your deck."
+    ]
+  },
   "dregsmod:LuckyClover": {
     "NAME": "Lucky Clover",
     "FLAVOR": "It's magical and delightful.",

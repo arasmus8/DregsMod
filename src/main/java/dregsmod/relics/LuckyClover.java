@@ -30,8 +30,8 @@ public class LuckyClover extends CustomRelic {
 
     @Override
     public void atBattleStartPreDraw() {
-        long curseCount = AbstractDungeon.player.masterDeck.group.stream()
-                .filter(card -> card.type == AbstractCard.CardType.CURSE)
+        long curseCount = AbstractDungeon.player.masterDeck
+                .getCardsOfType(AbstractCard.CardType.CURSE).group.stream()
                 .map(card -> card.cardID)
                 .distinct()
                 .count();

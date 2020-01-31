@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import dregsmod.DregsMod;
 import dregsmod.characters.Dregs;
 
@@ -38,22 +37,11 @@ public class Unlucky extends CustomCard {
     public Unlucky() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        configureCost();
     }
 
     public void configureCost() {
-        if (CardCrawlGame.dungeon != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            int curseCount = (int) AbstractDungeon.player.masterDeck.group.stream()
-                    .filter(card -> card.type == CardType.CURSE)
-                    .count();
-            updateCost(-curseCount);
-        }
-    }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        configureCost();
+        int curseCount = AbstractDungeon.player.masterDeck.getCardsOfType(CardType.CURSE).size();
+        modifyCostForCombat(-curseCount);
     }
 
     @Override
@@ -74,5 +62,12 @@ public class Unlucky extends CustomCard {
     @Override
     public AbstractCard makeCopy() {
         return new Unlucky();
+    }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        Unlucky copy = (Unlucky) super.makeStatEquivalentCopy();
+        copy.configureCost();
+        return copy;
     }
 }

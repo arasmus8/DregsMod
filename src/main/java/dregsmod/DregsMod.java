@@ -274,11 +274,13 @@ public class DregsMod implements
         BaseMod.addRelic(new BananaPeel(), RelicType.SHARED);
         BaseMod.addRelic(new StickyBarb(), RelicType.SHARED);
         BaseMod.addRelic(new CursedLocket(), RelicType.SHARED);
+        BaseMod.addRelic(new EvilEye(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(LuckyClover.ID);
         UnlockTracker.markRelicAsSeen(BananaPeel.ID);
         UnlockTracker.markRelicAsSeen(StickyBarb.ID);
         UnlockTracker.markRelicAsSeen(CursedLocket.ID);
+        UnlockTracker.markRelicAsSeen(EvilEye.ID);
 
         logger.info("Done adding relics!");
     }

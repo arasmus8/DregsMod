@@ -51,8 +51,7 @@ public class LashOut extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int origBaseDamage = baseDamage;
-        p.hand.group.stream()
-                .filter(card -> card.type == CardType.CURSE)
+        p.hand.getCardsOfType(CardType.CURSE).group
                 .forEach(card -> {
                     baseDamage += magicNumber;
                     addToBot(new DiscardSpecificCardAction(card));

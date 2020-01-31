@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import dregsmod.DregsMod;
 import dregsmod.characters.Dregs;
 
@@ -46,18 +45,8 @@ public class HardLuck extends CustomCard {
     }
 
     public void configureCost() {
-        if (CardCrawlGame.dungeon != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            int curseCount = (int) AbstractDungeon.player.masterDeck.group.stream()
-                    .filter(card -> card.type == CardType.CURSE)
-                    .count();
-            updateCost(-curseCount);
-        }
-    }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        configureCost();
+        int curseCount = AbstractDungeon.player.masterDeck.getCardsOfType(CardType.CURSE).size();
+        modifyCostForCombat(-curseCount);
     }
 
     // Actions the card should do.
@@ -80,5 +69,12 @@ public class HardLuck extends CustomCard {
     @Override
     public AbstractCard makeCopy() {
         return new HardLuck();
+    }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        HardLuck copy = (HardLuck) super.makeStatEquivalentCopy();
+        copy.configureCost();
+        return copy;
     }
 }

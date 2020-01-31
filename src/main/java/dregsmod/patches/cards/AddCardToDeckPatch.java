@@ -26,9 +26,9 @@ public class AddCardToDeckPatch {
                 cards.addAll(AbstractDungeon.player.exhaustPile.group);
                 for (AbstractCard c : cards) {
                     if (c instanceof HardLuck) {
-                        ((HardLuck) c).configureCost();
+                        c.updateCost(-1);
                     } else if (c instanceof Unlucky) {
-                        ((Unlucky) c).configureCost();
+                        c.updateCost(-1);
                     }
                 }
             }
