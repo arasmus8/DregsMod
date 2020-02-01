@@ -76,7 +76,7 @@ public class DregsMod implements
     private static final String POWER_DREGS_PORTRAIT = "dregsmodResources/images/1024/bg_power.png";
     private static final String ENERGY_ORB_DREGS_PORTRAIT = "dregsmodResources/images/1024/card_cyan_orb.png";
 
-    private static final String DREGS_CHARACTER_BUTTON_PNG = "dregsmodResources/images/charSelect/PotionbrewerCharacterButton.png";
+    private static final String DREGS_CHARACTER_BUTTON_PNG = "dregsmodResources/images/charSelect/CharacterButton.png";
     private static final String CHARACTER_SELECT_PORTRAIT = "dregsmodResources/images/charSelect/CharacterSelect.png";
     public static final String DREGS_SHOULDER = "dregsmodResources/images/char/potionbrewer/shoulder.png";
     public static final String DREGS_SHOULDER_2 = "dregsmodResources/images/char/potionbrewer/shoulder2.png";
