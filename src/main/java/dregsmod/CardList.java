@@ -63,6 +63,7 @@ public class CardList {
         allCards.add(new Plague());
         allCards.add(new Quarantine());
         allCards.add(new RitualJar());
+        allCards.add(new ShadowShield());
         allCards.add(new ShallowGrave());
 
         //Uncommon Attacks
