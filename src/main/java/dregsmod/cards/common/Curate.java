@@ -36,7 +36,7 @@ public class Curate extends CustomCard {
     private static final int BLOCK = 3;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 1;
 
 // /STAT DECLARATION/
 

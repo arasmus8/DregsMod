@@ -24,7 +24,7 @@
   "COMMON": {},
   "dregsmod:Curate": {
     "NAME": "Curate",
-    "DESCRIPTION": "Draw !M! cards. Discard a card. If you discard a Curse, gain !B! Block."
+    "DESCRIPTION": "Draw !M! card. Discard a card. If you discard a Curse, gain !B! Block."
   },
   "dregsmod:CursedNeedle": {
     "NAME": "Cursed Needle",
@@ -61,6 +61,11 @@
   "dregsmod:Ruin": {
     "NAME": "Ruin",
     "DESCRIPTION": "Deal !D! Damage. If the target is dregsmod:Cursed, damage it again."
+  },
+  "dregsmod:ShadowShield": {
+    "NAME": "Shadow Shield",
+    "DESCRIPTION": "Gain !B! Block for each other card in your hand.",
+    "UPGRADE_DESCRIPTION": "Innate NL Gain !B! Block for each other card in your hand."
   },
   "dregsmod:ShallowGrave": {
     "NAME": "Shallow Grave",
