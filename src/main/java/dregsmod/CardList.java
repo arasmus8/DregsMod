@@ -58,12 +58,15 @@ public class CardList {
         allCards.add(new SharpShadows());
 
         //Common Skills
+        allCards.add(new AmethystShard());
         allCards.add(new Curate());
+        allCards.add(new EmeraldShard());
         allCards.add(new Misery());
         allCards.add(new Plague());
         allCards.add(new Quarantine());
         allCards.add(new RitualJar());
         allCards.add(new RubyShard());
+        allCards.add(new SapphireShard());
         allCards.add(new ShadowShield());
         allCards.add(new ShallowGrave());
 

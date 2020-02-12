@@ -22,6 +22,11 @@
     "DESCRIPTION": "Discard all Curses. Deal !D! Damage, plus !M! for each Curse discarded."
   },
   "COMMON": {},
+  "dregsmod:AmethystShard": {
+    "NAME": "Amethyst Shard",
+    "DESCRIPTION": "Choose 1 of 3 common Purple cards and add it to your hand.",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Purple cards and add it to your hand. It costs 0 this turn."
+  },
   "dregsmod:Curate": {
     "NAME": "Curate",
     "DESCRIPTION": "Draw !M! card. Discard a card. If you discard a Curse, gain !B! Block."
@@ -29,6 +34,11 @@
   "dregsmod:CursedNeedle": {
     "NAME": "Cursed Needle",
     "DESCRIPTION": "Deal !D! Damage. Inflict !M! dregsmod:Cursed."
+  },
+  "dregsmod:EmeraldShard": {
+    "NAME": "Emerald Shard",
+    "DESCRIPTION": "Choose 1 of 3 common Green cards and add it to your hand.",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Green cards and add it to your hand. It costs 0 this turn."
   },
   "dregsmod:Gash": {
     "NAME": "Gash",
@@ -66,6 +76,11 @@
   "dregsmod:Ruin": {
     "NAME": "Ruin",
     "DESCRIPTION": "Deal !D! Damage. If the target is dregsmod:Cursed, damage it again."
+  },
+  "dregsmod:SapphireShard": {
+    "NAME": "Sapphire Shard",
+    "DESCRIPTION": "Choose 1 of 3 common Blue cards and add it to your hand.",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Blue cards and add it to your hand. It costs 0 this turn."
   },
   "dregsmod:ShadowShield": {
     "NAME": "Shadow Shield",
