@@ -13,12 +13,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import dregsmod.DregsMod;
 
-import java.util.logging.Logger;
-
 public class SealCardEffect extends AbstractGameEffect {
     private static final float EFFECT_DUR = 2.5F;
-    private static final float ANIM_DUR = 1.5F;
-    private static final float ANIM_START_AT = 2.25F;
+    private static final float ANIM_DUR = 1.0F;
+    private static final float ANIM_START_AT = 1.75F;
     private static final float SOUND_AT = 2.0F;
     private AbstractCard c;
     private static final float PADDING;
@@ -69,7 +67,6 @@ public class SealCardEffect extends AbstractGameEffect {
 
     @Override
     public void render(SpriteBatch sb) {
-        Logger log = Logger.getLogger(SealCardEffect.class.getName());
         if (!isDone) {
             c.render(sb);
             Texture top = DregsMod.uiTextures.get("cardSealTop");
