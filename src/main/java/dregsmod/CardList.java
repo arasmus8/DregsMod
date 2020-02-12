@@ -50,11 +50,14 @@ public class CardList {
         allCards.add(new CleansedCurse());
 
         // Common Attacks
+        allCards.add(new Chomp());
         allCards.add(new CursedNeedle());
         allCards.add(new Gash());
         allCards.add(new IcyTouch());
         allCards.add(new Improvise());
+        allCards.add(new Payback());
         allCards.add(new Ruin());
+        allCards.add(new ShadowDagger());
         allCards.add(new SharpShadows());
 
         //Common Skills
@@ -62,13 +65,11 @@ public class CardList {
         allCards.add(new Curate());
         allCards.add(new EmeraldShard());
         allCards.add(new Misery());
-        allCards.add(new Payback());
         allCards.add(new Plague());
         allCards.add(new Quarantine());
         allCards.add(new RitualJar());
         allCards.add(new RubyShard());
         allCards.add(new SapphireShard());
-        allCards.add(new ShadowDagger());
         allCards.add(new ShadowShield());
         allCards.add(new ShallowGrave());
 

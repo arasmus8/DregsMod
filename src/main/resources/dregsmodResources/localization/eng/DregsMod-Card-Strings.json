@@ -27,6 +27,10 @@
     "DESCRIPTION": "Choose 1 of 3 common Purple cards and add it to your hand.",
     "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Purple cards and add it to your hand. It costs 0 this turn."
   },
+  "dregsmod:Chomp": {
+    "NAME": "Chomp",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
   "dregsmod:Curate": {
     "NAME": "Curate",
     "DESCRIPTION": "Draw !M! card. Discard a card. If you discard a Curse, gain !B! Block."
