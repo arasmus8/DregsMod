@@ -56,6 +56,10 @@
     "NAME": "Misery",
     "DESCRIPTION": "Play another card in your hand and Exhaust it."
   },
+  "dregsmod:Payback": {
+    "NAME": "Payback",
+    "DESCRIPTION": "Deal !D! Damage. Increase the Damage by !M! for each Curse in your hand."
+  },
   "dregsmod:Plague": {
     "NAME": "Plague",
     "DESCRIPTION": "Unplayable NL While dregsmod:Sealed, deal !M! Damage to all enemies each turn."

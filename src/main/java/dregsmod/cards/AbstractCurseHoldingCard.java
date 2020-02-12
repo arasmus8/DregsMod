@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public abstract class AbstractCurseHoldingCard extends CustomCard {
     public boolean holdingCurse;
+    public int cursesInHand;
 
     public AbstractCurseHoldingCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
@@ -15,6 +16,7 @@ public abstract class AbstractCurseHoldingCard extends CustomCard {
         long curseCount = AbstractDungeon.player.hand.getCardsOfType(CardType.CURSE).group.stream()
                 .filter(card -> card != this)
                 .count();
+        cursesInHand = (int) curseCount;
         return curseCount > 0;
     }
 

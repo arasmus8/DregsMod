@@ -62,6 +62,7 @@ public class CardList {
         allCards.add(new Curate());
         allCards.add(new EmeraldShard());
         allCards.add(new Misery());
+        allCards.add(new Payback());
         allCards.add(new Plague());
         allCards.add(new Quarantine());
         allCards.add(new RitualJar());
