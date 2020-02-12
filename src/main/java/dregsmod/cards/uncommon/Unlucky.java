@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import dregsmod.DregsMod;
 import dregsmod.characters.Dregs;
 
@@ -40,8 +41,10 @@ public class Unlucky extends CustomCard {
     }
 
     public void configureCost() {
-        int curseCount = AbstractDungeon.player.masterDeck.getCardsOfType(CardType.CURSE).size();
-        modifyCostForCombat(-curseCount);
+        if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            int curseCount = AbstractDungeon.player.masterDeck.getCardsOfType(CardType.CURSE).size();
+            modifyCostForCombat(-curseCount);
+        }
     }
 
     @Override
