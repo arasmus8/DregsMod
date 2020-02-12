@@ -265,6 +265,11 @@
     "NAME": "Redemption",
     "DESCRIPTION": "Deal !D! Damage. Fatal: Permanently remove a random Curse from your deck. NL Exhaust"
   },
+  "dregsmod:Reincarnation": {
+    "NAME": "Reincarnation",
+    "DESCRIPTION": "Gain 1 Strength. Add 2 *Shivs to your hand. Evoke twice. Add a *Miracle to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain 1 Strength. Add 2 *Shivs to your hand. Evoke twice. Add a *Miracle to your hand."
+  },
   "dregsmod:Retribution": {
     "NAME": "Retribution",
     "DESCRIPTION": "Each time you lose HP, your next attack deals !M! additional Damage."

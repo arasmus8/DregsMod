@@ -116,6 +116,7 @@ public class CardList {
         allCards.add(new Entropy());
         allCards.add(new Indestructible());
         allCards.add(new Overcome());
+        allCards.add(new Reincarnation());
         allCards.add(new Ritual());
         allCards.add(new SeeNoEvil());
         allCards.add(new Twilight());
