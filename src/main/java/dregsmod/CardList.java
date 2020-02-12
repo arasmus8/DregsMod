@@ -67,6 +67,7 @@ public class CardList {
         allCards.add(new RitualJar());
         allCards.add(new RubyShard());
         allCards.add(new SapphireShard());
+        allCards.add(new ShadowDagger());
         allCards.add(new ShadowShield());
         allCards.add(new ShallowGrave());
 

@@ -82,6 +82,11 @@
     "DESCRIPTION": "Choose 1 of 3 common Blue cards and add it to your hand.",
     "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Blue cards and add it to your hand. It costs 0 this turn."
   },
+  "dregsmod:ShadowDagger": {
+    "NAME": "Shadow Dagger",
+    "DESCRIPTION": "Deal !D! Damage. Add a *Shiv to your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Add 2 *Shivs to your hand."
+  },
   "dregsmod:ShadowShield": {
     "NAME": "Shadow Shield",
     "DESCRIPTION": "Gain !B! Block for each other card in your hand.",
