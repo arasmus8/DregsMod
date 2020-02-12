@@ -58,6 +58,11 @@
     "NAME": "Ritual Jar",
     "DESCRIPTION": "Inflict !M! dregsmod:Cursed."
   },
+  "dregsmod:RubyShard": {
+    "NAME": "Ruby Shard",
+    "DESCRIPTION": "Choose 1 of 3 common Red cards and add it to your hand.",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Red cards and add it to your hand. It costs 0 this turn."
+  },
   "dregsmod:Ruin": {
     "NAME": "Ruin",
     "DESCRIPTION": "Deal !D! Damage. If the target is dregsmod:Cursed, damage it again."
