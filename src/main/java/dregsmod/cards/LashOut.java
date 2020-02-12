@@ -1,6 +1,5 @@
 package dregsmod.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
@@ -14,7 +13,7 @@ import dregsmod.characters.Dregs;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static dregsmod.DregsMod.makeCardPath;
 
-public class LashOut extends CustomCard {
+public class LashOut extends AbstractCurseHoldingCard {
     // TEXT DECLARATION
 
     public static final String ID = DregsMod.makeID(LashOut.class.getSimpleName());
@@ -47,18 +46,35 @@ public class LashOut extends CustomCard {
         magicNumber = baseMagicNumber;
     }
 
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        int realBaseDamage = baseDamage;
+        if (holdingCurse) {
+            baseDamage += cursesInHand * magicNumber;
+        }
+        super.calculateCardDamage(mo);
+        baseDamage = realBaseDamage;
+        isDamageModified = damage != baseDamage;
+    }
+
+    @Override
+    public void applyPowers() {
+        int realBaseDamage = baseDamage;
+        super.applyPowers();
+        if (holdingCurse) {
+            baseDamage += cursesInHand * magicNumber;
+        }
+        super.applyPowers();
+        baseDamage = realBaseDamage;
+        isDamageModified = damage != baseDamage;
+    }
+
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int origBaseDamage = baseDamage;
         p.hand.getCardsOfType(CardType.CURSE).group
-                .forEach(card -> {
-                    baseDamage += magicNumber;
-                    addToBot(new DiscardSpecificCardAction(card));
-                });
-        applyPowers();
+                .forEach(card -> addToBot(new DiscardSpecificCardAction(card)));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        baseDamage = origBaseDamage;
     }
 
     // Upgraded stats.

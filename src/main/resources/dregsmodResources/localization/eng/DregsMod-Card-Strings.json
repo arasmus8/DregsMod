@@ -19,7 +19,7 @@
   },
   "dregsmod:LashOut": {
     "NAME": "Lash Out",
-    "DESCRIPTION": "Discard all Curses. Deal !D! Damage, plus !M! for each Curse discarded."
+    "DESCRIPTION": "Discard all Curses. Deal !D! Damage. Increase Damage by !M! for each Curse discarded."
   },
   "COMMON": {},
   "dregsmod:AmethystShard": {
