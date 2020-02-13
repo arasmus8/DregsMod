@@ -138,6 +138,11 @@
     "NAME": "Fear",
     "DESCRIPTION": "Deal !D! Damage to all enemies. dregsmod:Seal this card."
   },
+  "dregsmod:GemHeart": {
+    "NAME": "Gem Heart",
+    "DESCRIPTION": "Choose a Color. Then choose 1 of 3 uncommon cards of that color to add to your hand.",
+    "UPGRADE_DESCRIPTION": "Choose a Color. Then choose 1 of 3 uncommon cards of that color to add to your hand. It costs 0 this turn."
+  },
   "dregsmod:Glare": {
     "NAME": "Glare",
     "DESCRIPTION": "Gain !B! Block. If you're holding a Curse, draw a card."
@@ -339,5 +344,22 @@
   "dregsmod:WeakPoint": {
     "NAME": "Weak Point",
     "DESCRIPTION": "Retain NL When Retained, a random enemy gains 2 Strength this turn. NL dregsmod:Cleanse: gain !M! Block"
+  },
+  "SPECIAL": {},
+  "dregsmod:Blue": {
+    "NAME": "Choose Blue",
+    "DESCRIPTION": "Choose a Blue card."
+  },
+  "dregsmod:Green": {
+    "NAME": "Choose Green",
+    "DESCRIPTION": "Choose a Green card."
+  },
+  "dregsmod:Purple": {
+    "NAME": "Choose Purple",
+    "DESCRIPTION": "Choose a Purple card."
+  },
+  "dregsmod:Red": {
+    "NAME": "Choose Red",
+    "DESCRIPTION": "Choose a Red card."
   }
 }

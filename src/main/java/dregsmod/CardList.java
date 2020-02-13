@@ -87,6 +87,7 @@ public class CardList {
         allCards.add(new Ascetic());
         allCards.add(new CursedScroll());
         allCards.add(new EmbraceDarkness());
+        allCards.add(new GemHeart());
         allCards.add(new Glare());
         allCards.add(new Guardian());
         allCards.add(new HardLuck());
