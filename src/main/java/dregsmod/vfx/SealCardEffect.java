@@ -17,7 +17,7 @@ public class SealCardEffect extends AbstractGameEffect {
     private static final float EFFECT_DUR = 2.5F;
     private static final float ANIM_DUR = 1.0F;
     private static final float ANIM_START_AT = 1.75F;
-    private static final float SOUND_AT = 2.0F;
+    private static final float SOUND_AT = 1.0F;
     private AbstractCard c;
     private static final float PADDING;
     private Color drawColor = Color.WHITE.cpy();
@@ -72,22 +72,26 @@ public class SealCardEffect extends AbstractGameEffect {
             Texture top = DregsMod.uiTextures.get("cardSealTop");
             Texture bottom = DregsMod.uiTextures.get("cardSealBottom");
 
-            float scale = c.drawScale;
+            float scale = c.drawScale * Settings.scale;
             float dT = MathUtils.clamp((ANIM_START_AT - duration) / ANIM_DUR, 0f, 1f);
 
-            float y = Interpolation.bounceOut.apply(topY, 0, dT);
-            drawColor.a = c.transparency;
+            float y = Interpolation.bounceOut.apply(topY - 2, -2, dT);
+            float a = 1.0f;
+            if (duration > ANIM_START_AT) {
+                a = Interpolation.fade.apply(0f, 1f, duration - ANIM_START_AT);
+            }
+            drawColor.a = c.transparency * a;
             sb.setColor(drawColor);
             Vector2 topVec = new Vector2(-150, y);
             topVec.scl(c.drawScale * Settings.scale);
             topVec.rotate(c.angle);
-            sb.draw(top, c.current_x + topVec.x, c.current_y + topVec.y, 0F, 0F, 300F, 216F, scale, scale, 0f, 0, 0, 300, 216, false, false);
+            sb.draw(top, c.current_x + topVec.x, c.current_y + topVec.y, 0F, 0F, 300F, 216F, scale, scale, c.angle, 0, 0, 300, 216, false, false);
 
-            y = Interpolation.bounceOut.apply(-c.hb.height, -c.hb.height + botY, dT);
+            y = Interpolation.bounceOut.apply(-2*botY + 4, -botY + 4, dT);
             Vector2 botVec = new Vector2(-150, y);
             botVec.scl(c.drawScale * Settings.scale);
             botVec.rotate(c.angle);
-            sb.draw(bottom, c.current_x + botVec.x, c.current_y + botVec.y, 0F, 0F, 300F, 220F, scale, scale, 0f, 0, 0, 300, 220, false, false);
+            sb.draw(bottom, c.current_x + botVec.x, c.current_y + botVec.y, 0F, 0F, 300F, 220F, scale, scale, c.angle, 0, 0, 300, 220, false, false);
         }
     }
 

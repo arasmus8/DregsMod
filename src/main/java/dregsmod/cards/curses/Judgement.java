@@ -46,9 +46,9 @@ public class Judgement extends AbstractCleansingCurse {
     @Override
     public void onRetained() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, 1, false), 1));
+        addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, 1, true), 1));
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            addToBot(new ApplyPowerAction(m, m, new VulnerablePower(m, 1, false), 1));
+            addToBot(new ApplyPowerAction(m, m, new VulnerablePower(m, 1, true), 1));
         }
     }
 

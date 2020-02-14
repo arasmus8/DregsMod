@@ -47,7 +47,7 @@ public class Envy extends AbstractCleansingCurse {
     public void onRetained() {
         AbstractPlayer p = AbstractDungeon.player;
         if(p.currentHealth >= p.maxHealth * 0.75) {
-            addToBot(new ApplyPowerAction(p, p, new WeakPower(p, 1, false), 1));
+            addToBot(new ApplyPowerAction(p, p, new WeakPower(p, 1, true), 1));
         }
     }
 

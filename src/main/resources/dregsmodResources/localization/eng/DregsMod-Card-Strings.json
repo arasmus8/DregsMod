@@ -117,6 +117,10 @@
     "NAME": "Asylum",
     "DESCRIPTION": "Each turn, choose a card to dregsmod:Seal. You gain HP equal to its energy cost."
   },
+  "dregsmod:BrushOff": {
+    "NAME": "Brush Off",
+    "DESCRIPTION": "Deal !D! Damage. If the target intends to Attack, enter dregsmod:Denial."
+  },
   "dregsmod:BrutalSwing": {
     "NAME": "Brutal Swing",
     "DESCRIPTION": "Deal !D! Damage. Enter dregsmod:Acceptance. If you're holding a Curse, gain [E] and draw a card."

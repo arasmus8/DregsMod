@@ -74,6 +74,7 @@ public class CardList {
         allCards.add(new ShallowGrave());
 
         //Uncommon Attacks
+        allCards.add(new BrushOff());
         allCards.add(new BrutalSwing());
         allCards.add(new Fear());
         allCards.add(new Malediction());

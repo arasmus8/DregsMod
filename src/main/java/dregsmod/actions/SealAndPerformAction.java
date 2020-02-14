@@ -134,6 +134,7 @@ public class SealAndPerformAction extends AbstractGameAction {
                 filtered.group.addAll(filteredList);
                 for (int i = 0; i < amount; ++i) {
                     card = filtered.getRandomCard(AbstractDungeon.cardRandomRng);
+                    filtered.removeCard(card);
                     AbstractDungeon.effectList.add(new SealCardEffect(card.makeStatEquivalentCopy()));
                     sealedCards.add(card);
                     CardSealed.isSealed.set(card, true);
