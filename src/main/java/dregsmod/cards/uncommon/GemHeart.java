@@ -42,6 +42,7 @@ public class GemHeart extends CustomCard {
 
     public GemHeart() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        exhaust = true;
     }
 
     // Actions the card should do.

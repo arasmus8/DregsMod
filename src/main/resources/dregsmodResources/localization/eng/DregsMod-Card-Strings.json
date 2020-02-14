@@ -24,8 +24,8 @@
   "COMMON": {},
   "dregsmod:AmethystShard": {
     "NAME": "Amethyst Shard",
-    "DESCRIPTION": "Choose 1 of 3 common Purple cards and add it to your hand.",
-    "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Purple cards and add it to your hand. It costs 0 this turn."
+    "DESCRIPTION": "Choose 1 of 3 common Purple cards and add it to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Purple cards and add it to your hand. It costs 0 this turn. NL Exhaust"
   },
   "dregsmod:Chomp": {
     "NAME": "Chomp",
@@ -41,8 +41,8 @@
   },
   "dregsmod:EmeraldShard": {
     "NAME": "Emerald Shard",
-    "DESCRIPTION": "Choose 1 of 3 common Green cards and add it to your hand.",
-    "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Green cards and add it to your hand. It costs 0 this turn."
+    "DESCRIPTION": "Choose 1 of 3 common Green cards and add it to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Green cards and add it to your hand. It costs 0 this turn. NL Exhaust"
   },
   "dregsmod:Gash": {
     "NAME": "Gash",
@@ -78,8 +78,8 @@
   },
   "dregsmod:RubyShard": {
     "NAME": "Ruby Shard",
-    "DESCRIPTION": "Choose 1 of 3 common Red cards and add it to your hand.",
-    "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Red cards and add it to your hand. It costs 0 this turn."
+    "DESCRIPTION": "Choose 1 of 3 common Red cards and add it to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Red cards and add it to your hand. It costs 0 this turn. NL Exhaust"
   },
   "dregsmod:Ruin": {
     "NAME": "Ruin",
@@ -87,8 +87,8 @@
   },
   "dregsmod:SapphireShard": {
     "NAME": "Sapphire Shard",
-    "DESCRIPTION": "Choose 1 of 3 common Blue cards and add it to your hand.",
-    "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Blue cards and add it to your hand. It costs 0 this turn."
+    "DESCRIPTION": "Choose 1 of 3 common Blue cards and add it to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 common Blue cards and add it to your hand. It costs 0 this turn. NL Exhaust"
   },
   "dregsmod:ShadowDagger": {
     "NAME": "Shadow Dagger",
@@ -144,8 +144,8 @@
   },
   "dregsmod:GemHeart": {
     "NAME": "Gem Heart",
-    "DESCRIPTION": "Choose a Color. Then choose 1 of 3 uncommon cards of that color to add to your hand.",
-    "UPGRADE_DESCRIPTION": "Choose a Color. Then choose 1 of 3 uncommon cards of that color to add to your hand. It costs 0 this turn."
+    "DESCRIPTION": "Choose a Color. Then choose 1 of 3 uncommon cards of that color to add to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Choose a Color. Then choose 1 of 3 uncommon cards of that color to add to your hand. It costs 0 this turn. NL Exhaust"
   },
   "dregsmod:Glare": {
     "NAME": "Glare",

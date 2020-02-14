@@ -35,6 +35,7 @@ public class EmeraldShard extends CustomCard {
 
     public EmeraldShard() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        exhaust = true;
     }
 
     // Actions the card should do.
