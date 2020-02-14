@@ -19,6 +19,8 @@ public class TheVaultPower extends AbstractPower implements CloneablePowerInterf
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+    private static ArrayList<AbstractCard> ignoredCards;
+
     public TheVaultPower(AbstractCreature owner) {
         name = NAME;
         ID = POWER_ID;
@@ -27,13 +29,25 @@ public class TheVaultPower extends AbstractPower implements CloneablePowerInterf
 
         loadRegion("flight");
         updateDescription();
+        if (!AbstractDungeon.player.hasPower(POWER_ID)) {
+            ignoredCards = new ArrayList<>(AbstractDungeon.player.discardPile.group);
+        }
     }
 
     @Override
     public void onDrawOrDiscard() {
+        ignoredCards.removeAll(AbstractDungeon.player.hand.group);
         ArrayList<AbstractCard> discardedCurses = new ArrayList<>(AbstractDungeon.player.discardPile.getCardsOfType(AbstractCard.CardType.CURSE).group);
         discardedCurses.removeAll(DregsMod.postSealedCards);
-        discardedCurses.forEach(card -> CardSealed.isSealed.set(card, true));
+        discardedCurses.removeAll(ignoredCards);
+        discardedCurses.forEach(card -> {
+            CardSealed.isSealed.set(card, true);
+            AbstractDungeon.player.powers.forEach(power -> {
+                if (power instanceof TriggerOnSealedPower) {
+                    ((TriggerOnSealedPower) power).triggerOnSealed(card);
+                }
+            });
+        });
     }
 
     @Override

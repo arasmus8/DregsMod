@@ -24,6 +24,13 @@ public abstract class AbstractCleansingCurse extends CustomCard {
         tags.add(CLEANSE_CURSE);
     }
 
+    @Override
+    public void triggerWhenDrawn() {
+        if (magicNumber <= 0) {
+            cleanseBy(0);
+        }
+    }
+
     public void cleanseBy(int amount) {
         if (cleanseAmount > misc + amount) {
             addToBot(new IncreaseMiscAction(uuid, misc, amount));
@@ -88,6 +95,7 @@ public abstract class AbstractCleansingCurse extends CustomCard {
         AbstractCleansingCurse copy = (AbstractCleansingCurse) super.makeStatEquivalentCopy();
         copy.cleanseAmount = cleanseAmount;
         copy.isCleansed = isCleansed;
+        copy.baseMagicNumber = copy.magicNumber = Math.max(0, cleanseAmount - misc);
         return copy;
     }
 }

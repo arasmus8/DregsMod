@@ -107,6 +107,7 @@ public class CardList {
         allCards.add(new Asylum());
         allCards.add(new Defiance());
         allCards.add(new Excess());
+        allCards.add(new LostPotential());
         allCards.add(new Scapegoat());
         allCards.add(new ShiftingSands());
         allCards.add(new TheVault());

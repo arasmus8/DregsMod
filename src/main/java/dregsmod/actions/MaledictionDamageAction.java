@@ -2,13 +2,11 @@ package dregsmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class MaledictionDamageAction extends AbstractGameAction {
     private AbstractCreature target;
@@ -29,6 +27,7 @@ public class MaledictionDamageAction extends AbstractGameAction {
                 AbstractDungeon.player.hand.refreshHandLayout();
             }
         }
+        SealAndPerformAction.sealedCards.clear();
         isDone = true;
     }
 }

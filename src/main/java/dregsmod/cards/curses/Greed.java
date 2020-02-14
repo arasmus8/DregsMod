@@ -1,6 +1,5 @@
 package dregsmod.cards.curses;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -38,8 +37,12 @@ public class Greed extends AbstractCleansingCurse {
 
     @Override
     public void triggerWhenDrawn() {
-        AbstractDungeon.player.loseGold(5);
-        cleanseBy(1);
+        if (magicNumber <= 0) {
+            cleanseBy(0);
+        } else {
+            AbstractDungeon.player.loseGold(5);
+            cleanseBy(1);
+        }
     }
 
     // Actions the card should do.

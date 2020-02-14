@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import dregsmod.DregsMod;
 import dregsmod.cards.uncommon.Guardian;
 import dregsmod.patches.variables.CardSealed;
+import dregsmod.powers.TriggerOnSealedPower;
 import dregsmod.vfx.SealCardEffect;
 
 import java.util.ArrayList;
@@ -145,8 +146,8 @@ public class SealAndPerformAction extends AbstractGameAction {
                         ((Guardian)card).triggerOnSealed();
                     }
                     GameActionManager.incrementDiscard(false);
-                    endActionWithFollowUp();
                 }
+                endActionWithFollowUp();
             }
         }
 
@@ -195,6 +196,11 @@ public class SealAndPerformAction extends AbstractGameAction {
 
     private void endActionWithFollowUp() {
         isDone = true;
+        sealedCards.forEach(card -> AbstractDungeon.player.powers.forEach(power -> {
+            if (power instanceof TriggerOnSealedPower) {
+                ((TriggerOnSealedPower) power).triggerOnSealed(card);
+            }
+        }));
         if (followUpAction != null) {
             addToTop(followUpAction);
         }

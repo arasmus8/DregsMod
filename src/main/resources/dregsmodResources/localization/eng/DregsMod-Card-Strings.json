@@ -176,6 +176,10 @@
     "NAME": "Laser Focus",
     "DESCRIPTION": "Inflict 99 Lock-On. If you're holding a Curse, gain !M! focus. NL Exhaust"
   },
+  "dregsmod:LostPotential": {
+    "NAME": "Lost Potential",
+    "DESCRIPTION": "Whenever you dregsmod:Seal a Curse, Channel a Lightning Orb."
+  },
   "dregsmod:Malediction": {
     "NAME": "Malediction",
     "DESCRIPTION": "dregsmod:Seal X random Curses. Deal !D! damage for each Curse sealed."

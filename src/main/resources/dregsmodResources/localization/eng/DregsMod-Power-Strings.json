@@ -57,6 +57,14 @@
       " #yCursed."
     ]
   },
+  "dregsmod:LostPotentialPower": {
+    "NAME": "Lost Potential",
+    "DESCRIPTIONS": [
+      "Whenever you #ySeal a #yCurse, channel #b",
+      " Lightning Orb.",
+      " Lightning Orbs."
+    ]
+  },
   "dregsmod:RetributionPower": {
     "NAME": "Retribution",
     "DESCRIPTIONS": [
