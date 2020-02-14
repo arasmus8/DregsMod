@@ -86,6 +86,7 @@ public class CardList {
 
         //Uncommon Skills
         allCards.add(new Ascetic());
+        allCards.add(new Clarity());
         allCards.add(new CursedScroll());
         allCards.add(new EmbraceDarkness());
         allCards.add(new GemHeart());

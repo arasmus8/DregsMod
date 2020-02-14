@@ -121,6 +121,10 @@
     "NAME": "Brutal Swing",
     "DESCRIPTION": "Deal !D! Damage. Enter dregsmod:Acceptance. If you're holding a Curse, gain [E] and draw a card."
   },
+  "dregsmod:Clarity": {
+    "NAME": "Clarity",
+    "DESCRIPTION": "Enter dregsmod:Acceptance. Conserve your energy this turn."
+  },
   "dregsmod:CursedScroll": {
     "NAME": "Cursed Scroll",
     "DESCRIPTION": "The target loses 2 Strength. Inflict !M! dregsmod:Cursed. NL Exhaust"
