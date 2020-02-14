@@ -1,28 +1,26 @@
 package dregsmod.cards.uncommon;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.FocusPower;
+import com.megacrit.cardcrawl.powers.LockOnPower;
 import dregsmod.DregsMod;
-import dregsmod.cards.choices.Blue;
-import dregsmod.cards.choices.Green;
-import dregsmod.cards.choices.Purple;
-import dregsmod.cards.choices.Red;
+import dregsmod.cards.AbstractCurseHoldingCard;
 import dregsmod.characters.Dregs;
-
-import java.util.ArrayList;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class GemHeart extends CustomCard {
+public class LaserFocus extends AbstractCurseHoldingCard {
 
 // TEXT DECLARATION
 
-    public static final String ID = DregsMod.makeID(GemHeart.class.getSimpleName());
+    public static final String ID = DregsMod.makeID(LaserFocus.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String IMG = makeCardPath("Skill.png");
 // Must have an image with the same NAME as the card in your image folder!
@@ -32,31 +30,31 @@ public class GemHeart extends CustomCard {
 // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
+
+    private static final int MAGIC = 1;
+    private static final int UPGRADED_MAGIC = 1;
 
 // /STAT DECLARATION/
 
-    public GemHeart() {
+    public LaserFocus() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber;
         exhaust = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> choices = new ArrayList<>();
-        choices.add(new Red());
-        choices.add(new Green());
-        choices.add(new Blue());
-        choices.add(new Purple());
-        if (upgraded) {
-            choices.forEach(AbstractCard::upgrade);
+        addToBot(new ApplyPowerAction(m, p, new LockOnPower(m, 99), 99));
+        if (holdingCurse) {
+            addToBot(new ApplyPowerAction(p, p, new FocusPower(p, magicNumber), magicNumber));
         }
-        addToBot(new ChooseOneAction(choices));
     }
 
     // Upgraded stats.
@@ -64,7 +62,7 @@ public class GemHeart extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADED_MAGIC);
             initializeDescription();
         }
     }

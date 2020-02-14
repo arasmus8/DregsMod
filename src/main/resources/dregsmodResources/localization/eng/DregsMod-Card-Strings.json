@@ -172,6 +172,10 @@
     "DESCRIPTION": "Inflict X Vulnerable, Weak, and dregsmod:Cursed on an enemy.",
     "UPGRADE_DESCRIPTION": "Inflict X + 1 Vulnerable, Weak, and dregsmod:Cursed on an enemy."
   },
+  "dregsmod:LaserFocus": {
+    "NAME": "Laser Focus",
+    "DESCRIPTION": "Inflict 99 Lock-On. If you're holding a Curse, gain !M! focus. NL Exhaust"
+  },
   "dregsmod:Malediction": {
     "NAME": "Malediction",
     "DESCRIPTION": "dregsmod:Seal X random Curses. Deal !D! damage for each Curse sealed."

@@ -28,7 +28,7 @@ public class Infection extends AbstractCleansingCurse {
     public static final CardColor COLOR = CardColor.CURSE;
 
     private static final int COST = 1;
-    private static final int CLEANSE_AMOUNT = 2;
+    private static final int CLEANSE_AMOUNT = 12;
 
 // /STAT DECLARATION/
 
@@ -42,8 +42,6 @@ public class Infection extends AbstractCleansingCurse {
     public void onRetained() {
         if (misc < CLEANSE_AMOUNT - 1) {
             addToBot(new VFXAction(new ShowCardAndAddToDrawPileEffect(this.makeSameInstanceOf(), true, false)));
-        } else {
-            // isEthereal = true;
         }
         cleanseBy(1);
     }
