@@ -11,6 +11,7 @@ import dregsmod.DregsMod;
 import dregsmod.patches.variables.CardSealed;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class TheVaultPower extends AbstractPower implements CloneablePowerInterface {
 
@@ -37,7 +38,12 @@ public class TheVaultPower extends AbstractPower implements CloneablePowerInterf
     @Override
     public void onDrawOrDiscard() {
         ignoredCards.removeAll(AbstractDungeon.player.hand.group);
-        ArrayList<AbstractCard> discardedCurses = new ArrayList<>(AbstractDungeon.player.discardPile.getCardsOfType(AbstractCard.CardType.CURSE).group);
+        ArrayList<AbstractCard> discardedCurses = AbstractDungeon.player.discardPile
+                .getCardsOfType(AbstractCard.CardType.CURSE)
+                .group
+                .stream()
+                .filter(card -> !CardSealed.isSealed.get(card))
+                .collect(Collectors.toCollection(ArrayList::new));
         discardedCurses.removeAll(DregsMod.postSealedCards);
         discardedCurses.removeAll(ignoredCards);
         discardedCurses.forEach(card -> {
