@@ -74,6 +74,7 @@ public class CardList {
         allCards.add(new ShallowGrave());
 
         //Uncommon Attacks
+        allCards.add(new BrutalSwing());
         allCards.add(new Fear());
         allCards.add(new Malediction());
         allCards.add(new Misfortune());
@@ -95,6 +96,7 @@ public class CardList {
         allCards.add(new MidnightManacles());
         allCards.add(new Obstruct());
         allCards.add(new Pinprick());
+        allCards.add(new Rejection());
         allCards.add(new Sarcophagus());
         allCards.add(new Torment());
 

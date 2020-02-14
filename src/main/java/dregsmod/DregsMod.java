@@ -342,6 +342,9 @@ public class DregsMod implements
         BaseMod.loadCustomStringsFile(TutorialStrings.class,
                 getModID() + "Resources/localization/eng/DregsMod-Tutorial-Strings.json");
 
+        BaseMod.loadCustomStringsFile(StanceStrings.class,
+                getModID() + "Resources/localization/eng/DregsMod-Stance-Strings.json");
+
         logger.info("Done editing strings");
     }
 

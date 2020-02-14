@@ -1,0 +1,14 @@
+{
+  "dregsmod:Acceptance": {
+    "NAME": "Acceptance",
+    "DESCRIPTION": [
+      "Your Attacks deal double damage but cost 1 more."
+    ]
+  },
+  "dregsmod:Denial": {
+    "NAME": "Denial",
+    "DESCRIPTION": [
+      "When entering this stance, gain [E] [E] [E] . Exiting this stance ends your turn."
+    ]
+  }
+}

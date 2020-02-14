@@ -117,6 +117,10 @@
     "NAME": "Asylum",
     "DESCRIPTION": "Each turn, choose a card to dregsmod:Seal. You gain HP equal to its energy cost."
   },
+  "dregsmod:BrutalSwing": {
+    "NAME": "Brutal Swing",
+    "DESCRIPTION": "Deal !D! Damage. Enter dregsmod:Acceptance. If you're holding a Curse, gain [E] and draw a card."
+  },
   "dregsmod:CursedScroll": {
     "NAME": "Cursed Scroll",
     "DESCRIPTION": "The target loses 2 Strength. Inflict !M! dregsmod:Cursed. NL Exhaust"
@@ -179,6 +183,10 @@
   "dregsmod:Pinprick": {
     "NAME": "Pinprick",
     "DESCRIPTION": "Inflict 2 Vulnerable. If you're holding a Curse, apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark."
+  },
+  "dregsmod:Rejection": {
+    "NAME": "Rejection",
+    "DESCRIPTION": "Gain !B! Block. Enter dregsmod:Denial."
   },
   "dregsmod:RiteOfPurification": {
     "NAME": "Rite of Purification",

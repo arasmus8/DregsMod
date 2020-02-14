@@ -58,5 +58,19 @@
       "sturdiness,"
     ],
     "DESCRIPTION": "Opposite of Frail. Increases Block gained by 25%"
+  },
+  {
+    "PROPER_NAME": "Acceptance Stance",
+    "NAMES": [
+      "acceptance"
+    ],
+    "DESCRIPTION": "Your Attacks deal double damage but cost 1 more."
+  },
+  {
+    "PROPER_NAME": "Denial Stance",
+    "NAMES": [
+      "denial"
+    ],
+    "DESCRIPTION": "When entering this stance, gain [E] [E] [E] . Exiting this stance ends your turn."
   }
 ]
