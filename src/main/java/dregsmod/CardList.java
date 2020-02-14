@@ -133,5 +133,6 @@ public class CardList {
         allCards.add(new EclipseForm());
         allCards.add(new Incantation());
         allCards.add(new Retribution());
+        allCards.add(new Vivification());
     }
 }
