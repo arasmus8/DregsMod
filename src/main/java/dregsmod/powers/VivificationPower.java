@@ -34,7 +34,7 @@ public class VivificationPower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if (damageAmount > owner.currentHealth) {
+        if (damageAmount >= owner.currentHealth) {
             flash();
             addToTop(new RemoveSpecificPowerAction(owner, owner, this));
             AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(CardLibrary.getCurse(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
