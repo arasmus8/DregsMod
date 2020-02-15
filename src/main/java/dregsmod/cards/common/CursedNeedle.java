@@ -2,6 +2,7 @@ package dregsmod.cards.common;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.CursedPower;
+import dregsmod.vfx.CursedNeedleEffect;
 
 import static dregsmod.DregsMod.makeCardPath;
 
@@ -44,7 +46,8 @@ public class CursedNeedle extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        addToBot(new VFXAction(new CursedNeedleEffect(m.hb.cX, m.hb.cY)));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         addToBot(new ApplyPowerAction(m, p, new CursedPower(m, magicNumber), magicNumber));
     }
 
