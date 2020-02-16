@@ -1,7 +1,6 @@
 package dregsmod.characters;
 
 import basemod.abstracts.CustomPlayer;
-import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -10,6 +9,7 @@ import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -53,13 +53,15 @@ public class Dregs extends CustomPlayer {
     public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
-    public static final int ORB_SLOTS = 1;
+    public static final int ORB_SLOTS = 2;
 
     private static final String ID = makeID("Dregs");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
-    
+
+    private static final DregsAnimation animation = new DregsAnimation();
+
     public static final String[] orbTextures = {
             "dregsmodResources/images/char/potionbrewer/orb/layer5.png",
             "dregsmodResources/images/char/potionbrewer/orb/layer4.png",
@@ -75,7 +77,7 @@ public class Dregs extends CustomPlayer {
     };
 
     public Dregs(String name, PlayerClass setClass) {
-        super(name, setClass, new PotionbrewerEnergyOrb(), new SpriterAnimation("dregsmodResources/images/char/potionbrewer/Spriter/Potionbrewer.scml"));
+        super(name, setClass, new PotionbrewerEnergyOrb(), animation);
 
         initializeClass(null,
                 DREGS_SHOULDER,
@@ -109,6 +111,7 @@ public class Dregs extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
+        retVal.add(DregsStrike.ID);
         retVal.add(DregsStrike.ID);
         retVal.add(DregsStrike.ID);
         retVal.add(DregsStrike.ID);
@@ -231,6 +234,15 @@ public class Dregs extends CustomPlayer {
 
     @Override
     public Texture getCutsceneBg() {
-        return ImageMaster.loadImage("images/scenes/blueBg.jpg");
+        return ImageMaster.loadImage("images/scenes/purpleBg.jpg");
+    }
+
+    @Override
+    public void damage(DamageInfo info) {
+        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
+            animation.onDamage(info.output);
+        }
+
+        super.damage(info);
     }
 }
