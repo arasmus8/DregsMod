@@ -11,9 +11,6 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import dregsmod.powers.CursedPower;
-import dregsmod.powers.FortitudePower;
-import dregsmod.powers.MightPower;
-import dregsmod.powers.SturdinessPower;
 
 public class JinxAction extends AbstractGameAction {
     private AbstractCreature m;
@@ -45,9 +42,11 @@ public class JinxAction extends AbstractGameAction {
 
         effect += amount;
 
-        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, effect, false), effect));
-        addToBot(new ApplyPowerAction(m, p, new WeakPower(m, effect, false), effect));
-        addToBot(new ApplyPowerAction(m, p, new CursedPower(m, effect), effect));
+        if (effect > 0) {
+            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, effect, false), effect));
+            addToBot(new ApplyPowerAction(m, p, new WeakPower(m, effect, false), effect));
+            addToBot(new ApplyPowerAction(m, p, new CursedPower(m, effect), effect));
+        }
 
         if (!freeToPlayOnce) {
             p.energy.use(EnergyPanel.totalCount);
