@@ -259,7 +259,7 @@
   },
   "dregsmod:EclipseForm": {
     "NAME": "Eclipse Form",
-    "DESCRIPTION": "Unplayable Curse cards can be played. When played, gain !M! Block and deal !M! Damage to all enemies."
+    "DESCRIPTION": "Unplayable Curse cards can be played. When you play a Curse, gain !M! Block and deal !M! Damage to all enemies."
   },
   "dregsmod:Entropy": {
     "NAME": "Entropy",

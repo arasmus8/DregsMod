@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.DregsMod;
 
@@ -33,7 +32,7 @@ public class EclipseFormPower extends AbstractPower implements CloneablePowerInt
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(card.type == AbstractCard.CardType.CURSE && card.cost < -1) {
+        if (card.type == AbstractCard.CardType.CURSE) {
             addToBot(new GainBlockAction(owner, amount));
             addToBot(new DamageAllEnemiesAction(
                     owner,

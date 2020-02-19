@@ -13,7 +13,7 @@ import dregsmod.powers.EclipseFormPower;
 public class PlayCursesEclipseFormPatch {
     public static boolean Postfix(boolean _return, AbstractCard _instance, AbstractPlayer p, AbstractMonster m) {
         if(!_return) {
-            if (_instance.type == AbstractCard.CardType.CURSE && _instance.costForTurn < -1 && p.hasPower(EclipseFormPower.POWER_ID)) {
+            if (_instance.type == AbstractCard.CardType.CURSE && p.hasPower(EclipseFormPower.POWER_ID)) {
                 return true;
             }
         }
