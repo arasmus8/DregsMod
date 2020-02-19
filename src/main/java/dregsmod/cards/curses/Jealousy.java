@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.actions.SealAndPerformAction;
 import dregsmod.cards.AbstractCurseHoldingCard;
-import dregsmod.characters.Dregs;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static dregsmod.DregsMod.makeCardPath;
@@ -27,7 +26,7 @@ public class Jealousy extends AbstractCurseHoldingCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.CURSE;
-    public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
+    public static final CardColor COLOR = CardColor.CURSE;
 
     private static final int COST = 1;
 
