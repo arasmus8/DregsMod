@@ -10,6 +10,8 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.curses.CurseOfTheBell;
+import com.megacrit.cardcrawl.cards.curses.Necronomicurse;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -250,5 +252,20 @@ public class Dregs extends CustomPlayer {
         }
 
         super.damage(info);
+    }
+
+    @Override
+    public boolean isCursed() {
+        return this.masterDeck.group.stream().anyMatch(card ->
+                card.type == AbstractCard.CardType.CURSE &&
+                        !card.cardID.equals(Necronomicurse.ID) &&
+                        !card.cardID.equals(CurseOfTheBell.ID) &&
+                        !card.cardID.equals(Jealousy.ID));
+    }
+
+    @Override
+    public void combatUpdate() {
+        super.combatUpdate();
+        animation.update();
     }
 }

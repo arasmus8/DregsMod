@@ -44,6 +44,10 @@ public class DregsAnimation extends AbstractAnimation {
         gemManager.onAnalyze(colors);
     }
 
+    public void update() {
+        gemManager.update();
+    }
+
     @Override
     public void setFlip(boolean horizontal, boolean vertical) {
         flipH = horizontal;

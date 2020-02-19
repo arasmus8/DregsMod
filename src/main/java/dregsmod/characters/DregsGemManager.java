@@ -1,8 +1,10 @@
 package dregsmod.characters;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -21,6 +23,8 @@ public class DregsGemManager {
     private static float HEIGHT_OFFSET;
     private static float RING_WIDTH_OFFSET;
     private static float RING_HEIGHT_OFFSET;
+
+    private static float highlightY;
 
     private static float[] xOffsets;
     private static float[] yOffsets;
@@ -52,6 +56,20 @@ public class DregsGemManager {
         this.colors = colors;
     }
 
+    public void update() {
+        if (highlightY < 0) {
+            if (MathUtils.randomBoolean(0.50f)) {
+                // start new highlight pulse
+                highlightY = 0;
+            }
+        } else {
+            highlightY += Gdx.graphics.getDeltaTime() * 50f;
+            if (highlightY > 250f) {
+                highlightY = -1;
+            }
+        }
+    }
+
     public void draw(SpriteBatch sb, CardColor color, float x, float y) {
         switch (color) {
             case RED:
@@ -75,9 +93,14 @@ public class DregsGemManager {
 
     public void render(SpriteBatch sb, float x, float y, boolean flip) {
         Color original = sb.getColor();
-        float a = original.a * 0.7f;
-        sb.setColor(new Color(1f, 0.9f, 1f, a));
+        Color normalColor = new Color(1f, 0.9f, 1f, original.a * 0.7f);
+        Color highlightColor = new Color(1f, 1f, 1f, original.a * 0.9f);
         for (int i = 0; i < colors.size(); ++i) {
+            if (Math.abs(yOffsets[i] - highlightY) < 25f) {
+                sb.setColor(highlightColor);
+            } else {
+                sb.setColor(normalColor);
+            }
             if (flip) {
                 draw(sb, colors.get(i), x - xOffsets[i], y - yOffsets[i]);
             } else {
