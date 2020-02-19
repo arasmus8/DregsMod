@@ -48,8 +48,8 @@ public class WaveOfDarkness extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster monster) {
         this.addToBot(new SFXAction("ATTACK_HEAVY"));
         this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
-        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         addToBot(new GainBlockAction(p, block));
+        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
