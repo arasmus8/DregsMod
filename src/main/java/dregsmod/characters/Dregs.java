@@ -204,15 +204,21 @@ public class Dregs extends CustomPlayer {
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY};
     }
-    
+
     @Override
     public String getSpireHeartText() {
         return TEXT[1];
     }
-    
+
     @Override
     public String getVampireText() {
         return TEXT[2];
+    }
+
+    @Override
+    public void applyPreCombatLogic() {
+        animation.analyzeDeck();
+        super.applyPreCombatLogic();
     }
 
     @Override
