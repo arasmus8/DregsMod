@@ -27,16 +27,18 @@ public class DregsDamageParticleManager {
     }
 
     public void newDamageParticle(int damageAmount) {
-        int maxHp = AbstractDungeon.player.maxHealth;
-        if (damageAmount < maxHp / 10) {
-            damageSize = DregsDamageParticleManager.DamageSize.SMALL;
-        } else if (damageAmount > maxHp / 4) {
-            damageSize = DregsDamageParticleManager.DamageSize.LARGE;
-        } else {
-            damageSize = DregsDamageParticleManager.DamageSize.NORMAL;
+        if (!active) {
+            int maxHp = AbstractDungeon.player.maxHealth;
+            if (damageAmount < maxHp / 10) {
+                damageSize = DregsDamageParticleManager.DamageSize.SMALL;
+            } else if (damageAmount > maxHp / 4) {
+                damageSize = DregsDamageParticleManager.DamageSize.LARGE;
+            } else {
+                damageSize = DregsDamageParticleManager.DamageSize.NORMAL;
+            }
+            active = true;
+            initialized = false;
         }
-        active = true;
-        initialized = false;
     }
 
     public void render(SpriteBatch sb, float x, float y, boolean flipped) {
@@ -68,13 +70,13 @@ public class DregsDamageParticleManager {
                     break;
                 case NORMAL:
                     damageEffect.draw(sb, Gdx.graphics.getDeltaTime());
-                    if (damageEffectLg.isComplete()) {
+                    if (damageEffect.isComplete()) {
                         active = false;
                     }
                     break;
                 case SMALL:
                     damageEffectSm.draw(sb, Gdx.graphics.getDeltaTime());
-                    if (damageEffectLg.isComplete()) {
+                    if (damageEffectSm.isComplete()) {
                         active = false;
                     }
                     break;
