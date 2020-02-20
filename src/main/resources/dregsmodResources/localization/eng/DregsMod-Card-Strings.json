@@ -143,8 +143,8 @@
   },
   "dregsmod:Excess": {
     "NAME": "Excess",
-    "DESCRIPTION": "Whenever you draw a Curse, draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Whenever you draw a Curse, draw !M! cards."
+    "DESCRIPTION": "Ethereal NL Whenever you draw a Curse, draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Ethereal NL Whenever you draw a Curse, draw !M! cards."
   },
   "dregsmod:Fear": {
     "NAME": "Fear",

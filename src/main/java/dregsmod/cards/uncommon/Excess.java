@@ -23,14 +23,16 @@ public class Excess extends CustomCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
     private static final int MAGIC = 1;
-    private static final int UPGRADE_MAGIC = 1;
+    private static final int UPGRADE_MAGIC = 0;
 
     public Excess() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        isEthereal = true;
     }
 
     @Override
@@ -43,7 +45,8 @@ public class Excess extends CustomCard {
         if (!upgraded) {
             rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
+            upgradeBaseCost(UPGRADED_COST);
+            // upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }
