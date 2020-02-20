@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.core.Settings;
@@ -93,14 +94,9 @@ public class DregsGemManager {
 
     public void render(SpriteBatch sb, float x, float y, boolean flip) {
         Color original = sb.getColor();
-        Color normalColor = new Color(1f, 0.9f, 1f, original.a * 0.7f);
-        Color highlightColor = new Color(1f, 1f, 1f, original.a * 0.9f);
         for (int i = 0; i < colors.size(); ++i) {
-            if (Math.abs(yOffsets[i] - highlightY) < 25f) {
-                sb.setColor(highlightColor);
-            } else {
-                sb.setColor(normalColor);
-            }
+            float a = Interpolation.fade.apply(original.a, original.a * 0.7f, Math.abs(yOffsets[i] - highlightY));
+            sb.setColor(new Color(1f, 1f, 1f, a));
             if (flip) {
                 draw(sb, colors.get(i), x - xOffsets[i], y - yOffsets[i]);
             } else {
