@@ -364,7 +364,7 @@
   },
   "dregsmod:Envy": {
     "NAME": "Envy",
-    "DESCRIPTION": "Retain NL When Retained, you are inflicted with Weak if you have at least 75% HP. NL dregsmod:Cleanse: Discard this !M! times"
+    "DESCRIPTION": "Retain NL When Retained, you are inflicted with Weak if you have at least 50% HP. NL dregsmod:Cleanse: Discard this !M! times"
   },
   "dregsmod:Infection": {
     "NAME": "Infection",
