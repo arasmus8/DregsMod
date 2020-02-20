@@ -247,8 +247,8 @@ public class Dregs extends CustomPlayer {
 
     @Override
     public void damage(DamageInfo info) {
-        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-            animation.onDamage(info.output);
+        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - currentBlock > 0) {
+            animation.onDamage(info.output - currentBlock);
         }
 
         super.damage(info);

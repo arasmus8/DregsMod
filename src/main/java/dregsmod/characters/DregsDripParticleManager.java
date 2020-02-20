@@ -10,12 +10,13 @@ public class DregsDripParticleManager {
     private static ParticleEffect dripEffect;
     private boolean active;
     private boolean initialized;
+    private float nextDripDelay;
 
     public DregsDripParticleManager() {
         dripEffect = new ParticleEffect();
         dripEffect.load(Gdx.files.internal("particleSettings/DripParticle"), Gdx.files.internal("particleSettings"));
         active = false;
-
+        nextDripDelay = MathUtils.random(0.5f, 2.5f);
     }
 
     public void newDripParticle() {
@@ -27,8 +28,10 @@ public class DregsDripParticleManager {
 
     public void update() {
         if (!active) {
-            if (MathUtils.randomBoolean(0.9f)) {
+            nextDripDelay -= Gdx.graphics.getDeltaTime();
+            if (nextDripDelay <= 0f) {
                 newDripParticle();
+                nextDripDelay = MathUtils.random(1.5f, 2.5f);
             }
         }
     }
