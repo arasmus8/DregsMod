@@ -190,7 +190,10 @@
   },
   "dregsmod:Misfortune": {
     "NAME": "Misfortune",
-    "DESCRIPTION": "Deal !D! Damage. Can only be used if you're holding a Curse."
+    "DESCRIPTION": "Deal !D! Damage. Can only be used if you're holding a Curse.",
+    "EXTENDED_DESCRIPTION": [
+      "I'm not holding a Curse!"
+    ]
   },
   "dregsmod:Obstruct": {
     "NAME": "Obstruct",

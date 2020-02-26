@@ -46,6 +46,9 @@ public class Misfortune extends AbstractCurseHoldingCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!holdingCurse) {
+            cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+        }
         return holdingCurse;
     }
 

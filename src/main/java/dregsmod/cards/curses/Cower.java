@@ -1,9 +1,7 @@
 package dregsmod.cards.curses;
 
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -45,7 +43,9 @@ public class Cower extends AbstractCleansingCurse implements TriggerOnMonsterDea
     @Override
     public void onRetained() {
         for(AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            addToBot(new HealAction(m, m, 5));
+            if (!m.isDying && !m.isEscaping && !m.halfDead) {
+                addToBot(new HealAction(m, m, 5));
+            }
         }
     }
 
