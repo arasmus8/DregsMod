@@ -64,22 +64,8 @@ public class Dregs extends CustomPlayer {
 
     private static final DregsAnimation animation = new DregsAnimation();
 
-    public static final String[] orbTextures = {
-            "dregsmodResources/images/char/potionbrewer/orb/layer5.png",
-            "dregsmodResources/images/char/potionbrewer/orb/layer4.png",
-            "dregsmodResources/images/char/potionbrewer/orb/layer3.png",
-            "dregsmodResources/images/char/potionbrewer/orb/layer2.png",
-            "dregsmodResources/images/char/potionbrewer/orb/layer1.png",
-            "dregsmodResources/images/char/potionbrewer/orb/layer6.png",
-            "dregsmodResources/images/char/potionbrewer/orb/layer5d.png",
-            "dregsmodResources/images/char/potionbrewer/orb/layer4d.png",
-            "dregsmodResources/images/char/potionbrewer/orb/layer3d.png",
-            "dregsmodResources/images/char/potionbrewer/orb/layer2d.png",
-            "dregsmodResources/images/char/potionbrewer/orb/layer1d.png",
-    };
-
     public Dregs(String name, PlayerClass setClass) {
-        super(name, setClass, new PotionbrewerEnergyOrb(), animation);
+        super(name, setClass, new DregsEnergyOrb(), animation);
 
         initializeClass(null,
                 DREGS_SHOULDER,

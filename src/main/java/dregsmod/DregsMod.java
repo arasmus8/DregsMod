@@ -78,14 +78,14 @@ public class DregsMod implements
 
     private static final String DREGS_CHARACTER_BUTTON_PNG = "dregsmodResources/images/charSelect/CharacterButton.png";
     private static final String CHARACTER_SELECT_PORTRAIT = "dregsmodResources/images/charSelect/CharacterSelect.png";
-    public static final String DREGS_SHOULDER = "dregsmodResources/images/char/potionbrewer/shoulder.png";
-    public static final String DREGS_SHOULDER_2 = "dregsmodResources/images/char/potionbrewer/shoulder2.png";
-    public static final String DREGS_CORPSE = "dregsmodResources/images/char/potionbrewer/corpse.png";
+    public static final String DREGS_SHOULDER = "dregsmodResources/images/char/dregs/shoulder.png";
+    public static final String DREGS_SHOULDER_2 = "dregsmodResources/images/char/dregs/shoulder2.png";
+    public static final String DREGS_CORPSE = "dregsmodResources/images/char/dregs/corpse.png";
 
     public static final String BADGE_IMAGE = "dregsmodResources/images/Badge.png";
 
-    public static final String DREGS_SKELETON_ATLAS = "dregsmodResources/images/char/potionbrewer/skeleton.atlas";
-    public static final String DREGS_SKELETON_JSON = "dregsmodResources/images/char/potionbrewer/skeleton.json";
+    public static final String DREGS_SKELETON_ATLAS = "dregsmodResources/images/char/dregs/skeleton.atlas";
+    public static final String DREGS_SKELETON_JSON = "dregsmodResources/images/char/dregs/skeleton.json";
 
     public static String makeCardPath(String resourcePath) {
         return getModID() + "Resources/images/cards/" + resourcePath;
