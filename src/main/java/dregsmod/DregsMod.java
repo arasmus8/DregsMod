@@ -18,8 +18,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import dregsmod.actions.CleansedCurseAction;
 import dregsmod.characters.Dregs;
@@ -42,13 +40,7 @@ public class DregsMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        OnCardUseSubscriber,
-        OnStartBattleSubscriber,
-        PostBattleSubscriber,
-        PostInitializeSubscriber,
-        PostPotionUseSubscriber,
-        StartActSubscriber,
-        StartGameSubscriber {
+        PostInitializeSubscriber {
 
     private static String modID;
 
@@ -362,30 +354,6 @@ public class DregsMod implements
             }
         }
         keywordsSetup = true;
-    }
-
-    @Override
-    public void receiveStartGame() {
-    }
-
-    @Override
-    public void receiveStartAct() {
-    }
-
-    @Override
-    public void receivePostPotionUse(AbstractPotion potion) {
-    }
-
-    @Override
-    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-    }
-
-    @Override
-    public void receivePostBattle(AbstractRoom abstractRoom) {
-    }
-
-    @Override
-    public void receiveCardUsed(AbstractCard card) {
     }
 
     public static String makeID(String idText) {

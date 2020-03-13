@@ -51,6 +51,17 @@ public class DeathBrand extends CustomRelic {
     }
 
     @Override
+    public void obtain() {
+        for (int i = 0; i < AbstractDungeon.player.relics.size(); i++) {
+            if (AbstractDungeon.player.relics.get(i).relicId.equals(CurseBrand.ID)) {
+                instantObtain(AbstractDungeon.player, i, true);
+                return;
+            }
+        }
+        super.obtain();
+    }
+
+    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
     }
