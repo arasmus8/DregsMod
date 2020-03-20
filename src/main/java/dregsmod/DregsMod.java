@@ -60,13 +60,13 @@ public class DregsMod implements
     private static final String SKILL_BLACK_BG = "dregsmodResources/images/512/bg_skill.png";
     private static final String POWER_BLACK_BG = "dregsmodResources/images/512/bg_power.png";
 
-    private static final String ENERGY_ORB_DREGS = "dregsmodResources/images/512/card_cyan_orb.png";
+    private static final String ENERGY_ORB_DREGS = "dregsmodResources/images/512/card_dregs_orb.png";
     private static final String CARD_ENERGY_ORB = "dregsmodResources/images/512/card_small_orb.png";
 
     private static final String ATTACK_DREGS_PORTRAIT = "dregsmodResources/images/1024/bg_attack.png";
     private static final String SKILL_DREGS_PORTRAIT = "dregsmodResources/images/1024/bg_skill.png";
     private static final String POWER_DREGS_PORTRAIT = "dregsmodResources/images/1024/bg_power.png";
-    private static final String ENERGY_ORB_DREGS_PORTRAIT = "dregsmodResources/images/1024/card_cyan_orb.png";
+    private static final String ENERGY_ORB_DREGS_PORTRAIT = "dregsmodResources/images/1024/card_dregs_orb.png";
 
     private static final String DREGS_CHARACTER_BUTTON_PNG = "dregsmodResources/images/charSelect/CharacterButton.png";
     private static final String CHARACTER_SELECT_PORTRAIT = "dregsmodResources/images/charSelect/CharacterSelect.png";
