@@ -51,14 +51,14 @@ public class DiscardAndPerformAction extends AbstractGameAction {
                 return;
             }
 
-            int cardsToDiscard;
             if (p.hand.size() <= amount) {
                 discardedCards.addAll(p.hand.group);
-                p.hand.group.forEach(card -> {
+                while (p.hand.size() > 0) {
+                    AbstractCard card = p.hand.getTopCard();
                     p.hand.moveToDiscardPile(card);
                     card.triggerOnManualDiscard();
                     GameActionManager.incrementDiscard(false);
-                });
+                }
 
                 p.hand.applyPowers();
                 endActionWithFollowUp();
@@ -115,8 +115,8 @@ public class DiscardAndPerformAction extends AbstractGameAction {
     }
 
     static {
-        uiStrings = CardCrawlGame.languagePack.getUIString("DiscardAction");// 14
-        TEXT = uiStrings.TEXT;// 15
-        DURATION = Settings.ACTION_DUR_XFAST;// 20
+        uiStrings = CardCrawlGame.languagePack.getUIString("DiscardAction");
+        TEXT = uiStrings.TEXT;
+        DURATION = Settings.ACTION_DUR_XFAST;
     }
 }
