@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.actions.SealAndPerformAction;
 import dregsmod.cards.AbstractCurseHoldingCard;
+import dregsmod.cards.rare.EclipseForm;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static dregsmod.DregsMod.makeCardPath;
@@ -54,7 +55,7 @@ public class Jealousy extends AbstractCurseHoldingCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return holdingCurse;
+        return holdingCurse || p.hasPower(EclipseForm.ID);
     }
 
     @Override
