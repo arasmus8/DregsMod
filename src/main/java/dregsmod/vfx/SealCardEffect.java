@@ -14,10 +14,10 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import dregsmod.DregsMod;
 
 public class SealCardEffect extends AbstractGameEffect {
-    private static final float EFFECT_DUR = 2.5F;
+    private static final float EFFECT_DUR = 2.0F;
     private static final float ANIM_DUR = 1.0F;
-    private static final float ANIM_START_AT = 1.75F;
-    private static final float SOUND_AT = 1.0F;
+    private static final float ANIM_START_AT = 1.25F;
+    private static final float SOUND_AT = 0.75F;
     private AbstractCard c;
     private static final float PADDING;
     private Color drawColor = Color.WHITE.cpy();
@@ -34,6 +34,7 @@ public class SealCardEffect extends AbstractGameEffect {
         c.current_y = Settings.HEIGHT / 2.0f;
         c.target_x = c.current_x;
         c.target_y = c.current_y;
+        c.targetAngle = MathUtils.random(-6f, 6f);
         soundPlayed = false;
         if (count > 5) {
             isDone = true;
@@ -51,7 +52,7 @@ public class SealCardEffect extends AbstractGameEffect {
 
         if (duration < SOUND_AT && !soundPlayed) {
             soundPlayed = true;
-            CardCrawlGame.sound.play("BLOCK_GAIN_2", 0.2F);// 23
+            CardCrawlGame.sound.play("BLOCK_GAIN_2", 0.3F);
         }
 
         c.update();
@@ -62,8 +63,11 @@ public class SealCardEffect extends AbstractGameEffect {
         }
     }
 
-    static int topY = 216;
-    static int botY = 220;
+    static int topY = 27; // 216;
+    static int botY = 28;
+    static int botHeight = 220;
+
+    private int tt = 999;
 
     @Override
     public void render(SpriteBatch sb) {
@@ -74,11 +78,17 @@ public class SealCardEffect extends AbstractGameEffect {
 
             float scale = c.drawScale * Settings.scale;
             float dT = MathUtils.clamp((ANIM_START_AT - duration) / ANIM_DUR, 0f, 1f);
+            tt += 1;
+            if (tt > 40) {
+                // log every 40 frames
+                tt = 0;
+                System.out.println(dT);
+            }
 
-            float y = Interpolation.bounceOut.apply(topY - 2, -2, dT);
+            float y = Interpolation.circleOut.apply(topY - 2, -2, dT);
             float a = 1.0f;
             if (duration > ANIM_START_AT) {
-                a = Interpolation.fade.apply(0f, 1f, duration - ANIM_START_AT);
+                a = Interpolation.fade.apply(1f, 0f, (duration - ANIM_START_AT) / (EFFECT_DUR - ANIM_START_AT));
             }
             drawColor.a = c.transparency * a;
             sb.setColor(drawColor);
@@ -87,7 +97,7 @@ public class SealCardEffect extends AbstractGameEffect {
             topVec.rotate(c.angle);
             sb.draw(top, c.current_x + topVec.x, c.current_y + topVec.y, 0F, 0F, 300F, 216F, scale, scale, c.angle, 0, 0, 300, 216, false, false);
 
-            y = Interpolation.bounceOut.apply(-2*botY + 4, -botY + 4, dT);
+            y = Interpolation.circleOut.apply(-(botY + botHeight) + 4, -(botHeight) + 4, dT);
             Vector2 botVec = new Vector2(-150, y);
             botVec.scl(c.drawScale * Settings.scale);
             botVec.rotate(c.angle);
@@ -100,6 +110,6 @@ public class SealCardEffect extends AbstractGameEffect {
     }
 
     static {
-        PADDING = 30.0f * Settings.scale;
+        PADDING = 50.0f * Settings.scale;
     }
 }
