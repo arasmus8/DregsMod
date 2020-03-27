@@ -28,7 +28,7 @@ public class DregsEnergyOrb extends CustomEnergyOrb {
         background = ImageMaster.loadImage("dregsmodResources/images/char/dregs/orbmain.png");
         orbVfx = ImageMaster.loadImage("dregsmodResources/images/char/dregs/orbvfx.png");
         dripPool = new ParticleEffect[13];
-        xOffsets = new float[]{14f, 112f, 60f, 4f, 83f, 124f, 107f, 72f, 97f, 54f, 26f, 9f, 65f};
+        xOffsets = new float[]{14f, 112f, 60f, 14f, 83f, 124f, 107f, 72f, 97f, 54f, 26f, 12f, 65f};
         yOffsets = new float[]{20f, 19f, 16f, 65f, 79f, 74f, 29f, 53f, 18f, 72f, 76f, 26f, 18f};
         for (int i = 0; i < xOffsets.length; ++i) {
             xOffsets[i] *= Settings.scale;
