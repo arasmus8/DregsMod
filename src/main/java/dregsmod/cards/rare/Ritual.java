@@ -1,8 +1,10 @@
 package dregsmod.cards.rare;
 
 import basemod.abstracts.CustomCard;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -65,6 +67,8 @@ public class Ritual extends CustomCard {
                         new CursedPower(monster, magicNumber),
                         magicNumber
                 )));
+        int lifeToRecover = MathUtils.floor((float) (p.maxHealth - p.currentHealth) * 0.2f);
+        addToBot(new HealAction(p, p, lifeToRecover));
     }
 
     // Upgraded stats.

@@ -1,7 +1,6 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,6 +19,7 @@ public class VivificationPower extends AbstractPower implements CloneablePowerIn
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private final boolean upgraded;
+    private boolean usedThisCombat;
 
     public VivificationPower(AbstractPlayer owner, boolean upgraded) {
         name = NAME;
@@ -27,6 +27,7 @@ public class VivificationPower extends AbstractPower implements CloneablePowerIn
         this.owner = owner;
         this.amount = -1;
         this.upgraded = upgraded;
+        this.usedThisCombat = false;
 
         loadRegion("buffer");
         updateDescription();
@@ -34,9 +35,9 @@ public class VivificationPower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if (damageAmount >= owner.currentHealth) {
+        if (!usedThisCombat && damageAmount >= owner.currentHealth) {
             flash();
-            addToTop(new RemoveSpecificPowerAction(owner, owner, this));
+            usedThisCombat = true;
             AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(CardLibrary.getCurse(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
             int goalHealth = upgraded ? owner.maxHealth / 2 : owner.maxHealth / 3;
             if (owner.currentHealth > goalHealth) {
@@ -51,7 +52,9 @@ public class VivificationPower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public void updateDescription() {
-        if (upgraded) {
+        if (usedThisCombat) {
+            description = DESCRIPTIONS[2];
+        } else if (upgraded) {
             description = DESCRIPTIONS[1];
         } else {
             description = DESCRIPTIONS[0];

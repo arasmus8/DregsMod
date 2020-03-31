@@ -31,8 +31,8 @@ public class Indestructible extends CustomCard {
 
     private static final int COST = 2;
 
-    private static final int MAGIC = 20;
-    private static final int UPGRADED_MAGIC = 8;
+    private static final int MAGIC = 12;
+    private static final int UPGRADED_MAGIC = 6;
 
 // /STAT DECLARATION/
 

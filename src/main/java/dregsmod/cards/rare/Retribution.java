@@ -25,8 +25,8 @@ public class Retribution extends CustomCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 5;
-    private static final int UPGRADE_MAGIC = 3;
+    private static final int MAGIC = 3;
+    private static final int UPGRADE_MAGIC = 2;
 
     public Retribution() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
