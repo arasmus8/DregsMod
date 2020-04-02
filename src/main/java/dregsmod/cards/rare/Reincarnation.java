@@ -14,11 +14,12 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import dregsmod.DregsMod;
+import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Reincarnation extends CustomCard {
+public class Reincarnation extends CustomCard implements UpgradeTextChangingCard {
 
 // TEXT DECLARATION
 
@@ -36,7 +37,7 @@ public class Reincarnation extends CustomCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
 
 // /STAT DECLARATION/
 
@@ -55,6 +56,11 @@ public class Reincarnation extends CustomCard {
         addToBot(new AnimateOrbAction(1));
         addToBot(new EvokeOrbAction(1));
         addToBot(new MakeTempCardInHandAction(new Miracle(), 1));
+    }
+
+    @Override
+    public String upgradePreviewText() {
+        return diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     // Upgraded stats.

@@ -1,14 +1,12 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.DregsMod;
-import dregsmod.actions.AsylumHealAction;
+import dregsmod.actions.AsylumChannelAction;
 import dregsmod.actions.SealAndPerformAction;
 
 import java.util.logging.Logger;
@@ -46,7 +44,7 @@ public class AsylumPower extends AbstractPower implements CloneablePowerInterfac
         logger.info("start of turn");
         logger.info("adding action");
         flash();
-        addToBot(new SealAndPerformAction(amount, new AsylumHealAction()));
+        addToBot(new SealAndPerformAction(amount, new AsylumChannelAction()));
     }
 
     @Override

@@ -30,7 +30,6 @@ public class Obstruct extends CustomCard {
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
 
     private static final int MAGIC = 1;
     private static final int UPGRADED_MAGIC = 1;
@@ -54,7 +53,6 @@ public class Obstruct extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
             upgradeMagicNumber(UPGRADED_MAGIC);
             initializeDescription();
         }

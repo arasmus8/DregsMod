@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
-import dregsmod.actions.JinxAction;
 import dregsmod.actions.MaledictionAction;
 import dregsmod.characters.Dregs;
 
@@ -32,7 +31,7 @@ public class Malediction extends CustomCard {
 
     private static final int COST = -1;
 
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
 
 // /STAT DECLARATION/

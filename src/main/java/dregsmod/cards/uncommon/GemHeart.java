@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
+import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.cards.choices.Blue;
 import dregsmod.cards.choices.Green;
 import dregsmod.cards.choices.Purple;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class GemHeart extends CustomCard {
+public class GemHeart extends CustomCard implements UpgradeTextChangingCard {
 
 // TEXT DECLARATION
 
@@ -57,6 +58,11 @@ public class GemHeart extends CustomCard {
             choices.forEach(AbstractCard::upgrade);
         }
         addToBot(new ChooseOneAction(choices));
+    }
+
+    @Override
+    public String upgradePreviewText() {
+        return this.diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     // Upgraded stats.

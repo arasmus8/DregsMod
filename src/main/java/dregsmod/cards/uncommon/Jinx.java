@@ -7,12 +7,12 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.actions.JinxAction;
-import dregsmod.actions.OvercomeAction;
+import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Jinx extends CustomCard {
+public class Jinx extends CustomCard implements UpgradeTextChangingCard {
 
 // TEXT DECLARATION
 
@@ -47,6 +47,11 @@ public class Jinx extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new JinxAction(m, magicNumber, freeToPlayOnce, energyOnUse));
+    }
+
+    @Override
+    public String upgradePreviewText() {
+        return diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     // Upgraded stats.

@@ -56,7 +56,7 @@ public class DenialStance extends AbstractStance {
         sfxId = CardCrawlGame.sound.playAndLoop("STANCE_LOOP_WRATH");
         AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.DARK_GRAY, true));
         AbstractDungeon.effectsQueue.add(new CustomStanceChangeParticleGenerator(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, STANCE_ID));
-        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(3));// 76
+        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(2));
     }
 
     public void onExitStance() {

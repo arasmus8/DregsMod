@@ -10,11 +10,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractSealedCard;
+import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Torment extends AbstractSealedCard {
+public class Torment extends AbstractSealedCard implements UpgradeTextChangingCard {
 
 // TEXT DECLARATION
 
@@ -58,6 +59,11 @@ public class Torment extends AbstractSealedCard {
     public void triggerWhileSealed(AbstractPlayer p) {
         AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(this.makeSameInstanceOf(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
         addToBot(new GainEnergyAction(magicNumber));
+    }
+
+    @Override
+    public String upgradePreviewText() {
+        return diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     // Upgraded stats.

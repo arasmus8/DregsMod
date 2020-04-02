@@ -33,7 +33,7 @@ public class ShallowGrave extends CustomCard {
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 6;
+    private static final int BLOCK = 4;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
     private static final int MAGIC = 2;

@@ -45,7 +45,9 @@ public class HardLuck extends CustomCard {
     }
 
     public void configureCost() {
-        if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+        if (AbstractDungeon.isPlayerInDungeon() &&
+                AbstractDungeon.currMapNode != null &&
+                AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             int curseCount = AbstractDungeon.player.masterDeck.getCardsOfType(CardType.CURSE).size();
             modifyCostForCombat(-curseCount);
         }

@@ -27,7 +27,6 @@ public class Excess extends CustomCard {
     private static final int UPGRADED_COST = 1;
 
     private static final int MAGIC = 1;
-    private static final int UPGRADE_MAGIC = 0;
 
     public Excess() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
@@ -43,10 +42,8 @@ public class Excess extends CustomCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
-            // upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }

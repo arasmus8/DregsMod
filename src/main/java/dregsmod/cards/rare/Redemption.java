@@ -29,7 +29,7 @@ public class Redemption extends CustomCard {
 
     private static final int COST = 2;
     private static final int DAMAGE = 16;
-    private static final int UPGRADE_PLUS_DMG = 6;
+    private static final int UPGRADE_PLUS_DMG = 4;
 
     public Redemption() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);

@@ -19,7 +19,7 @@
   },
   "dregsmod:LashOut": {
     "NAME": "Lash Out",
-    "DESCRIPTION": "Discard all Curses. Deal !D! Damage. Increase Damage by !M! for each Curse discarded."
+    "DESCRIPTION": "Discard all Curses in your hand. Deal !D! Damage. Increase Damage by !M! for each Curse discarded."
   },
   "COMMON": {},
   "dregsmod:AmethystShard": {
@@ -66,7 +66,7 @@
   },
   "dregsmod:Plague": {
     "NAME": "Plague",
-    "DESCRIPTION": "Unplayable NL While dregsmod:Sealed, deal !M! Damage to all enemies each turn."
+    "DESCRIPTION": "Unplayable NL While this card is dregsmod:Sealed, deal !M! Damage to all enemies each turn."
   },
   "dregsmod:Quarantine": {
     "NAME": "Quarantine",
@@ -111,11 +111,11 @@
   "UNCOMMON": {},
   "dregsmod:Ascetic": {
     "NAME": "Ascetic",
-    "DESCRIPTION": "Unplayable NL While dregsmod:Sealed, gain !M! Mantra each turn."
+    "DESCRIPTION": "Unplayable NL While this card is dregsmod:Sealed, gain !M! Mantra each turn."
   },
   "dregsmod:Asylum": {
     "NAME": "Asylum",
-    "DESCRIPTION": "Each turn, choose a card to dregsmod:Seal. You gain HP equal to its energy cost."
+    "DESCRIPTION": "Each turn, choose a card to dregsmod:Seal. Channel an orb based on the rarity of the card."
   },
   "dregsmod:BrushOff": {
     "NAME": "Brush Off",
@@ -143,8 +143,7 @@
   },
   "dregsmod:Excess": {
     "NAME": "Excess",
-    "DESCRIPTION": "Ethereal NL Whenever you draw a Curse, draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Ethereal NL Whenever you draw a Curse, draw !M! cards."
+    "DESCRIPTION": "Ethereal NL Whenever you draw a Curse, draw !M! card."
   },
   "dregsmod:Fear": {
     "NAME": "Fear",
@@ -237,8 +236,8 @@
   },
   "dregsmod:Torment": {
     "NAME": "Torment",
-    "DESCRIPTION": "Unplayable NL While dregsmod:Sealed, gain [E] each turn.",
-    "UPGRADE_DESCRIPTION": "Unplayable NL While dregsmod:Sealed, gain [E] [E] each turn."
+    "DESCRIPTION": "Unplayable NL While this card is dregsmod:Sealed, gain [E] each turn.",
+    "UPGRADE_DESCRIPTION": "Unplayable NL While this card is dregsmod:Sealed, gain [E] [E] each turn."
   },
   "dregsmod:Unlucky": {
     "NAME": "Unlucky",
