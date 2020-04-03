@@ -32,7 +32,7 @@ public class DefiancePower extends AbstractPower implements CloneablePowerInterf
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (target == owner) {
             if (power.ID.equals(WeakPower.POWER_ID) || power.ID.equals(FrailPower.POWER_ID) || power.ID.equals(VulnerablePower.POWER_ID)) {
-                addToBot(new ApplyPowerAction(owner, owner, new MightPower(owner, amount), amount));
+                addToBot(new ApplyPowerAction(owner, owner, new MightPower(owner, amount, true), amount));
             }
         }
     }

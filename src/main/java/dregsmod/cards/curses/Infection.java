@@ -1,13 +1,17 @@
 package dregsmod.cards.curses;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCleansingCurse;
+
+import java.util.ArrayList;
 
 import static dregsmod.DregsMod.makeCardPath;
 
@@ -40,10 +44,28 @@ public class Infection extends AbstractCleansingCurse {
 
     @Override
     public void onRetained() {
-        if (misc < CLEANSE_AMOUNT - 1) {
-            addToBot(new VFXAction(new ShowCardAndAddToDrawPileEffect(this.makeSameInstanceOf(), true, false)));
+        if (!isCleansed) {
+            cleanseBy(1);
+            if (isCleansed) {
+                AbstractPlayer p = AbstractDungeon.player;
+                ArrayList<AbstractCard> withSameUUID = new ArrayList<>();
+                for (AbstractCard card : p.drawPile.group) {
+                    if (card.uuid.equals(this.uuid)) {
+                        withSameUUID.add(card);
+                    }
+                }
+                for (AbstractCard card : p.discardPile.group) {
+                    if (card.uuid.equals(this.uuid)) {
+                        withSameUUID.add(card);
+                    }
+                }
+                for (AbstractCard card : withSameUUID) {
+                    card.applyPowers();
+                }
+            } else {
+                addToBot(new VFXAction(new ShowCardAndAddToDrawPileEffect(this.makeSameInstanceOf(), true, false)));
+            }
         }
-        cleanseBy(1);
     }
 
     // Actions the card should do.

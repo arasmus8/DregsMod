@@ -5,7 +5,12 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.orbs.*;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.orbs.Frost;
+import com.megacrit.cardcrawl.orbs.Lightning;
+import com.megacrit.cardcrawl.orbs.Plasma;
+import dregsmod.orbs.Curse;
+import dregsmod.orbs.Sludge;
 
 public class AsylumChannelAction extends AbstractGameAction {
     public AsylumChannelAction() {
@@ -15,35 +20,30 @@ public class AsylumChannelAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        int healAmount = 0;
         for (AbstractCard card : SealAndPerformAction.sealedCards) {
             AbstractOrb orbToChannel;
-            switch (card.rarity) {
-                case BASIC: //fallthrough
-                    if (card.type == AbstractCard.CardType.CURSE) {
-                        orbToChannel = new Dark();
+            if (card.type == AbstractCard.CardType.CURSE) {
+                orbToChannel = new Curse();
+            } else if (card.type == AbstractCard.CardType.STATUS) {
+                orbToChannel = new Sludge();
+            } else {
+                switch (card.rarity) {
+                    case UNCOMMON:
+                        orbToChannel = new Frost();
                         break;
-                    }
-                case SPECIAL: //fallthrough
-                    if (card.type == AbstractCard.CardType.CURSE) {
-                        orbToChannel = new Dark();
+                    case RARE:
+                        orbToChannel = new Plasma();
                         break;
-                    }
-                case COMMON:
-                    orbToChannel = new Lightning();
-                    break;
-                case UNCOMMON:
-                    orbToChannel = new Frost();
-                    break;
-                case RARE:
-                    orbToChannel = new Plasma();
-                    break;
-                case CURSE:
-                    orbToChannel = new Dark();
-                    break;
-                default:
-                    orbToChannel = new Lightning();
-                    break;
+                    case CURSE:
+                        orbToChannel = new Curse();
+                        break;
+                    case BASIC: //fallthrough
+                    case SPECIAL: //fallthrough
+                    case COMMON:
+                    default:
+                        orbToChannel = new Lightning();
+                        break;
+                }
             }
             addToBot(new ChannelAction(orbToChannel));
         }

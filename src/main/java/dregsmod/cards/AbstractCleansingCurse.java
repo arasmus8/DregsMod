@@ -16,6 +16,8 @@ import static dregsmod.patches.enums.CustomCardTags.CLEANSE_CURSE;
 public abstract class AbstractCleansingCurse extends CustomCard {
     public int cleanseAmount;
     public boolean isCleansed = false;
+    private boolean exhausting = false;
+    private AbstractCard cleansedCurse;
 
     public AbstractCleansingCurse(String id, String name, String img, int cost, String rawDescription, CardTarget target, int cleanseAmount) {
         super(id, name, img, cost, rawDescription, CardType.CURSE, CardColor.CURSE, CardRarity.CURSE, target);
@@ -40,9 +42,8 @@ public abstract class AbstractCleansingCurse extends CustomCard {
                     .filter(c -> c.uuid.equals(uuid))
                     .collect(Collectors.toCollection(ArrayList::new));
             instances.forEach(card -> p.masterDeck.removeCard(card));
-            AbstractCard cleansedCurse = new CleansedCurse();
+            cleansedCurse = new CleansedCurse();
             p.masterDeck.addToTop(cleansedCurse.makeSameInstanceOf());
-            addToTop(new MakeTempCardInHandAction(cleansedCurse.makeSameInstanceOf(), true, true));
             this.purgeOnUse = true;
             for (AbstractCard c : p.hand.group) {
                 if (c.uuid == uuid) {
@@ -75,17 +76,24 @@ public abstract class AbstractCleansingCurse extends CustomCard {
 
     @Override
     public void applyPowers() {
-        baseMagicNumber = magicNumber = cleanseAmount - misc;
+        baseMagicNumber = magicNumber = Math.max(0, cleanseAmount - misc);
         super.applyPowers();
         initializeDescription();
         if (isCleansed) {
-            AbstractPlayer p = AbstractDungeon.player;
-            if (p.hand.contains(this)) {
-                addToBot(new ExhaustSpecificCardAction(this, p.hand));
-            } else if (p.drawPile.contains(this)) {
-                addToBot(new ExhaustSpecificCardAction(this, p.drawPile));
-            } else if (p.discardPile.contains(this)) {
-                addToBot(new ExhaustSpecificCardAction(this, p.discardPile));
+            if (!exhausting) {
+                exhausting = true;
+                AbstractPlayer p = AbstractDungeon.player;
+                if (p.hand.contains(this)) {
+                    addToBot(new ExhaustSpecificCardAction(this, p.hand));
+                } else if (p.drawPile.contains(this)) {
+                    p.drawPile.removeCard(this);
+                } else if (p.discardPile.contains(this)) {
+                    p.discardPile.removeCard(this);
+                }
+                if (cleansedCurse != null) {
+                    addToBot(new MakeTempCardInHandAction(cleansedCurse.makeSameInstanceOf(), true, true));
+                }
+                cleansedCurse = null;
             }
         }
     }

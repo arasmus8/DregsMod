@@ -17,6 +17,7 @@ public class MightPower extends AbstractPower implements CloneablePowerInterface
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private boolean dontRemoveThisTurn = false;
 
     public MightPower(AbstractCreature owner, int amount) {
         name = NAME;
@@ -32,12 +33,21 @@ public class MightPower extends AbstractPower implements CloneablePowerInterface
         }
     }
 
+    public MightPower(AbstractCreature owner, int amount, boolean dontRemoveThisTurn) {
+        this(owner, amount);
+        this.dontRemoveThisTurn = dontRemoveThisTurn;
+    }
+
     @Override
-    public void atStartOfTurn() {
-        if (amount <= 1) {
-            addToBot(new RemoveSpecificPowerAction(owner, owner, this));
-        } else {
-            addToBot(new ReducePowerAction(owner, owner, this, 1));
+    public void atEndOfTurn(boolean isPlayer) {
+        if (dontRemoveThisTurn) {
+            dontRemoveThisTurn = false;
+        } else if (isPlayer) {
+            if (amount <= 1) {
+                addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+            } else {
+                addToBot(new ReducePowerAction(owner, owner, this, 1));
+            }
         }
     }
 

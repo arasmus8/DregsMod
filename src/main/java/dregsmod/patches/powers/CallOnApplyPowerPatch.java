@@ -16,7 +16,7 @@ public class CallOnApplyPowerPatch {
             locator = Locator.class
     )
     public static void Insert(ApplyPowerAction __instance) {
-        if (__instance.target != null && !__instance.source.isPlayer) {
+        if (__instance.target != null && (__instance.source == null || !__instance.source.isPlayer)) {
             AbstractPower powerToApply = (AbstractPower) ReflectionHacks.getPrivate(__instance, ApplyPowerAction.class, "powerToApply");
             for (AbstractPower pow : __instance.target.powers) {
                 pow.onApplyPower(powerToApply, __instance.target, __instance.source);

@@ -38,6 +38,7 @@ public class VivificationPower extends AbstractPower implements CloneablePowerIn
         if (!usedThisCombat && damageAmount >= owner.currentHealth) {
             flash();
             usedThisCombat = true;
+            updateDescription();
             AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(CardLibrary.getCurse(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
             int goalHealth = upgraded ? owner.maxHealth / 2 : owner.maxHealth / 3;
             if (owner.currentHealth > goalHealth) {

@@ -61,7 +61,7 @@ public class DregsMod implements
     private static final String POWER_BLACK_BG = "dregsmodResources/images/512/bg_power.png";
 
     private static final String ENERGY_ORB_DREGS = "dregsmodResources/images/512/card_dregs_orb.png";
-    private static final String CARD_ENERGY_ORB = "dregsmodResources/images/512/card_small_orb.png";
+    public static final String CARD_ENERGY_ORB = "dregsmodResources/images/512/card_small_orb.png";
 
     private static final String ATTACK_DREGS_PORTRAIT = "dregsmodResources/images/1024/bg_attack.png";
     private static final String SKILL_DREGS_PORTRAIT = "dregsmodResources/images/1024/bg_skill.png";
@@ -92,7 +92,7 @@ public class DregsMod implements
     }
 
     public static String makeOrbPath(String resourcePath) {
-        return getModID() + "Resources/orbs/" + resourcePath;
+        return getModID() + "Resources/images/orbs/" + resourcePath;
     }
 
     public static String makePowerPath(String resourcePath) {
