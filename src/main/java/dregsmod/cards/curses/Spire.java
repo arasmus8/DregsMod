@@ -10,11 +10,11 @@ import dregsmod.cards.AbstractCleansingCurse;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Tower extends AbstractCleansingCurse {
+public class Spire extends AbstractCleansingCurse {
 
 // TEXT DECLARATION
 
-    public static final String ID = DregsMod.makeID(Tower.class.getSimpleName());
+    public static final String ID = DregsMod.makeID(Spire.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String IMG = makeCardPath("Curse.png");
 // Must have an image with the same NAME as the card in your image folder!
@@ -31,7 +31,7 @@ public class Tower extends AbstractCleansingCurse {
 
 // /STAT DECLARATION/
 
-    public Tower() {
+    public Spire() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TARGET, CLEANSE_AMOUNT);
         isInnate = true;
         selfRetain = true;

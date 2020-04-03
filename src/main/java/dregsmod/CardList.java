@@ -37,8 +37,8 @@ public class CardList {
         allCards.add(new Doom());
         allCards.add(new Gloom());
         allCards.add(new Death());
-        allCards.add(new Tower());
-        allCards.add(new Judgement());
+        allCards.add(new Spire());
+        allCards.add(new Inquisition());
         allCards.add(new Dread());
         allCards.add(new Cower());
         allCards.add(new Greed());

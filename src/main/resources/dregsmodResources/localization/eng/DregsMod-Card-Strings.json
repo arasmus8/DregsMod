@@ -344,12 +344,12 @@
     "NAME": "Death",
     "DESCRIPTION": "Increase this card's cost by 1. Unless played, take 100 Damage. NL dregsmod:Cleanse: Spend !M! [E]"
   },
-  "dregsmod:Tower": {
-    "NAME": "Tower",
+  "dregsmod:Spire": {
+    "NAME": "Spire",
     "DESCRIPTION": "Innate NL Retain NL dregsmod:Cleanse: Play !M! cards."
   },
-  "dregsmod:Judgement": {
-    "NAME": "Judgement",
+  "dregsmod:Inquisition": {
+    "NAME": "Inquisition",
     "DESCRIPTION": "Retain NL When Retained, inflict 1 Vulnerable on all combatants. NL dregsmod:Cleanse: Exhaust this !M! times"
   },
   "dregsmod:Dread": {
