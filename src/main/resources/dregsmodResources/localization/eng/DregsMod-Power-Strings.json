@@ -45,9 +45,10 @@
   "dregsmod:ExcessPower": {
     "NAME": "Excess",
     "DESCRIPTIONS": [
-      "When you draw a #yCurse, draw #b",
-      " card.",
-      " cards."
+      "When you draw a #yCurse, trigger the passive of all your #ySludge Orbs #b",
+      " time.",
+      " times.",
+      " If you have no #ySludge Orbs, channel one."
     ]
   },
   "dregsmod:IncantationPower": {

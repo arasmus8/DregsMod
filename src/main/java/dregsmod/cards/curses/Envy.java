@@ -1,12 +1,11 @@
 package dregsmod.cards.curses;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCleansingCurse;
 
@@ -41,14 +40,7 @@ public class Envy extends AbstractCleansingCurse {
     @Override
     public void triggerOnManualDiscard() {
         cleanseBy(1);
-    }
-
-    @Override
-    public void onRetained() {
-        AbstractPlayer p = AbstractDungeon.player;
-        if (p.currentHealth >= p.maxHealth * 0.5) {
-            addToBot(new ApplyPowerAction(p, p, new WeakPower(p, 1, true), 1));
-        }
+        addToBot(new DiscardAction(AbstractDungeon.player, AbstractDungeon.player, 1, true));
     }
 
     // Actions the card should do.
