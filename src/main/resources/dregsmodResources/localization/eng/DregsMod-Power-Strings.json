@@ -76,8 +76,8 @@
   "dregsmod:ScapegoatPower": {
     "NAME": "Scapegoat",
     "DESCRIPTIONS": [
-      "When you #yExhaust a card, inflict #b",
-      " #yCursed on a random enemy."
+      "The Block and Damage of your cards are #b",
+      "% higher this turn."
     ]
   },
   "dregsmod:ShiftingSandsPower": {
