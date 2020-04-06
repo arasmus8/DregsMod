@@ -1,6 +1,7 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.DregsMod;
 import dregsmod.patches.variables.CardSealed;
+import dregsmod.vfx.SealCardEffect;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -53,6 +55,7 @@ public class TheVaultPower extends AbstractPower implements CloneablePowerInterf
                     ((TriggerOnSealedPower) power).triggerOnSealed(card);
                 }
             });
+            addToBot(new VFXAction(new SealCardEffect(card.makeSameInstanceOf())));
         });
     }
 

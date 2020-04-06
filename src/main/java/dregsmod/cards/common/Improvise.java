@@ -1,21 +1,21 @@
 package dregsmod.cards.common;
 
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
-import dregsmod.cards.AbstractCurseHoldingCard;
 import dregsmod.characters.Dregs;
-import dregsmod.patches.variables.CardSealed;
+import dregsmod.orbs.Sludge;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Improvise extends AbstractCurseHoldingCard {
+public class Improvise extends CustomCard {
 
     public static final String ID = DregsMod.makeID(Improvise.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -42,10 +42,7 @@ public class Improvise extends AbstractCurseHoldingCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (holdingCurse) {
-            CardSealed.isSealed.set(this, true);
-            addToBot(new DrawCardAction(p, 1));
-        }
+        addToBot(new ChannelAction(new Sludge()));
     }
 
     @Override

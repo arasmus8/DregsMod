@@ -72,5 +72,19 @@
       "denial"
     ],
     "DESCRIPTION": "When entering this stance, gain [E] [E] . Exiting this stance ends your turn."
+  },
+  {
+    "PROPER_NAME": "Sludge Orb",
+    "NAMES": [
+      "sludge"
+    ],
+    "DESCRIPTION": "Orb: Increases potency each turn. When #yEvoked, draws cards."
+  },
+  {
+    "PROPER_NAME": "Curse Orb",
+    "NAMES": [
+      "curseorb"
+    ],
+    "DESCRIPTION": "Orb: Adds curses to your hand. When #yEvoked, exhaust a card."
   }
 ]

@@ -54,7 +54,7 @@
   },
   "dregsmod:Improvise": {
     "NAME": "Improvise",
-    "DESCRIPTION": "Deal !D! Damage. If you're holding a Curse, draw a card and dregsmod:Seal this card."
+    "DESCRIPTION": "Deal !D! Damage. Channel a dregsmod:Sludge Orb"
   },
   "dregsmod:Misery": {
     "NAME": "Misery",
@@ -143,7 +143,7 @@
   },
   "dregsmod:Excess": {
     "NAME": "Excess",
-    "DESCRIPTION": "Ethereal NL Whenever you draw a Curse, draw !M! card."
+    "DESCRIPTION": "Whenever you draw a Curse, trigger the passive of all your dregsmod:Sludge Orbs. If you have none, channel 1 Sludge Orb."
   },
   "dregsmod:Fear": {
     "NAME": "Fear",
@@ -216,7 +216,7 @@
   },
   "dregsmod:Scapegoat": {
     "NAME": "Scapegoat",
-    "DESCRIPTION": "When you Exhuast a card, inflict !M! dregsmod:Cursed on a random enemy."
+    "DESCRIPTION": "When you Exhuast or dregsmod:Seal a card, your cards have !M! percent more damage and block until the end of the turn."
   },
   "dregsmod:SealedEnergy": {
     "NAME": "Sealed Energy",
@@ -366,7 +366,7 @@
   },
   "dregsmod:Envy": {
     "NAME": "Envy",
-    "DESCRIPTION": "Retain NL When Retained, you are inflicted with Weak if you have at least 50% HP. NL dregsmod:Cleanse: Discard this !M! times"
+    "DESCRIPTION": "Retain NL When you discard this card, discard another random card as well. NL dregsmod:Cleanse: Discard this !M! times"
   },
   "dregsmod:Infection": {
     "NAME": "Infection",

@@ -2,6 +2,7 @@ package dregsmod.cards.uncommon;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.characters.Dregs;
 import dregsmod.patches.variables.CardSealed;
+import dregsmod.vfx.SealCardEffect;
 
 import static dregsmod.DregsMod.makeCardPath;
 
@@ -42,6 +44,7 @@ public class Fear extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAllEnemiesAction(p, multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         CardSealed.isSealed.set(this, true);
+        addToBot(new VFXAction(new SealCardEffect(this.makeSameInstanceOf())));
     }
 
     @Override
