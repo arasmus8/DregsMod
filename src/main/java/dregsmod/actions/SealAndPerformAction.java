@@ -26,7 +26,7 @@ public class SealAndPerformAction extends AbstractGameAction {
     private AbstractGameAction followUpAction;
     private boolean clearSealHistory;
     private boolean isRandom;
-    private static final AbstractPlayer p = AbstractDungeon.player;
+    private static AbstractPlayer p;
     private static final float DURATION;
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
@@ -37,6 +37,7 @@ public class SealAndPerformAction extends AbstractGameAction {
             boolean random,
             AbstractGameAction action
     ) {
+        p = AbstractDungeon.player;
         setValues(p, p, amount);
         actionType = ActionType.DISCARD;
         duration = DURATION;
