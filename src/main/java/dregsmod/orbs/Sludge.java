@@ -2,7 +2,6 @@ package dregsmod.orbs;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
@@ -91,8 +90,8 @@ public class Sludge extends AbstractOrb {
         this.vfxTimer -= Gdx.graphics.getDeltaTime();
         particle.update(Gdx.graphics.getDeltaTime());
         if (this.vfxTimer < 0.0F) {
-            float x = this.cX + MathUtils.random(-30f, 30f);
-            float y = this.cY + MathUtils.random(-40f, -20f);
+            float x = this.cX + MathUtils.random(-20f, 20f);
+            float y = this.cY + MathUtils.random(-25f, -20f);
             particle.setPosition(x, y);
             particle.start();
             this.vfxTimer = VFX_INTERVAL_TIME;
@@ -107,9 +106,10 @@ public class Sludge extends AbstractOrb {
         int h = img.getHeight();
         float w2 = w / 2f;
         float h2 = h / 2f;
-        sb.draw(img, cX - w2, cY - h2,
-                w2, h2, w, h, scale, scale, this.angle,
+        sb.draw(img, cX - w2 + bobEffect.y / 4f, cY - h2 + bobEffect.y / 3f,
+                w2, h2, w, h, scale, scale, 0f,
                 0, 0, w, h, false, false);
+        /*
         this.shineColor.a = this.c.a / 3.0F;
         sb.setColor(this.shineColor);
         sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE);
@@ -120,6 +120,7 @@ public class Sludge extends AbstractOrb {
                 scale * 1.5F, scale * 1.5F,
                 angle / 1.4F, 0, 0, w, h, false, false);
         sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
+        */
         particle.draw(sb);
         renderText(sb);
         hb.render(sb);
