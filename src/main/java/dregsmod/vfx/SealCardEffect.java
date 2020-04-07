@@ -14,10 +14,10 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import dregsmod.DregsMod;
 
 public class SealCardEffect extends AbstractGameEffect {
-    private static final float EFFECT_DUR = 2.0F;
-    private static final float ANIM_DUR = 1.0F;
-    private static final float ANIM_START_AT = 1.25F;
-    private static final float SOUND_AT = 0.75F;
+    private static final float EFFECT_DUR = 1.0F;
+    private static final float ANIM_DUR = 0.5F;
+    private static final float ANIM_START_AT = 0.75F;
+    private static final float SOUND_AT = 0.25F;
     private AbstractCard c;
     private static final float PADDING;
     private Color drawColor = Color.WHITE.cpy();

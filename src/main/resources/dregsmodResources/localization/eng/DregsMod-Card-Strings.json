@@ -15,7 +15,10 @@
   },
   "dregsmod:Jealousy": {
     "NAME": "Jealousy",
-    "DESCRIPTION": "Cannot be removed from your deck. NL dregsmod:Seal a random Curse."
+    "DESCRIPTION": "Cannot be removed from your deck. NL dregsmod:Seal a random Curse.",
+    "EXTENDED_DESCRIPTION": [
+      "I'm not holding another Curse!"
+    ]
   },
   "dregsmod:LashOut": {
     "NAME": "Lash Out",
@@ -83,7 +86,7 @@
   },
   "dregsmod:Ruin": {
     "NAME": "Ruin",
-    "DESCRIPTION": "Deal !D! Damage. If the target is dregsmod:Cursed, damage it again."
+    "DESCRIPTION": "Deal !D! Damage. If the target is dregsmod:Cursed, Damage it again."
   },
   "dregsmod:SapphireShard": {
     "NAME": "Sapphire Shard",
@@ -182,7 +185,7 @@
   },
   "dregsmod:Malediction": {
     "NAME": "Malediction",
-    "DESCRIPTION": "dregsmod:Seal X random Curses. Deal !D! damage for each Curse sealed."
+    "DESCRIPTION": "dregsmod:Seal X random Curses. Deal !D! Damage for each Curse sealed."
   },
   "dregsmod:MidnightManacles": {
     "NAME": "Midnight Manacles",
@@ -201,7 +204,8 @@
   },
   "dregsmod:Pinprick": {
     "NAME": "Pinprick",
-    "DESCRIPTION": "Inflict 2 Vulnerable. If you're holding a Curse, apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark."
+    "DESCRIPTION": "Inflict 2 Vulnerable. If you're holding a Curse, apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark.",
+    "UPGRADE_DESCRIPTION": "Inflict 2 Vulnerable to ALL enemies. If you're holding a Curse, apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark."
   },
   "dregsmod:Rejection": {
     "NAME": "Rejection",
@@ -217,7 +221,7 @@
   },
   "dregsmod:Scapegoat": {
     "NAME": "Scapegoat",
-    "DESCRIPTION": "When you Exhuast or dregsmod:Seal a card, your cards have !M! percent more damage and block until the end of the turn."
+    "DESCRIPTION": "When you Exhuast or dregsmod:Seal a card, your cards have !M! percent more Damage and Block until the end of the turn."
   },
   "dregsmod:SealedEnergy": {
     "NAME": "Sealed Energy",
@@ -274,7 +278,7 @@
   },
   "dregsmod:Incantation": {
     "NAME": "Incantation",
-    "DESCRIPTION": "The first enemy you damage each turn is inflicted with !M! dregsmod:Cursed."
+    "DESCRIPTION": "The first enemy you Damage each turn is inflicted with !M! dregsmod:Cursed."
   },
   "dregsmod:Indestructible": {
     "NAME": "Indestructible",
@@ -321,8 +325,8 @@
   },
   "dregsmod:Vivification": {
     "NAME": "Vivification",
-    "DESCRIPTION": "When you would take fatal damage, instead heal to 1/3 HP and add a Curse to your deck. Works only once per combat.",
-    "UPGRADE_DESCRIPTION": "When you would take fatal damage, instead heal to 1/2 HP and add a Curse to your deck. Works only once per combat."
+    "DESCRIPTION": "When you would take fatal Damage, instead heal to 1/3 HP and add a Curse to your deck. Works only once per combat.",
+    "UPGRADE_DESCRIPTION": "When you would take fatal Damage, instead heal to 1/2 HP and add a Curse to your deck. Works only once per combat."
   },
   "CURSE": {},
   "dregsmod:CleansedCurse": {

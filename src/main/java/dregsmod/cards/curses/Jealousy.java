@@ -3,6 +3,7 @@ package dregsmod.cards.curses;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.BlueCandle;
 import dregsmod.DregsMod;
 import dregsmod.actions.SealAndPerformAction;
 import dregsmod.cards.AbstractCurseHoldingCard;
@@ -55,7 +56,8 @@ public class Jealousy extends AbstractCurseHoldingCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return holdingCurse || p.hasPower(EclipseForm.ID);
+        cantUseMessage = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        return holdingCurse || p.hasPower(EclipseForm.ID) || p.hasRelic(BlueCandle.ID);
     }
 
     @Override
