@@ -3,11 +3,8 @@ package dregsmod.cards.rare;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractSealedCard;
 import dregsmod.characters.Dregs;
@@ -56,7 +53,6 @@ public class Entropy extends AbstractSealedCard {
 
     @Override
     public void triggerWhileSealed(AbstractPlayer p) {
-        AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(this.makeSameInstanceOf(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
         addToBot(new GainBlockAction(p, p, block));
     }
 

@@ -25,9 +25,11 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import dregsmod.DregsMod;
-import dregsmod.cards.*;
+import dregsmod.cards.Adaptability;
+import dregsmod.cards.DregsDefend;
+import dregsmod.cards.DregsStrike;
+import dregsmod.cards.LashOut;
 import dregsmod.cards.curses.Jealousy;
-import dregsmod.patches.variables.CardSealed;
 import dregsmod.relics.CurseBrand;
 
 import java.util.ArrayList;
@@ -209,6 +211,7 @@ public class Dregs extends CustomPlayer {
         super.applyPreCombatLogic();
     }
 
+    /*
     @Override
     public void applyStartOfTurnPostDrawPowers() {
         discardPile.group.stream()
@@ -216,6 +219,7 @@ public class Dregs extends CustomPlayer {
                 .forEach(card -> ((AbstractSealedCard) card).triggerWhileSealed(this));
         super.applyStartOfTurnPostDrawPowers();
     }
+    */
 
     @Override
     public List<CutscenePanel> getCutscenePanels() {

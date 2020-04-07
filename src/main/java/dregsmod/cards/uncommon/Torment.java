@@ -3,11 +3,8 @@ package dregsmod.cards.uncommon;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractSealedCard;
 import dregsmod.cards.UpgradeTextChangingCard;
@@ -57,7 +54,6 @@ public class Torment extends AbstractSealedCard implements UpgradeTextChangingCa
 
     @Override
     public void triggerWhileSealed(AbstractPlayer p) {
-        AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(this.makeSameInstanceOf(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
         addToBot(new GainEnergyAction(magicNumber));
     }
 
