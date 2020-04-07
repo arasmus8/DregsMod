@@ -27,7 +27,7 @@ public class Greed extends AbstractCleansingCurse {
     public static final CardColor COLOR = CardColor.CURSE;
 
     private static final int COST = -2;
-    private static final int CLEANSE_AMOUNT = 10;
+    private static final int CLEANSE_AMOUNT = 8;
 
 // /STAT DECLARATION/
 

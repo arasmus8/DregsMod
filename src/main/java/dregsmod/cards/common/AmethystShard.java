@@ -30,7 +30,7 @@ public class AmethystShard extends CustomCard implements UpgradeTextChangingCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
 // /STAT DECLARATION/
 

@@ -31,7 +31,7 @@ public class Cower extends AbstractCleansingCurse implements TriggerOnMonsterDea
     public static final CardColor COLOR = CardColor.CURSE;
 
     private static final int COST = -2;
-    private static final int CLEANSE_AMOUNT = 7;
+    private static final int CLEANSE_AMOUNT = 5;
 
 // /STAT DECLARATION/
 
