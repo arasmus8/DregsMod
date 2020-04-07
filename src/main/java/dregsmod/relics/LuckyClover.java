@@ -28,16 +28,31 @@ public class LuckyClover extends CustomRelic {
         initializeTips();
     }
 
-    @Override
-    public void atBattleStartPreDraw() {
-        long curseCount = AbstractDungeon.player.masterDeck
+    private int curseCount() {
+        return (int) AbstractDungeon.player.masterDeck
                 .getCardsOfType(AbstractCard.CardType.CURSE).group.stream()
                 .map(card -> card.cardID)
                 .distinct()
                 .count();
+    }
+
+    @Override
+    public void atBattleStartPreDraw() {
         flash();
+        int curseCount = curseCount();
+        counter = curseCount;
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlatedArmorPower(AbstractDungeon.player, (int) curseCount)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlatedArmorPower(AbstractDungeon.player, curseCount)));
+    }
+
+    @Override
+    public void onObtainCard(AbstractCard c) {
+        counter = curseCount();
+    }
+
+    @Override
+    public void onEquip() {
+        counter = curseCount();
     }
 
     @Override
