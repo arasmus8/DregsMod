@@ -355,7 +355,7 @@
   },
   "dregsmod:Inquisition": {
     "NAME": "Inquisition",
-    "DESCRIPTION": "Retain NL When Retained, inflict 1 Vulnerable on all combatants. NL dregsmod:Cleanse: Exhaust this !M! times"
+    "DESCRIPTION": "Retain NL Each turn, inflict 1 Vulnerable on all combatants. NL dregsmod:Cleanse: Exhaust this !M! times"
   },
   "dregsmod:Dread": {
     "NAME": "Dread",

@@ -3,10 +3,12 @@ package dregsmod.cards.curses;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCleansingCurse;
 
@@ -44,11 +46,14 @@ public class Inquisition extends AbstractCleansingCurse {
     }
 
     @Override
-    public void onRetained() {
+    public void atTurnStart() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, 1, true), 1));
-        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            addToBot(new ApplyPowerAction(m, m, new VulnerablePower(m, 1, true), 1));
+        if (p.hand.contains(this)) {
+            AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(this.makeSameInstanceOf(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
+            addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, 1, false), 1));
+            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+                addToBot(new ApplyPowerAction(m, m, new VulnerablePower(m, 1, false), 1));
+            }
         }
     }
 
