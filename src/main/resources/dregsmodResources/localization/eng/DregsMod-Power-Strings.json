@@ -63,7 +63,8 @@
     "DESCRIPTIONS": [
       "Whenever you #ySeal a #yCurse, channel #b",
       " Lightning Orb.",
-      " Lightning Orbs."
+      " Lightning Orbs.",
+      " Also gain an Orb Slot."
     ]
   },
   "dregsmod:RetributionPower": {

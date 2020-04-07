@@ -2,6 +2,7 @@ package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -16,12 +17,18 @@ public class LostPotentialPower extends AbstractPower implements CloneablePowerI
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private static boolean upgraded;
 
-    public LostPotentialPower(AbstractPlayer owner, int amount) {
+    public LostPotentialPower(AbstractPlayer owner, int amount, boolean isUpgraded) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
+        if (owner.hasPower(POWER_ID)) {
+            upgraded = upgraded || isUpgraded;
+        } else {
+            upgraded = isUpgraded;
+        }
 
         loadRegion("static_discharge");
         updateDescription();
@@ -31,7 +38,12 @@ public class LostPotentialPower extends AbstractPower implements CloneablePowerI
     public void triggerOnSealed(AbstractCard card) {
         if (card.type == AbstractCard.CardType.CURSE) {
             flash();
-            addToBot(new ChannelAction(new Lightning()));
+            if (upgraded) {
+                addToBot(new IncreaseMaxOrbAction(1));
+            }
+            for (int i = 0; i < amount; i++) {
+                addToBot(new ChannelAction(new Lightning()));
+            }
         }
     }
 
@@ -42,10 +54,13 @@ public class LostPotentialPower extends AbstractPower implements CloneablePowerI
         } else {
             description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
         }
+        if (upgraded) {
+            description += DESCRIPTIONS[3];
+        }
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new LostPotentialPower((AbstractPlayer) owner, amount);
+        return new LostPotentialPower((AbstractPlayer) owner, amount, upgraded);
     }
 }
