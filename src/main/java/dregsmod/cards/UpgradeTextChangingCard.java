@@ -1,5 +1,6 @@
 package dregsmod.cards;
 
+import basemod.BaseMod;
 import com.github.difflib.algorithm.DiffException;
 import com.github.difflib.text.DiffRow;
 import com.github.difflib.text.DiffRowGenerator;
@@ -34,7 +35,11 @@ public interface UpgradeTextChangingCard {
                         }
                         String[] words = parts2[0].split(" +", 0);
                         String[] wordsWithColor = Arrays.stream(words)
-                                .map(s1 -> s1.matches("NL|\\[E]") ? s1 : "[#7fff00]" + s1 + "[]")
+                                .map(s1 -> {
+                                    if (s1.matches("NL|\\[E]")) return s1;
+                                    if (BaseMod.getKeywordUnique(s1.toLowerCase()) != null) return s1;
+                                    return "[#7fff00]" + s1 + "[]";
+                                })
                                 .toArray(String[]::new);
                         return String.join(" ", wordsWithColor) +
                                 " " +

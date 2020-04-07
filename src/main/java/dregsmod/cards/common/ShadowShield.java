@@ -4,11 +4,13 @@ import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
+import dregsmod.patches.variables.CardSealed;
 
 import static dregsmod.DregsMod.makeCardPath;
 
@@ -33,22 +35,33 @@ public class ShadowShield extends CustomCard implements UpgradeTextChangingCard 
     private static final int COST = 1;
 
     private static final int BLOCK = 1;
+    private static final int MAGIC = 1;
 
 // /STAT DECLARATION/
 
     public ShadowShield() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
-        isInnate = false;
+        baseMagicNumber = magicNumber = MAGIC;
+    }
+
+    @Override
+    public void applyPowers() {
+        AbstractPlayer p = AbstractDungeon.player;
+        int cardCount = p.hand.size() - 1;
+        if (upgraded) {
+            cardCount += p.discardPile.group.stream()
+                    .filter(card -> CardSealed.isSealed.get(card))
+                    .count();
+        }
+        baseBlock = cardCount;
+        super.applyPowers();
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int cardCount = p.hand.size() - 1;
-        for (int i = 0; i < cardCount; ++i) {
-            addToBot(new GainBlockAction(p, p, block));
-        }
+        addToBot(new GainBlockAction(p, p, block));
     }
 
     @Override
@@ -61,7 +74,6 @@ public class ShadowShield extends CustomCard implements UpgradeTextChangingCard 
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            isInnate = true;
             rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

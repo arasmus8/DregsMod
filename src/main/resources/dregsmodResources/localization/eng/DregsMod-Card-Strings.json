@@ -53,7 +53,7 @@
   },
   "dregsmod:IcyTouch": {
     "NAME": "Icy Touch",
-    "DESCRIPTION": "Deal !D! Damage. If you're holding a Curse, channel a Frost Orb."
+    "DESCRIPTION": "Deal !D! Damage. If you're holding a Curse, Channel a Frost Orb."
   },
   "dregsmod:Improvise": {
     "NAME": "Improvise",
@@ -100,8 +100,8 @@
   },
   "dregsmod:ShadowShield": {
     "NAME": "Shadow Shield",
-    "DESCRIPTION": "Gain !B! Block for each other card in your hand.",
-    "UPGRADE_DESCRIPTION": "Innate NL Gain !B! Block for each other card in your hand."
+    "DESCRIPTION": "Gain !M! Block for each other card in your hand. NL (Gain !B! Block)",
+    "UPGRADE_DESCRIPTION": "Gain !M! Block for each other card in your hand, and each dregsmod:Sealed card. NL (Gain !B! Block)"
   },
   "dregsmod:ShallowGrave": {
     "NAME": "Shallow Grave",
