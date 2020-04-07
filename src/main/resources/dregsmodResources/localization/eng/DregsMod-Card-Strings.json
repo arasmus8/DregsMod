@@ -312,7 +312,7 @@
   },
   "dregsmod:Ritual": {
     "NAME": "Ritual",
-    "DESCRIPTION": "Inflict !M! dregsmod:Cursed to all enemies. Heal 20% of your missing HP. NL Exhaust"
+    "DESCRIPTION": "Inflict !M! dregsmod:Cursed to all enemies. Heal 50% of your missing HP. NL Exhaust"
   },
   "dregsmod:SeeNoEvil": {
     "NAME": "See No Evil",

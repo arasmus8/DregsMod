@@ -48,6 +48,7 @@ public class Ritual extends CustomCard {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
+        exhaust = true;
     }
 
     // Actions the card should do.
@@ -67,7 +68,7 @@ public class Ritual extends CustomCard {
                         new CursedPower(monster, magicNumber),
                         magicNumber
                 )));
-        int lifeToRecover = MathUtils.floor((float) (p.maxHealth - p.currentHealth) * 0.2f);
+        int lifeToRecover = MathUtils.floor((float) (p.maxHealth - p.currentHealth) * 0.5f);
         addToBot(new HealAction(p, p, lifeToRecover));
     }
 

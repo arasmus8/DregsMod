@@ -42,12 +42,13 @@ public class CleansedCurse extends CustomCard {
         addToBot(new CleansedCurseAction(this));
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            initializeDescription();
-        }
     }
 }

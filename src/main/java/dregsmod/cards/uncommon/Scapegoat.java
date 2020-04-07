@@ -25,8 +25,8 @@ public class Scapegoat extends CustomCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 10;
-    private static final int UPGRADE_MAGIC = 2;
+    private static final int MAGIC = 15;
+    private static final int UPGRADE_MAGIC = 5;
 
     public Scapegoat() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
