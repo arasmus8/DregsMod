@@ -55,6 +55,12 @@ public class AcceptanceStance extends AbstractStance {
         this.description = stanceString.DESCRIPTION[0];
     }
 
+    @Override
+    public void atStartOfTurn() {
+        // increase any retained attacks back up as costForTurn obviously resets after the turn
+        adjustAttackCosts(1);
+    }
+
     public void onEnterStance() {
         if (sfxId != -1L) {
             this.stopIdleSfx();
