@@ -23,7 +23,7 @@ public class AbstractCardRender {
                 sb.setColor(renderColor);
 
                 Texture img = DregsMod.uiTextures.get("cardSeal");
-                Vector2 vec = new Vector2(-83, -15);
+                Vector2 vec = new Vector2(-88, -15);
                 vec.scl(__instance.drawScale * Settings.scale);
                 vec.rotate(__instance.angle);
                 float x = __instance.current_x + vec.x;
