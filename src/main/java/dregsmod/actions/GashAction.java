@@ -10,12 +10,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class GashAction extends AbstractGameAction {
     private AbstractCard c;
+    private AbstractMonster t;
 
     public GashAction(AbstractCard card, AbstractPlayer player, AbstractMonster target, int damage) {
         c = card;
         setValues(target, player, damage);
         duration = Settings.ACTION_DUR_FAST;
         actionType = ActionType.DAMAGE;
+        t = target;
     }
 
     @Override
@@ -23,6 +25,7 @@ public class GashAction extends AbstractGameAction {
         if (duration == Settings.ACTION_DUR_FAST) {
             isDone = true;
             c.applyPowers();
+            c.calculateCardDamage(t);
 
             addToBot(new DamageAction(target, new DamageInfo(source, c.damage, c.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
             addToBot(new DamageAction(target, new DamageInfo(source, c.damage, c.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
