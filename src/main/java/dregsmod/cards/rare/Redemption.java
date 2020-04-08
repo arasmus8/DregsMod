@@ -34,6 +34,7 @@ public class Redemption extends CustomCard {
     public Redemption() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        exhaust = true;
     }
 
     @Override
