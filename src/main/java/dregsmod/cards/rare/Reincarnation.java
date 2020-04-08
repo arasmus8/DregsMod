@@ -38,24 +38,29 @@ public class Reincarnation extends CustomCard implements UpgradeTextChangingCard
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
     private static final int COST = 3;
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_MAGIC = 1;
 
 // /STAT DECLARATION/
 
     public Reincarnation() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        baseMagicNumber = magicNumber = MAGIC;
         exhaust = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
-        addToBot(new MakeTempCardInHandAction(new Shiv(), 2));
-        addToBot(new AnimateOrbAction(1));
-        addToBot(new EvokeWithoutRemovingOrbAction(1));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
+        addToBot(new MakeTempCardInHandAction(new Shiv(), magicNumber));
+        if (magicNumber > 1) {
+            addToBot(new AnimateOrbAction(1));
+            addToBot(new EvokeWithoutRemovingOrbAction(1));
+        }
         addToBot(new AnimateOrbAction(1));
         addToBot(new EvokeOrbAction(1));
-        addToBot(new MakeTempCardInHandAction(new Miracle(), 1));
+        addToBot(new MakeTempCardInHandAction(new Miracle(), magicNumber));
     }
 
     @Override
@@ -68,8 +73,8 @@ public class Reincarnation extends CustomCard implements UpgradeTextChangingCard
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPGRADE_MAGIC);
             rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            exhaust = false;
             initializeDescription();
         }
     }

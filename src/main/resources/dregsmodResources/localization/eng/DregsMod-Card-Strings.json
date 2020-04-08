@@ -304,8 +304,8 @@
   },
   "dregsmod:Reincarnation": {
     "NAME": "Reincarnation",
-    "DESCRIPTION": "Gain 1 Strength. Add 2 *Shivs to your hand. Evoke twice. Add a *Miracle to your hand. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Gain 1 Strength. Add 2 *Shivs to your hand. Evoke twice. Add a *Miracle to your hand."
+    "DESCRIPTION": "Gain 1 Strength. Add 1 *Shiv to your hand. Evoke once. Add a *Miracle to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain 2 Strength. Add 2 *Shivs to your hand. Evoke twice. Add 2 *Miracles to your hand. NL Exhaust"
   },
   "dregsmod:Retribution": {
     "NAME": "Retribution",
