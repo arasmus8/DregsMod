@@ -5,7 +5,9 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.patches.variables.CardSealed;
+import dregsmod.powers.TriggerOnSealedPower;
 import dregsmod.vfx.SealCardEffect;
 
 import java.util.ArrayList;
@@ -35,6 +37,11 @@ public class SealRandomCurseAction extends AbstractGameAction {
                 p.hand.moveToDiscardPile(curseToSeal);
             } else if (p.drawPile.contains(curseToSeal)) {
                 p.drawPile.moveToDiscardPile(curseToSeal);
+            }
+            for (AbstractPower power : p.powers) {
+                if (power instanceof TriggerOnSealedPower) {
+                    ((TriggerOnSealedPower) power).triggerOnSealed(curseToSeal);
+                }
             }
         }
     }
