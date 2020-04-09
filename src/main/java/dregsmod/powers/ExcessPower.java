@@ -1,6 +1,7 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import com.megacrit.cardcrawl.actions.defect.ImpulseAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -30,6 +31,9 @@ public class ExcessPower extends AbstractPower implements CloneablePowerInterfac
     public void onCardDraw(AbstractCard card) {
         if (card.type == AbstractCard.CardType.CURSE) {
             flash();
+            for (int i = 0; i < amount; i++) {
+                addToBot(new ImpulseAction());
+            }
             addToBot(new ExcessSludgeOrbAction(amount));
         }
     }

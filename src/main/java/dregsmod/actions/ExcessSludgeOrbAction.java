@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
 import dregsmod.orbs.Sludge;
 
 import java.util.ArrayList;
@@ -20,23 +21,12 @@ public class ExcessSludgeOrbAction extends AbstractGameAction {
     public void update() {
         isDone = true;
 
-        ArrayList<AbstractOrb> sludgeOrbs = AbstractDungeon.player.orbs.stream()
-                .filter(orb -> orb != null && orb.ID != null && orb.ID.equals(Sludge.ORB_ID))
+        ArrayList<AbstractOrb> orbs = AbstractDungeon.player.orbs.stream()
+                .filter(orb -> !(orb instanceof EmptyOrbSlot))
                 .collect(Collectors.toCollection(ArrayList::new));
-        if (sludgeOrbs.size() == 0) {
+        if (orbs.size() == 0) {
             AbstractOrb orb = new Sludge();
             addToBot(new ChannelAction(orb));
-            for (int i = 1; i < amount; i++) {
-                orb.onStartOfTurn();
-                orb.onEndOfTurn();
-            }
-        } else {
-            sludgeOrbs.forEach(orb -> {
-                for (int i = 0; i < amount; i++) {
-                    orb.onStartOfTurn();
-                    orb.onEndOfTurn();
-                }
-            });
         }
     }
 }

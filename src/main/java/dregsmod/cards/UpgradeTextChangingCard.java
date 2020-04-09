@@ -30,9 +30,6 @@ public interface UpgradeTextChangingCard {
                     .skip(1)
                     .map(s -> {
                         String[] parts2 = s.split("@DIFFEND@", 0);
-                        if (parts2.length < 2) {
-                            return s;
-                        }
                         String[] words = parts2[0].split(" +", 0);
                         String[] wordsWithColor = Arrays.stream(words)
                                 .map(s1 -> {
@@ -41,6 +38,9 @@ public interface UpgradeTextChangingCard {
                                     return "[#7fff00]" + s1 + "[]";
                                 })
                                 .toArray(String[]::new);
+                        if (parts2.length < 2) {
+                            return String.join(" ", wordsWithColor);
+                        }
                         return String.join(" ", wordsWithColor) +
                                 " " +
                                 String.join(" ", Arrays.copyOfRange(parts2, 1, parts2.length));

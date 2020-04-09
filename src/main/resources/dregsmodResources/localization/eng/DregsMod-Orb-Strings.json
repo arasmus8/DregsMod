@@ -8,7 +8,7 @@
       " cards."
     ]
   },
-  "dregsmod:Curse": {
+  "dregsmod:CurseOrb": {
     "NAME": "Curse",
     "DESCRIPTION": [
       "#yPassive: At the start of turn, add #b",

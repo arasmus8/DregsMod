@@ -24,6 +24,7 @@ public class MightPower extends AbstractPower implements CloneablePowerInterface
         ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
+        isTurnBased = true;
 
         loadRegion("flex");
         updateDescription();

@@ -2,14 +2,12 @@ package dregsmod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import dregsmod.DregsMod;
+import dregsmod.actions.CardAwokenAction;
 import dregsmod.util.TextureLoader;
 
 import static dregsmod.DregsMod.makeRelicOutlinePath;
@@ -35,12 +33,15 @@ public class CurseBrand extends CustomRelic {
             this.flash();
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             this.addToBot(
+                    new CardAwokenAction()
+/*
                     new DamageAllEnemiesAction(
                             null,
                             DamageInfo.createDamageMatrix(3, true),
                             DamageInfo.DamageType.THORNS,
                             AbstractGameAction.AttackEffect.BLUNT_LIGHT
                     )
+*/
             );
         }
     }

@@ -27,6 +27,14 @@
       "This enemy heals 10% of its missing HP at the start of its turn. If #yCursed exceeds its HP, it will be killed and transformed into a curse."
     ]
   },
+  "dregsmod:DefianceAwakenPower": {
+    "NAME": "Defiance",
+    "DESCRIPTIONS": [
+      "Whenever you are inflicted with #yWeak, #yFrail, or #yVulnerable, #yAwaken #b",
+      " random card.",
+      " random cards."
+    ]
+  },
   "dregsmod:DefiancePower": {
     "NAME": "Defiance",
     "DESCRIPTIONS": [
@@ -45,10 +53,10 @@
   "dregsmod:ExcessPower": {
     "NAME": "Excess",
     "DESCRIPTIONS": [
-      "When you draw a #yCurse, trigger the passive of all your #ySludge Orbs #b",
+      "When you draw a #yCurse, trigger the passive of all your #yOrbs #b",
       " time.",
       " times.",
-      " If you have no #ySludge Orbs, channel one."
+      " If you have no #yOrbs, channel a #ySludge Orb."
     ]
   },
   "dregsmod:IncantationPower": {

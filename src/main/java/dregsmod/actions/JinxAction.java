@@ -1,16 +1,12 @@
 package dregsmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import dregsmod.powers.CursedPower;
 
 public class JinxAction extends AbstractGameAction {
     private AbstractCreature m;
@@ -43,9 +39,9 @@ public class JinxAction extends AbstractGameAction {
         effect += amount;
 
         if (effect > 0) {
-            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, effect, false), effect));
-            addToBot(new ApplyPowerAction(m, p, new WeakPower(m, effect, false), effect));
-            addToBot(new ApplyPowerAction(m, p, new CursedPower(m, effect), effect));
+            for (int i = 0; i < effect; i++) {
+                addToBot(new CardAwokenAction());
+            }
         }
 
         if (!freeToPlayOnce) {

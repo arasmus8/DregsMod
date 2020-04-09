@@ -23,6 +23,7 @@ public class FortitudePower extends AbstractPower implements CloneablePowerInter
         ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
+        isTurnBased = true;
 
         loadRegion("anger");
         updateDescription();

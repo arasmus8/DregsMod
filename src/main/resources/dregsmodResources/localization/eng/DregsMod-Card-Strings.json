@@ -114,7 +114,8 @@
   "UNCOMMON": {},
   "dregsmod:Ascetic": {
     "NAME": "Ascetic",
-    "DESCRIPTION": "Unplayable NL While this card is dregsmod:Sealed, gain !M! Mantra each turn."
+    "DESCRIPTION": "Unplayable NL While this card is dregsmod:Sealed, dregsmod:Awaken a random card each turn.",
+    "UPGRADE_DESCRIPTION": "Unplayable NL While this card is dregsmod:Sealed, dregsmod:Awaken a random card 2 levels each turn."
   },
   "dregsmod:Asylum": {
     "NAME": "Asylum",
@@ -138,7 +139,8 @@
   },
   "dregsmod:Defiance": {
     "NAME": "Defiance",
-    "DESCRIPTION": "Whenever you are inflicted with Weak, Frail, or Vulnerable, gain !M! dregsmod:Might."
+    "DESCRIPTION": "Whenever you are inflicted with Weak, Frail, or Vulnerable, gain !M! dregsmod:Might.",
+    "UPGRADE_DESCRIPTION": "Whenever you are inflicted with Weak, Frail, or Vulnerable, gain !M! dregsmod:Might and dregsmod:Awaken a random card."
   },
   "dregsmod:EmbraceDarkness": {
     "NAME": "Embrace Darkness",
@@ -146,8 +148,8 @@
   },
   "dregsmod:Excess": {
     "NAME": "Excess",
-    "DESCRIPTION": "Whenever you draw a Curse, trigger the passive of all your dregsmod:Sludge Orbs. If you have none, Channel 1 Sludge Orb.",
-    "UPGRADE_DESCRIPTION": "Retain NL Whenever you draw a Curse, trigger the passive of all your dregsmod:Sludge Orbs. If you have none, Channel 1 Sludge Orb."
+    "DESCRIPTION": "Whenever you draw a Curse, trigger the passive of all your Orbs. If you have none, Channel 1 dregsmod:Sludge Orb.",
+    "UPGRADE_DESCRIPTION": "Retain NL Whenever you draw a Curse, trigger the passive of all your Orbs. If you have none, Channel 1 dregsmod:Sludge Orb."
   },
   "dregsmod:Fear": {
     "NAME": "Fear",
@@ -172,8 +174,8 @@
   },
   "dregsmod:Jinx": {
     "NAME": "Jinx",
-    "DESCRIPTION": "Inflict X Vulnerable, Weak, and dregsmod:Cursed on an enemy.",
-    "UPGRADE_DESCRIPTION": "Inflict X + 1 Vulnerable, Weak, and dregsmod:Cursed on an enemy."
+    "DESCRIPTION": "dregsmod:Awaken X random cards.",
+    "UPGRADE_DESCRIPTION": "dregsmod:Awaken X+1 random cards."
   },
   "dregsmod:LaserFocus": {
     "NAME": "Laser Focus",
@@ -284,6 +286,11 @@
   "dregsmod:Indestructible": {
     "NAME": "Indestructible",
     "DESCRIPTION": "Gain !M! Temporary HP. NL Exhaust"
+  },
+  "dregsmod:Kindle": {
+    "NAME": "Kindle",
+    "DESCRIPTION": "Choose a card to dregsmod:Awaken.",
+    "UPGRADE_DESCRIPTION": "Choose a card to dregsmod:Awaken. NL If you're holding a Curse, dregsmod:Seal it and return this to your hand."
   },
   "dregsmod:MeanLook": {
     "NAME": "Mean Look",

@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.*;
@@ -19,9 +18,10 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import dregsmod.DregsMod;
+import dregsmod.actions.CardAwokenAction;
 
-public class Curse extends AbstractOrb {
-    public static final String ORB_ID = DregsMod.makeID("Curse");
+public class CurseOrb extends AbstractOrb {
+    public static final String ORB_ID = DregsMod.makeID("CurseOrb");
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;
     private static final float ORB_BORDER_SCALE = 1.2F;
@@ -41,7 +41,7 @@ public class Curse extends AbstractOrb {
             Writhe.ID
     };
 
-    public Curse() {
+    public CurseOrb() {
         img = ImageMaster.loadImage(DregsMod.makeOrbPath("Curse.png"));
         this.ID = ORB_ID;
         this.name = orbString.NAME;
@@ -85,12 +85,12 @@ public class Curse extends AbstractOrb {
 
     @Override
     public void onEvoke() {
-        AbstractDungeon.actionManager.addToBottom(new ExhaustAction(1, false));
+        AbstractDungeon.actionManager.addToBottom(new CardAwokenAction());
     }
 
     @Override
     public AbstractOrb makeCopy() {
-        return new Curse();
+        return new CurseOrb();
     }
 
     @Override

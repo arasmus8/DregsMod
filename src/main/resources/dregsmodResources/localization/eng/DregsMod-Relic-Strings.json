@@ -10,7 +10,7 @@
     "NAME": "Curse Brand",
     "FLAVOR": "This mark is reserved for the failed and fallen.",
     "DESCRIPTIONS": [
-      "Whenever you draw a Curse, deal 3 damage to all enemies."
+      "Whenever you draw a Curse, dregsmod:Awaken a random card."
     ]
   },
   "dregsmod:CursedLocket": {

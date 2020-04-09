@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.orbs.Plasma;
-import dregsmod.orbs.Curse;
+import dregsmod.orbs.CurseOrb;
 import dregsmod.orbs.Sludge;
 
 public class AsylumChannelAction extends AbstractGameAction {
@@ -23,7 +23,7 @@ public class AsylumChannelAction extends AbstractGameAction {
         for (AbstractCard card : SealAndPerformAction.sealedCards) {
             AbstractOrb orbToChannel;
             if (card.type == AbstractCard.CardType.CURSE) {
-                orbToChannel = new Curse();
+                orbToChannel = new CurseOrb();
             } else if (card.type == AbstractCard.CardType.STATUS) {
                 orbToChannel = new Sludge();
             } else {
@@ -35,7 +35,7 @@ public class AsylumChannelAction extends AbstractGameAction {
                         orbToChannel = new Plasma();
                         break;
                     case CURSE:
-                        orbToChannel = new Curse();
+                        orbToChannel = new CurseOrb();
                         break;
                     case BASIC: //fallthrough
                     case SPECIAL: //fallthrough

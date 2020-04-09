@@ -22,6 +22,7 @@ public class SturdinessPower extends AbstractPower implements CloneablePowerInte
         ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
+        isTurnBased = true;
 
         loadRegion("dexterity");
         updateDescription();
