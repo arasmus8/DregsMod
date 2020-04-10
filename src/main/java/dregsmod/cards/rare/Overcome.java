@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.actions.OvercomeAction;
+import dregsmod.cards.AwakenSkillTag;
 import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
@@ -41,6 +42,7 @@ public class Overcome extends CustomCard implements UpgradeTextChangingCard {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
+        tags.add(AwakenSkillTag.AWAKEN_RANDOM_EFFECT);
     }
 
     // Actions the card should do.

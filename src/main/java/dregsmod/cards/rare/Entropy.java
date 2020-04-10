@@ -7,7 +7,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractSealedCard;
+import dregsmod.cards.AwakenedMod;
 import dregsmod.characters.Dregs;
+
+import java.util.Optional;
 
 import static dregsmod.DregsMod.makeCardPath;
 
@@ -54,6 +57,8 @@ public class Entropy extends AbstractSealedCard {
     @Override
     public void triggerWhileSealed(AbstractPlayer p) {
         addToBot(new GainBlockAction(p, p, block));
+        Optional<AwakenedMod> awakenedMod = AwakenedMod.getForCard(this);
+        awakenedMod.ifPresent(mod -> mod.onUse(this, p, null));
     }
 
     // Upgraded stats.

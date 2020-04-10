@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
+import dregsmod.cards.AwakenSkillTag;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
@@ -41,6 +42,7 @@ public class Indestructible extends CustomCard {
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
         exhaust = true;
+        tags.add(AwakenSkillTag.AWAKEN_SKILL);
     }
 
     // Actions the card should do.

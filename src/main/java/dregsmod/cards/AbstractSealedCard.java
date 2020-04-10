@@ -16,6 +16,7 @@ public abstract class AbstractSealedCard extends CustomCard {
     @Override
     public void atTurnStart() {
         if (CardSealed.isSealed.get(this)) {
+            applyPowers();
             float offW = AbstractDungeon.player.hb.width;
             float xOff = MathUtils.random(-offW, offW);
             AbstractDungeon.effectList.add(

@@ -38,7 +38,7 @@ public class StickyBarb extends CustomRelic implements OnReceivePowerRelic {
     @Override
     public int onReceivePowerStacks(AbstractPower power, AbstractCreature source, int stackAmount) {
         if (power.ID.equals(VulnerablePower.POWER_ID)) {
-            boolean isSourceMonster = !source.isPlayer;
+            boolean isSourceMonster = source == null || !source.isPlayer;
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                 if (!m.isDeadOrEscaped()) {
                     addToBot(new ApplyPowerAction(m, source, new VulnerablePower(m, 1, isSourceMonster), 1));

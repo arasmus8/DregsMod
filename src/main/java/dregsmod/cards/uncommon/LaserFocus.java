@@ -1,17 +1,15 @@
 package dregsmod.cards.uncommon;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FocusPower;
 import com.megacrit.cardcrawl.powers.LockOnPower;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCurseHoldingCard;
+import dregsmod.cards.AwakenSkillTag;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
@@ -46,6 +44,7 @@ public class LaserFocus extends AbstractCurseHoldingCard {
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
         exhaust = true;
+        tags.add(AwakenSkillTag.AWAKEN_SKILL);
     }
 
     // Actions the card should do.

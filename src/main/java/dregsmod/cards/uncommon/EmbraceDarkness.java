@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Dark;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCurseHoldingCard;
+import dregsmod.cards.AwakenSkillTag;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.FortitudePower;
 
@@ -43,6 +44,18 @@ public class EmbraceDarkness extends AbstractCurseHoldingCard {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
+        tags.add(AwakenSkillTag.AWAKEN_RANDOM_EFFECT);
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (holdingCurse) {
+            showEvokeValue = true;
+            showEvokeOrbCount = 1;
+        } else {
+            showEvokeValue = false;
+        }
     }
 
     // Actions the card should do.

@@ -12,7 +12,7 @@
     "DESCRIPTIONS": [
       "Whenever you draw a Curse, #yAwaken a random card.",
       "Awaken",
-      "Awoken attacks deal more Damage; awoken skills grant more Block. NL A card can be Awakened more than once."
+      "Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects. NL A card can be Awakened more than once."
     ]
   },
   "dregsmod:CursedLocket": {
@@ -26,7 +26,9 @@
     "NAME": "Death Brand",
     "FLAVOR": "This brand marks its bearer for execution.",
     "DESCRIPTIONS": [
-      "Replaces Curse Brand. Whenever you draw a Curse, deal 5 damage to all enemies."
+      "Replaces Curse Brand. Whenever you draw a Curse, #yAwaken a random card in your hand twice.",
+      "Awaken",
+      "Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects. NL A card can be Awakened more than once."
     ]
   },
   "dregsmod:EvilEye": {

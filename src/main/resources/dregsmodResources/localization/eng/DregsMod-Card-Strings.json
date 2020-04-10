@@ -339,7 +339,7 @@
   "CURSE": {},
   "dregsmod:CleansedCurse": {
     "NAME": "Cleansed Curse",
-    "DESCRIPTION": "Choose 1 of 20 cards from other colors. Permanently replace this card with your choice."
+    "DESCRIPTION": "Choose 1 of 20 cards from Ironclad, Silent, Defect and Watcher card pools. Permanently replace this card with your choice."
   },
   "dregsmod:Catastrophe": {
     "NAME": "Catastrophe",
@@ -392,18 +392,18 @@
   "SPECIAL": {},
   "dregsmod:Blue": {
     "NAME": "Choose Blue",
-    "DESCRIPTION": "Choose a Blue card."
+    "DESCRIPTION": "Choose a Defect card."
   },
   "dregsmod:Green": {
     "NAME": "Choose Green",
-    "DESCRIPTION": "Choose a Green card."
+    "DESCRIPTION": "Choose a Silent card."
   },
   "dregsmod:Purple": {
     "NAME": "Choose Purple",
-    "DESCRIPTION": "Choose a Purple card."
+    "DESCRIPTION": "Choose a Watcher card."
   },
   "dregsmod:Red": {
     "NAME": "Choose Red",
-    "DESCRIPTION": "Choose a Red card."
+    "DESCRIPTION": "Choose an Ironclad card."
   }
 }

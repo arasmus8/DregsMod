@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ConservePower;
 import dregsmod.DregsMod;
+import dregsmod.cards.AwakenSkillTag;
 import dregsmod.characters.Dregs;
 import dregsmod.stances.AcceptanceStance;
 
@@ -39,6 +40,7 @@ public class Clarity extends CustomCard {
 
     public Clarity() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        tags.add(AwakenSkillTag.AWAKEN_RANDOM_EFFECT);
     }
 
     // Actions the card should do.

@@ -37,6 +37,8 @@ public class Improvise extends CustomCard {
     public Improvise() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        showEvokeValue = true;
+        showEvokeOrbCount = 1;
     }
 
     @Override

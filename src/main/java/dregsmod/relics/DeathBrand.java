@@ -2,15 +2,18 @@ package dregsmod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import dregsmod.DregsMod;
+import dregsmod.actions.CardAwokenAction;
 import dregsmod.util.TextureLoader;
+
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import static dregsmod.DregsMod.makeRelicOutlinePath;
 import static dregsmod.DregsMod.makeRelicPath;
@@ -32,16 +35,18 @@ public class DeathBrand extends CustomRelic {
     @Override
     public void onCardDraw(AbstractCard drawnCard) {
         if (drawnCard.type == AbstractCard.CardType.CURSE) {
-            this.flash();
-            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            this.addToBot(
-                    new DamageAllEnemiesAction(
-                            null,
-                            DamageInfo.createDamageMatrix(5, true),
-                            DamageInfo.DamageType.THORNS,
-                            AbstractGameAction.AttackEffect.BLUNT_LIGHT
-                    )
-            );
+            CardGroup cg = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+            AbstractPlayer p = AbstractDungeon.player;
+            Predicate<AbstractCard> eligible = card1 -> card1.type == AbstractCard.CardType.ATTACK ||
+                    card1.type == AbstractCard.CardType.SKILL;
+            cg.group.addAll(p.hand.group.stream().filter(eligible).collect(Collectors.toList()));
+            if (cg.size() > 0) {
+                this.flash();
+                this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+                this.addToBot(
+                        new CardAwokenAction(cg.getRandomCard(AbstractDungeon.cardRng), 2)
+                );
+            }
         }
     }
 

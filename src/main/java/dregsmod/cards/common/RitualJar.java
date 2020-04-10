@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
+import dregsmod.cards.AwakenSkillTag;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.CursedPower;
 
@@ -41,6 +42,7 @@ public class RitualJar extends CustomCard {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
+        tags.add(AwakenSkillTag.AWAKEN_SKILL);
     }
 
     // Actions the card should do.

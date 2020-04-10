@@ -7,8 +7,12 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractSealedCard;
+import dregsmod.cards.AwakenSkillTag;
+import dregsmod.cards.AwakenedMod;
 import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
+
+import java.util.Optional;
 
 import static dregsmod.DregsMod.makeCardPath;
 
@@ -40,6 +44,7 @@ public class Torment extends AbstractSealedCard implements UpgradeTextChangingCa
     public Torment() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        tags.add(AwakenSkillTag.AWAKEN_RANDOM_EFFECT);
     }
 
     // Actions the card should do.
@@ -55,6 +60,8 @@ public class Torment extends AbstractSealedCard implements UpgradeTextChangingCa
     @Override
     public void triggerWhileSealed(AbstractPlayer p) {
         addToBot(new GainEnergyAction(magicNumber));
+        Optional<AwakenedMod> awakenedMod = AwakenedMod.getForCard(this);
+        awakenedMod.ifPresent(mod -> mod.onUse(this, p, null));
     }
 
     @Override

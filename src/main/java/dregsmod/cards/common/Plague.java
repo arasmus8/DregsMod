@@ -8,7 +8,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractSealedCard;
+import dregsmod.cards.AwakenSkillTag;
+import dregsmod.cards.AwakenedMod;
 import dregsmod.characters.Dregs;
+
+import java.util.Optional;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static dregsmod.DregsMod.makeCardPath;
@@ -41,14 +45,17 @@ public class Plague extends AbstractSealedCard {
 
     public Plague() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = MAGIC;
-        this.magicNumber = MAGIC;
+        baseMagicNumber = MAGIC;
+        magicNumber = MAGIC;
+        tags.add(AwakenSkillTag.AWAKEN_SKILL);
     }
 
     @Override
     public void triggerWhileSealed(AbstractPlayer player) {
         int[] damage = DamageInfo.createDamageMatrix(magicNumber);
         addToBot(new DamageAllEnemiesAction(player, damage, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.POISON));
+        Optional<AwakenedMod> awakenedMod = AwakenedMod.getForCard(this);
+        awakenedMod.ifPresent(mod -> mod.onUse(this, player, null));
     }
 
     @Override

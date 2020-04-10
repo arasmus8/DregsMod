@@ -4,6 +4,8 @@ import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Interpolation;
@@ -19,12 +21,15 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import dregsmod.actions.AwakenRandomEffectAction;
 import dregsmod.vfx.AwakenedParticleEffect;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class AwakenedMod extends AbstractCardModifier {
     private static final int[] primes;
@@ -69,6 +74,18 @@ public class AwakenedMod extends AbstractCardModifier {
         ArrayList<AbstractCardModifier> modifiers = CardModifierManager.getModifiers(card, ID);
         AwakenedMod m = (AwakenedMod) modifiers.get(0);
         m.level = MathUtils.clamp(m.level + times - 1, 1, primes.length - 1);
+        card.applyPowers();
+        card.initializeDescription();
+    }
+
+    public static Optional<AwakenedMod> getForCard(AbstractCard card) {
+        ArrayList<AbstractCardModifier> modifiers = CardModifierManager.getModifiers(card, ID);
+        if (modifiers.size() > 0) {
+            AwakenedMod m = (AwakenedMod) modifiers.get(0);
+            return Optional.of(m);
+        } else {
+            return Optional.empty();
+        }
     }
 
     @Override
@@ -90,6 +107,17 @@ public class AwakenedMod extends AbstractCardModifier {
     }
 
     @Override
+    public void onApplyPowers(AbstractCard card) {
+        super.onApplyPowers(card);
+        if (card.tags.contains(AwakenSkillTag.AWAKEN_SKILL)) {
+            card.magicNumber = card.baseMagicNumber + primes[level - 1];
+            if (card.magicNumber != card.baseMagicNumber) {
+                card.isMagicNumberModified = true;
+            }
+        }
+    }
+
+    @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction useCardAction) {
         AbstractPlayer p = AbstractDungeon.player;
         ArrayList<AbstractGameAction> actions = new ArrayList<>();
@@ -98,6 +126,9 @@ public class AwakenedMod extends AbstractCardModifier {
         }
         if (level > 3) {
             actions.add(new LoseHPAction(p, p, primes[level - 3]));
+        }
+        if (card.tags.contains(AwakenSkillTag.AWAKEN_RANDOM_EFFECT)) {
+            actions.add(new AwakenRandomEffectAction());
         }
         // queue actions
         for (AbstractGameAction action : actions) {
@@ -192,6 +223,7 @@ public class AwakenedMod extends AbstractCardModifier {
         Color color = Color.BLACK.cpy();
         color.a = card.transparency;
         sb.setColor(color);
+        float lvlScale = Interpolation.exp5In.apply(1f, 1.75f, (float) level / (float) primes.length);
         sb.draw(img,
                 card.hb.cX + vec.x - img.packedWidth / 2f,
                 card.hb.cY + vec.y - img.packedHeight / 2f,
@@ -199,9 +231,48 @@ public class AwakenedMod extends AbstractCardModifier {
                 (float) img.packedHeight / 2.0F,
                 (float) img.packedWidth,
                 (float) img.packedHeight,
-                card.drawScale,
-                card.drawScale,
+                card.drawScale * lvlScale,
+                card.drawScale * lvlScale,
                 card.angle);
+        if (level > 3) {
+            int hpLoss = primes[level - 3];
+            vec = new Vector2(0, 0);
+            vec.scl(card.drawScale * Settings.scale);
+            vec.rotate(card.angle);
+            color = Color.WHITE.cpy();
+            color.a = card.transparency;
+            sb.setColor(color);
+            Texture hpImg = ImageMaster.TP_HP;
+            sb.draw(hpImg,
+                    card.hb.cX + vec.x - hpImg.getWidth() / 2f,
+                    card.hb.cY + vec.y - hpImg.getHeight() / 2f,
+                    (float) hpImg.getWidth() / 2.0F,
+                    (float) hpImg.getHeight() / 2.0F,
+                    (float) hpImg.getWidth(),
+                    (float) hpImg.getHeight(),
+                    card.drawScale * 1.25f,
+                    card.drawScale * 1.25f,
+                    card.angle,
+                    0,
+                    0,
+                    hpImg.getWidth(),
+                    hpImg.getHeight(),
+                    false,
+                    false);
+            String text = "" + hpLoss;
+            FontHelper.topPanelAmountFont.getData().setScale(card.drawScale * 0.9f);
+            BitmapFont font = FontHelper.topPanelAmountFont;
+            FontHelper.renderRotatedText(sb,
+                    font,
+                    text,
+                    card.hb.cX,
+                    card.hb.cY,
+                    vec.x,
+                    vec.y,
+                    card.angle,
+                    false,
+                    color);
+        }
     }
 
     static {

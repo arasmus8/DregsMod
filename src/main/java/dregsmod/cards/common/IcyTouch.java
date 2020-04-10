@@ -40,6 +40,17 @@ public class IcyTouch extends AbstractCurseHoldingCard {
     }
 
     @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (holdingCurse) {
+            showEvokeValue = true;
+            showEvokeOrbCount = 1;
+        } else {
+            showEvokeValue = false;
+        }
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (holdingCurse) {

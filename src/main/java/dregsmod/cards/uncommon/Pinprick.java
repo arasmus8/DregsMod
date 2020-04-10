@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCurseHoldingCard;
+import dregsmod.cards.AwakenSkillTag;
 import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
@@ -36,6 +37,7 @@ public class Pinprick extends AbstractCurseHoldingCard implements UpgradeTextCha
     public Pinprick() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        tags.add(AwakenSkillTag.AWAKEN_SKILL);
     }
 
     @Override
@@ -45,19 +47,19 @@ public class Pinprick extends AbstractCurseHoldingCard implements UpgradeTextCha
                 if (mm != null) {
                     addToBot(new ApplyPowerAction(mm, p, new VulnerablePower(mm, 2, false), 2));
                     if (holdingCurse) {
-                        this.addToBot(new VFXAction(new PressurePointEffect(mm.hb.cX, mm.hb.cY)));
-                        this.addToBot(new ApplyPowerAction(mm, p, new MarkPower(mm, this.magicNumber), this.magicNumber));
+                        addToBot(new VFXAction(new PressurePointEffect(mm.hb.cX, mm.hb.cY)));
+                        addToBot(new ApplyPowerAction(mm, p, new MarkPower(mm, magicNumber), magicNumber));
                     }
                 }
             }
         } else {
             addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 2, false), 2));
             if (holdingCurse) {
-                this.addToBot(new VFXAction(new PressurePointEffect(m.hb.cX, m.hb.cY)));
-                this.addToBot(new ApplyPowerAction(m, p, new MarkPower(m, this.magicNumber), this.magicNumber));
+                addToBot(new VFXAction(new PressurePointEffect(m.hb.cX, m.hb.cY)));
+                addToBot(new ApplyPowerAction(m, p, new MarkPower(m, magicNumber), magicNumber));
             }
         }
-        this.addToBot(new TriggerMarksAction(this));
+        addToBot(new TriggerMarksAction(this));
     }
 
     @Override

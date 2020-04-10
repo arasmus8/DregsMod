@@ -32,11 +32,12 @@ public class KindleAction extends AbstractGameAction {
         if (this.duration == this.startDuration) {
             CardGroup cg = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             AbstractPlayer p = AbstractDungeon.player;
-            Predicate<AbstractCard> eligible = card1 -> (card1.cost > -2) &&
-                    (card1.type == AbstractCard.CardType.ATTACK || card1.type == AbstractCard.CardType.SKILL);
+            Predicate<AbstractCard> eligible = card1 -> card1.type == AbstractCard.CardType.ATTACK ||
+                    card1.type == AbstractCard.CardType.SKILL;
             cg.group.addAll(p.hand.group.stream().filter(eligible).collect(Collectors.toList()));
             cg.group.addAll(p.discardPile.group.stream().filter(eligible).collect(Collectors.toList()));
             cg.group.addAll(p.drawPile.group.stream().filter(eligible).collect(Collectors.toList()));
+            cg.group.remove(card);
             if (cg.size() < 1) {
                 isDone = true;
             } else if (cg.size() == 1) {
@@ -46,6 +47,7 @@ public class KindleAction extends AbstractGameAction {
                 card.returnToHand = returnToHand;
                 isDone = true;
             } else {
+                cg.sortByAcquisition();
                 AbstractDungeon.gridSelectScreen.open(cg, 1, false, TEXT[0]);
             }
         } else if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
