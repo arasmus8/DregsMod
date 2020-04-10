@@ -24,6 +24,7 @@ public class CurseBrand extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
+        tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
         initializeTips();
     }
 

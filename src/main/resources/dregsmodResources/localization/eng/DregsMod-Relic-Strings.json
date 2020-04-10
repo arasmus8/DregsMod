@@ -10,7 +10,9 @@
     "NAME": "Curse Brand",
     "FLAVOR": "This mark is reserved for the failed and fallen.",
     "DESCRIPTIONS": [
-      "Whenever you draw a Curse, dregsmod:Awaken a random card."
+      "Whenever you draw a Curse, #yAwaken a random card.",
+      "Awaken",
+      "Awoken attacks deal more Damage; awoken skills grant more Block. NL A card can be Awakened more than once."
     ]
   },
   "dregsmod:CursedLocket": {
