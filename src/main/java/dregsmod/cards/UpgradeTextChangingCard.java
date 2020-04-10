@@ -30,9 +30,10 @@ public interface UpgradeTextChangingCard {
                     .skip(1)
                     .map(s -> {
                         String[] parts2 = s.split("@DIFFEND@", 0);
-                        String[] words = parts2[0].split(" +", 0);
+                        String[] words = parts2[0].split(" ", -1);
                         String[] wordsWithColor = Arrays.stream(words)
                                 .map(s1 -> {
+                                    if (s1.length() == 0) return s1;
                                     if (s1.matches("NL|\\[E]")) return s1;
                                     if (BaseMod.getKeywordUnique(s1.toLowerCase()) != null) return s1;
                                     return "[#7fff00]" + s1 + "[]";
@@ -41,12 +42,11 @@ public interface UpgradeTextChangingCard {
                         if (parts2.length < 2) {
                             return String.join(" ", wordsWithColor);
                         }
-                        return String.join(" ", wordsWithColor) +
-                                " " +
-                                String.join(" ", Arrays.copyOfRange(parts2, 1, parts2.length));
+                        return String.join(" ", wordsWithColor) + parts2[1];
                     })
                     .toArray(String[]::new);
-            return parts[0] + " " + String.join(" ", modified);
+            String updated = parts[0] + String.join("", modified);
+            return updated.replaceAll("[*]\\[#7fff00]", "[#7fff00]");
         } catch (DiffException e) {
             e.printStackTrace();
             return upgraded;
