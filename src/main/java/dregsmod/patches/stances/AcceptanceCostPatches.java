@@ -4,7 +4,9 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
+import dregsmod.actions.AcceptanceEndTurnAction;
 import dregsmod.stances.AcceptanceStance;
 import javassist.CtBehavior;
 
@@ -65,6 +67,18 @@ public class AcceptanceCostPatches {
                 if (card.costForTurn >= 0) {
                     card.setCostForTurn(card.costForTurn + 1);
                 }
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = AbstractRoom.class,
+            method = "endTurn"
+    )
+    public static class AbstractRoomEndTurnPatch {
+        public static void Postfix(AbstractRoom _instance) {
+            if (AbstractDungeon.player.stance.ID.equals(AcceptanceStance.STANCE_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new AcceptanceEndTurnAction());
             }
         }
     }
