@@ -94,7 +94,7 @@ public class CardList {
         allCards.add(new Glare());
         allCards.add(new Guardian());
         allCards.add(new HardLuck());
-        allCards.add(new Jinx());
+        allCards.add(new Insight());
         allCards.add(new LaserFocus());
         allCards.add(new MidnightManacles());
         allCards.add(new Obstruct());

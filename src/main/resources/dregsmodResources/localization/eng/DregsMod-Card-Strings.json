@@ -172,8 +172,8 @@
     "NAME": "Hard Luck",
     "DESCRIPTION": "Gain !B! Block. Costs 1 less for each Curse in your deck."
   },
-  "dregsmod:Jinx": {
-    "NAME": "Jinx",
+  "dregsmod:Insight": {
+    "NAME": "Insight",
     "DESCRIPTION": "dregsmod:Awaken X random cards.",
     "UPGRADE_DESCRIPTION": "dregsmod:Awaken X+1 random cards."
   },

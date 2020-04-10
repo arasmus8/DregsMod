@@ -12,11 +12,11 @@ import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Jinx extends CustomCard implements UpgradeTextChangingCard {
+public class Insight extends CustomCard implements UpgradeTextChangingCard {
 
 // TEXT DECLARATION
 
-    public static final String ID = DregsMod.makeID(Jinx.class.getSimpleName());
+    public static final String ID = DregsMod.makeID(Insight.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String IMG = makeCardPath("Skill.png");
 // Must have an image with the same NAME as the card in your image folder!
@@ -37,7 +37,7 @@ public class Jinx extends CustomCard implements UpgradeTextChangingCard {
 
 // /STAT DECLARATION/
 
-    public Jinx() {
+    public Insight() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
