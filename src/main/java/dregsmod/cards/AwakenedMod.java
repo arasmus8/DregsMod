@@ -41,7 +41,7 @@ public class AwakenedMod extends AbstractCardModifier {
     private float blinkDuration;
     private float blinkFullDuration;
     private float vY;
-    private ArrayList<AbstractGameEffect> eyeEffects;
+    private final ArrayList<AbstractGameEffect> eyeEffects;
     private TextureAtlas.AtlasRegion img;
 
     public AwakenedMod(int level) {
@@ -260,8 +260,8 @@ public class AwakenedMod extends AbstractCardModifier {
                     false,
                     false);
             String text = "" + hpLoss;
-            FontHelper.topPanelAmountFont.getData().setScale(card.drawScale * 0.9f);
-            BitmapFont font = FontHelper.topPanelAmountFont;
+            FontHelper.cardEnergyFont_L.getData().setScale(card.drawScale * 0.5f);
+            BitmapFont font = FontHelper.cardEnergyFont_L;
             FontHelper.renderRotatedText(sb,
                     font,
                     text,
