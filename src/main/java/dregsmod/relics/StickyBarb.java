@@ -24,7 +24,7 @@ public class StickyBarb extends CustomRelic implements OnReceivePowerRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("StickyBarb.png"));
 
     public StickyBarb() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
         initializeTips();

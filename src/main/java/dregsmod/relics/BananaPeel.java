@@ -24,7 +24,7 @@ public class BananaPeel extends CustomRelic implements OnReceivePowerRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BananaPeel.png"));
 
     public BananaPeel() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.FLAT);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
         initializeTips();

@@ -258,20 +258,20 @@ public class DregsMod implements
         BaseMod.addRelicToCustomPool(new CurseBrand(), Dregs.Enums.COLOR_BLACK);
         BaseMod.addRelicToCustomPool(new NeowsHatred(), Dregs.Enums.COLOR_BLACK);
         BaseMod.addRelicToCustomPool(new DeathBrand(), Dregs.Enums.COLOR_BLACK);
+        BaseMod.addRelicToCustomPool(new CursedLocket(), Dregs.Enums.COLOR_BLACK);
 
         UnlockTracker.markRelicAsSeen(NeowsHatred.ID);
         UnlockTracker.markRelicAsSeen(DeathBrand.ID);
+        UnlockTracker.markRelicAsSeen(CursedLocket.ID);
 
         BaseMod.addRelic(new LuckyClover(), RelicType.SHARED);
         BaseMod.addRelic(new BananaPeel(), RelicType.SHARED);
         BaseMod.addRelic(new StickyBarb(), RelicType.SHARED);
-        BaseMod.addRelic(new CursedLocket(), RelicType.SHARED);
         BaseMod.addRelic(new EvilEye(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(LuckyClover.ID);
         UnlockTracker.markRelicAsSeen(BananaPeel.ID);
         UnlockTracker.markRelicAsSeen(StickyBarb.ID);
-        UnlockTracker.markRelicAsSeen(CursedLocket.ID);
         UnlockTracker.markRelicAsSeen(EvilEye.ID);
 
         logger.info("Done adding relics!");

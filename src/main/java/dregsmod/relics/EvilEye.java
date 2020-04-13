@@ -23,7 +23,7 @@ public class EvilEye extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("EvilEye.png"));
 
     public EvilEye() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.FLAT);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.FLAT);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
         initializeTips();

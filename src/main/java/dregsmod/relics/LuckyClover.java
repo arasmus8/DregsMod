@@ -22,7 +22,7 @@ public class LuckyClover extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("LuckyClover.png"));
 
     public LuckyClover() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.FLAT);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
         initializeTips();
