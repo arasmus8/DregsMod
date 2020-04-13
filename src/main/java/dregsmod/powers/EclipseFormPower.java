@@ -36,7 +36,7 @@ public class EclipseFormPower extends AbstractPower implements CloneablePowerInt
             addToBot(new GainBlockAction(owner, amount));
             addToBot(new DamageAllEnemiesAction(
                     owner,
-                    DamageInfo.createDamageMatrix(amount),
+                    DamageInfo.createDamageMatrix(amount, true),
                     DamageInfo.DamageType.THORNS,
                     AbstractGameAction.AttackEffect.BLUNT_LIGHT
             ));
