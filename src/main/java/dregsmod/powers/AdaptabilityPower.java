@@ -26,7 +26,6 @@ public class AdaptabilityPower extends AbstractPower implements CloneablePowerIn
         this.owner = owner;
         this.amount = amount;
 
-        loadRegion("malleable");
         region48 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
         region128 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
         updateDescription();
