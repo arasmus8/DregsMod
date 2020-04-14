@@ -24,7 +24,7 @@ public class IncantationPower extends AbstractPower implements CloneablePowerInt
         this.owner = owner;
         this.amount = amount;
 
-        usedThisTurn = true;
+        usedThisTurn = false;
 
         loadRegion("hymn");
         updateDescription();
