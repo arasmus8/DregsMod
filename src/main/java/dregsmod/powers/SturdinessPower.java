@@ -1,6 +1,8 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -9,6 +11,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import dregsmod.DregsMod;
+import dregsmod.util.TextureLoader;
 
 public class SturdinessPower extends AbstractPower implements CloneablePowerInterface {
 
@@ -16,6 +19,7 @@ public class SturdinessPower extends AbstractPower implements CloneablePowerInte
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private static final Texture texture = TextureLoader.getTexture(DregsMod.makePowerPath("sturdiness.png"));
 
     public SturdinessPower(AbstractCreature owner, int amount) {
         name = NAME;
@@ -24,7 +28,8 @@ public class SturdinessPower extends AbstractPower implements CloneablePowerInte
         this.amount = amount;
         isTurnBased = true;
 
-        loadRegion("dexterity");
+        region48 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
         updateDescription();
 
         if (owner.hasPower(FrailPower.POWER_ID)) {
