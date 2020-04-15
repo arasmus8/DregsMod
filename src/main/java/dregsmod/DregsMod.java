@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import dregsmod.actions.CleansedCurseAction;
 import dregsmod.characters.Dregs;
+import dregsmod.potions.InsightPotion;
 import dregsmod.relics.*;
 import dregsmod.util.IDCheckDontTouchPls;
 import dregsmod.util.TextureLoader;
@@ -245,7 +246,7 @@ public class DregsMod implements
     public void receiveEditPotions() {
         logger.info("Beginning to edit potions");
 
-        // BaseMod.addPotion(AcidPotion.class, AcidPotion.LIQUID_COLOR, AcidPotion.HYBRID_COLOR, AcidPotion.SPOTS_COLOR, AcidPotion.POTION_ID, null);
+        BaseMod.addPotion(InsightPotion.class, InsightPotion.LIQUID_COLOR, InsightPotion.HYBRID_COLOR, InsightPotion.SPOTS_COLOR, InsightPotion.POTION_ID, Dregs.Enums.DREGS);
 
         logger.info("Done editing potions");
     }
