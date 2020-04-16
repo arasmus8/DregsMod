@@ -1,6 +1,6 @@
 package dregsmod.cards.choices;
 
-import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -8,11 +8,10 @@ import dregsmod.DregsMod;
 import dregsmod.actions.GemHeartAction;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static dregsmod.DregsMod.makeCardPath;
 
-public class Red extends CustomCard {
+public class Red extends AbstractCard {
     public static final String ID = DregsMod.makeID(Red.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = "red/skill/flame_barrier";
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.SPECIAL;
@@ -36,5 +35,10 @@ public class Red extends CustomCard {
     @Override
     public void upgrade() {
         upgraded = true;
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new Red();
     }
 }
