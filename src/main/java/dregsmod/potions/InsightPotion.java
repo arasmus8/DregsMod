@@ -1,6 +1,7 @@
 package dregsmod.potions;
 
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -31,8 +32,10 @@ public class InsightPotion extends AbstractPotion {
     @Override
     public void use(AbstractCreature abstractCreature) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            for (int i = 0; i < potency; i++) {
-                addToBot(new CardAwokenAction());
+            for (AbstractCard card : AbstractDungeon.player.hand.group) {
+                if (card.type == AbstractCard.CardType.ATTACK || card.type == AbstractCard.CardType.SKILL) {
+                    addToBot(new CardAwokenAction(card, potency));
+                }
             }
         }
     }

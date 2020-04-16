@@ -2,9 +2,9 @@
   "dregsmod:InsightPotion": {
     "NAME": "Insight Potion",
     "DESCRIPTIONS": [
-      "#yAwaken #b",
-      " random card.",
-      " random cards."
+      "#yAwaken the cards in your hand #b",
+      " time.",
+      " times."
     ]
   }
 }
