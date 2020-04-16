@@ -1,6 +1,8 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,6 +13,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import dregsmod.DregsMod;
+import dregsmod.util.TextureLoader;
 
 public class VivificationPower extends AbstractPower implements CloneablePowerInterface {
 
@@ -18,6 +21,7 @@ public class VivificationPower extends AbstractPower implements CloneablePowerIn
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private static final Texture texture = TextureLoader.getTexture(DregsMod.makePowerPath("vivification.png"));
     private final boolean upgraded;
     private boolean usedThisCombat;
 
@@ -29,7 +33,8 @@ public class VivificationPower extends AbstractPower implements CloneablePowerIn
         this.upgraded = upgraded;
         this.usedThisCombat = false;
 
-        loadRegion("buffer");
+        region48 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
         updateDescription();
     }
 
