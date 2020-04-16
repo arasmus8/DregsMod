@@ -19,9 +19,9 @@ public class InsightPotion extends AbstractPotion {
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
-    public static final Color LIQUID_COLOR = Color.BLACK;
-    public static final Color HYBRID_COLOR = Color.MAROON;
-    public static final Color SPOTS_COLOR = Color.CLEAR;
+    public static final Color LIQUID_COLOR = Color.BLACK.cpy();
+    public static final Color HYBRID_COLOR = Color.MAROON.cpy();
+    public static final Color SPOTS_COLOR = Color.CLEAR.cpy();
 
     public InsightPotion() {
         super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.SPHERE, PotionColor.SMOKE);
