@@ -19,7 +19,7 @@ public class ShallowGrave extends CustomCard {
 
     public static final String ID = DregsMod.makeID(ShallowGrave.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("ShallowGrave.png");
 // Must have an image with the same NAME as the card in your image folder!
 
 // /TEXT DECLARATION/
