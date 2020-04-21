@@ -8,5 +8,5 @@ public class AwakenSkillTag {
     public static AbstractCard.CardTags AWAKEN_SKILL;
 
     @SpireEnum
-    public static AbstractCard.CardTags AWAKEN_RANDOM_EFFECT;
+    public static AbstractCard.CardTags CANT_AWAKEN;
 }

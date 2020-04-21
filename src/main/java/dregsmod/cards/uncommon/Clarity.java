@@ -40,7 +40,7 @@ public class Clarity extends CustomCard {
 
     public Clarity() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        tags.add(AwakenSkillTag.AWAKEN_RANDOM_EFFECT);
+        tags.add(AwakenSkillTag.CANT_AWAKEN);
     }
 
     // Actions the card should do.

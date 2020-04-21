@@ -12,28 +12,38 @@ import java.util.stream.Collectors;
 
 public class CardAwokenAction extends AbstractGameAction {
     private AbstractCard card;
+    private CardGroup fromGroup;
 
     public CardAwokenAction(AbstractCard card, int times) {
         setValues(AbstractDungeon.player, AbstractDungeon.player, times);
         this.card = card;
+        fromGroup = null;
+    }
+
+    public CardAwokenAction(CardGroup group, int times) {
+        this((AbstractCard) null, times);
+        fromGroup = group;
     }
 
     public CardAwokenAction(int times) {
-        this(randomCard(), times);
+        this((AbstractCard) null, times);
     }
 
     public CardAwokenAction() {
-        this(randomCard(), 0);
+        this((AbstractCard) null, 0);
     }
 
-    private static AbstractCard randomCard() {
+    private static AbstractCard randomCard(CardGroup group) {
         CardGroup cg = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        AbstractPlayer p = AbstractDungeon.player;
-        Predicate<AbstractCard> eligible = card1 -> card1.type == AbstractCard.CardType.ATTACK ||
-                card1.type == AbstractCard.CardType.SKILL;
-        cg.group.addAll(p.hand.group.stream().filter(eligible).collect(Collectors.toList()));
-        cg.group.addAll(p.discardPile.group.stream().filter(eligible).collect(Collectors.toList()));
-        cg.group.addAll(p.drawPile.group.stream().filter(eligible).collect(Collectors.toList()));
+        Predicate<AbstractCard> eligible = AwakenedMod.eligibleToAwaken;
+        if (group != null) {
+            cg.group.addAll(group.group.stream().filter(eligible).collect(Collectors.toList()));
+        } else {
+            AbstractPlayer p = AbstractDungeon.player;
+            cg.group.addAll(p.hand.group.stream().filter(eligible).collect(Collectors.toList()));
+            cg.group.addAll(p.discardPile.group.stream().filter(eligible).collect(Collectors.toList()));
+            cg.group.addAll(p.drawPile.group.stream().filter(eligible).collect(Collectors.toList()));
+        }
         if (!cg.isEmpty()) {
             return cg.getRandomCard(AbstractDungeon.cardRng);
         } else {
@@ -44,6 +54,9 @@ public class CardAwokenAction extends AbstractGameAction {
     @Override
     public void update() {
         isDone = true;
+        if (card == null) {
+            card = randomCard(fromGroup);
+        }
         if (card != null) {
             if (amount > 0) {
                 AwakenedMod.awakenCard(card, amount);

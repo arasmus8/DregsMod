@@ -44,7 +44,7 @@ public class Torment extends AbstractSealedCard implements UpgradeTextChangingCa
     public Torment() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        tags.add(AwakenSkillTag.AWAKEN_RANDOM_EFFECT);
+        tags.add(AwakenSkillTag.CANT_AWAKEN);
     }
 
     // Actions the card should do.

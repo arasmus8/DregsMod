@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import dregsmod.cards.AwakenedMod;
 
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -16,8 +17,8 @@ public class KindleAction extends AbstractGameAction {
 
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
-    private AbstractCard card;
-    private boolean returnToHand;
+    private final AbstractCard card;
+    private final boolean returnToHand;
 
     public KindleAction(AbstractCard card, boolean returnToHand) {
         setValues(AbstractDungeon.player, AbstractDungeon.player);
@@ -32,8 +33,7 @@ public class KindleAction extends AbstractGameAction {
         if (this.duration == this.startDuration) {
             CardGroup cg = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             AbstractPlayer p = AbstractDungeon.player;
-            Predicate<AbstractCard> eligible = card1 -> card1.type == AbstractCard.CardType.ATTACK ||
-                    card1.type == AbstractCard.CardType.SKILL;
+            Predicate<AbstractCard> eligible = AwakenedMod.eligibleToAwaken;
             cg.group.addAll(p.hand.group.stream().filter(eligible).collect(Collectors.toList()));
             cg.group.addAll(p.discardPile.group.stream().filter(eligible).collect(Collectors.toList()));
             cg.group.addAll(p.drawPile.group.stream().filter(eligible).collect(Collectors.toList()));

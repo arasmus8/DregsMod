@@ -25,11 +25,11 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import dregsmod.actions.AwakenRandomEffectAction;
 import dregsmod.vfx.AwakenedParticleEffect;
 
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class AwakenedMod extends AbstractCardModifier {
     private static final int[] primes;
@@ -40,16 +40,23 @@ public class AwakenedMod extends AbstractCardModifier {
     private float blinkDelay;
     private float blinkDuration;
     private float blinkFullDuration;
-    private float vY;
     private final ArrayList<AbstractGameEffect> eyeEffects;
     private TextureAtlas.AtlasRegion img;
+
+    public static final Predicate<AbstractCard> eligibleToAwaken = card1 -> {
+        if (card1.type == AbstractCard.CardType.ATTACK) {
+            return true;
+        } else if (card1.type == AbstractCard.CardType.SKILL) {
+            return !card1.tags.contains(AwakenSkillTag.CANT_AWAKEN);
+        }
+        return false;
+    };
 
     public AwakenedMod(int level) {
         this.level = level;
         vfxDuration = 0.1f;
         eyeEffects = new ArrayList<>();
         img = ImageMaster.EYE_ANIM_6;
-        vY = 12.0F * Settings.scale;
     }
 
     @Override
@@ -127,9 +134,6 @@ public class AwakenedMod extends AbstractCardModifier {
         if (level > 3) {
             actions.add(new LoseHPAction(p, p, primes[level - 3]));
         }
-        if (card.tags.contains(AwakenSkillTag.AWAKEN_RANDOM_EFFECT)) {
-            actions.add(new AwakenRandomEffectAction());
-        }
         // queue actions
         for (AbstractGameAction action : actions) {
             AbstractDungeon.actionManager.addToBottom(action);
@@ -172,16 +176,12 @@ public class AwakenedMod extends AbstractCardModifier {
         }
 
         if (blinkDuration > blinkFullDuration * 0.85F) {
-            vY = 12.0F * Settings.scale;
             img = ImageMaster.EYE_ANIM_6;
         } else if (blinkDuration > blinkFullDuration * 0.8F) {
-            vY = 8.0F * Settings.scale;
             img = ImageMaster.EYE_ANIM_5;
         } else if (blinkDuration > blinkFullDuration * 0.75F) {
-            vY = 4.0F * Settings.scale;
             img = ImageMaster.EYE_ANIM_4;
         } else if (blinkDuration > blinkFullDuration * 0.7F) {
-            vY = 3.0F * Settings.scale;
             img = ImageMaster.EYE_ANIM_3;
         } else if (blinkDuration > blinkFullDuration * 0.65F) {
             img = ImageMaster.EYE_ANIM_2;
@@ -194,16 +194,12 @@ public class AwakenedMod extends AbstractCardModifier {
         } else if (blinkDuration > blinkFullDuration * 0.3F) {
             img = ImageMaster.EYE_ANIM_2;
         } else if (blinkDuration > blinkFullDuration * 0.25F) {
-            vY = 3.0F * Settings.scale;
             img = ImageMaster.EYE_ANIM_3;
         } else if (blinkDuration > blinkFullDuration * 0.2F) {
-            vY = 4.0F * Settings.scale;
             img = ImageMaster.EYE_ANIM_4;
         } else if (blinkDuration > blinkFullDuration * 0.15F) {
-            vY = 8.0F * Settings.scale;
             img = ImageMaster.EYE_ANIM_5;
         } else {
-            vY = 12.0F * Settings.scale;
             img = ImageMaster.EYE_ANIM_6;
         }
         for (AbstractGameEffect e : eyeEffects) {
