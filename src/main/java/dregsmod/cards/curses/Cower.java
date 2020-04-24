@@ -20,7 +20,7 @@ public class Cower extends AbstractCleansingCurse implements TriggerOnMonsterDea
 
     public static final String ID = DregsMod.makeID(Cower.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Curse.png");
+    public static final String IMG = makeCardPath("Cower.png");
 // Must have an image with the same NAME as the card in your image folder!
 
 // /TEXT DECLARATION/
