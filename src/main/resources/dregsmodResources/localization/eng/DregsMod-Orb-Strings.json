@@ -12,8 +12,8 @@
     "NAME": "Curse",
     "DESCRIPTION": [
       "#yPassive: At the start of turn, add #b",
-      " Curse to your hand. NL #yEvoke: exhaust a card.",
-      " Curses to your hand. NL #yEvoke: exhaust a card."
+      " Curse to your hand. NL #yEvoke: #yAwaken a card.",
+      " Curses to your hand. NL #yEvoke: #yAwaken a card."
     ]
   }
 }

@@ -25,6 +25,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import dregsmod.characters.Dregs;
 import dregsmod.vfx.AwakenedParticleEffect;
 
 import java.util.ArrayList;
@@ -47,7 +48,10 @@ public class AwakenedMod extends AbstractCardModifier {
         if (card1.type == AbstractCard.CardType.ATTACK) {
             return true;
         } else if (card1.type == AbstractCard.CardType.SKILL) {
-            return !card1.tags.contains(AwakenSkillTag.CANT_AWAKEN);
+            if (card1.color == Dregs.Enums.COLOR_BLACK) {
+                return !card1.tags.contains(AwakenSkillTag.CANT_AWAKEN);
+            }
+            return (card1.baseBlock > 0 || card1.baseMagicNumber > 0);
         }
         return false;
     };
@@ -116,7 +120,7 @@ public class AwakenedMod extends AbstractCardModifier {
     @Override
     public void onApplyPowers(AbstractCard card) {
         super.onApplyPowers(card);
-        if (card.tags.contains(AwakenSkillTag.AWAKEN_SKILL)) {
+        if (card.tags.contains(AwakenSkillTag.AWAKEN_SKILL) || (card.color != Dregs.Enums.COLOR_BLACK && card.baseBlock <= 0)) {
             card.magicNumber = card.baseMagicNumber + primes[level - 1];
             if (card.magicNumber != card.baseMagicNumber) {
                 card.isMagicNumberModified = true;
