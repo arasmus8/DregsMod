@@ -25,7 +25,7 @@ public class Catastrophe extends CustomCard {
 
 // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.CURSE;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.CURSE;
     public static final CardColor COLOR = CardColor.CURSE;
