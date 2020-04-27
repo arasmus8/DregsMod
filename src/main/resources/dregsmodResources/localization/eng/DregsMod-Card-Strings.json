@@ -383,7 +383,7 @@
   },
   "dregsmod:Infection": {
     "NAME": "Infection",
-    "DESCRIPTION": "Retain NL When Retained, shuffle a copy into your draw pile. NL dregsmod:Cleanse: Retain this !M! times NL Exhaust"
+    "DESCRIPTION": "Take 5 damage when played. NL At the end of turn, add a copy to your discard pile. NL dregsmod:Cleanse: Play this !M! times NL Exhaust"
   },
   "dregsmod:WeakPoint": {
     "NAME": "Weak Point",
