@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import dregsmod.cards.AwakenedMod;
+import dregsmod.vfx.AwakenCardEffect;
 
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -63,6 +64,7 @@ public class CardAwokenAction extends AbstractGameAction {
             } else {
                 AwakenedMod.awakenCard(card);
             }
+            AbstractDungeon.effectList.add(new AwakenCardEffect(card.makeStatEquivalentCopy()));
         }
     }
 }
