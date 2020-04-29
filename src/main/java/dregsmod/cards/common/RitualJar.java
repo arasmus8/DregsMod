@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
+import dregsmod.actions.RitualJarAction;
 import dregsmod.cards.AwakenSkillTag;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.CursedPower;
@@ -33,8 +34,8 @@ public class RitualJar extends CustomCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 8;
-    private static final int UPGRADED_MAGIC = 4;
+    private static final int MAGIC = 5;
+    private static final int UPGRADED_MAGIC = 5;
 
 // /STAT DECLARATION/
 
@@ -49,6 +50,7 @@ public class RitualJar extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(m, p, new CursedPower(m, magicNumber), magicNumber));
+        addToBot(new RitualJarAction());
     }
 
     // Upgraded stats.
