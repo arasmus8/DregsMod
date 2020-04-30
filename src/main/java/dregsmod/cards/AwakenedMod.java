@@ -120,7 +120,16 @@ public class AwakenedMod extends AbstractCardModifier {
     @Override
     public void onApplyPowers(AbstractCard card) {
         super.onApplyPowers(card);
-        if (card.tags.contains(AwakenSkillTag.AWAKEN_SKILL) || (card.color != Dregs.Enums.COLOR_BLACK && card.baseBlock <= 0)) {
+        if (card.tags.contains(AwakenSkillTag.AWAKEN_SKILL)) {
+            card.magicNumber = card.baseMagicNumber + primes[level - 1];
+            if (card.magicNumber != card.baseMagicNumber) {
+                card.isMagicNumberModified = true;
+            }
+        } else if (card.type == AbstractCard.CardType.SKILL &&
+                card.color != Dregs.Enums.COLOR_BLACK &&
+                card.baseBlock <= 0 &&
+                card.baseMagicNumber > 0
+        ) {
             card.magicNumber = card.baseMagicNumber + primes[level - 1];
             if (card.magicNumber != card.baseMagicNumber) {
                 card.isMagicNumberModified = true;
