@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.characters.Dregs;
-import dregsmod.powers.ChaosTheoryPower;
 import dregsmod.powers.EclipseFormPower;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
@@ -17,7 +16,7 @@ import static dregsmod.DregsMod.makeCardPath;
 public class EclipseForm extends CustomCard {
 
     public static final String ID = DregsMod.makeID(EclipseForm.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("EclipseForm.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.RARE;
