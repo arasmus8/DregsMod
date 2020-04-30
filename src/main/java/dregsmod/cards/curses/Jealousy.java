@@ -58,8 +58,9 @@ public class Jealousy extends AbstractCurseHoldingCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean fromSuper = super.canUse(p, m);
         cantUseMessage = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
-        return holdingCurse || p.hasPower(EclipseForm.ID) || p.hasRelic(BlueCandle.ID);
+        return fromSuper && (holdingCurse || p.hasPower(EclipseForm.ID) || p.hasRelic(BlueCandle.ID));
     }
 
     @Override
