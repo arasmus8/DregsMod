@@ -15,7 +15,7 @@
   },
   "dregsmod:Jealousy": {
     "NAME": "Jealousy",
-    "DESCRIPTION": "Cannot be removed from your deck. NL dregsmod:Seal a random Curse.",
+    "DESCRIPTION": "Soulbound NL dregsmod:Seal a random Curse.",
     "EXTENDED_DESCRIPTION": [
       "I'm not holding another Curse!"
     ]

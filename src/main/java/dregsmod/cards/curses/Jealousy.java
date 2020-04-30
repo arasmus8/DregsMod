@@ -1,5 +1,6 @@
 package dregsmod.cards.curses;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -37,6 +38,7 @@ public class Jealousy extends AbstractCurseHoldingCard {
 
     public Jealousy() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        SoulboundField.soulbound.set(this, true);
     }
 
 
