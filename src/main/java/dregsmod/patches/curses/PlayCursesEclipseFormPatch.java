@@ -14,7 +14,7 @@ public class PlayCursesEclipseFormPatch {
     public static boolean Postfix(boolean _return, AbstractCard _instance, AbstractPlayer p, AbstractMonster m) {
         if(!_return) {
             if (_instance.type == AbstractCard.CardType.CURSE && p.hasPower(EclipseFormPower.POWER_ID)) {
-                return true;
+                return _instance.hasEnoughEnergy();
             }
         }
         return _return;
