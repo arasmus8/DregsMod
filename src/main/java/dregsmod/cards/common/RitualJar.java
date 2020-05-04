@@ -50,7 +50,7 @@ public class RitualJar extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(m, p, new CursedPower(m, magicNumber), magicNumber));
-        addToBot(new RitualJarAction());
+        addToBot(new RitualJarAction(this));
     }
 
     // Upgraded stats.
