@@ -3,6 +3,8 @@ package dregsmod;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
+import basemod.abstracts.CustomSavable;
+import basemod.devcommands.ConsoleCommand;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -18,9 +20,11 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.random.Random;
+import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import dregsmod.actions.CleansedCurseAction;
 import dregsmod.characters.Dregs;
+import dregsmod.patches.enums.CustomRewardItem;
 import dregsmod.potions.InsightPotion;
 import dregsmod.relics.*;
 import dregsmod.util.IDCheckDontTouchPls;
@@ -32,6 +36,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 @SpireInitializer
@@ -41,7 +46,8 @@ public class DregsMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        CustomSavable<Integer> {
 
     private static String modID;
 
@@ -236,11 +242,17 @@ public class DregsMod implements
         uiTextures.put("cardSealTop", cardSealTop);
 
         // Console Commands
+        ConsoleCommand.addCommand("cleanse", CleanseCursesConsoleCommand.class);
 
         // Save/Load fields
-        BaseMod.addSaveField(CleansedCurseAction.ID, new CleansedCurseAction(null));
+        BaseMod.addSaveField(makeID("cleansedCurseRewardRng"), this);
 
         // Events
+
+        // Rewards
+        BaseMod.registerCustomReward(CustomRewardItem.CLEANSED_CURSE_REWARD,
+                (rewardSave) -> new CleansedCurseReward(rewardSave.amount),
+                (reward) -> new RewardSave(reward.type.toString(), CleansedCurseReward.ID, ((CleansedCurseReward) reward).amount, 0));
     }
 
     public void receiveEditPotions() {
@@ -359,5 +371,19 @@ public class DregsMod implements
 
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
+    }
+
+    public static Random cleansedCurseRng;
+
+    @Override
+    public Integer onSave() {
+        cleansedCurseRng = Optional.ofNullable(cleansedCurseRng).orElse(new Random(Settings.seed));
+        return cleansedCurseRng.counter;
+    }
+
+    @Override
+    public void onLoad(Integer value) {
+        int randomCount = Optional.ofNullable(value).orElse(0);
+        cleansedCurseRng = new Random(Settings.seed, randomCount);
     }
 }

@@ -4,6 +4,15 @@
       "Choose a card to Permanently add to your Deck:"
     ]
   },
+  "dregsmod:CleansedCurseReward": {
+    "TEXT": [
+      "Choose ",
+      " card",
+      " cards",
+      " to add to your Deck:",
+      "Cleansed Curse Reward"
+    ]
+  },
   "dregsmod:SealAndPerformAction": {
     "TEXT": [
       "Seal:"
