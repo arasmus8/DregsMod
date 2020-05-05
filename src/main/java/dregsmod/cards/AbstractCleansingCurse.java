@@ -15,7 +15,6 @@ import static dregsmod.patches.enums.CustomCardTags.CLEANSE_CURSE;
 public abstract class AbstractCleansingCurse extends CustomCard {
     public int cleanseAmount;
     public boolean isCleansed = false;
-    private boolean exhausting = false;
 
     public AbstractCleansingCurse(String id, String name, String img, int cost, String rawDescription, CardTarget target, int cleanseAmount) {
         super(id, name, img, cost, rawDescription, CardType.CURSE, CardColor.CURSE, CardRarity.CURSE, target);
@@ -50,11 +49,7 @@ public abstract class AbstractCleansingCurse extends CustomCard {
             }
 
             this.purgeOnUse = true;
-            for (AbstractCard c : p.hand.group) {
-                if (c.uuid == uuid) {
-                    ((AbstractCleansingCurse) c).isCleansed = true;
-                }
-            }
+            p.hand.group.stream().filter(c -> c.uuid.equals(uuid)).forEach(c -> addToBot(new ExhaustSpecificCardAction(c, p.hand)));
 
             p.discardPile.group.removeIf(c -> c.uuid.equals(uuid));
             p.drawPile.group.removeIf(c -> c.uuid.equals(uuid));
@@ -68,19 +63,6 @@ public abstract class AbstractCleansingCurse extends CustomCard {
         baseMagicNumber = magicNumber = Math.max(0, cleanseAmount - misc);
         super.applyPowers();
         initializeDescription();
-        if (isCleansed) {
-            if (!exhausting) {
-                exhausting = true;
-                AbstractPlayer p = AbstractDungeon.player;
-                if (p.hand.contains(this)) {
-                    addToBot(new ExhaustSpecificCardAction(this, p.hand));
-                } else if (p.drawPile.contains(this)) {
-                    p.drawPile.removeCard(this);
-                } else if (p.discardPile.contains(this)) {
-                    p.discardPile.removeCard(this);
-                }
-            }
-        }
     }
 
     @Override

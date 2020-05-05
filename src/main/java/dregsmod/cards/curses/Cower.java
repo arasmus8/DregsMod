@@ -55,7 +55,7 @@ public class Cower extends AbstractCleansingCurse implements TriggerOnMonsterDea
             cleanseBy(1);
         } else {
             for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-                if (c.uuid == uuid) {
+                if (c.uuid.equals(uuid)) {
                     c.misc += 1;
                     c.baseMagicNumber = c.magicNumber = ((Cower) c).cleanseAmount - c.misc;
                     c.applyPowers();
