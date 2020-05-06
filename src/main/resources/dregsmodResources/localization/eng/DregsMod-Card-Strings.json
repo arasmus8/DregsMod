@@ -259,6 +259,7 @@
   "dregsmod:BadOmen": {
     "NAME": "Bad Omen",
     "DESCRIPTION": "Can only be used if either your draw or discard pile contains exactly 13 cards. NL Deal !D! Damage to all enemies.",
+    "UPGRADE_DESCRIPTION": "Retain NL Can only be used if either your draw or discard pile contains exactly 13 cards. NL Deal !D! Damage to all enemies.",
     "EXTENDED_DESCRIPTION": [
       "Must have exactly 13 cards..."
     ]
