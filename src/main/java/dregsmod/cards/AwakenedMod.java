@@ -44,14 +44,14 @@ public class AwakenedMod extends AbstractCardModifier {
     private final ArrayList<AbstractGameEffect> eyeEffects;
     private TextureAtlas.AtlasRegion img;
 
-    public static final Predicate<AbstractCard> eligibleToAwaken = card1 -> {
-        if (card1.type == AbstractCard.CardType.ATTACK) {
+    public static final Predicate<AbstractCard> eligibleToAwaken = card -> {
+        if (card.type == AbstractCard.CardType.ATTACK) {
             return true;
-        } else if (card1.type == AbstractCard.CardType.SKILL) {
-            if (card1.color == Dregs.Enums.COLOR_BLACK) {
-                return !card1.tags.contains(AwakenSkillTag.CANT_AWAKEN);
+        } else if (card.type == AbstractCard.CardType.SKILL) {
+            if (card.color == Dregs.Enums.COLOR_BLACK) {
+                return !card.tags.contains(AwakenSkillTag.CANT_AWAKEN);
             }
-            return (card1.baseBlock > 0 || card1.baseMagicNumber > 0);
+            return (card.baseBlock > 0 || card.baseMagicNumber > 0);
         }
         return false;
     };
@@ -145,7 +145,7 @@ public class AwakenedMod extends AbstractCardModifier {
             actions.add(new DrawCardAction(p, 1));
         }
         if (level > 3) {
-            actions.add(new LoseHPAction(p, p, primes[level - 3]));
+            actions.add(new LoseHPAction(p, p, primes[level - 4]));
         }
         // queue actions
         for (AbstractGameAction action : actions) {
@@ -244,7 +244,7 @@ public class AwakenedMod extends AbstractCardModifier {
                 card.drawScale * lvlScale,
                 card.angle);
         if (level > 3) {
-            int hpLoss = primes[level - 3];
+            int hpLoss = primes[level - 4];
             vec = new Vector2(0, 0);
             vec.scl(card.drawScale * Settings.scale);
             vec.rotate(card.angle);

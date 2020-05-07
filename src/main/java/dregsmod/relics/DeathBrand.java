@@ -33,8 +33,20 @@ public class DeathBrand extends CustomRelic {
         if (drawnCard.type == AbstractCard.CardType.CURSE) {
             this.flash();
             AbstractPlayer p = AbstractDungeon.player;
-            addToBot(new CardAwokenAction(p.hand, 2));
+            addToBot(new CardAwokenAction(p.hand, 1));
         }
+    }
+
+    public void onEquip() {
+        ++AbstractDungeon.player.masterHandSize;
+    }
+
+    public void onUnequip() {
+        --AbstractDungeon.player.masterHandSize;
+    }
+
+    public void atTurnStart() {
+        this.flash();
     }
 
     @Override
@@ -46,7 +58,7 @@ public class DeathBrand extends CustomRelic {
     public void obtain() {
         for (int i = 0; i < AbstractDungeon.player.relics.size(); i++) {
             if (AbstractDungeon.player.relics.get(i).relicId.equals(CurseBrand.ID)) {
-                instantObtain(AbstractDungeon.player, i, true);
+                instantObtain(AbstractDungeon.player, i, false);
                 return;
             }
         }
