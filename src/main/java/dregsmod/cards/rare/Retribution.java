@@ -15,7 +15,7 @@ import static dregsmod.DregsMod.makeCardPath;
 public class Retribution extends CustomCard {
 
     public static final String ID = DregsMod.makeID(Retribution.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("Retribution.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.RARE;
