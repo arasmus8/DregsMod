@@ -19,7 +19,7 @@
     "NAME": "Cursed Locket",
     "FLAVOR": "Sealed with dark energy, it burns to the touch.",
     "DESCRIPTIONS": [
-      "Whenever you inflict #yCursed, inflict 3 more."
+      "Whenever you inflict #yCursed, inflict 5 more."
     ]
   },
   "dregsmod:DeathBrand": {
@@ -36,6 +36,13 @@
     "FLAVOR": "Likes to kick puppies.",
     "DESCRIPTIONS": [
       "After each battle, heal 1 HP for each #yCurse remaining in your deck."
+    ]
+  },
+  "dregsmod:JadeSeal": {
+    "NAME": "Jade Seal",
+    "FLAVOR": "An ancient artifact from a forgotten empire.",
+    "DESCRIPTIONS": [
+      "Whenever you #ySeal a card, gain 3 #yBlock."
     ]
   },
   "dregsmod:LuckyClover": {

@@ -1,30 +1,25 @@
 package dregsmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import dregsmod.patches.variables.CardSealed;
-import dregsmod.powers.CursedPower;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class MaledictionAction extends AbstractGameAction {
-    private AbstractCreature m;
-    private AbstractPlayer p;
-    private int energyOnUse;
-    private boolean freeToPlayOnce;
+    private final AbstractCreature m;
+    private final AbstractPlayer p;
+    private final int energyOnUse;
+    private final boolean freeToPlayOnce;
 
     public MaledictionAction(AbstractCreature target, int damage, boolean freeToPlayOnce, int energyOnUse) {
         m = target;

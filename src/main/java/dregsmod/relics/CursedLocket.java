@@ -18,7 +18,7 @@ public class CursedLocket extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("CursedLocket.png"));
 
     public CursedLocket() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.FLAT);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.FLAT);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
         tips.add(new PowerTip(BaseMod.getKeywordProper("dregsmod:cursed"), BaseMod.getKeywordDescription("dregsmod:cursed")));

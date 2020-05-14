@@ -10,9 +10,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import dregsmod.DregsMod;
-import dregsmod.cards.uncommon.Guardian;
+import dregsmod.cards.TriggerOnSelfSealedCard;
 import dregsmod.patches.variables.CardSealed;
 import dregsmod.powers.TriggerOnSealedPower;
+import dregsmod.relics.TriggerOnSealedRelic;
 import dregsmod.vfx.SealCardEffect;
 
 import java.util.ArrayList;
@@ -23,9 +24,10 @@ public class SealAndPerformAction extends AbstractGameAction {
     public static ArrayList<AbstractCard> sealedCards = new ArrayList<>();
     private Predicate<AbstractCard> filterCriteria = null;
     private CardGroup group = null;
-    private AbstractGameAction followUpAction;
+    private AbstractCard cardToSeal = null;
+    private final AbstractGameAction followUpAction;
     private boolean clearSealHistory;
-    private boolean isRandom;
+    private final boolean isRandom;
     private static AbstractPlayer p;
     private static final float DURATION;
     private static final UIStrings uiStrings;
@@ -57,9 +59,14 @@ public class SealAndPerformAction extends AbstractGameAction {
             Predicate<AbstractCard> filterCriteria,
             AbstractGameAction action
     ) {
-       this(amount, random, action);
-       this.group = group;
-       this.filterCriteria = filterCriteria;
+        this(amount, random, action);
+        this.group = group;
+        this.filterCriteria = filterCriteria;
+    }
+
+    public SealAndPerformAction(AbstractCard cardToSeal, AbstractGameAction action) {
+        this(-1, false, action);
+        this.cardToSeal = cardToSeal;
     }
 
     @Override
@@ -79,25 +86,20 @@ public class SealAndPerformAction extends AbstractGameAction {
                 group = p.hand;
             }
 
-            if(filterCriteria == null) {
+            if (cardToSeal != null) {
+                sealedCards.add(cardToSeal);
+                p.hand.applyPowers();
+                endActionWithFollowUp();
+                return;
+            }
+
+            if (filterCriteria == null) {
                 filterCriteria = abstractCard -> true;
             }
             ArrayList<AbstractCard> filteredList = group.group.stream().filter(filterCriteria).collect(Collectors.toCollection(ArrayList::new));
 
             if (filteredList.size() <= amount) {
                 sealedCards.addAll(filteredList);
-                filteredList.forEach(card -> {
-                    CardSealed.isSealed.set(card, true);
-                    AbstractDungeon.effectList.add(new SealCardEffect(card.makeStatEquivalentCopy()));
-                    group.moveToDiscardPile(card);
-                    card.triggerOnManualDiscard();
-                    card.triggerOnExhaust();
-                    if(card.cardID.equals(Guardian.ID)) {
-                        ((Guardian)card).triggerOnSealed();
-                    }
-                    GameActionManager.incrementDiscard(false);
-                });
-
                 p.hand.applyPowers();
                 endActionWithFollowUp();
                 return;
@@ -130,23 +132,13 @@ public class SealAndPerformAction extends AbstractGameAction {
                     return;
                 }
             } else {
-
                 AbstractCard card;
                 CardGroup filtered = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 filtered.group.addAll(filteredList);
                 for (int i = 0; i < amount; ++i) {
                     card = filtered.getRandomCard(AbstractDungeon.cardRandomRng);
                     filtered.removeCard(card);
-                    AbstractDungeon.effectList.add(new SealCardEffect(card.makeStatEquivalentCopy()));
                     sealedCards.add(card);
-                    CardSealed.isSealed.set(card, true);
-                    group.moveToDiscardPile(card);
-                    card.triggerOnManualDiscard();
-                    card.triggerOnExhaust();
-                    if(card.cardID.equals(Guardian.ID)) {
-                        ((Guardian)card).triggerOnSealed();
-                    }
-                    GameActionManager.incrementDiscard(false);
                 }
                 endActionWithFollowUp();
             }
@@ -154,37 +146,15 @@ public class SealAndPerformAction extends AbstractGameAction {
 
         if (group == p.hand) {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-                for (AbstractCard card : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                    AbstractDungeon.effectList.add(new SealCardEffect(card.makeStatEquivalentCopy()));
-                    sealedCards.add(card);
-                    CardSealed.isSealed.set(card, true);
-                    p.hand.moveToDiscardPile(card);
-                    card.triggerOnManualDiscard();
-                    card.triggerOnExhaust();
-                    if(card.cardID.equals(Guardian.ID)) {
-                        ((Guardian)card).triggerOnSealed();
-                    }
-                    GameActionManager.incrementDiscard(false);
-                }
+                sealedCards.addAll(AbstractDungeon.handCardSelectScreen.selectedCards.group);
+                group.group.addAll(AbstractDungeon.handCardSelectScreen.selectedCards.group);
                 AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
                 p.hand.applyPowers();
                 endActionWithFollowUp();
             }
         } else {
             if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
-                for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
-                    AbstractDungeon.effectList.add(new SealCardEffect(card.makeStatEquivalentCopy()));
-                    sealedCards.add(card);
-                    CardSealed.isSealed.set(card, true);
-                    group.moveToDiscardPile(card);
-                    card.triggerOnManualDiscard();
-                    card.triggerOnExhaust();
-                    if(card.cardID.equals(Guardian.ID)) {
-                        ((Guardian)card).triggerOnSealed();
-                    }
-                    GameActionManager.incrementDiscard(false);
-                }
-
+                sealedCards.addAll(AbstractDungeon.gridSelectScreen.selectedCards);
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();
                 p.hand.refreshHandLayout();
                 p.hand.applyPowers();
@@ -197,11 +167,31 @@ public class SealAndPerformAction extends AbstractGameAction {
 
     private void endActionWithFollowUp() {
         isDone = true;
-        sealedCards.forEach(card -> AbstractDungeon.player.powers.forEach(power -> {
-            if (power instanceof TriggerOnSealedPower) {
-                ((TriggerOnSealedPower) power).triggerOnSealed(card);
+        sealedCards.forEach(card -> {
+            AbstractDungeon.effectList.add(new SealCardEffect(card.makeStatEquivalentCopy()));
+            CardSealed.isSealed.set(card, true);
+            if (p.hand.contains(card)) {
+                p.hand.moveToDiscardPile(card);
+                card.triggerOnManualDiscard();
+                card.triggerOnExhaust();
+                GameActionManager.incrementDiscard(false);
+            } else if (p.drawPile.contains(card)) {
+                p.drawPile.moveToDiscardPile(card);
             }
-        }));
+            if (card instanceof TriggerOnSelfSealedCard) {
+                ((TriggerOnSelfSealedCard) card).triggerOnSealed();
+            }
+            AbstractDungeon.player.relics.forEach(relic -> {
+                if (relic instanceof TriggerOnSealedRelic) {
+                    ((TriggerOnSealedRelic) relic).triggerOnSealed(card);
+                }
+            });
+            AbstractDungeon.player.powers.forEach(power -> {
+                if (power instanceof TriggerOnSealedPower) {
+                    ((TriggerOnSealedPower) power).triggerOnSealed(card);
+                }
+            });
+        });
         if (followUpAction != null) {
             addToTop(followUpAction);
         }

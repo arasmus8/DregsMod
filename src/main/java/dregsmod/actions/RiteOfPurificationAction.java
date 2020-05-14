@@ -13,7 +13,7 @@ public class RiteOfPurificationAction extends AbstractGameAction {
 
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
-    private AbstractCard riteCard;
+    private final AbstractCard riteCard;
 
     public RiteOfPurificationAction(AbstractCard riteCard) {
         setValues(AbstractDungeon.player, AbstractDungeon.player);
@@ -26,21 +26,18 @@ public class RiteOfPurificationAction extends AbstractGameAction {
     public void update() {
         if (this.duration == this.startDuration) {
             if(AbstractDungeon.player.hand.size() < 1) {
+                riteCard.returnToHand = false;
                 isDone = true;
             } else if (AbstractDungeon.player.hand.size() == 1) {
-                boolean curseExhausted = false;
                 AbstractCard card = AbstractDungeon.player.hand.getTopCard();
                 addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
                 if (card.type == AbstractCard.CardType.CURSE) {
-                    curseExhausted = true;
-                }
-
-                if (curseExhausted) {
                     riteCard.returnToHand = true;
                     addToTop(new DrawCardAction(AbstractDungeon.player, 1));
                 } else {
                     riteCard.returnToHand = false;
                 }
+
                 isDone = true;
             } else {
                 AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, false, false);

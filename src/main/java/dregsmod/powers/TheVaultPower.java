@@ -3,7 +3,6 @@ package dregsmod.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,9 +10,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.DregsMod;
+import dregsmod.actions.SealAndPerformAction;
 import dregsmod.patches.variables.CardSealed;
 import dregsmod.util.TextureLoader;
-import dregsmod.vfx.SealCardEffect;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -54,13 +53,7 @@ public class TheVaultPower extends AbstractPower implements CloneablePowerInterf
         discardedCurses.removeAll(DregsMod.postSealedCards);
         discardedCurses.removeAll(ignoredCards);
         discardedCurses.forEach(card -> {
-            CardSealed.isSealed.set(card, true);
-            AbstractDungeon.player.powers.forEach(power -> {
-                if (power instanceof TriggerOnSealedPower) {
-                    ((TriggerOnSealedPower) power).triggerOnSealed(card);
-                }
-            });
-            addToBot(new VFXAction(new SealCardEffect(card.makeSameInstanceOf())));
+            addToBot(new SealAndPerformAction(card, null));
         });
     }
 

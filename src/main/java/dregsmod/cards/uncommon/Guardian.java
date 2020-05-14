@@ -9,11 +9,12 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AwakenSkillTag;
+import dregsmod.cards.TriggerOnSelfSealedCard;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Guardian extends CustomCard {
+public class Guardian extends CustomCard implements TriggerOnSelfSealedCard {
 
 // TEXT DECLARATION
 

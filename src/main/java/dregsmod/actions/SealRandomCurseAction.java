@@ -1,14 +1,10 @@
 package dregsmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.patches.variables.CardSealed;
-import dregsmod.powers.TriggerOnSealedPower;
-import dregsmod.vfx.SealCardEffect;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;
@@ -31,18 +27,7 @@ public class SealRandomCurseAction extends AbstractGameAction {
 
         if (unsealedCurses.size() > 0) {
             AbstractCard curseToSeal = unsealedCurses.get(AbstractDungeon.cardRng.random(unsealedCurses.size() - 1));
-            CardSealed.isSealed.set(curseToSeal, true);
-            addToBot(new VFXAction(new SealCardEffect(curseToSeal.makeSameInstanceOf())));
-            if (p.hand.contains(curseToSeal)) {
-                p.hand.moveToDiscardPile(curseToSeal);
-            } else if (p.drawPile.contains(curseToSeal)) {
-                p.drawPile.moveToDiscardPile(curseToSeal);
-            }
-            for (AbstractPower power : p.powers) {
-                if (power instanceof TriggerOnSealedPower) {
-                    ((TriggerOnSealedPower) power).triggerOnSealed(curseToSeal);
-                }
-            }
+            addToBot(new SealAndPerformAction(curseToSeal, null));
         }
     }
 }

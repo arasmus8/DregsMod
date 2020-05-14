@@ -44,7 +44,7 @@ public class CursedPower extends AbstractPower implements CloneablePowerInterfac
         type = PowerType.DEBUFF;
         if (AbstractDungeon.player.hasRelic(CursedLocket.ID)) {
             AbstractDungeon.player.getRelic(CursedLocket.ID).flash();
-            this.amount += 3;
+            this.amount += 5;
         }
     }
 
@@ -53,7 +53,7 @@ public class CursedPower extends AbstractPower implements CloneablePowerInterfac
         super.stackPower(stackAmount);
         if (AbstractDungeon.player.hasRelic(CursedLocket.ID)) {
             AbstractDungeon.player.getRelic(CursedLocket.ID).flash();
-            amount += 3;
+            amount += 5;
         }
     }
 
