@@ -3,24 +3,25 @@ package dregsmod.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.defect.ImpulseAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.DregsMod;
+import dregsmod.orbs.Sludge;
 import dregsmod.util.TextureLoader;
 
-public class ExcessPower extends AbstractPower implements TriggerOnSealedPower, CloneablePowerInterface {
+public class ExcessChannelPower extends AbstractPower implements TriggerOnSealedPower, CloneablePowerInterface {
 
-    public static final String POWER_ID = DregsMod.makeID(ExcessPower.class.getSimpleName());
+    public static final String POWER_ID = DregsMod.makeID(ExcessChannelPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final Texture texture = TextureLoader.getTexture(DregsMod.makePowerPath("excess.png"));
 
-    public ExcessPower(AbstractCreature owner, int amount) {
+    public ExcessChannelPower(AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
@@ -36,7 +37,7 @@ public class ExcessPower extends AbstractPower implements TriggerOnSealedPower, 
         if (card.type == AbstractCard.CardType.CURSE) {
             flash();
             for (int i = 0; i < amount; i++) {
-                addToBot(new ImpulseAction());
+                addToBot(new ChannelAction(new Sludge()));
             }
         }
     }
@@ -48,6 +49,6 @@ public class ExcessPower extends AbstractPower implements TriggerOnSealedPower, 
 
     @Override
     public AbstractPower makeCopy() {
-        return new ExcessPower(owner, amount);
+        return new ExcessChannelPower(owner, amount);
     }
 }

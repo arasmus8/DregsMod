@@ -52,6 +52,7 @@ public class TheVaultPower extends AbstractPower implements CloneablePowerInterf
                 .collect(Collectors.toCollection(ArrayList::new));
         discardedCurses.removeAll(DregsMod.postSealedCards);
         discardedCurses.removeAll(ignoredCards);
+        ignoredCards.addAll(discardedCurses);
         discardedCurses.forEach(card -> addToBot(new SealAndPerformAction(card, null)));
     }
 

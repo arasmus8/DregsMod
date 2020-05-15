@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
+import dregsmod.powers.ExcessChannelPower;
 import dregsmod.powers.ExcessPower;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
@@ -36,6 +37,9 @@ public class Excess extends CustomCard implements UpgradeTextChangingCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ExcessPower(p, magicNumber), magicNumber));
+        if (upgraded) {
+            addToBot(new ApplyPowerAction(p, p, new ExcessChannelPower(p, magicNumber), magicNumber));
+        }
     }
 
     @Override
@@ -47,7 +51,6 @@ public class Excess extends CustomCard implements UpgradeTextChangingCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            selfRetain = true;
             rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

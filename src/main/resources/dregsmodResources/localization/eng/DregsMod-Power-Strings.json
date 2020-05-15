@@ -50,13 +50,20 @@
       " Damage to all enemies."
     ]
   },
+  "dregsmod:ExcessChannelPower": {
+    "NAME": "Excess",
+    "DESCRIPTIONS": [
+      "When you draw a #yCurse, channel #b",
+      " #ySludge Orb.",
+      " #ySludge Orbs."
+    ]
+  },
   "dregsmod:ExcessPower": {
     "NAME": "Excess",
     "DESCRIPTIONS": [
       "When you draw a #yCurse, trigger the passive of all your #yOrbs #b",
       " time.",
-      " times.",
-      " If you have no #yOrbs, channel a #ySludge Orb."
+      " times."
     ]
   },
   "dregsmod:IncantationPower": {
