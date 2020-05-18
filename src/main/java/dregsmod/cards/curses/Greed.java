@@ -1,5 +1,6 @@
 package dregsmod.cards.curses;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -7,6 +8,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCleansingCurse;
+
+import java.util.function.Function;
 
 import static dregsmod.DregsMod.makeCardPath;
 
@@ -37,12 +40,15 @@ public class Greed extends AbstractCleansingCurse {
 
     @Override
     public void triggerWhenDrawn() {
-        if (magicNumber <= 0) {
-            cleanseBy(0);
-        } else {
-            AbstractDungeon.player.loseGold(5);
-            cleanseBy(1);
-        }
+        Function<AbstractCleansingCurse, AbstractGameAction> cleanse = card -> new AbstractGameAction() {
+            @Override
+            public void update() {
+                isDone = true;
+                AbstractDungeon.player.loseGold(5);
+                card.cleanseBy(1);
+            }
+        };
+        addToBot(cleanse.apply(this));
     }
 
     // Actions the card should do.
