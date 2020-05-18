@@ -13,11 +13,7 @@
   "dregsmod:DregsNeow": {
     "NAMES": [],
     "TEXT": [
-      "[ #rObtain #ra #rcursed #rRelic ",
-      "#gChoose #ga #gCard #gto #gobtain ]",
-      "#gGain #g100 #gGold ]",
-      "#gTransform #ga #gCard ]",
-      "#gMax #gHP #g+7 ]"
+      "#rObtain #ra #rcursed #rRelic "
     ]
   }
 }

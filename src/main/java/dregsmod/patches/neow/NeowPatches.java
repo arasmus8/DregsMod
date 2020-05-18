@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 
 import static dregsmod.patches.enums.CustomNeowRewardDrawback.DREGS_DRAWBACK;
 
+@SuppressWarnings("unused")
 public class NeowPatches {
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("dregsmod:DregsNeow");
     private static final String[] DREGS_NEOW_TEXT = characterStrings.TEXT;
@@ -31,7 +32,7 @@ public class NeowPatches {
         @SpireInsertPatch(
                 locator = MiniBlessingLocator.class
         )
-        public static SpireReturn Insert(NeowEvent _instance) {
+        public static SpireReturn<Void> Insert(NeowEvent _instance) {
             if (AbstractDungeon.player.chosenClass == Dregs.Enums.DREGS) {
                 ArrayList<NeowReward> rewards;
                 rewards = (ArrayList<NeowReward>) ReflectionHacks.getPrivate(_instance, NeowEvent.class, "rewards");
@@ -65,7 +66,7 @@ public class NeowPatches {
         @SpireInsertPatch(
                 locator = BlessingLocator.class
         )
-        public static SpireReturn Insert(NeowEvent _instance) {
+        public static SpireReturn<Void> Insert(NeowEvent _instance) {
             if (AbstractDungeon.player.chosenClass == Dregs.Enums.DREGS) {
                 ArrayList<NeowReward> rewards;
                 rewards = (ArrayList<NeowReward>) ReflectionHacks.getPrivate(_instance, NeowEvent.class, "rewards");
@@ -109,12 +110,16 @@ public class NeowPatches {
 
     public static class DregsReward extends NeowReward {
 
+        private static final CharacterStrings characterStrings;
+        public static final String[] TEXT;
+        private static final String[] UNIQUE_REWARDS;
+
         public DregsReward(boolean isFirst) {
             super(isFirst);
             drawback = DREGS_DRAWBACK;
             Logger logger = Logger.getLogger(DregsReward.class.getName());
             int category;
-            if(isFirst) {
+            if (isFirst) {
                 type = NeowRewardType.HUNDRED_GOLD;
                 category = 1;
             } else {
@@ -128,23 +133,43 @@ public class NeowPatches {
             super(category);
             drawback = DREGS_DRAWBACK;
             Logger logger = Logger.getLogger(DregsReward.class.getName());
+            ArrayList<NeowReward.NeowRewardDef> rewardOptions = new ArrayList<>();
             switch (category) {
                 case 0:
-                    type = NeowRewardType.THREE_CARDS;
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.THREE_CARDS, TEXT[0]));
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.ONE_RANDOM_RARE_CARD, TEXT[1]));
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.UPGRADE_CARD, TEXT[3]));
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.RANDOM_COLORLESS, TEXT[30]));
                     break;
                 case 1:
-                    type = NeowRewardType.HUNDRED_GOLD;
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.THREE_SMALL_POTIONS, TEXT[5]));
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.RANDOM_COMMON_RELIC, TEXT[6]));
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.TEN_PERCENT_HP_BONUS, TEXT[7] +
+                            (int) ((float) AbstractDungeon.player.maxHealth * 0.1F) +
+                            " ]"));
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.HUNDRED_GOLD, TEXT[8] + 100 + TEXT[9]));
                     break;
                 case 2:
-                    type = NeowRewardType.TRANSFORM_CARD;
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.REMOVE_TWO, " [ " + TEXT[10]));
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.ONE_RARE_RELIC, " [ " + TEXT[11]));
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.THREE_RARE_CARDS, " [ " + TEXT[12]));
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.TRANSFORM_TWO_CARDS, " [ " + TEXT[15]));
                     break;
                 case 3:
-                    type = NeowRewardType.TEN_PERCENT_HP_BONUS;
+                    rewardOptions.add(new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.BOSS_RELIC, UNIQUE_REWARDS[0]));
                     break;
                 default:
                     logger.warning("Invalid Reward Category " + category);
             }
-            optionLabel = "" + DREGS_NEOW_TEXT[0] + DREGS_NEOW_TEXT[category + 1];
+            NeowReward.NeowRewardDef reward = rewardOptions.get(NeowEvent.rng.random(0, rewardOptions.size() - 1));
+            type = reward.type;
+            optionLabel = "" + DREGS_NEOW_TEXT[0] + reward.desc;
+        }
+
+        static {
+            characterStrings = CardCrawlGame.languagePack.getCharacterString("Neow Reward");
+            TEXT = characterStrings.TEXT;
+            UNIQUE_REWARDS = characterStrings.UNIQUE_REWARDS;
         }
     }
 }
