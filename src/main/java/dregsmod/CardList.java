@@ -2,7 +2,10 @@ package dregsmod;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import dregsmod.cards.*;
+import dregsmod.cards.Adaptability;
+import dregsmod.cards.DregsDefend;
+import dregsmod.cards.DregsStrike;
+import dregsmod.cards.LashOut;
 import dregsmod.cards.common.*;
 import dregsmod.cards.curses.*;
 import dregsmod.cards.rare.*;
@@ -45,9 +48,6 @@ public class CardList {
         allCards.add(new Envy());
         allCards.add(new Infection());
         allCards.add(new WeakPoint());
-
-        // Special Cards
-        allCards.add(new CleansedCurse());
 
         // Common Attacks
         allCards.add(new Chomp());
