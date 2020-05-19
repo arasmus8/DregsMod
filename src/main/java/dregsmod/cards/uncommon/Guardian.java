@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
-import dregsmod.cards.AwakenSkillTag;
+import dregsmod.cards.DregsCardTags;
 import dregsmod.cards.TriggerOnSelfSealedCard;
 import dregsmod.characters.Dregs;
 
@@ -44,7 +44,7 @@ public class Guardian extends CustomCard implements TriggerOnSelfSealedCard {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         baseMagicNumber = magicNumber = MAGIC;
-        tags.add(AwakenSkillTag.AWAKEN_SKILL);
+        tags.add(DregsCardTags.AWAKEN_SKILL);
     }
 
     // Actions the card should do.

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCurseHoldingCard;
-import dregsmod.cards.AwakenSkillTag;
+import dregsmod.cards.DregsCardTags;
 import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
@@ -37,7 +37,7 @@ public class Pinprick extends AbstractCurseHoldingCard implements UpgradeTextCha
     public Pinprick() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(AwakenSkillTag.AWAKEN_SKILL);
+        tags.add(DregsCardTags.AWAKEN_SKILL);
     }
 
     @Override

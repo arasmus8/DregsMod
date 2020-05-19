@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.actions.ObstructAction;
-import dregsmod.cards.AwakenSkillTag;
+import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
@@ -41,7 +41,7 @@ public class Obstruct extends CustomCard {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
-        tags.add(AwakenSkillTag.CANT_AWAKEN);
+        tags.add(DregsCardTags.CANT_AWAKEN);
     }
 
     // Actions the card should do.

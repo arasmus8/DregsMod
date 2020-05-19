@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.actions.CardAwokenAction;
 import dregsmod.cards.AbstractSealedCard;
-import dregsmod.cards.AwakenSkillTag;
 import dregsmod.cards.AwakenedMod;
+import dregsmod.cards.DregsCardTags;
 import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
@@ -44,7 +44,7 @@ public class Ascetic extends AbstractSealedCard implements UpgradeTextChangingCa
     public Ascetic() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        tags.add(AwakenSkillTag.CANT_AWAKEN);
+        tags.add(DregsCardTags.CANT_AWAKEN);
     }
 
     // Actions the card should do.

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Dark;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCurseHoldingCard;
-import dregsmod.cards.AwakenSkillTag;
+import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.FortitudePower;
 
@@ -44,7 +44,7 @@ public class EmbraceDarkness extends AbstractCurseHoldingCard {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
-        tags.add(AwakenSkillTag.CANT_AWAKEN);
+        tags.add(DregsCardTags.CANT_AWAKEN);
     }
 
     @Override

@@ -13,6 +13,9 @@ import dregsmod.patches.enums.CustomRewardItem;
 import dregsmod.util.TextureLoader;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+import static dregsmod.cards.DregsCardTags.CLEANSE_REWARD;
 
 public class CleansedCurseReward extends CustomReward {
     private static final UIStrings uiStrings;
@@ -70,7 +73,16 @@ public class CleansedCurseReward extends CustomReward {
                 randomCards.addToTop(randomCard);
             }
         }
-        AbstractDungeon.gridSelectScreen.open(randomCards, amount, TEXT[0] + amount + (amount == 1 ? TEXT[1] : TEXT[2]) + TEXT[3], false, false, false, false);
+        randomCards.group.forEach(c -> {
+        });
+        CardGroup cardSelection = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        cardSelection.group.addAll(randomCards.group.stream().map(c -> {
+            AbstractCard cpy = c.makeCopy();
+            cpy.tags.add(CLEANSE_REWARD);
+            AbstractDungeon.player.relics.forEach(r -> r.onPreviewObtainCard(cpy));
+            return cpy;
+        }).collect(Collectors.toList()));
+        AbstractDungeon.gridSelectScreen.open(cardSelection, amount, TEXT[0] + amount + (amount == 1 ? TEXT[1] : TEXT[2]) + TEXT[3], false, false, false, false);
         AbstractDungeon.dynamicBanner.hide();
         return false;
     }

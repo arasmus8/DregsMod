@@ -8,7 +8,7 @@ import dregsmod.DregsMod;
 import dregsmod.actions.KindleAction;
 import dregsmod.actions.SealAndPerformAction;
 import dregsmod.cards.AbstractCurseHoldingCard;
-import dregsmod.cards.AwakenSkillTag;
+import dregsmod.cards.DregsCardTags;
 import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
@@ -38,7 +38,7 @@ public class Kindle extends AbstractCurseHoldingCard implements UpgradeTextChang
 
     public Kindle() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        tags.add(AwakenSkillTag.CANT_AWAKEN);
+        tags.add(DregsCardTags.CANT_AWAKEN);
     }
 
     // Actions the card should do.

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.FocusPower;
 import com.megacrit.cardcrawl.powers.LockOnPower;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCurseHoldingCard;
-import dregsmod.cards.AwakenSkillTag;
+import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
@@ -44,7 +44,7 @@ public class LaserFocus extends AbstractCurseHoldingCard {
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
         exhaust = true;
-        tags.add(AwakenSkillTag.AWAKEN_SKILL);
+        tags.add(DregsCardTags.AWAKEN_SKILL);
     }
 
     // Actions the card should do.

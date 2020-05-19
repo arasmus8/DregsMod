@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.actions.GemShardAction;
-import dregsmod.cards.AwakenSkillTag;
+import dregsmod.cards.DregsCardTags;
 import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
@@ -38,7 +38,7 @@ public class AmethystShard extends CustomCard implements UpgradeTextChangingCard
     public AmethystShard() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         exhaust = true;
-        tags.add(AwakenSkillTag.CANT_AWAKEN);
+        tags.add(DregsCardTags.CANT_AWAKEN);
     }
 
     // Actions the card should do.

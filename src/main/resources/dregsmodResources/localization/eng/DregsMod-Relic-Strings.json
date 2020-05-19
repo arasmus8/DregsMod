@@ -15,6 +15,13 @@
       "Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects. NL A card can be Awakened more than once."
     ]
   },
+  "dregsmod:CursedEgg": {
+    "NAME": "Cursed Egg",
+    "FLAVOR": "DO NOT EAT!",
+    "DESCRIPTIONS": [
+      "Cleansed #yCurse reward cards are #yUpgraded."
+    ]
+  },
   "dregsmod:CursedLocket": {
     "NAME": "Cursed Locket",
     "FLAVOR": "Sealed with dark energy, it burns to the touch.",

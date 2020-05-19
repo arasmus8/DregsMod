@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import dregsmod.DregsMod;
-import dregsmod.cards.AwakenSkillTag;
+import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
@@ -42,7 +42,7 @@ public class MidnightManacles extends CustomCard {
     public MidnightManacles() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        tags.add(AwakenSkillTag.AWAKEN_SKILL);
+        tags.add(DregsCardTags.AWAKEN_SKILL);
     }
 
     // Actions the card should do.

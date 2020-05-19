@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import dregsmod.DregsMod;
-import dregsmod.cards.AwakenSkillTag;
+import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.CursedPower;
 
@@ -50,7 +50,7 @@ public class Ritual extends CustomCard {
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
         exhaust = true;
-        tags.add(AwakenSkillTag.AWAKEN_SKILL);
+        tags.add(DregsCardTags.AWAKEN_SKILL);
     }
 
     // Actions the card should do.

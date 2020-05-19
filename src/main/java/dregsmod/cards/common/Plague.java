@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractSealedCard;
-import dregsmod.cards.AwakenSkillTag;
 import dregsmod.cards.AwakenedMod;
+import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
 
 import java.util.Optional;
@@ -48,7 +48,7 @@ public class Plague extends AbstractSealedCard {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGIC;
         magicNumber = MAGIC;
-        tags.add(AwakenSkillTag.AWAKEN_SKILL);
+        tags.add(DregsCardTags.AWAKEN_SKILL);
     }
 
     @Override
