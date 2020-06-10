@@ -15,7 +15,10 @@
   },
   "dregsmod:SealAndPerformAction": {
     "TEXT": [
-      "Seal:"
+      "Seal:",
+      "Choose up to ",
+      "Choose any number of ",
+      " cards to "
     ]
   }
 }
