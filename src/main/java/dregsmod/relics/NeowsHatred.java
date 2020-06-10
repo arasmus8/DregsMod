@@ -2,8 +2,6 @@ package dregsmod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
@@ -36,7 +34,6 @@ public class NeowsHatred extends CustomRelic {
         if(room instanceof RestRoom) {
             flash();
             AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(CardList.getRandomCleanseCurse(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
-            this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
     }
 

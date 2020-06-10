@@ -35,14 +35,6 @@ public class CurseBrand extends CustomRelic {
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             this.addToBot(
                     new CardAwokenAction()
-/*
-                    new DamageAllEnemiesAction(
-                            null,
-                            DamageInfo.createDamageMatrix(3, true),
-                            DamageInfo.DamageType.THORNS,
-                            AbstractGameAction.AttackEffect.BLUNT_LIGHT
-                    )
-*/
             );
         }
     }

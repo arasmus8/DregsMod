@@ -124,9 +124,9 @@ public class SealAndPerformAction extends AbstractGameAction {
                     CardGroup filtered = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                     filtered.group.addAll(filteredList);
                     if (amount < 0) {
-                        AbstractDungeon.gridSelectScreen.open(filtered, 99, true, TEXT[0]);
+                        AbstractDungeon.gridSelectScreen.open(filtered, 99, true, TEXT[2] + TEXT[3] + TEXT[0]);
                     } else {
-                        AbstractDungeon.gridSelectScreen.open(filtered, amount, TEXT[0], false, false, false, false);
+                        AbstractDungeon.gridSelectScreen.open(filtered, amount, true, TEXT[1] + amount + TEXT[3] + TEXT[0]);
                     }
                     tickDuration();
                     return;
@@ -173,11 +173,11 @@ public class SealAndPerformAction extends AbstractGameAction {
             if (p.hand.contains(card)) {
                 p.hand.moveToDiscardPile(card);
                 card.triggerOnManualDiscard();
-                card.triggerOnExhaust();
                 GameActionManager.incrementDiscard(false);
             } else if (p.drawPile.contains(card)) {
                 p.drawPile.moveToDiscardPile(card);
             }
+            card.triggerOnExhaust();
             if (card instanceof TriggerOnSelfSealedCard) {
                 ((TriggerOnSelfSealedCard) card).triggerOnSealed();
             }
@@ -185,11 +185,14 @@ public class SealAndPerformAction extends AbstractGameAction {
                 if (relic instanceof TriggerOnSealedRelic) {
                     ((TriggerOnSealedRelic) relic).triggerOnSealed(card);
                 }
+                relic.onExhaust(card);
+                relic.onManualDiscard();
             });
             AbstractDungeon.player.powers.forEach(power -> {
                 if (power instanceof TriggerOnSealedPower) {
                     ((TriggerOnSealedPower) power).triggerOnSealed(card);
                 }
+                power.onExhaust(card);
             });
         });
         if (followUpAction != null) {

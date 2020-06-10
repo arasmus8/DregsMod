@@ -43,6 +43,7 @@ public class ScapegoatPower extends AbstractPower implements CloneablePowerInter
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             amount = 0;
+            updateDescription();
         }
     }
 
