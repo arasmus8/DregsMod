@@ -26,7 +26,14 @@
     "NAME": "Cursed Locket",
     "FLAVOR": "Sealed with dark energy, it burns to the touch.",
     "DESCRIPTIONS": [
-      "Whenever you inflict #yCursed, inflict 5 more."
+      "Increase #yCursed inflicted by 50%."
+    ]
+  },
+  "dregsmod:DarksteelHammer": {
+    "NAME": "Darksteel Hammer",
+    "FLAVOR": "This blacksmith's tool is steeped in cursed energy.",
+    "DESCRIPTIONS": [
+      "Whenever you obtain a #yCurse, #yUpgrade a random card."
     ]
   },
   "dregsmod:DeathBrand": {
