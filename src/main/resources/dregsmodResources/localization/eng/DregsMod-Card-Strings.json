@@ -282,7 +282,7 @@
   },
   "dregsmod:Incantation": {
     "NAME": "Incantation",
-    "DESCRIPTION": "The first enemy you Damage each turn is inflicted with !M! dregsmod:Cursed."
+    "DESCRIPTION": "Instead of healing, dregsmod:Cursed enemies take !M! damage each turn."
   },
   "dregsmod:Indestructible": {
     "NAME": "Indestructible",

@@ -6,10 +6,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -60,7 +62,6 @@ public class CursedPower extends AbstractPower implements CloneablePowerInterfac
     @Override
     public void atStartOfTurn() {
         this.flash();
-        int healAmount = (owner.maxHealth - owner.currentHealth) / 10;
         if (amount >= owner.currentHealth) {
             addToBot(new InstantKillAction(owner));
             addToBot(new FastShakeAction(owner, 0.5F, 0.2F));// 119
@@ -81,7 +82,12 @@ public class CursedPower extends AbstractPower implements CloneablePowerInterfac
                     break;
             }
             addToBot(new AddCardToDeckAction(curseToAdd));
+        } else if (AbstractDungeon.player.hasPower(IncantationPower.POWER_ID)) {
+            IncantationPower incantationPower = (IncantationPower) AbstractDungeon.player.getPower(IncantationPower.POWER_ID);
+            int damageAmount = incantationPower.amount;
+            addToBot(new DamageAction(owner, new DamageInfo(owner, damageAmount, DamageInfo.DamageType.HP_LOSS)));
         } else {
+            int healAmount = (owner.maxHealth - owner.currentHealth) / 10;
             addToBot(new HealAction(owner, owner, healAmount));
         }
     }

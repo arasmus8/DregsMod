@@ -69,8 +69,8 @@
   "dregsmod:IncantationPower": {
     "NAME": "Incantation",
     "DESCRIPTIONS": [
-      "The first enemy you damage each turn is inflicted with #b",
-      " #yCursed."
+      "Instead of healing, #yCursed enemies take #b",
+      " damage each turn."
     ]
   },
   "dregsmod:LostPotentialPower": {
