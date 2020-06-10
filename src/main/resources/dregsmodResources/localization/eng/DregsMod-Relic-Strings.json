@@ -73,6 +73,13 @@
       "Whenever you enter a Rest Site, add a Curse to your deck."
     ]
   },
+  "dregsmod:Padlock": {
+    "NAME": "Padlock",
+    "FLAVOR": "This lock was once used to seal the cage of an evil force.",
+    "DESCRIPTIONS": [
+      "At the beginning of each combat, you may #ySeal up to 5 cards from your draw pile."
+    ]
+  },
   "dregsmod:StickyBarb": {
     "NAME": "Sticky Barb",
     "FLAVOR": "Impossible to remove from socks.",
