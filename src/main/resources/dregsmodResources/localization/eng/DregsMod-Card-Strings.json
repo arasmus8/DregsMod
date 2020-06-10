@@ -77,7 +77,7 @@
   },
   "dregsmod:RitualJar": {
     "NAME": "Ritual Jar",
-    "DESCRIPTION": "Inflict !M! dregsmod:Cursed. Increase the power of all Ritual Jar cards by 3 this combat."
+    "DESCRIPTION": "Inflict !M! dregsmod:Cursed. Increase the power of ALL Ritual\u00A0Jar cards by 3 this combat."
   },
   "dregsmod:RubyShard": {
     "NAME": "Ruby Shard",
