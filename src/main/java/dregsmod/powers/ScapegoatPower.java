@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.DregsMod;
 import dregsmod.util.TextureLoader;
 
-public class ScapegoatPower extends AbstractPower implements CloneablePowerInterface, TriggerOnSealedPower {
+public class ScapegoatPower extends AbstractPower implements CloneablePowerInterface {
 
     public static final String POWER_ID = DregsMod.makeID(ScapegoatPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -45,12 +45,6 @@ public class ScapegoatPower extends AbstractPower implements CloneablePowerInter
             amount = 0;
             updateDescription();
         }
-    }
-
-    @Override
-    public void triggerOnSealed(AbstractCard card) {
-        amount += magic;
-        updateDescription();
     }
 
     @Override
