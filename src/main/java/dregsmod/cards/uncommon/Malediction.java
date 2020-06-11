@@ -31,8 +31,8 @@ public class Malediction extends CustomCard {
 
     private static final int COST = -1;
 
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DAMAGE = 3;
+    private static final int DAMAGE = 8;
+    private static final int UPGRADE_PLUS_DAMAGE = 4;
 
 // /STAT DECLARATION/
 
