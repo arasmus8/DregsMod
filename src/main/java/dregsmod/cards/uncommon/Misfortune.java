@@ -22,7 +22,7 @@ public class Misfortune extends AbstractCurseHoldingCard {
     public static final String ID = DregsMod.makeID(Misfortune.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("Misfortune.png");
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
