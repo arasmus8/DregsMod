@@ -136,6 +136,9 @@ public class DregsMod implements
         logger.info("Done creating the color");
 
 
+        // Save/Load fields
+        BaseMod.addSaveField(makeID("cleansedCurseRewardRng"), this);
+
         logger.info("Done adding mod savable fields");
     }
 
@@ -243,9 +246,6 @@ public class DregsMod implements
 
         // Console Commands
         ConsoleCommand.addCommand("cleanse", CleanseCursesConsoleCommand.class);
-
-        // Save/Load fields
-        BaseMod.addSaveField(makeID("cleansedCurseRewardRng"), this);
 
         // Events
 
