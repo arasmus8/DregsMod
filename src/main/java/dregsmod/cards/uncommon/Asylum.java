@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.RegenPower;
 import dregsmod.DregsMod;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.AsylumPower;
@@ -16,7 +15,7 @@ import static dregsmod.DregsMod.makeCardPath;
 public class Asylum extends CustomCard {
 
     public static final String ID = DregsMod.makeID(Asylum.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("Asylum.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
