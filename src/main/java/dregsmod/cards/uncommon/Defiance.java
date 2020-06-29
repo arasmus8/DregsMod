@@ -17,7 +17,7 @@ import static dregsmod.DregsMod.makeCardPath;
 public class Defiance extends CustomCard implements UpgradeTextChangingCard {
 
     public static final String ID = DregsMod.makeID(Defiance.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("Defiance.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
