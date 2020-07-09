@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import dregsmod.DregsMod;
 import dregsmod.cards.Adaptability;
 import dregsmod.cards.DregsDefend;
@@ -31,6 +32,7 @@ import dregsmod.cards.DregsStrike;
 import dregsmod.cards.LashOut;
 import dregsmod.cards.curses.Jealousy;
 import dregsmod.relics.CurseBrand;
+import dregsmod.vfx.VictoryEffect;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -225,9 +227,21 @@ public class Dregs extends CustomPlayer {
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList<>();
         panels.add(new CutscenePanel("dregsmodResources/images/heart1.png", "ATTACK_HEAVY"));
-        panels.add(new CutscenePanel("dregsmodResources/images/heart2.png"));
+        panels.add(new CutscenePanel("dregsmodResources/images/heart2.png", "NECRONOMICON"));
         panels.add(new CutscenePanel("dregsmodResources/images/heart3.png"));
         return panels;
+    }
+
+    @Override
+    public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
+        for (AbstractGameEffect effect : effects) {
+            if (effect instanceof VictoryEffect) {
+                effect.update();
+                // effect exists, so don't create
+                return;
+            }
+        }
+        effects.add(new VictoryEffect());
     }
 
     @Override

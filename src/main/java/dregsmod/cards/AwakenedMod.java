@@ -33,7 +33,7 @@ import java.util.Optional;
 import java.util.function.Predicate;
 
 public class AwakenedMod extends AbstractCardModifier {
-    private static final int[] primes;
+    private static final int[] modifierValues;
     private static final String[] roman;
     public static final String ID = "dregsmod:AwakenedMod";
     private int level;
@@ -72,7 +72,7 @@ public class AwakenedMod extends AbstractCardModifier {
         ArrayList<AbstractCardModifier> modifiers = CardModifierManager.getModifiers(card, ID);
         if (modifiers.size() > 0) {
             AwakenedMod m = (AwakenedMod) modifiers.get(0);
-            m.level = MathUtils.clamp(m.level + 1, 1, primes.length - 1);
+            m.level = MathUtils.clamp(m.level + 1, 1, modifierValues.length - 1);
         } else {
             CardModifierManager.addModifier(card, new AwakenedMod(1));
         }
@@ -84,7 +84,7 @@ public class AwakenedMod extends AbstractCardModifier {
         awakenCard(card);
         ArrayList<AbstractCardModifier> modifiers = CardModifierManager.getModifiers(card, ID);
         AwakenedMod m = (AwakenedMod) modifiers.get(0);
-        m.level = MathUtils.clamp(m.level + times - 1, 1, primes.length - 1);
+        m.level = MathUtils.clamp(m.level + times - 1, 1, modifierValues.length - 1);
         card.applyPowers();
         card.initializeDescription();
     }
@@ -102,7 +102,7 @@ public class AwakenedMod extends AbstractCardModifier {
     @Override
     public float modifyDamage(float damage, DamageInfo.DamageType type, AbstractCard card, AbstractMonster target) {
         if (card.type == AbstractCard.CardType.ATTACK) {
-            return damage + primes[level];
+            return damage + modifierValues[level];
         } else {
             return damage;
         }
@@ -111,7 +111,7 @@ public class AwakenedMod extends AbstractCardModifier {
     @Override
     public float modifyBlock(float block, AbstractCard card) {
         if (card.type == AbstractCard.CardType.SKILL) {
-            return block + primes[level - 1];
+            return block + modifierValues[level - 1];
         } else {
             return block;
         }
@@ -121,7 +121,7 @@ public class AwakenedMod extends AbstractCardModifier {
     public void onApplyPowers(AbstractCard card) {
         super.onApplyPowers(card);
         if (card.tags.contains(DregsCardTags.AWAKEN_SKILL)) {
-            card.magicNumber = card.baseMagicNumber + primes[level - 1];
+            card.magicNumber = card.baseMagicNumber + modifierValues[level - 1];
             if (card.magicNumber != card.baseMagicNumber) {
                 card.isMagicNumberModified = true;
             }
@@ -130,7 +130,7 @@ public class AwakenedMod extends AbstractCardModifier {
                 card.baseBlock <= 0 &&
                 card.baseMagicNumber > 0
         ) {
-            card.magicNumber = card.baseMagicNumber + primes[level - 1];
+            card.magicNumber = card.baseMagicNumber + modifierValues[level - 1];
             if (card.magicNumber != card.baseMagicNumber) {
                 card.isMagicNumberModified = true;
             }
@@ -145,7 +145,7 @@ public class AwakenedMod extends AbstractCardModifier {
             actions.add(new DrawCardAction(p, 1));
         }
         if (level > 3) {
-            actions.add(new LoseHPAction(p, p, primes[level - 4]));
+            actions.add(new LoseHPAction(p, p, modifierValues[level - 4]));
         }
         // queue actions
         for (AbstractGameAction action : actions) {
@@ -177,7 +177,7 @@ public class AwakenedMod extends AbstractCardModifier {
         float dt = Gdx.graphics.getDeltaTime();
         vfxDuration -= dt;
         if (vfxDuration < 0f) {
-            vfxDuration = MathUtils.random(0.1f, Interpolation.exp5In.apply(1.0f, 0.3f, (float) level / (float) primes.length));
+            vfxDuration = MathUtils.random(0.1f, Interpolation.exp5In.apply(1.0f, 0.3f, (float) level / (float) modifierValues.length));
             eyeEffects.add(new AwakenedParticleEffect(card));
         }
 
@@ -232,7 +232,7 @@ public class AwakenedMod extends AbstractCardModifier {
         Color color = Color.BLACK.cpy();
         color.a = card.transparency;
         sb.setColor(color);
-        float lvlScale = Interpolation.exp5In.apply(1f, 1.75f, (float) level / (float) primes.length);
+        float lvlScale = Interpolation.exp5In.apply(1f, 1.75f, (float) level / (float) modifierValues.length);
         sb.draw(img,
                 card.hb.cX + vec.x - img.packedWidth / 2f,
                 card.hb.cY + vec.y - img.packedHeight / 2f,
@@ -244,7 +244,7 @@ public class AwakenedMod extends AbstractCardModifier {
                 card.drawScale * lvlScale,
                 card.angle);
         if (level > 3) {
-            int hpLoss = primes[level - 4];
+            int hpLoss = modifierValues[level - 4];
             vec = new Vector2(0, 0);
             vec.scl(card.drawScale * Settings.scale);
             vec.rotate(card.angle);
@@ -285,18 +285,18 @@ public class AwakenedMod extends AbstractCardModifier {
     }
 
     static {
-        primes = new int[]{
+        modifierValues = new int[]{
                 2,
                 3,
                 5,
-                7,
-                11,
-                13,
-                17,
-                23,
-                29,
-                31,
-                37
+                8,
+                12,
+                16,
+                20,
+                24,
+                28,
+                32,
+                36
         };
 
         roman = new String[]{
