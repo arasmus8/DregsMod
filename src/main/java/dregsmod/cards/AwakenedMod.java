@@ -14,6 +14,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -24,8 +25,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import dregsmod.characters.Dregs;
+import dregsmod.powers.ScapegoatBonusPower;
 import dregsmod.vfx.AwakenedParticleEffect;
 
 import java.util.ArrayList;
@@ -99,10 +102,19 @@ public class AwakenedMod extends AbstractCardModifier {
         }
     }
 
+    private int bonusFromScapegoat() {
+        AbstractPlayer p = AbstractDungeon.player;
+        AbstractPower scapegoatBonusPower = p.getPower(ScapegoatBonusPower.POWER_ID);
+        if (scapegoatBonusPower != null) {
+            return scapegoatBonusPower.amount;
+        }
+        return 0;
+    }
+
     @Override
     public float modifyDamage(float damage, DamageInfo.DamageType type, AbstractCard card, AbstractMonster target) {
         if (card.type == AbstractCard.CardType.ATTACK) {
-            return damage + modifierValues[level];
+            return damage + modifierValues[level] + bonusFromScapegoat();
         } else {
             return damage;
         }
@@ -111,7 +123,7 @@ public class AwakenedMod extends AbstractCardModifier {
     @Override
     public float modifyBlock(float block, AbstractCard card) {
         if (card.type == AbstractCard.CardType.SKILL) {
-            return block + modifierValues[level - 1];
+            return block + modifierValues[level - 1] + bonusFromScapegoat();
         } else {
             return block;
         }
@@ -151,6 +163,8 @@ public class AwakenedMod extends AbstractCardModifier {
         for (AbstractGameAction action : actions) {
             AbstractDungeon.actionManager.addToBottom(action);
         }
+
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, ScapegoatBonusPower.POWER_ID));
     }
 
     @Override

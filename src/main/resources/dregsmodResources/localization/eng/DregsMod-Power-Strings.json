@@ -89,11 +89,18 @@
       " additional damage."
     ]
   },
+  "dregsmod:ScapegoatBonusPower": {
+    "NAME": "Scapegoat Bonus",
+    "DESCRIPTIONS": [
+      "The next #yAwoken card you play does #b",
+      " more damage or Block."
+    ]
+  },
   "dregsmod:ScapegoatPower": {
     "NAME": "Scapegoat",
     "DESCRIPTIONS": [
-      "The Block and Damage of your cards are #b",
-      "% higher this turn."
+      "Whenever you #yExhaust or #ySeal a card, your next #yAwoken card does #b",
+      " more damage or Block."
     ]
   },
   "dregsmod:ShiftingSandsPower": {

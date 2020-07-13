@@ -224,7 +224,7 @@
   },
   "dregsmod:Scapegoat": {
     "NAME": "Scapegoat",
-    "DESCRIPTION": "When you Exhuast or dregsmod:Seal a card, your cards have !M! percent more Damage and Block until the end of the turn."
+    "DESCRIPTION": "Whenever you Exhuast or dregsmod:Seal a card, the next dregsmod:Awoken card you play does !M! more damage or Block."
   },
   "dregsmod:SealedEnergy": {
     "NAME": "Sealed Energy",
