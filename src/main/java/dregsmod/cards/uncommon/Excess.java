@@ -17,7 +17,7 @@ import static dregsmod.DregsMod.makeCardPath;
 public class Excess extends CustomCard implements UpgradeTextChangingCard {
 
     public static final String ID = DregsMod.makeID(Excess.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("Excess.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
