@@ -16,7 +16,7 @@ import static dregsmod.DregsMod.makeCardPath;
 public class LostPotential extends CustomCard implements UpgradeTextChangingCard {
 
     public static final String ID = DregsMod.makeID(LostPotential.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("LostPotential.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
