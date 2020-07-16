@@ -15,7 +15,7 @@ import static dregsmod.DregsMod.makeCardPath;
 public class ShiftingSands extends CustomCard {
 
     public static final String ID = DregsMod.makeID(ShiftingSands.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("ShiftingSands.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
