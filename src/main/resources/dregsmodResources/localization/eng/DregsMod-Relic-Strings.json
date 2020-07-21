@@ -52,6 +52,14 @@
       "After each battle, heal 1 HP for each #yCurse remaining in your deck."
     ]
   },
+  "dregsmod:FracturedPrism": {
+    "NAME": "Fractured Prism",
+    "FLAVOR": "The cracked surface creates exactly 5 reflections.",
+    "DESCRIPTIONS": [
+      "Choose a card in your deck. Your next 5 card rewards will include a copy of that card.",
+      "Choose 1 card to include in 5 future rewards."
+    ]
+  },
   "dregsmod:JadeSeal": {
     "NAME": "Jade Seal",
     "FLAVOR": "An ancient artifact from a forgotten empire.",

@@ -269,31 +269,33 @@ public class DregsMod implements
 
 
         BaseMod.addRelicToCustomPool(new CurseBrand(), Dregs.Enums.COLOR_BLACK);
-        BaseMod.addRelicToCustomPool(new NeowsHatred(), Dregs.Enums.COLOR_BLACK);
-        BaseMod.addRelicToCustomPool(new DeathBrand(), Dregs.Enums.COLOR_BLACK);
-        BaseMod.addRelicToCustomPool(new CursedLocket(), Dregs.Enums.COLOR_BLACK);
-        BaseMod.addRelicToCustomPool(new JadeSeal(), Dregs.Enums.COLOR_BLACK);
         BaseMod.addRelicToCustomPool(new CursedEgg(), Dregs.Enums.COLOR_BLACK);
+        BaseMod.addRelicToCustomPool(new CursedLocket(), Dregs.Enums.COLOR_BLACK);
+        BaseMod.addRelicToCustomPool(new DeathBrand(), Dregs.Enums.COLOR_BLACK);
+        BaseMod.addRelicToCustomPool(new JadeSeal(), Dregs.Enums.COLOR_BLACK);
+        BaseMod.addRelicToCustomPool(new NeowsHatred(), Dregs.Enums.COLOR_BLACK);
         BaseMod.addRelicToCustomPool(new Padlock(), Dregs.Enums.COLOR_BLACK);
 
-        UnlockTracker.markRelicAsSeen(NeowsHatred.ID);
-        UnlockTracker.markRelicAsSeen(DeathBrand.ID);
-        UnlockTracker.markRelicAsSeen(CursedLocket.ID);
-        UnlockTracker.markRelicAsSeen(JadeSeal.ID);
         UnlockTracker.markRelicAsSeen(CursedEgg.ID);
+        UnlockTracker.markRelicAsSeen(CursedLocket.ID);
+        UnlockTracker.markRelicAsSeen(DeathBrand.ID);
+        UnlockTracker.markRelicAsSeen(JadeSeal.ID);
+        UnlockTracker.markRelicAsSeen(NeowsHatred.ID);
         UnlockTracker.markRelicAsSeen(Padlock.ID);
 
-        BaseMod.addRelic(new LuckyClover(), RelicType.SHARED);
         BaseMod.addRelic(new BananaPeel(), RelicType.SHARED);
-        BaseMod.addRelic(new StickyBarb(), RelicType.SHARED);
-        BaseMod.addRelic(new EvilEye(), RelicType.SHARED);
         BaseMod.addRelic(new DarksteelHammer(), RelicType.SHARED);
+        BaseMod.addRelic(new EvilEye(), RelicType.SHARED);
+        BaseMod.addRelic(new FracturedPrism(), RelicType.SHARED);
+        BaseMod.addRelic(new LuckyClover(), RelicType.SHARED);
+        BaseMod.addRelic(new StickyBarb(), RelicType.SHARED);
 
-        UnlockTracker.markRelicAsSeen(LuckyClover.ID);
         UnlockTracker.markRelicAsSeen(BananaPeel.ID);
-        UnlockTracker.markRelicAsSeen(StickyBarb.ID);
-        UnlockTracker.markRelicAsSeen(EvilEye.ID);
         UnlockTracker.markRelicAsSeen(DarksteelHammer.ID);
+        UnlockTracker.markRelicAsSeen(EvilEye.ID);
+        UnlockTracker.markRelicAsSeen(FracturedPrism.ID);
+        UnlockTracker.markRelicAsSeen(LuckyClover.ID);
+        UnlockTracker.markRelicAsSeen(StickyBarb.ID);
 
         logger.info("Done adding relics!");
     }

@@ -118,15 +118,17 @@ public class NeowPatches {
             super(isFirst);
             drawback = DREGS_DRAWBACK;
             Logger logger = Logger.getLogger(DregsReward.class.getName());
-            int category;
+            NeowReward.NeowRewardDef reward;
             if (isFirst) {
                 type = NeowRewardType.HUNDRED_GOLD;
-                category = 1;
+                reward = new NeowReward.NeowRewardDef(NeowRewardType.HUNDRED_GOLD, TEXT[8] + 100 + TEXT[9]);
             } else {
-                type = NeowRewardType.TEN_PERCENT_HP_BONUS;
-                category = 3;
+                reward = new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.TEN_PERCENT_HP_BONUS, TEXT[7] +
+                        (int) ((float) AbstractDungeon.player.maxHealth * 0.1F) + " ]");
             }
-            optionLabel = "" + DREGS_NEOW_TEXT[0] + DREGS_NEOW_TEXT[category + 1];
+
+            this.type = reward.type;
+            optionLabel = "" + DREGS_NEOW_TEXT[0] + reward.desc;
         }
 
         public DregsReward(int category) {
