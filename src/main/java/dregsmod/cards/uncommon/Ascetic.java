@@ -22,7 +22,7 @@ public class Ascetic extends AbstractSealedCard implements UpgradeTextChangingCa
 
     public static final String ID = DregsMod.makeID(Ascetic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Ascetic.png");
 // Must have an image with the same NAME as the card in your image folder!
 
 // /TEXT DECLARATION/
