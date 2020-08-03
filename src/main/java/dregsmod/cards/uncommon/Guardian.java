@@ -20,7 +20,7 @@ public class Guardian extends CustomCard implements TriggerOnSelfSealedCard {
 
     public static final String ID = DregsMod.makeID(Guardian.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Guardian.png");
 // Must have an image with the same NAME as the card in your image folder!
 
 // /TEXT DECLARATION/
