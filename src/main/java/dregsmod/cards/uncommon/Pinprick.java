@@ -22,7 +22,7 @@ import static dregsmod.DregsMod.makeCardPath;
 public class Pinprick extends AbstractCurseHoldingCard implements UpgradeTextChangingCard {
 
     public static final String ID = DregsMod.makeID(Pinprick.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Pinprick.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
