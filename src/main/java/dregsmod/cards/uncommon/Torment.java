@@ -22,7 +22,7 @@ public class Torment extends AbstractSealedCard implements UpgradeTextChangingCa
 
     public static final String ID = DregsMod.makeID(Torment.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Torment.png");
 // Must have an image with the same NAME as the card in your image folder!
 
 // /TEXT DECLARATION/
