@@ -31,8 +31,7 @@ public class MeanLook extends CustomCard {
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 5;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 6;
 
     public MeanLook() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
@@ -53,7 +52,8 @@ public class MeanLook extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            exhaust = false;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

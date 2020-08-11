@@ -295,7 +295,8 @@
   },
   "dregsmod:MeanLook": {
     "NAME": "Mean Look",
-    "DESCRIPTION": "Deal !D! Damage. Double the target's dregsmod:Cursed. NL Exhaust"
+    "DESCRIPTION": "Deal !D! Damage. Double the target's dregsmod:Cursed. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Double the target's dregsmod:Cursed."
   },
   "dregsmod:Overcome": {
     "NAME": "Overcome",
