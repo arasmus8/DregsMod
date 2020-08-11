@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
@@ -30,6 +31,11 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.ScapegoatBonusPower;
 import dregsmod.vfx.AwakenedParticleEffect;
+import javassist.ClassPool;
+import javassist.CtMethod;
+import javassist.expr.ExprEditor;
+import javassist.expr.FieldAccess;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -47,6 +53,31 @@ public class AwakenedMod extends AbstractCardModifier {
     private final ArrayList<AbstractGameEffect> eyeEffects;
     private TextureAtlas.AtlasRegion img;
 
+    private static boolean usesMagicNumber(AbstractCard card) {
+        final boolean[] usesMagic = {false};
+        if (card.baseMagicNumber > 0
+                && StringUtils.containsIgnoreCase(card.rawDescription, "!M!")) {
+            try {
+                ClassPool pool = Loader.getClassPool();
+                CtMethod ctClass = pool.get(card.getClass().getName()).getDeclaredMethod("use");
+
+                ctClass.instrument(new ExprEditor() {
+                    @Override
+                    public void edit(FieldAccess f) {
+
+                        if (f.getFieldName().equals("magicNumber") && !f.isWriter()) {
+                            usesMagic[0] = true;
+                        }
+
+                    }
+                });
+
+            } catch (Exception ignored) {
+            }
+        }
+        return usesMagic[0];
+    }
+
     public static final Predicate<AbstractCard> eligibleToAwaken = card -> {
         if (card.type == AbstractCard.CardType.ATTACK) {
             return true;
@@ -54,7 +85,7 @@ public class AwakenedMod extends AbstractCardModifier {
             if (card.color == Dregs.Enums.COLOR_BLACK) {
                 return !card.tags.contains(DregsCardTags.CANT_AWAKEN);
             }
-            return (card.baseBlock > 0 || card.baseMagicNumber > 0);
+            return (card.baseBlock > 0 || (card.baseMagicNumber > 0 && usesMagicNumber(card)));
         }
         return false;
     };
@@ -142,7 +173,13 @@ public class AwakenedMod extends AbstractCardModifier {
                 card.baseBlock <= 0 &&
                 card.baseMagicNumber > 0
         ) {
-            card.magicNumber = card.baseMagicNumber + modifierValues[level - 1];
+            int adjustBy = modifierValues[level - 1];
+            AbstractCard upgraded = card.makeStatEquivalentCopy();
+            upgraded.upgrade();
+            if (card.baseMagicNumber > upgraded.baseMagicNumber) {
+                adjustBy *= -1;
+            }
+            card.magicNumber = card.baseMagicNumber + adjustBy;
             if (card.magicNumber != card.baseMagicNumber) {
                 card.isMagicNumberModified = true;
             }
