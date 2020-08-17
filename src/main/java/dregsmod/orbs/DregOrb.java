@@ -6,12 +6,10 @@ import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.curses.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
@@ -20,28 +18,16 @@ import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import dregsmod.DregsMod;
 import dregsmod.actions.CardAwokenAction;
 
-public class CurseOrb extends AbstractOrb {
-    public static final String ORB_ID = DregsMod.makeID("CurseOrb");
+public class DregOrb extends AbstractOrb {
+    public static final String ORB_ID = DregsMod.makeID("DregOrb");
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;
     private static final float ORB_BORDER_SCALE = 1.2F;
     private float vfxTimer = 0.5F;
     private static final float VFX_INTERVAL_TIME = 0.25F;
-    private ParticleEffect particle;
-    private static String[] curseList = {
-            Clumsy.ID,
-            Decay.ID,
-            Doubt.ID,
-            Injury.ID,
-            Normality.ID,
-            Pain.ID,
-            Parasite.ID,
-            Regret.ID,
-            Shame.ID,
-            Writhe.ID
-    };
+    private final ParticleEffect particle;
 
-    public CurseOrb() {
+    public DregOrb() {
         img = ImageMaster.loadImage(DregsMod.makeOrbPath("Curse.png"));
         this.ID = ORB_ID;
         this.name = orbString.NAME;
@@ -77,9 +63,7 @@ public class CurseOrb extends AbstractOrb {
     public void onStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.DARK), 0.1F));
         for (int i = 0; i < passiveAmount; i++) {
-            String cardId = curseList[AbstractDungeon.cardRng.random(curseList.length - 1)];
-            AbstractCard card = CardLibrary.getCopy(cardId);
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(card));
+            AbstractDungeon.actionManager.addToBottom(new DrawPileToHandAction(passiveAmount, AbstractCard.CardType.CURSE));
         }
     }
 
@@ -90,7 +74,7 @@ public class CurseOrb extends AbstractOrb {
 
     @Override
     public AbstractOrb makeCopy() {
-        return new CurseOrb();
+        return new DregOrb();
     }
 
     @Override

@@ -185,14 +185,14 @@ public class SealAndPerformAction extends AbstractGameAction {
                 if (relic instanceof TriggerOnSealedRelic) {
                     ((TriggerOnSealedRelic) relic).triggerOnSealed(card);
                 }
-                relic.onExhaust(card);
-                relic.onManualDiscard();
+                // relic.onExhaust(card);
+                // relic.onManualDiscard();
             });
             AbstractDungeon.player.powers.forEach(power -> {
                 if (power instanceof TriggerOnSealedPower) {
                     ((TriggerOnSealedPower) power).triggerOnSealed(card);
                 }
-                power.onExhaust(card);
+                // power.onExhaust(card);
             });
         });
         if (followUpAction != null) {

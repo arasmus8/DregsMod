@@ -8,12 +8,12 @@
       " cards."
     ]
   },
-  "dregsmod:CurseOrb": {
-    "NAME": "Curse",
+  "dregsmod:DregOrb": {
+    "NAME": "Dreg",
     "DESCRIPTION": [
-      "#yPassive: At the start of turn, add #b",
-      " Curse to your hand. NL #yEvoke: #yAwaken a card.",
-      " Curses to your hand. NL #yEvoke: #yAwaken a card."
+      "#yPassive: At the start of turn, draw #b",
+      " Curse. NL #yEvoke: #yAwaken a card.",
+      " Curses. NL #yEvoke: #yAwaken a card."
     ]
   }
 }

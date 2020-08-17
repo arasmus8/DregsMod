@@ -1,6 +1,8 @@
 package dregsmod.cards.uncommon;
 
+import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -8,6 +10,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.AsylumPower;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static dregsmod.DregsMod.makeCardPath;
@@ -28,9 +33,21 @@ public class Asylum extends CustomCard {
     private static final int MAGIC = 1;
     private static final int UPGRADED_COST = 0;
 
+    private final List<TooltipInfo> customTooltips;
+
     public Asylum() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        customTooltips = new ArrayList<>();
+        if (BaseMod.getKeywordProper("dregsmod:asylumorbs") != null) {
+            customTooltips.add(new TooltipInfo(BaseMod.getKeywordTitle("dregsmod:asylumorbs"),
+                    BaseMod.getKeywordDescription("dregsmod:asylumorbs")));
+        }
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        return customTooltips;
     }
 
     @Override

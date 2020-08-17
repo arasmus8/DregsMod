@@ -5,7 +5,7 @@
       "seal",
       "sealed"
     ],
-    "DESCRIPTION": "Sealed cards remain in the discard pile when you shuffle and are un-sealed. Sealing a card triggers any exhaust or discard effects."
+    "DESCRIPTION": "Sealed cards remain in the discard pile when you shuffle and are un-sealed. Sealing a card triggers any exhaust or discard effects listed on the card."
   },
   {
     "PROPER_NAME": "Cleanse",
@@ -65,11 +65,18 @@
     "DESCRIPTION": "Orb: Increases potency each turn. When #yEvoked, draws cards."
   },
   {
-    "PROPER_NAME": "Curse Orb",
+    "PROPER_NAME": "Dreg Orb",
     "NAMES": [
-      "curseorb"
+      "dregorb"
     ],
-    "DESCRIPTION": "Orb: Adds curses to your hand. When #yEvoked, exhaust a card."
+    "DESCRIPTION": "Orb: Draws curses each turn. When #yEvoked, Awakens a card."
+  },
+  {
+    "PROPER_NAME": "Asylum Orbs",
+    "NAMES": [
+      "asylumorbs"
+    ],
+    "DESCRIPTION": "Channels a different Orb depending on the rarity of the Sealed Card: NL Common: Lightning NL Uncommon: Frost NL Rare: Plasma NL Status: Sludge NL Curse: Dreg"
   },
   {
     "PROPER_NAME": "Awaken",
