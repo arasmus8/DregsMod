@@ -42,24 +42,35 @@ public class Pinprick extends AbstractCurseHoldingCard implements UpgradeTextCha
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (!holdingCurse) {
+            return;
+        }
         if (upgraded) {
             for (AbstractMonster mm : AbstractDungeon.getMonsters().monsters) {
                 if (mm != null) {
                     addToBot(new ApplyPowerAction(mm, p, new VulnerablePower(mm, 2, false), 2));
-                    if (holdingCurse) {
-                        addToBot(new VFXAction(new PressurePointEffect(mm.hb.cX, mm.hb.cY)));
-                        addToBot(new ApplyPowerAction(mm, p, new MarkPower(mm, magicNumber), magicNumber));
-                    }
+                    addToBot(new VFXAction(new PressurePointEffect(mm.hb.cX, mm.hb.cY)));
+                    addToBot(new ApplyPowerAction(mm, p, new MarkPower(mm, magicNumber), magicNumber));
                 }
             }
         } else {
             addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 2, false), 2));
-            if (holdingCurse) {
-                addToBot(new VFXAction(new PressurePointEffect(m.hb.cX, m.hb.cY)));
-                addToBot(new ApplyPowerAction(m, p, new MarkPower(m, magicNumber), magicNumber));
-            }
+            addToBot(new VFXAction(new PressurePointEffect(m.hb.cX, m.hb.cY)));
+            addToBot(new ApplyPowerAction(m, p, new MarkPower(m, magicNumber), magicNumber));
         }
         addToBot(new TriggerMarksAction(this));
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (super.canUse(p, m)) {
+            if (!holdingCurse) {
+                cantUseMessage = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            }
+            return holdingCurse;
+        } else {
+            return false;
+        }
     }
 
     @Override

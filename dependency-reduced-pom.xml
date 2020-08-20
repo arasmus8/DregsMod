@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>dregsmod</groupId>
-  <artifactId>DregsMod</artifactId>
-  <name>DregsMod</name>
-  <version>0.0.1</version>
-  <description>Adds the Dregs.
-    - Cleanse curses to collect cards from other classes
-    - Curse your enemies
-    - Try not to die
-  </description>
-  <build>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>dregsmod</groupId>
+    <artifactId>DregsMod</artifactId>
+    <name>DregsMod</name>
+    <version>0.0.1</version>
+    <description>Adds the Dregs.
+        - Cleanse curses to collect cards from other classes
+        - Curse your enemies
+        - Try not to die
+    </description>
+    <build>
     <resources>
       <resource>
         <directory>src/main/resources</directory>
@@ -69,7 +69,7 @@
             </goals>
             <configuration>
               <target>
-                <copy/>
+                  <copy/>
               </target>
             </configuration>
           </execution>
@@ -131,7 +131,7 @@
     <ModTheSpire.version>3.15.0</ModTheSpire.version>
     <Steam.path>D:\Programs\steamapps</Steam.path>
     <maven.compiler.source>1.8</maven.compiler.source>
-    <SlayTheSpire.version>01-27-2020</SlayTheSpire.version>
+      <SlayTheSpire.version>07-30-2020</SlayTheSpire.version>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 </project>

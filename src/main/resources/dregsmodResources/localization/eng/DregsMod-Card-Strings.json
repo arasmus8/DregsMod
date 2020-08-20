@@ -207,8 +207,11 @@
   },
   "dregsmod:Pinprick": {
     "NAME": "Pinprick",
-    "DESCRIPTION": "Inflict 2 Vulnerable. If you're holding a Curse, apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark.",
-    "UPGRADE_DESCRIPTION": "Inflict 2 Vulnerable to ALL enemies. If you're holding a Curse, apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark."
+    "DESCRIPTION": "If you're holding a Curse, inflict 2 Vulnerable and apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark.",
+    "UPGRADE_DESCRIPTION": "If you're holding a Curse, inflict 2 Vulnerable and apply !M! *Mark to ALL enemies. NL ALL enemies lose HP equal to their *Mark.",
+    "EXTENDED_DESCRIPTION": [
+      "I'm not holding a Curse!"
+    ]
   },
   "dregsmod:Rejection": {
     "NAME": "Rejection",
