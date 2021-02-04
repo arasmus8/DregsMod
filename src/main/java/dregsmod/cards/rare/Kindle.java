@@ -9,12 +9,11 @@ import dregsmod.actions.KindleAction;
 import dregsmod.actions.SealAndPerformAction;
 import dregsmod.cards.AbstractCurseHoldingCard;
 import dregsmod.cards.DregsCardTags;
-import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Kindle extends AbstractCurseHoldingCard implements UpgradeTextChangingCard {
+public class Kindle extends AbstractCurseHoldingCard {
 
 // TEXT DECLARATION
 
@@ -53,11 +52,6 @@ public class Kindle extends AbstractCurseHoldingCard implements UpgradeTextChang
         } else {
             addToBot(new KindleAction(this, false));
         }
-    }
-
-    @Override
-    public String upgradePreviewText() {
-        return diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     // Upgraded stats.

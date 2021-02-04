@@ -8,12 +8,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.actions.SealAndPerformAction;
 import dregsmod.cards.DregsCardTags;
-import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class SeeNoEvil extends CustomCard implements UpgradeTextChangingCard {
+public class SeeNoEvil extends CustomCard {
 
 // TEXT DECLARATION
 
@@ -50,11 +49,6 @@ public class SeeNoEvil extends CustomCard implements UpgradeTextChangingCard {
                 null,
                 null
         ));
-    }
-
-    @Override
-    public String upgradePreviewText() {
-        return diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     // Upgraded stats.

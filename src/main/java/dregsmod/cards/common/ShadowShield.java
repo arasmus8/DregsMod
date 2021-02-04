@@ -8,13 +8,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
-import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 import dregsmod.patches.variables.CardSealed;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class ShadowShield extends CustomCard implements UpgradeTextChangingCard {
+public class ShadowShield extends CustomCard {
 
 // TEXT DECLARATION
 
@@ -62,11 +61,6 @@ public class ShadowShield extends CustomCard implements UpgradeTextChangingCard 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-    }
-
-    @Override
-    public String upgradePreviewText() {
-        return diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     // Upgraded stats.

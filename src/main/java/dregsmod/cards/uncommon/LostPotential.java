@@ -6,14 +6,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
-import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.LostPotentialPower;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static dregsmod.DregsMod.makeCardPath;
 
-public class LostPotential extends CustomCard implements UpgradeTextChangingCard {
+public class LostPotential extends CustomCard {
 
     public static final String ID = DregsMod.makeID(LostPotential.class.getSimpleName());
     public static final String IMG = makeCardPath("LostPotential.png");
@@ -36,11 +35,6 @@ public class LostPotential extends CustomCard implements UpgradeTextChangingCard
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new LostPotentialPower(p, magicNumber, upgraded), magicNumber));
-    }
-
-    @Override
-    public String upgradePreviewText() {
-        return diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     @Override

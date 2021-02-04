@@ -11,12 +11,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
-import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class ShadowDagger extends CustomCard implements UpgradeTextChangingCard {
+public class ShadowDagger extends CustomCard {
 
     public static final String ID = DregsMod.makeID(ShadowDagger.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -47,11 +46,6 @@ public class ShadowDagger extends CustomCard implements UpgradeTextChangingCard 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new MakeTempCardInHandAction(new Shiv(), magicNumber));
-    }
-
-    @Override
-    public String upgradePreviewText() {
-        return diffText(cardStrings.DESCRIPTION, cardStrings.UPGRADE_DESCRIPTION);
     }
 
     @Override

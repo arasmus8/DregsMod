@@ -8,12 +8,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.actions.OvercomeAction;
 import dregsmod.cards.DregsCardTags;
-import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Overcome extends CustomCard implements UpgradeTextChangingCard {
+public class Overcome extends CustomCard {
 
 // TEXT DECLARATION
 
@@ -49,11 +48,6 @@ public class Overcome extends CustomCard implements UpgradeTextChangingCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new OvercomeAction(magicNumber, freeToPlayOnce, energyOnUse));
-    }
-
-    @Override
-    public String upgradePreviewText() {
-        return diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     // Upgraded stats.

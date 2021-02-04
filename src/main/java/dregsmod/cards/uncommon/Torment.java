@@ -9,14 +9,13 @@ import dregsmod.DregsMod;
 import dregsmod.cards.AbstractSealedCard;
 import dregsmod.cards.AwakenedMod;
 import dregsmod.cards.DregsCardTags;
-import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
 import java.util.Optional;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Torment extends AbstractSealedCard implements UpgradeTextChangingCard {
+public class Torment extends AbstractSealedCard {
 
 // TEXT DECLARATION
 
@@ -62,11 +61,6 @@ public class Torment extends AbstractSealedCard implements UpgradeTextChangingCa
         addToBot(new GainEnergyAction(magicNumber));
         Optional<AwakenedMod> awakenedMod = AwakenedMod.getForCard(this);
         awakenedMod.ifPresent(mod -> mod.onUse(this, p, null));
-    }
-
-    @Override
-    public String upgradePreviewText() {
-        return diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     // Upgraded stats.

@@ -12,7 +12,7 @@ import dregsmod.powers.AdaptabilityPower;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Adaptability extends CustomCard implements UpgradeTextChangingCard {
+public class Adaptability extends CustomCard {
 
     public static final String ID = DregsMod.makeID(Adaptability.class.getSimpleName());
     public static final String IMG = makeCardPath("Adaptability.png");
@@ -35,11 +35,6 @@ public class Adaptability extends CustomCard implements UpgradeTextChangingCard 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new AdaptabilityPower(p, magicNumber), magicNumber));
-    }
-
-    @Override
-    public String upgradePreviewText() {
-        return diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     @Override

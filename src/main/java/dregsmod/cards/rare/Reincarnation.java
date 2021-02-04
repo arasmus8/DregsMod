@@ -15,12 +15,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import dregsmod.DregsMod;
 import dregsmod.cards.DregsCardTags;
-import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Reincarnation extends CustomCard implements UpgradeTextChangingCard {
+public class Reincarnation extends CustomCard {
 
 // TEXT DECLARATION
 
@@ -63,11 +62,6 @@ public class Reincarnation extends CustomCard implements UpgradeTextChangingCard
         addToBot(new AnimateOrbAction(1));
         addToBot(new EvokeOrbAction(1));
         addToBot(new MakeTempCardInHandAction(new Miracle(), magicNumber));
-    }
-
-    @Override
-    public String upgradePreviewText() {
-        return diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     // Upgraded stats.

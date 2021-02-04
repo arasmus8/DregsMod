@@ -13,13 +13,12 @@ import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCurseHoldingCard;
 import dregsmod.cards.DregsCardTags;
-import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static dregsmod.DregsMod.makeCardPath;
 
-public class Pinprick extends AbstractCurseHoldingCard implements UpgradeTextChangingCard {
+public class Pinprick extends AbstractCurseHoldingCard {
 
     public static final String ID = DregsMod.makeID(Pinprick.class.getSimpleName());
     public static final String IMG = makeCardPath("Pinprick.png");
@@ -71,11 +70,6 @@ public class Pinprick extends AbstractCurseHoldingCard implements UpgradeTextCha
         } else {
             return false;
         }
-    }
-
-    @Override
-    public String upgradePreviewText() {
-        return diffText(CARD_STRINGS.DESCRIPTION, CARD_STRINGS.UPGRADE_DESCRIPTION);
     }
 
     @Override

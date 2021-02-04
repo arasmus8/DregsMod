@@ -11,13 +11,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
-import dregsmod.cards.UpgradeTextChangingCard;
 import dregsmod.characters.Dregs;
 import dregsmod.vfx.BadOmenEffect;
 
 import static dregsmod.DregsMod.makeCardPath;
 
-public class BadOmen extends CustomCard implements UpgradeTextChangingCard {
+public class BadOmen extends CustomCard {
 
     public static final String ID = DregsMod.makeID(BadOmen.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -72,11 +71,6 @@ public class BadOmen extends CustomCard implements UpgradeTextChangingCard {
             return active;
         }
         return false;
-    }
-
-    @Override
-    public String upgradePreviewText() {
-        return diffText(cardStrings.DESCRIPTION, cardStrings.UPGRADE_DESCRIPTION);
     }
 
     @Override
