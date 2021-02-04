@@ -12,16 +12,16 @@
         - Try not to die
     </description>
     <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-      <resource>
-        <directory>src/main/resources</directory>
-        <excludes>
-          <exclude>ModTheSpire.json</exclude>
-        </excludes>
-      </resource>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>ModTheSpire.json</exclude>
+                </excludes>
+            </resource>
       <resource>
         <filtering>true</filtering>
         <directory>src/main/resources</directory>

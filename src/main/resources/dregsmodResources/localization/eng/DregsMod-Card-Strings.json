@@ -49,7 +49,7 @@
   },
   "dregsmod:Gash": {
     "NAME": "Gash",
-    "DESCRIPTION": "Inflict !M! Vulnerable. Deal !D! Damage twice."
+    "DESCRIPTION": "Deal !D! Damage twice. Inflict !M! Vulnerable."
   },
   "dregsmod:IcyTouch": {
     "NAME": "Icy Touch",
@@ -360,7 +360,7 @@
   },
   "dregsmod:Death": {
     "NAME": "Death",
-    "DESCRIPTION": "Increase this card's cost by 1. Unless played, take 100 Damage. NL dregsmod:Cleanse: Spend !M! [E]"
+    "DESCRIPTION": "Increase this card's cost by 1. At the end of your turn, take 100 Damage. NL dregsmod:Cleanse: Spend !M! [E]"
   },
   "dregsmod:Spire": {
     "NAME": "Spire",

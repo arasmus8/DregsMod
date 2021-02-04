@@ -56,7 +56,7 @@ public class Dregs extends CustomPlayer {
     
     public static final int ENERGY_PER_TURN = 3;
     public static final int STARTING_HP = 75;
-    public static final int MAX_HP = 75;
+    public static final int MAX_HP = 85;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 2;
@@ -212,16 +212,6 @@ public class Dregs extends CustomPlayer {
         animation.analyzeDeck();
         super.applyPreCombatLogic();
     }
-
-    /*
-    @Override
-    public void applyStartOfTurnPostDrawPowers() {
-        discardPile.group.stream()
-                .filter(card -> CardSealed.isSealed.get(card) && card instanceof AbstractSealedCard)
-                .forEach(card -> ((AbstractSealedCard) card).triggerWhileSealed(this));
-        super.applyStartOfTurnPostDrawPowers();
-    }
-    */
 
     @Override
     public List<CutscenePanel> getCutscenePanels() {
