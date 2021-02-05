@@ -1,13 +1,11 @@
 package dregsmod.cards.uncommon;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
+import dregsmod.cards.AbstractDregsCard;
 import dregsmod.cards.DregsCardTags;
 import dregsmod.cards.choices.Blue;
 import dregsmod.cards.choices.Green;
@@ -17,20 +15,8 @@ import dregsmod.characters.Dregs;
 
 import java.util.ArrayList;
 
-import static dregsmod.DregsMod.makeCardPath;
-
-public class GemHeart extends CustomCard {
-
-// TEXT DECLARATION
-
+public class GemHeart extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(GemHeart.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("GemHeart.png");
-// Must have an image with the same NAME as the card in your image folder!
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -39,15 +25,11 @@ public class GemHeart extends CustomCard {
 
     private static final int COST = 1;
 
-// /STAT DECLARATION/
-
     public GemHeart() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, DregsCardTags.CANT_AWAKEN);
         exhaust = true;
-        tags.add(DregsCardTags.CANT_AWAKEN);
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> choices = new ArrayList<>();
@@ -61,12 +43,11 @@ public class GemHeart extends CustomCard {
         addToBot(new ChooseOneAction(choices));
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

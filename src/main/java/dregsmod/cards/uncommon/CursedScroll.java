@@ -1,31 +1,17 @@
 package dregsmod.cards.uncommon;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import dregsmod.DregsMod;
+import dregsmod.cards.AbstractDregsCard;
 import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.CursedPower;
 
-import static dregsmod.DregsMod.makeCardPath;
-
-public class CursedScroll extends CustomCard {
-
-// TEXT DECLARATION
-
+public class CursedScroll extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(CursedScroll.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("CursedScroll.png");
-// Must have an image with the same NAME as the card in your image folder!
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -37,24 +23,18 @@ public class CursedScroll extends CustomCard {
     private static final int MAGIC = 10;
     private static final int UPGRADED_MAGIC = 4;
 
-// /STAT DECLARATION/
-
     public CursedScroll() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = MAGIC;
-        magicNumber = baseMagicNumber;
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, DregsCardTags.AWAKEN_SKILL);
+        magicNumber = baseMagicNumber = MAGIC;
         exhaust = true;
-        tags.add(DregsCardTags.AWAKEN_SKILL);
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -2), -2));
         addToBot(new ApplyPowerAction(m, p, new CursedPower(m, magicNumber), magicNumber));
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

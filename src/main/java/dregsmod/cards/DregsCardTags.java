@@ -12,4 +12,7 @@ public class DregsCardTags {
 
     @SpireEnum
     public static AbstractCard.CardTags CLEANSE_REWARD;
+
+    @SpireEnum
+    public static AbstractCard.CardTags CLEANSE_CURSE;
 }

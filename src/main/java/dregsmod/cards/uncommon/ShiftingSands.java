@@ -1,22 +1,15 @@
 package dregsmod.cards.uncommon;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
+import dregsmod.cards.AbstractDregsCard;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.ShiftingSandsPower;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static dregsmod.DregsMod.makeCardPath;
-
-public class ShiftingSands extends CustomCard {
-
+public class ShiftingSands extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(ShiftingSands.class.getSimpleName());
-    public static final String IMG = makeCardPath("ShiftingSands.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -29,7 +22,7 @@ public class ShiftingSands extends CustomCard {
     private static final int UPGRADE_MAGIC = 1;
 
     public ShiftingSands() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         magicNumber = baseMagicNumber = MAGIC;
     }
 

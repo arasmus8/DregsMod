@@ -1,8 +1,6 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,15 +10,13 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.DregsMod;
-import dregsmod.util.TextureLoader;
 
-public class LostPotentialPower extends AbstractPower implements CloneablePowerInterface, TriggerOnSealedPower {
+public class LostPotentialPower extends AbstractDregsPower implements CloneablePowerInterface, TriggerOnSealedPower {
 
     public static final String POWER_ID = DregsMod.makeID(LostPotentialPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final Texture texture = TextureLoader.getTexture(DregsMod.makePowerPath("lostpotential.png"));
     private static boolean upgraded;
 
     public LostPotentialPower(AbstractPlayer owner, int amount, boolean isUpgraded) {
@@ -34,8 +30,7 @@ public class LostPotentialPower extends AbstractPower implements CloneablePowerI
             upgraded = isUpgraded;
         }
 
-        region48 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
-        region128 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
+        loadRegion("lostpotential");
         updateDescription();
     }
 

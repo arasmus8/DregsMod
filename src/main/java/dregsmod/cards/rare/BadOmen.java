@@ -1,30 +1,19 @@
 package dregsmod.cards.rare;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
+import dregsmod.cards.AbstractDregsCard;
 import dregsmod.characters.Dregs;
 import dregsmod.vfx.BadOmenEffect;
 
-import static dregsmod.DregsMod.makeCardPath;
-
-public class BadOmen extends CustomCard {
-
+public class BadOmen extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(BadOmen.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-    public static final String IMG = makeCardPath("BadOmen.png");
-
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -35,7 +24,7 @@ public class BadOmen extends CustomCard {
     private static final int DAMAGE = 40;
 
     public BadOmen() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         baseDamage = DAMAGE;
         isMultiDamage = true;
     }
@@ -66,7 +55,7 @@ public class BadOmen extends CustomCard {
         if (super.canUse(p, m)) {
             boolean active = active();
             if (!active) {
-                cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+                cantUseMessage = EXTENDED_DESCRIPTION[0];
             }
             return active;
         }
@@ -77,7 +66,7 @@ public class BadOmen extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             selfRetain = true;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             upgradeName();
             initializeDescription();
         }

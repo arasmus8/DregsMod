@@ -1,8 +1,6 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -14,15 +12,13 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.DregsMod;
-import dregsmod.util.TextureLoader;
 
-public class EclipseFormPower extends AbstractPower implements CloneablePowerInterface {
+public class EclipseFormPower extends AbstractDregsPower implements CloneablePowerInterface {
 
     public static final String POWER_ID = DregsMod.makeID(EclipseFormPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final Texture texture = TextureLoader.getTexture(DregsMod.makePowerPath("eclipseform.png"));
 
     public EclipseFormPower(AbstractCreature owner, int amount) {
         name = NAME;
@@ -30,8 +26,7 @@ public class EclipseFormPower extends AbstractPower implements CloneablePowerInt
         this.owner = owner;
         this.amount = amount;
 
-        region48 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
-        region128 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
+        loadRegion("eclipseform");
         updateDescription();
     }
 

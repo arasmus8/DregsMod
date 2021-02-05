@@ -2,8 +2,6 @@ package dregsmod.cards.uncommon;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FocusPower;
 import com.megacrit.cardcrawl.powers.LockOnPower;
@@ -12,20 +10,8 @@ import dregsmod.cards.AbstractCurseHoldingCard;
 import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
 
-import static dregsmod.DregsMod.makeCardPath;
-
 public class LaserFocus extends AbstractCurseHoldingCard {
-
-// TEXT DECLARATION
-
     public static final String ID = DregsMod.makeID(LaserFocus.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("LaserFocus.png");
-// Must have an image with the same NAME as the card in your image folder!
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -37,17 +23,12 @@ public class LaserFocus extends AbstractCurseHoldingCard {
     private static final int MAGIC = 1;
     private static final int UPGRADED_MAGIC = 1;
 
-// /STAT DECLARATION/
-
     public LaserFocus() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = MAGIC;
-        magicNumber = baseMagicNumber;
+        super(ID, COST, TYPE, COLOR, RARITY, TARGET, DregsCardTags.AWAKEN_SKILL);
+        magicNumber = baseMagicNumber = MAGIC;
         exhaust = true;
-        tags.add(DregsCardTags.AWAKEN_SKILL);
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(m, p, new LockOnPower(m, 99), 99));
@@ -56,7 +37,6 @@ public class LaserFocus extends AbstractCurseHoldingCard {
         }
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

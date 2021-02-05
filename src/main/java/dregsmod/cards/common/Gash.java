@@ -1,31 +1,20 @@
 package dregsmod.cards.common;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.ScrapeEffect;
 import dregsmod.DregsMod;
+import dregsmod.cards.AbstractDregsCard;
 import dregsmod.characters.Dregs;
 
-import static dregsmod.DregsMod.makeCardPath;
-
-public class Gash extends CustomCard {
-
+public class Gash extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(Gash.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-    public static final String IMG = makeCardPath("Gash.png");
-
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -38,7 +27,7 @@ public class Gash extends CustomCard {
     private static final int MAGIC = 1;
 
     public Gash() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
     }

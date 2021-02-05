@@ -1,30 +1,20 @@
 package dregsmod.cards.uncommon;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.WallopEffect;
 import dregsmod.DregsMod;
 import dregsmod.actions.SealRandomCurseAction;
+import dregsmod.cards.AbstractDregsCard;
 import dregsmod.characters.Dregs;
 
-import static dregsmod.DregsMod.makeCardPath;
-
-public class SealingWish extends CustomCard {
-
+public class SealingWish extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(SealingWish.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-    public static final String IMG = makeCardPath("SealingWish.png");
-
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -36,7 +26,7 @@ public class SealingWish extends CustomCard {
     private static final int UPGRADE_PLUS_DMG = 4;
 
     public SealingWish() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         baseDamage = DAMAGE;
         isMultiDamage = true;
         exhaust = true;

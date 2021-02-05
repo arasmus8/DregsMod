@@ -1,28 +1,14 @@
 package dregsmod.cards.uncommon;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.actions.MaledictionAction;
+import dregsmod.cards.AbstractDregsCard;
 import dregsmod.characters.Dregs;
 
-import static dregsmod.DregsMod.makeCardPath;
-
-public class Malediction extends CustomCard {
-
-// TEXT DECLARATION
-
+public class Malediction extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(Malediction.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Malediction.png");
-// Must have an image with the same NAME as the card in your image folder!
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -34,20 +20,16 @@ public class Malediction extends CustomCard {
     private static final int DAMAGE = 8;
     private static final int UPGRADE_PLUS_DAMAGE = 4;
 
-// /STAT DECLARATION/
-
     public Malediction() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         baseDamage = DAMAGE;
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new MaledictionAction(m, damage, freeToPlayOnce, energyOnUse));
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

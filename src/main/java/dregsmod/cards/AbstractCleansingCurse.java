@@ -1,6 +1,5 @@
 package dregsmod.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMiscAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,17 +9,16 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import dregsmod.CleansedCurseReward;
 import dregsmod.patches.enums.CustomRewardItem;
 
-import static dregsmod.patches.enums.CustomCardTags.CLEANSE_CURSE;
+import static dregsmod.cards.DregsCardTags.CLEANSE_CURSE;
 
-public abstract class AbstractCleansingCurse extends CustomCard {
+public abstract class AbstractCleansingCurse extends AbstractDregsCard {
     public int cleanseAmount;
     public boolean isCleansed = false;
 
-    public AbstractCleansingCurse(String id, String name, String img, int cost, String rawDescription, CardTarget target, int cleanseAmount) {
-        super(id, name, img, cost, rawDescription, CardType.CURSE, CardColor.CURSE, CardRarity.CURSE, target);
+    public AbstractCleansingCurse(String id, int cost, CardTarget target, int cleanseAmount) {
+        super(id, cost, CardType.CURSE, CardRarity.CURSE, target, CardColor.CURSE, CLEANSE_CURSE);
         this.cleanseAmount = cleanseAmount;
         baseMagicNumber = magicNumber = cleanseAmount - misc;
-        tags.add(CLEANSE_CURSE);
     }
 
     @Override

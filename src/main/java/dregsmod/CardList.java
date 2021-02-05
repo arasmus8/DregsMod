@@ -2,15 +2,11 @@ package dregsmod;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import dregsmod.cards.Adaptability;
-import dregsmod.cards.DregsDefend;
-import dregsmod.cards.DregsStrike;
-import dregsmod.cards.LashOut;
+import dregsmod.cards.*;
 import dregsmod.cards.common.*;
 import dregsmod.cards.curses.*;
 import dregsmod.cards.rare.*;
 import dregsmod.cards.uncommon.*;
-import dregsmod.patches.enums.CustomCardTags;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -20,7 +16,7 @@ public class CardList {
 
     public static AbstractCard getRandomCleanseCurse() {
         ArrayList<AbstractCard> cleanseCurses = allCards.stream()
-                .filter(card -> card.hasTag(CustomCardTags.CLEANSE_CURSE))
+                .filter(card -> card.hasTag(DregsCardTags.CLEANSE_CURSE))
                 .collect(Collectors.toCollection(ArrayList::new));
         AbstractCard randomChoice = cleanseCurses.get(AbstractDungeon.cardRng.random(0, cleanseCurses.size() - 1));
         return randomChoice.makeCopy();

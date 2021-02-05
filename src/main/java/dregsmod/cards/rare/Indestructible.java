@@ -1,29 +1,15 @@
 package dregsmod.cards.rare;
 
-import basemod.abstracts.CustomCard;
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
+import dregsmod.cards.AbstractDregsCard;
 import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
 
-import static dregsmod.DregsMod.makeCardPath;
-
-public class Indestructible extends CustomCard {
-
-// TEXT DECLARATION
-
+public class Indestructible extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(Indestructible.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Indestructible.png");
-// Must have an image with the same NAME as the card in your image folder!
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -35,23 +21,17 @@ public class Indestructible extends CustomCard {
     private static final int MAGIC = 12;
     private static final int UPGRADED_MAGIC = 6;
 
-// /STAT DECLARATION/
-
     public Indestructible() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = MAGIC;
-        magicNumber = baseMagicNumber;
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, DregsCardTags.AWAKEN_SKILL);
+        magicNumber = baseMagicNumber = MAGIC;
         exhaust = true;
-        tags.add(DregsCardTags.AWAKEN_SKILL);
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new AddTemporaryHPAction(p, p, magicNumber));
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

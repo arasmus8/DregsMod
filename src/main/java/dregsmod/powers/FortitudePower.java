@@ -1,8 +1,6 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,15 +10,13 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import dregsmod.DregsMod;
-import dregsmod.util.TextureLoader;
 
-public class FortitudePower extends AbstractPower implements CloneablePowerInterface {
+public class FortitudePower extends AbstractDregsPower implements CloneablePowerInterface {
 
     public static final String POWER_ID = DregsMod.makeID(FortitudePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final Texture texture = TextureLoader.getTexture(DregsMod.makePowerPath("fortitude.png"));
 
     public FortitudePower(AbstractCreature owner, int amount) {
         name = NAME;
@@ -29,8 +25,7 @@ public class FortitudePower extends AbstractPower implements CloneablePowerInter
         this.amount = amount;
         isTurnBased = true;
 
-        region48 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
-        region128 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
+        loadRegion("fortitude");
         updateDescription();
 
         if (owner.hasPower(VulnerablePower.POWER_ID)) {

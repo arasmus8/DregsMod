@@ -1,8 +1,6 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -10,18 +8,16 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.DregsMod;
 import dregsmod.actions.AsylumChannelAction;
 import dregsmod.actions.SealAndPerformAction;
-import dregsmod.util.TextureLoader;
 
 import java.util.logging.Logger;
 
-public class AsylumPower extends AbstractPower implements CloneablePowerInterface {
+public class AsylumPower extends AbstractDregsPower implements CloneablePowerInterface {
     private static final Logger logger = Logger.getLogger(AsylumPower.class.getName());
 
     public static final String POWER_ID = DregsMod.makeID(AsylumPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final Texture texture = TextureLoader.getTexture(DregsMod.makePowerPath("asylum.png"));
 
     public AsylumPower(AbstractPlayer owner, int amount) {
         name = NAME;
@@ -30,8 +26,7 @@ public class AsylumPower extends AbstractPower implements CloneablePowerInterfac
         this.amount = amount;
         this.priority = 3;
 
-        region48 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
-        region128 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
+        loadRegion("asylum");
         updateDescription();
     }
 

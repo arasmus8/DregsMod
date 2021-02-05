@@ -1,22 +1,15 @@
 package dregsmod.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.AdaptabilityPower;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static dregsmod.DregsMod.makeCardPath;
-
-public class Adaptability extends CustomCard {
+public class Adaptability extends AbstractDregsCard {
 
     public static final String ID = DregsMod.makeID(Adaptability.class.getSimpleName());
-    public static final String IMG = makeCardPath("Adaptability.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -28,7 +21,7 @@ public class Adaptability extends CustomCard {
     private static final int MAGIC = 3;
 
     public Adaptability() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         magicNumber = baseMagicNumber = MAGIC;
     }
 
@@ -42,7 +35,7 @@ public class Adaptability extends CustomCard {
         if (!upgraded) {
             isInnate = true;
             upgradeName();
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

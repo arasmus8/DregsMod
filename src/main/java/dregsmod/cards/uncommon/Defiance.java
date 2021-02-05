@@ -1,23 +1,16 @@
 package dregsmod.cards.uncommon;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
+import dregsmod.cards.AbstractDregsCard;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.DefianceAwakenPower;
 import dregsmod.powers.DefiancePower;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static dregsmod.DregsMod.makeCardPath;
-
-public class Defiance extends CustomCard {
-
+public class Defiance extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(Defiance.class.getSimpleName());
-    public static final String IMG = makeCardPath("Defiance.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -29,7 +22,7 @@ public class Defiance extends CustomCard {
     private static final int MAGIC = 1;
 
     public Defiance() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         magicNumber = baseMagicNumber = MAGIC;
     }
 
@@ -45,7 +38,7 @@ public class Defiance extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -1,8 +1,6 @@
 package dregsmod.cards.rare;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.actions.KindleAction;
@@ -11,20 +9,8 @@ import dregsmod.cards.AbstractCurseHoldingCard;
 import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
 
-import static dregsmod.DregsMod.makeCardPath;
-
 public class Kindle extends AbstractCurseHoldingCard {
-
-// TEXT DECLARATION
-
     public static final String ID = DregsMod.makeID(Kindle.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Kindle.png");
-// Must have an image with the same NAME as the card in your image folder!
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -33,14 +19,11 @@ public class Kindle extends AbstractCurseHoldingCard {
 
     private static final int COST = 0;
 
-// /STAT DECLARATION/
-
     public Kindle() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         tags.add(DregsCardTags.CANT_AWAKEN);
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (upgraded && holdingCurse) {
@@ -54,12 +37,11 @@ public class Kindle extends AbstractCurseHoldingCard {
         }
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

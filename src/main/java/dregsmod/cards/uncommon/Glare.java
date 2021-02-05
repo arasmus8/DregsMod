@@ -3,27 +3,13 @@ package dregsmod.cards.uncommon;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCurseHoldingCard;
 import dregsmod.characters.Dregs;
 
-import static dregsmod.DregsMod.makeCardPath;
-
 public class Glare extends AbstractCurseHoldingCard {
-
-// TEXT DECLARATION
-
     public static final String ID = DregsMod.makeID(Glare.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Glare.png");
-// Must have an image with the same NAME as the card in your image folder!
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -37,15 +23,12 @@ public class Glare extends AbstractCurseHoldingCard {
 
     private static final int MAGIC = 1;
 
-// /STAT DECLARATION/
-
     public Glare() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         baseMagicNumber = magicNumber = MAGIC;
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, block));
@@ -54,7 +37,6 @@ public class Glare extends AbstractCurseHoldingCard {
         }
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

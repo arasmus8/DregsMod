@@ -1,8 +1,6 @@
 package dregsmod;
 
-import basemod.BaseMod;
-import basemod.ModLabel;
-import basemod.ModPanel;
+import basemod.*;
 import basemod.abstracts.CustomSavable;
 import basemod.devcommands.ConsoleCommand;
 import basemod.helpers.RelicType;
@@ -11,6 +9,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -23,10 +22,12 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import dregsmod.cards.AbstractDregsCard;
 import dregsmod.characters.Dregs;
 import dregsmod.patches.enums.CustomRewardItem;
 import dregsmod.potions.InsightPotion;
 import dregsmod.relics.*;
+import dregsmod.util.AssetLoader;
 import dregsmod.util.IDCheckDontTouchPls;
 import dregsmod.util.TextureLoader;
 
@@ -109,6 +110,12 @@ public class DregsMod implements
     public static String makeEventPath(String resourcePath) {
         return getModID() + "Resources/images/events/" + resourcePath;
     }
+
+    public static String assetPath(String path) {
+        return "dregsmodAssets/" + path;
+    }
+
+    public static AssetLoader assets = new AssetLoader();
 
     public static Map<String, Texture> uiTextures = new HashMap<>();
     public static ArrayList<AbstractCard> postSealedCards = new ArrayList<>();
@@ -300,6 +307,7 @@ public class DregsMod implements
         logger.info("Done adding relics!");
     }
 
+    @SuppressWarnings("LibGDXUnsafeIterator")
     @Override
     public void receiveEditCards() {
         logger.info("Adding variables");
@@ -311,10 +319,17 @@ public class DregsMod implements
         logger.info("Adding cards");
 
 
-        for (AbstractCard c : CardList.allCards) {
-            BaseMod.addCard(c);
-            UnlockTracker.unlockCard(c.cardID);
+        TextureAtlas cardAtlas = ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
+
+        TextureAtlas myCardAtlas = assets.loadAtlas(assetPath("images/cards/cards.atlas"));
+        for (TextureAtlas.AtlasRegion region : myCardAtlas.getRegions()) {
+            cardAtlas.addRegion(getModID() + "/" + region.name, region);
         }
+
+        new AutoAdd("DregsMod")
+                .packageFilter(AbstractDregsCard.class)
+                .setDefaultSeen(true)
+                .cards();
 
         logger.info("Done adding cards!");
     }

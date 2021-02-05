@@ -3,27 +3,13 @@ package dregsmod.cards.curses;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractCleansingCurse;
 
-import static dregsmod.DregsMod.makeCardPath;
-
 public class Dread extends AbstractCleansingCurse {
-
-// TEXT DECLARATION
-
     public static final String ID = DregsMod.makeID(Dread.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Dread.png");
-// Must have an image with the same NAME as the card in your image folder!
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardTarget TARGET = CardTarget.NONE;
     public static final CardColor COLOR = CardColor.CURSE;
@@ -33,10 +19,8 @@ public class Dread extends AbstractCleansingCurse {
 
     private boolean suspendDamage = false;
 
-// /STAT DECLARATION/
-
     public Dread() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TARGET, CLEANSE_AMOUNT);
+        super(ID, COST, TARGET, CLEANSE_AMOUNT);
         selfRetain = true;
     }
 
@@ -50,7 +34,6 @@ public class Dread extends AbstractCleansingCurse {
         }
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // actions when card is used.
@@ -62,7 +45,6 @@ public class Dread extends AbstractCleansingCurse {
         return false;
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
     }

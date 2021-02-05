@@ -1,37 +1,23 @@
 package dregsmod.cards.rare;
 
-import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import dregsmod.DregsMod;
+import dregsmod.cards.AbstractDregsCard;
 import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.CursedPower;
 
-import static dregsmod.DregsMod.makeCardPath;
-
-public class Ritual extends CustomCard {
-
-// TEXT DECLARATION
-
+public class Ritual extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(Ritual.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Ritual.png");
-// Must have an image with the same NAME as the card in your image folder!
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -43,17 +29,12 @@ public class Ritual extends CustomCard {
     private static final int MAGIC = 25;
     private static final int UPGRADED_MAGIC = 10;
 
-// /STAT DECLARATION/
-
     public Ritual() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = MAGIC;
-        magicNumber = baseMagicNumber;
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, DregsCardTags.AWAKEN_SKILL);
+        magicNumber = baseMagicNumber = MAGIC;
         exhaust = true;
-        tags.add(DregsCardTags.AWAKEN_SKILL);
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("ATTACK_PIERCING_WAIL"));
@@ -74,7 +55,6 @@ public class Ritual extends CustomCard {
         addToBot(new HealAction(p, p, lifeToRecover));
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

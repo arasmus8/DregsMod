@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.TriggerMarksAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.watcher.MarkPower;
@@ -15,14 +14,8 @@ import dregsmod.cards.AbstractCurseHoldingCard;
 import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static dregsmod.DregsMod.makeCardPath;
-
 public class Pinprick extends AbstractCurseHoldingCard {
-
     public static final String ID = DregsMod.makeID(Pinprick.class.getSimpleName());
-    public static final String IMG = makeCardPath("Pinprick.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -34,7 +27,7 @@ public class Pinprick extends AbstractCurseHoldingCard {
     private static final int MAGIC = 5;
 
     public Pinprick() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(DregsCardTags.AWAKEN_SKILL);
     }
@@ -64,7 +57,7 @@ public class Pinprick extends AbstractCurseHoldingCard {
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (super.canUse(p, m)) {
             if (!holdingCurse) {
-                cantUseMessage = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+                cantUseMessage = EXTENDED_DESCRIPTION[0];
             }
             return holdingCurse;
         } else {
@@ -77,7 +70,7 @@ public class Pinprick extends AbstractCurseHoldingCard {
         if (!upgraded) {
             upgradeName();
             target = CardTarget.ALL_ENEMY;
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -1,8 +1,6 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,15 +10,13 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import dregsmod.DregsMod;
-import dregsmod.util.TextureLoader;
 
-public class MightPower extends AbstractPower implements CloneablePowerInterface {
+public class MightPower extends AbstractDregsPower implements CloneablePowerInterface {
 
     public static final String POWER_ID = DregsMod.makeID(MightPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final Texture texture = TextureLoader.getTexture(DregsMod.makePowerPath("might.png"));
     private boolean dontRemoveThisTurn = false;
 
     public MightPower(AbstractCreature owner, int amount) {
@@ -30,8 +26,7 @@ public class MightPower extends AbstractPower implements CloneablePowerInterface
         this.amount = amount;
         isTurnBased = true;
 
-        region48 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
-        region128 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
+        loadRegion("might");
         updateDescription();
 
         if (owner.hasPower(WeakPower.POWER_ID)) {

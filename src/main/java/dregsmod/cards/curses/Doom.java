@@ -1,28 +1,14 @@
 package dregsmod.cards.curses;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
+import dregsmod.cards.AbstractDregsCard;
 import dregsmod.powers.CursedPower;
 
-import static dregsmod.DregsMod.makeCardPath;
-
-public class Doom extends CustomCard {
-
-// TEXT DECLARATION
-
+public class Doom extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(Doom.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Doom.png");
-// Must have an image with the same NAME as the card in your image folder!
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -32,16 +18,12 @@ public class Doom extends CustomCard {
     private static final int COST = 2;
     private static final int MAGIC = 12;
 
-// /STAT DECLARATION/
-
     public Doom() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = MAGIC;
-        magicNumber = baseMagicNumber;
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR);
+        magicNumber = baseMagicNumber = MAGIC;
         exhaust = true;
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(m, p, new CursedPower(m, magicNumber), magicNumber));
@@ -52,7 +34,6 @@ public class Doom extends CustomCard {
         return false;
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
     }

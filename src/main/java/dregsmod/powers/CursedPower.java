@@ -2,8 +2,6 @@ package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -24,15 +22,13 @@ import dregsmod.cards.curses.Catastrophe;
 import dregsmod.cards.curses.Doom;
 import dregsmod.cards.curses.Gloom;
 import dregsmod.relics.CursedLocket;
-import dregsmod.util.TextureLoader;
 
-public class CursedPower extends AbstractPower implements CloneablePowerInterface, HealthBarRenderPower {
+public class CursedPower extends AbstractDregsPower implements CloneablePowerInterface, HealthBarRenderPower {
 
     public static final String POWER_ID = DregsMod.makeID(CursedPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final Texture texture = TextureLoader.getTexture(DregsMod.makePowerPath("cursed.png"));
 
     public CursedPower(AbstractCreature owner, int amount) {
         name = NAME;
@@ -40,8 +36,7 @@ public class CursedPower extends AbstractPower implements CloneablePowerInterfac
         this.owner = owner;
         this.amount = amount;
 
-        region48 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
-        region128 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
+        loadRegion("cursed");
         updateDescription();
         type = PowerType.DEBUFF;
         if (AbstractDungeon.player.hasRelic(CursedLocket.ID)) {

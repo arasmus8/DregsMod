@@ -1,8 +1,6 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -12,15 +10,13 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import dregsmod.DregsMod;
 import dregsmod.actions.CardAwokenAction;
-import dregsmod.util.TextureLoader;
 
-public class DefianceAwakenPower extends AbstractPower implements CloneablePowerInterface {
+public class DefianceAwakenPower extends AbstractDregsPower implements CloneablePowerInterface {
 
     public static final String POWER_ID = DregsMod.makeID(DefianceAwakenPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final Texture texture = TextureLoader.getTexture(DregsMod.makePowerPath("defiance.png"));
 
     public DefianceAwakenPower(AbstractCreature owner, int amount) {
         name = NAME;
@@ -28,8 +24,7 @@ public class DefianceAwakenPower extends AbstractPower implements CloneablePower
         this.owner = owner;
         this.amount = amount;
 
-        region48 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
-        region128 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
+        loadRegion("defiance");
         updateDescription();
     }
 

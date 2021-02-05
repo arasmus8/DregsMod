@@ -1,8 +1,6 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,18 +10,16 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.DregsMod;
 import dregsmod.actions.SealAndPerformAction;
 import dregsmod.patches.variables.CardSealed;
-import dregsmod.util.TextureLoader;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-public class TheVaultPower extends AbstractPower implements CloneablePowerInterface {
+public class TheVaultPower extends AbstractDregsPower implements CloneablePowerInterface {
 
     public static final String POWER_ID = DregsMod.makeID(TheVaultPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final Texture texture = TextureLoader.getTexture(DregsMod.makePowerPath("thevault.png"));
 
     private static ArrayList<AbstractCard> ignoredCards;
 
@@ -33,8 +29,7 @@ public class TheVaultPower extends AbstractPower implements CloneablePowerInterf
         this.owner = owner;
         this.amount = -1;
 
-        region48 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
-        region128 = new TextureAtlas.AtlasRegion(texture, 0, 0, 32, 32);
+        loadRegion("thevault");
         updateDescription();
         if (!AbstractDungeon.player.hasPower(POWER_ID)) {
             ignoredCards = new ArrayList<>(AbstractDungeon.player.discardPile.group);
