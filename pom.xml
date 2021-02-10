@@ -73,6 +73,8 @@
                 <configuration>
                     <excludes>
                         <exclude>**/*.psd</exclude>
+                        <exclude>${pack.cards.target}</exclude>
+                        <exclude>${pack.powers.target}</exclude>
                     </excludes>
                 </configuration>
             </plugin>
