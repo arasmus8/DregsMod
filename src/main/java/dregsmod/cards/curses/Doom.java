@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractDregsCard;
-import dregsmod.powers.CursedPower;
+import dregsmod.powers.BlightedPower;
 
 public class Doom extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(Doom.class.getSimpleName());
@@ -26,7 +26,7 @@ public class Doom extends AbstractDregsCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p, new CursedPower(m, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(m, p, new BlightedPower(m, magicNumber), magicNumber));
     }
 
     @Override

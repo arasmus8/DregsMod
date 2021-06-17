@@ -23,20 +23,20 @@ import dregsmod.cards.curses.Doom;
 import dregsmod.cards.curses.Gloom;
 import dregsmod.relics.CursedLocket;
 
-public class CursedPower extends AbstractDregsPower implements CloneablePowerInterface, HealthBarRenderPower {
+public class BlightedPower extends AbstractDregsPower implements CloneablePowerInterface, HealthBarRenderPower {
 
-    public static final String POWER_ID = DregsMod.makeID(CursedPower.class.getSimpleName());
+    public static final String POWER_ID = DregsMod.makeID(BlightedPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public CursedPower(AbstractCreature owner, int amount) {
+    public BlightedPower(AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
 
-        loadRegion("cursed");
+        loadRegion("blighted");
         updateDescription();
         type = PowerType.DEBUFF;
         if (AbstractDungeon.player.hasRelic(CursedLocket.ID)) {
@@ -94,7 +94,7 @@ public class CursedPower extends AbstractDregsPower implements CloneablePowerInt
 
     @Override
     public AbstractPower makeCopy() {
-        return new CursedPower(owner, amount);
+        return new BlightedPower(owner, amount);
     }
 
     @Override

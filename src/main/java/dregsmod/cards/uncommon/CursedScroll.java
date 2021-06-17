@@ -8,7 +8,7 @@ import dregsmod.DregsMod;
 import dregsmod.cards.AbstractDregsCard;
 import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
-import dregsmod.powers.CursedPower;
+import dregsmod.powers.BlightedPower;
 
 public class CursedScroll extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(CursedScroll.class.getSimpleName());
@@ -32,7 +32,7 @@ public class CursedScroll extends AbstractDregsCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -2), -2));
-        addToBot(new ApplyPowerAction(m, p, new CursedPower(m, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(m, p, new BlightedPower(m, magicNumber), magicNumber));
     }
 
     @Override

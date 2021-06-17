@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractDregsCard;
 import dregsmod.characters.Dregs;
-import dregsmod.powers.CursedPower;
+import dregsmod.powers.BlightedPower;
 
 public class MeanLook extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(MeanLook.class.getSimpleName());
@@ -31,9 +31,9 @@ public class MeanLook extends AbstractDregsCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        if (m.hasPower(CursedPower.POWER_ID)) {
-            int curseAmount = m.getPower(CursedPower.POWER_ID).amount;
-            addToBot(new ApplyPowerAction(m, p, new CursedPower(m, curseAmount), curseAmount));
+        if (m.hasPower(BlightedPower.POWER_ID)) {
+            int curseAmount = m.getPower(BlightedPower.POWER_ID).amount;
+            addToBot(new ApplyPowerAction(m, p, new BlightedPower(m, curseAmount), curseAmount));
         }
     }
 

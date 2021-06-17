@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractDregsCard;
 import dregsmod.characters.Dregs;
-import dregsmod.powers.CursedPower;
+import dregsmod.powers.BlightedPower;
 import dregsmod.vfx.CursedNeedleEffect;
 
 public class CursedNeedle extends AbstractDregsCard {
@@ -38,7 +38,7 @@ public class CursedNeedle extends AbstractDregsCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new CursedNeedleEffect(m.hb.cX, m.hb.cY)));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-        addToBot(new ApplyPowerAction(m, p, new CursedPower(m, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(m, p, new BlightedPower(m, magicNumber), magicNumber));
     }
 
     @Override

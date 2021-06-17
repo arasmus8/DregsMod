@@ -40,7 +40,7 @@
   },
   "dregsmod:CursedNeedle": {
     "NAME": "Cursed Needle",
-    "DESCRIPTION": "Deal !D! Damage. Inflict !M! dregsmod:Cursed."
+    "DESCRIPTION": "Deal !D! Damage. Inflict !M! dregsmod:Blighted."
   },
   "dregsmod:EmeraldShard": {
     "NAME": "Emerald Shard",
@@ -77,7 +77,7 @@
   },
   "dregsmod:RitualJar": {
     "NAME": "Ritual Jar",
-    "DESCRIPTION": "Inflict !M! dregsmod:Cursed. Increase the power of ALL Ritual\u00A0Jar cards by 3 this combat."
+    "DESCRIPTION": "Inflict !M! dregsmod:Blighted. Increase the power of ALL Ritual\u00A0Jar cards by 3 this combat."
   },
   "dregsmod:RubyShard": {
     "NAME": "Ruby Shard",
@@ -86,7 +86,7 @@
   },
   "dregsmod:Ruin": {
     "NAME": "Ruin",
-    "DESCRIPTION": "Deal !D! Damage. If the target is dregsmod:Cursed, Damage it again."
+    "DESCRIPTION": "Deal !D! Damage. If the target is dregsmod:Blighted, Damage it again."
   },
   "dregsmod:SapphireShard": {
     "NAME": "Sapphire Shard",
@@ -135,7 +135,7 @@
   },
   "dregsmod:CursedScroll": {
     "NAME": "Cursed Scroll",
-    "DESCRIPTION": "The target loses 2 Strength. Inflict !M! dregsmod:Cursed. NL Exhaust"
+    "DESCRIPTION": "The target loses 2 Strength. Inflict !M! dregsmod:Blighted. NL Exhaust"
   },
   "dregsmod:Defiance": {
     "NAME": "Defiance",
@@ -285,7 +285,7 @@
   },
   "dregsmod:Incantation": {
     "NAME": "Incantation",
-    "DESCRIPTION": "Instead of healing, dregsmod:Cursed enemies take !M! damage each turn."
+    "DESCRIPTION": "Instead of healing, dregsmod:Blighted enemies take !M! damage each turn."
   },
   "dregsmod:Indestructible": {
     "NAME": "Indestructible",
@@ -298,8 +298,8 @@
   },
   "dregsmod:MeanLook": {
     "NAME": "Mean Look",
-    "DESCRIPTION": "Deal !D! Damage. Double the target's dregsmod:Cursed. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Double the target's dregsmod:Cursed."
+    "DESCRIPTION": "Deal !D! Damage. Double the target's dregsmod:Blighted. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Double the target's dregsmod:Blighted."
   },
   "dregsmod:Overcome": {
     "NAME": "Overcome",
@@ -325,7 +325,7 @@
   },
   "dregsmod:Ritual": {
     "NAME": "Ritual",
-    "DESCRIPTION": "Inflict !M! dregsmod:Cursed to all enemies. Heal 50% of your missing HP. NL Exhaust"
+    "DESCRIPTION": "Inflict !M! dregsmod:Blighted to all enemies. Heal 50% of your missing HP. NL Exhaust"
   },
   "dregsmod:SeeNoEvil": {
     "NAME": "See No Evil",
@@ -348,15 +348,15 @@
   },
   "dregsmod:Catastrophe": {
     "NAME": "Catastrophe",
-    "DESCRIPTION": "Ethereal NL Inflict !M! dregsmod:Cursed to all enemies."
+    "DESCRIPTION": "Ethereal NL Inflict !M! dregsmod:Blighted to all enemies."
   },
   "dregsmod:Doom": {
     "NAME": "Doom",
-    "DESCRIPTION": "Inflict !M! dregsmod:Cursed to the target. NL Exhaust"
+    "DESCRIPTION": "Inflict !M! dregsmod:Blighted to the target. NL Exhaust"
   },
   "dregsmod:Gloom": {
     "NAME": "Gloom",
-    "DESCRIPTION": "Inflict !M! dregsmod:Cursed to the target. NL Exhaust"
+    "DESCRIPTION": "Inflict !M! dregsmod:Blighted to the target. NL Exhaust"
   },
   "dregsmod:Death": {
     "NAME": "Death",

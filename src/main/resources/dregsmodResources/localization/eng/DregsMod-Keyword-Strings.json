@@ -16,11 +16,11 @@
     "DESCRIPTION": "Some Curses can be Cleansed by fulfilling the condition on the card. When fulfilled, the curse can be replaced with your choice of card from another class."
   },
   {
-    "PROPER_NAME": "Cursed",
+    "PROPER_NAME": "Blighted",
     "NAMES": [
-      "cursed"
+      "blighted"
     ],
-    "DESCRIPTION": "When Cursed exceeds an enemy's current HP, it will be killed and transformed into a special card. Cursed enemies will heal 10% of their missing HP each turn."
+    "DESCRIPTION": "When Blighted exceeds an enemy's current HP, it will be killed and transformed into a special card. Blighted enemies will heal 10% of their missing HP each turn."
   },
   {
     "PROPER_NAME": "Fortitude",

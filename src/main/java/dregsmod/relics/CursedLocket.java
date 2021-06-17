@@ -21,7 +21,7 @@ public class CursedLocket extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.FLAT);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("dregsmod:cursed"), BaseMod.getKeywordDescription("dregsmod:cursed")));
+        tips.add(new PowerTip(BaseMod.getKeywordProper("dregsmod:blighted"), BaseMod.getKeywordDescription("dregsmod:blighted")));
         initializeTips();
     }
 

@@ -21,10 +21,10 @@
       "Add a copy of a random card from your master deck to your hand each turn."
     ]
   },
-  "dregsmod:CursedPower": {
-    "NAME": "Cursed",
+  "dregsmod:BlightedPower": {
+    "NAME": "Blighted",
     "DESCRIPTIONS": [
-      "This enemy heals 10% of its missing HP at the start of its turn. If #yCursed exceeds its HP, it will be killed and transformed into a curse."
+      "This enemy heals 10% of its missing HP at the start of its turn. If #yBlighted exceeds its HP, it will be killed and transformed into a curse."
     ]
   },
   "dregsmod:DefianceAwakenPower": {

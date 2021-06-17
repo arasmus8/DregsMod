@@ -6,12 +6,12 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
-import dregsmod.powers.CursedPower;
+import dregsmod.powers.BlightedPower;
 
 public class RuinAction extends AbstractGameAction {
     private static final float DURATION = 0.1f;
-    private AbstractMonster m;
-    private DamageInfo info;
+    private final AbstractMonster m;
+    private final DamageInfo info;
 
     public RuinAction(AbstractMonster target, DamageInfo damageInfo) {
         this.duration = DURATION;
@@ -26,7 +26,7 @@ public class RuinAction extends AbstractGameAction {
         if (this.target == null) {
             this.isDone = true;
         } else {
-            if (this.m.hasPower(CursedPower.POWER_ID)) {
+            if (this.m.hasPower(BlightedPower.POWER_ID)) {
                 if (this.duration == DURATION && this.target != null && this.target.currentHealth > 0) {
                     if (this.info.type != DamageInfo.DamageType.THORNS && this.info.owner.isDying) {
                         this.isDone = true;

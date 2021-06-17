@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractDregsCard;
-import dregsmod.powers.CursedPower;
+import dregsmod.powers.BlightedPower;
 
 public class Catastrophe extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(Catastrophe.class.getSimpleName());
@@ -33,7 +33,7 @@ public class Catastrophe extends AbstractDregsCard {
                 .forEach(monster -> addToBot(new ApplyPowerAction(
                         monster,
                         p,
-                        new CursedPower(monster, magicNumber),
+                        new BlightedPower(monster, magicNumber),
                         magicNumber
                 )));
     }

@@ -14,7 +14,7 @@ import dregsmod.DregsMod;
 import dregsmod.cards.AbstractDregsCard;
 import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
-import dregsmod.powers.CursedPower;
+import dregsmod.powers.BlightedPower;
 
 public class Ritual extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(Ritual.class.getSimpleName());
@@ -48,7 +48,7 @@ public class Ritual extends AbstractDregsCard {
                 .forEach(monster -> addToBot(new ApplyPowerAction(
                         monster,
                         p,
-                        new CursedPower(monster, magicNumber),
+                        new BlightedPower(monster, magicNumber),
                         magicNumber
                 )));
         int lifeToRecover = MathUtils.floor((float) (p.maxHealth - p.currentHealth) * 0.5f);
