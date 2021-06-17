@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
 import dregsmod.cards.AbstractSealedCard;
@@ -35,7 +34,7 @@ public class Plague extends AbstractSealedCard {
 
     @Override
     public void triggerWhileSealed(AbstractPlayer player) {
-        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+        for (AbstractMonster m : monsterList()) {
             addToBot(new DamageAction(m, new DamageInfo(player, magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.POISON, true));
         }
         Optional<AwakenedMod> awakenedMod = AwakenedMod.getForCard(this);

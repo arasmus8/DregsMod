@@ -5,10 +5,14 @@ import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import static dregsmod.DregsMod.getModID;
@@ -59,5 +63,11 @@ public abstract class AbstractDregsCard extends CustomCard {
     @Override
     protected Texture getPortraitImage() {
         return ImageMaster.loadImage(makeCardPath(String.format("%s_p.png", getBaseImagePath(cardID))));
+    }
+
+    protected ArrayList<AbstractMonster> monsterList() {
+        ArrayList<AbstractMonster> monsters = new ArrayList<>(AbstractDungeon.getMonsters().monsters);
+        monsters.removeIf(AbstractCreature::isDeadOrEscaped);
+        return monsters;
     }
 }
