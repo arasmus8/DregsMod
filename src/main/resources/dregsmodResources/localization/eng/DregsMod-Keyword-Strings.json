@@ -90,69 +90,69 @@
     "NAMES": [
       "awoken"
     ],
-    "DESCRIPTION": "Awoken attacks deal 3 more Damage; awoken skills grant 2 more Block or have more potent effects."
+    "DESCRIPTION": "Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken II",
     "NAMES": [
       "awoken\u00A0ii"
     ],
-    "DESCRIPTION": "Awoken attacks deal 5 more Damage; awoken skills grant 3 more Block or have more potent effects."
+    "DESCRIPTION": "Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken III",
     "NAMES": [
       "awoken\u00A0iii"
     ],
-    "DESCRIPTION": "Draw a card when played. NL Awoken attacks deal 7 more Damage; awoken skills grant 5 more Block or have more potent effects."
+    "DESCRIPTION": "Draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken IV",
     "NAMES": [
       "awoken\u00A0iv"
     ],
-    "DESCRIPTION": "Costs 2 HP to play. NL Draw a card when played. Awoken attacks deal 11 more Damage; awoken skills grant 7 more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken V",
     "NAMES": [
       "awoken\u00A0v"
     ],
-    "DESCRIPTION": "Costs 3 HP to play. NL Draw a card when played. Awoken attacks deal 13 more Damage; awoken skills grant 11 more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken VI",
     "NAMES": [
       "awoken\u00A0vi"
     ],
-    "DESCRIPTION": "Costs 5 HP to play. NL Draw a card when played. Awoken attacks deal 17 more Damage; awoken skills grant 13 more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken VII",
     "NAMES": [
       "awoken\u00A0vii"
     ],
-    "DESCRIPTION": "Costs 7 HP to play. NL Draw a card when played. Awoken attacks deal 23 more Damage; awoken skills grant 17 more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken VIII",
     "NAMES": [
       "awoken\u00A0viii"
     ],
-    "DESCRIPTION": "Costs 11 HP to play. NL Draw a card when played. Awoken attacks deal 29 more Damage; awoken skills grant 23 more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken IX",
     "NAMES": [
       "awoken\u00A0ix"
     ],
-    "DESCRIPTION": "Costs 13 HP to play. NL Draw a card when played. Awoken attacks deal 31 more Damage; awoken skills grant 29 more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken X",
     "NAMES": [
       "awoken\u00A0x"
     ],
-    "DESCRIPTION": "Costs 17 HP to play. NL Draw a card when played. Awoken attacks deal 37 more Damage; awoken skills grant 31 more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
   }
 ]

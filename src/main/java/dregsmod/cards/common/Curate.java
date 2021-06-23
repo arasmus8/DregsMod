@@ -19,10 +19,10 @@ public class Curate extends AbstractDregsCard {
 
     private static final int COST = 0;
 
-    private static final int BLOCK = 3;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final int BLOCK = 5;
 
     private static final int MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
 
     public Curate() {
         super(ID, COST, TYPE, RARITY, TARGET, COLOR);
@@ -40,7 +40,8 @@ public class Curate extends AbstractDregsCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

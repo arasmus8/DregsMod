@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import dregsmod.DregsMod;
 import dregsmod.actions.CardAwokenAction;
 
@@ -31,7 +30,7 @@ public class DefianceAwakenPower extends AbstractDregsPower implements Cloneable
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (target == owner) {
-            if (power.ID.equals(WeakPower.POWER_ID) || power.ID.equals(FrailPower.POWER_ID) || power.ID.equals(VulnerablePower.POWER_ID)) {
+            if (power.ID.equals(FrailPower.POWER_ID) || power.ID.equals(VulnerablePower.POWER_ID)) {
                 addToBot(new CardAwokenAction());
             }
         }

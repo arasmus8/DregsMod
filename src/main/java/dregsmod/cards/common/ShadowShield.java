@@ -17,7 +17,7 @@ public class ShadowShield extends AbstractDregsCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     private static final int BLOCK = 1;
     private static final int MAGIC = 1;

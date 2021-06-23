@@ -1,5 +1,6 @@
 package dregsmod.cards.uncommon;
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -19,13 +20,13 @@ public class HardLuck extends AbstractDregsCard {
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
     private static final int COST = 6;
-    private static final int UPGRADED_COST = 5;
 
     private static final int BLOCK = 13;
 
     public HardLuck() {
         super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         baseBlock = BLOCK;
+        baseMagicNumber = magicNumber = 1;
     }
 
     public void configureCost() {
@@ -39,6 +40,9 @@ public class HardLuck extends AbstractDregsCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (upgraded) {
+            addToBot(new DrawCardAction(p, magicNumber));
+        }
         addToBot(new GainBlockAction(p, p, block));
     }
 
@@ -46,8 +50,8 @@ public class HardLuck extends AbstractDregsCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
             configureCost();
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

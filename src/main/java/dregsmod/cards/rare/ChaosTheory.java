@@ -7,6 +7,7 @@ import dregsmod.DregsMod;
 import dregsmod.cards.AbstractDregsCard;
 import dregsmod.characters.Dregs;
 import dregsmod.powers.ChaosTheoryPower;
+import dregsmod.powers.ChaosTheoryUpgradedPower;
 
 public class ChaosTheory extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(ChaosTheory.class.getSimpleName());
@@ -16,8 +17,7 @@ public class ChaosTheory extends AbstractDregsCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
-    private static final int COST = 3;
-    private static final int UPGRADED_COST = 2;
+    private static final int COST = 2;
 
     private static final int MAGIC = 1;
 
@@ -28,14 +28,18 @@ public class ChaosTheory extends AbstractDregsCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ChaosTheoryPower(p, magicNumber), magicNumber));
+        if (upgraded) {
+            addToBot(new ApplyPowerAction(p, p, new ChaosTheoryUpgradedPower(p, magicNumber), magicNumber));
+        } else {
+            addToBot(new ApplyPowerAction(p, p, new ChaosTheoryPower(p, magicNumber), magicNumber));
+        }
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

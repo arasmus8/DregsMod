@@ -21,8 +21,8 @@ public class SealingWish extends AbstractDregsCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
-    private static final int COST = 2;
-    private static final int DAMAGE = 14;
+    private static final int COST = 1;
+    private static final int DAMAGE = 12;
     private static final int UPGRADE_PLUS_DMG = 4;
 
     public SealingWish() {

@@ -19,8 +19,8 @@ public class LastHope extends AbstractDregsCard {
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 15;
+    private static final int UPGRADE_PLUS_DMG = 4;
 
     public LastHope() {
         super(ID, COST, TYPE, RARITY, TARGET, COLOR);

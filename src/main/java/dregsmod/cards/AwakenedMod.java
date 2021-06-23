@@ -14,8 +14,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -29,7 +28,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import dregsmod.characters.Dregs;
-import dregsmod.powers.ScapegoatBonusPower;
+import dregsmod.powers.ScapegoatPower;
 import dregsmod.vfx.AwakenedParticleEffect;
 import javassist.ClassPool;
 import javassist.CtMethod;
@@ -135,9 +134,10 @@ public class AwakenedMod extends AbstractCardModifier {
 
     private int bonusFromScapegoat() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractPower scapegoatBonusPower = p.getPower(ScapegoatBonusPower.POWER_ID);
-        if (scapegoatBonusPower != null) {
-            return scapegoatBonusPower.amount;
+        AbstractPower scapegoatPower = p.getPower(ScapegoatPower.POWER_ID);
+        if (scapegoatPower != null) {
+            ScapegoatPower actual = (ScapegoatPower) scapegoatPower;
+            return actual.amount2;
         }
         return 0;
     }
@@ -194,14 +194,12 @@ public class AwakenedMod extends AbstractCardModifier {
             actions.add(new DrawCardAction(p, 1));
         }
         if (level > 3) {
-            actions.add(new LoseHPAction(p, p, modifierValues[level - 4]));
+            actions.add(new HealAction(p, p, modifierValues[level - 4]));
         }
         // queue actions
         for (AbstractGameAction action : actions) {
             AbstractDungeon.actionManager.addToBottom(action);
         }
-
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, ScapegoatBonusPower.POWER_ID));
     }
 
     @Override
@@ -211,11 +209,6 @@ public class AwakenedMod extends AbstractCardModifier {
         } else {
             return rawDescription + " NL dregsmod:Awoken\u00A0" + roman[level];
         }
-        /*
-        return String.format("%s NL [#87ceeb]Awoken[]%s",
-                rawDescription,
-                level > 1 ? " - [#87ceeb]Level[] [#87ceeb]" + level + "[]" : "");
-        */
     }
 
     @Override

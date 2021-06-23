@@ -36,11 +36,12 @@
   },
   "dregsmod:Curate": {
     "NAME": "Curate",
-    "DESCRIPTION": "Draw !M! card. Discard a card. If you discard a Curse, gain !B! Block."
+    "DESCRIPTION": "Draw !M! card. Discard a card. If you discard a Curse, gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. Discard a card. If you discard a Curse, gain !B! Block."
   },
   "dregsmod:CursedNeedle": {
     "NAME": "Cursed Needle",
-    "DESCRIPTION": "Deal !D! Damage. Inflict !M! dregsmod:Blighted."
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! dregsmod:Blighted."
   },
   "dregsmod:EmeraldShard": {
     "NAME": "Emerald Shard",
@@ -49,7 +50,7 @@
   },
   "dregsmod:Gash": {
     "NAME": "Gash",
-    "DESCRIPTION": "Deal !D! Damage twice. Inflict !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! Damage twice. Apply !M! Vulnerable."
   },
   "dregsmod:IcyTouch": {
     "NAME": "Icy Touch",
@@ -77,7 +78,7 @@
   },
   "dregsmod:RitualJar": {
     "NAME": "Ritual Jar",
-    "DESCRIPTION": "Inflict !M! dregsmod:Blighted. Increase the power of ALL Ritual\u00A0Jar cards by 3 this combat."
+    "DESCRIPTION": "Apply !M! dregsmod:Blighted. Increase the power of ALL Ritual\u00A0Jar cards by 3 this combat."
   },
   "dregsmod:RubyShard": {
     "NAME": "Ruby Shard",
@@ -135,12 +136,12 @@
   },
   "dregsmod:CursedScroll": {
     "NAME": "Cursed Scroll",
-    "DESCRIPTION": "The target loses 2 Strength. Inflict !M! dregsmod:Blighted. NL Exhaust"
+    "DESCRIPTION": "The target loses 2 Strength. Apply !M! dregsmod:Blighted. NL Exhaust"
   },
   "dregsmod:Defiance": {
     "NAME": "Defiance",
-    "DESCRIPTION": "Whenever you are inflicted with Weak, Frail, or Vulnerable, gain !M! dregsmod:Might.",
-    "UPGRADE_DESCRIPTION": "Whenever you are inflicted with Weak, Frail, or Vulnerable, gain !M! dregsmod:Might and dregsmod:Awaken a random card."
+    "DESCRIPTION": "Whenever you are inflicted with Frail or Vulnerable, gain !M! dregsmod:Might.",
+    "UPGRADE_DESCRIPTION": "Whenever you are inflicted with Frail or Vulnerable, gain !M! dregsmod:Might and dregsmod:Awaken a random card."
   },
   "dregsmod:EmbraceDarkness": {
     "NAME": "Embrace Darkness",
@@ -170,7 +171,8 @@
   },
   "dregsmod:HardLuck": {
     "NAME": "Hard Luck",
-    "DESCRIPTION": "Gain !B! Block. Costs 1 less for each Curse in your deck."
+    "DESCRIPTION": "Gain !B! Block. Costs 1 less for each Curse in your deck.",
+    "UPGRADE_DESCRIPTION": "Draw a card. NL Gain !B! Block. Costs 1 less for each Curse in your deck."
   },
   "dregsmod:Insight": {
     "NAME": "Insight",
@@ -179,12 +181,12 @@
   },
   "dregsmod:LaserFocus": {
     "NAME": "Laser Focus",
-    "DESCRIPTION": "Inflict 99 Lock-On. If you're holding a Curse, gain !M! focus. NL Exhaust"
+    "DESCRIPTION": "Apply 99 Lock-On. If you're holding a Curse, gain !M! focus. NL Exhaust"
   },
   "dregsmod:LostPotential": {
     "NAME": "Lost Potential",
-    "DESCRIPTION": "Whenever you dregsmod:Seal a Curse, Channel a Lightning Orb.",
-    "UPGRADE_DESCRIPTION": "Whenever you dregsmod:Seal a Curse, Gain an Orb Slot, and Channel a Lightning Orb."
+    "DESCRIPTION": "Whenever you dregsmod:Seal a card, Channel a Lightning Orb.",
+    "UPGRADE_DESCRIPTION": "Whenever you dregsmod:Seal a card, Gain an Orb Slot, and Channel a Lightning Orb."
   },
   "dregsmod:Malediction": {
     "NAME": "Malediction",
@@ -203,12 +205,12 @@
   },
   "dregsmod:Obstruct": {
     "NAME": "Obstruct",
-    "DESCRIPTION": "If the target intends to Attack, inflict Weak and gain !M! dregsmod:Sturdiness."
+    "DESCRIPTION": "If the target intends to Attack, apply Weak and gain !M! dregsmod:Sturdiness."
   },
   "dregsmod:Pinprick": {
     "NAME": "Pinprick",
-    "DESCRIPTION": "If you're holding a Curse, inflict 2 Vulnerable and apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark.",
-    "UPGRADE_DESCRIPTION": "If you're holding a Curse, inflict 2 Vulnerable and apply !M! *Mark to ALL enemies. NL ALL enemies lose HP equal to their *Mark.",
+    "DESCRIPTION": "If you're holding a Curse, apply 2 Vulnerable and apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark.",
+    "UPGRADE_DESCRIPTION": "If you're holding a Curse, apply 2 Vulnerable and apply !M! *Mark to ALL enemies. NL ALL enemies lose HP equal to their *Mark.",
     "EXTENDED_DESCRIPTION": [
       "I'm not holding a Curse!"
     ]
@@ -227,7 +229,7 @@
   },
   "dregsmod:Scapegoat": {
     "NAME": "Scapegoat",
-    "DESCRIPTION": "Whenever you Exhuast or dregsmod:Seal a card, the next dregsmod:Awoken card you play does !M! more damage or Block."
+    "DESCRIPTION": "For each card you Exhaust or dregsmod:Seal, dregsmod:Awoken cards do !M! more damage or Block."
   },
   "dregsmod:SealedEnergy": {
     "NAME": "Sealed Energy",
@@ -239,7 +241,7 @@
   },
   "dregsmod:ShiftingSands": {
     "NAME": "Shifting Sands",
-    "DESCRIPTION": "When you draw a Curse, inflict !M! Weak on a random enemy."
+    "DESCRIPTION": "When you draw a Curse, apply !M! Weak on a random enemy."
   },
   "dregsmod:TheVault": {
     "NAME": "The Vault",
@@ -252,7 +254,8 @@
   },
   "dregsmod:Unlucky": {
     "NAME": "Unlucky",
-    "DESCRIPTION": "Deal !D! Damage. Costs 1 less for each Curse in your deck."
+    "DESCRIPTION": "Deal !D! Damage. Costs 1 less for each Curse in your deck.",
+    "UPGRADE_DESCRIPTION": "Draw a card. NL Deal !D! Damage. Costs 1 less for each Curse in your deck."
   },
   "dregsmod:WaveOfDarkness": {
     "NAME": "Wave of Darkness",
@@ -269,7 +272,8 @@
   },
   "dregsmod:ChaosTheory": {
     "NAME": "Chaos Theory",
-    "DESCRIPTION": "Each turn, add !M! copy of a random card from your master deck to your hand."
+    "DESCRIPTION": "Each turn, add !M! copy of a random card from your master deck to your hand.",
+    "UPGRADE_DESCRIPTION": "Each turn, add !M! upgraded copy of a random card from your master deck to your hand."
   },
   "dregsmod:EclipseForm": {
     "NAME": "Eclipse Form",
@@ -325,7 +329,7 @@
   },
   "dregsmod:Ritual": {
     "NAME": "Ritual",
-    "DESCRIPTION": "Inflict !M! dregsmod:Blighted to all enemies. Heal 50% of your missing HP. NL Exhaust"
+    "DESCRIPTION": "Apply !M! dregsmod:Blighted to all enemies. Heal 50% of your missing HP. NL Exhaust"
   },
   "dregsmod:SeeNoEvil": {
     "NAME": "See No Evil",
@@ -348,15 +352,15 @@
   },
   "dregsmod:Catastrophe": {
     "NAME": "Catastrophe",
-    "DESCRIPTION": "Ethereal NL Inflict !M! dregsmod:Blighted to all enemies."
+    "DESCRIPTION": "Ethereal NL Apply !M! dregsmod:Blighted to all enemies."
   },
   "dregsmod:Doom": {
     "NAME": "Doom",
-    "DESCRIPTION": "Inflict !M! dregsmod:Blighted to the target. NL Exhaust"
+    "DESCRIPTION": "Apply !M! dregsmod:Blighted to the target. NL Exhaust"
   },
   "dregsmod:Gloom": {
     "NAME": "Gloom",
-    "DESCRIPTION": "Inflict !M! dregsmod:Blighted to the target. NL Exhaust"
+    "DESCRIPTION": "Apply !M! dregsmod:Blighted to the target. NL Exhaust"
   },
   "dregsmod:Death": {
     "NAME": "Death",
@@ -368,7 +372,7 @@
   },
   "dregsmod:Inquisition": {
     "NAME": "Inquisition",
-    "DESCRIPTION": "Retain NL Each turn, inflict 1 Vulnerable on all combatants. NL dregsmod:Cleanse: Exhaust this !M! times"
+    "DESCRIPTION": "Retain NL Each turn, apply 1 Vulnerable on all combatants. NL dregsmod:Cleanse: Exhaust this !M! times"
   },
   "dregsmod:Dread": {
     "NAME": "Dread",

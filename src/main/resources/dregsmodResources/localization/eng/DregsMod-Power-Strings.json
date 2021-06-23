@@ -18,7 +18,8 @@
   "dregsmod:ChaosTheoryPower": {
     "NAME": "Chaos Theory",
     "DESCRIPTIONS": [
-      "Add a copy of a random card from your master deck to your hand each turn."
+      "Add a copy of a random card from your master deck to your hand each turn.",
+      "Add a copy of a random card from your master deck to your hand each turn and upgrade it."
     ]
   },
   "dregsmod:BlightedPower": {
@@ -99,7 +100,7 @@
   "dregsmod:ScapegoatPower": {
     "NAME": "Scapegoat",
     "DESCRIPTIONS": [
-      "Whenever you #yExhaust or #ySeal a card, your next #yAwoken card does #b",
+      "Whenever you #yExhaust or #ySeal a card, your #yAwoken cards do #b",
       " more damage or Block."
     ]
   },

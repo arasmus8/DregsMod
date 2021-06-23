@@ -18,8 +18,8 @@ public class Retribution extends AbstractDregsCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 3;
-    private static final int UPGRADE_MAGIC = 2;
+    private static final int MAGIC = 6;
+    private static final int UPGRADE_MAGIC = 3;
 
     public Retribution() {
         super(ID, COST, TYPE, RARITY, TARGET, COLOR);

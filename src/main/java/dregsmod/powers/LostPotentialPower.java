@@ -36,14 +36,12 @@ public class LostPotentialPower extends AbstractDregsPower implements CloneableP
 
     @Override
     public void triggerOnSealed(AbstractCard card) {
-        if (card.type == AbstractCard.CardType.CURSE) {
-            flash();
-            if (upgraded) {
-                addToBot(new IncreaseMaxOrbAction(1));
-            }
-            for (int i = 0; i < amount; i++) {
-                addToBot(new ChannelAction(new Lightning()));
-            }
+        flash();
+        if (upgraded) {
+            addToBot(new IncreaseMaxOrbAction(1));
+        }
+        for (int i = 0; i < amount; i++) {
+            addToBot(new ChannelAction(new Lightning()));
         }
     }
 

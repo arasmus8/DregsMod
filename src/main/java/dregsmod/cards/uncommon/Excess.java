@@ -17,7 +17,7 @@ public class Excess extends AbstractDregsCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
-    private static final int COST = 2;
+    private static final int COST = 0;
 
     private static final int MAGIC = 1;
 

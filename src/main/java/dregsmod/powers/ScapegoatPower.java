@@ -1,9 +1,7 @@
 package dregsmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,7 +9,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import dregsmod.DregsMod;
 
-public class ScapegoatPower extends AbstractDregsPower implements CloneablePowerInterface {
+public class ScapegoatPower extends AbstractDregsTwoAmountPower implements TriggerOnSealedPower, CloneablePowerInterface {
 
     public static final String POWER_ID = DregsMod.makeID(ScapegoatPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -23,15 +21,22 @@ public class ScapegoatPower extends AbstractDregsPower implements CloneablePower
         ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
+        this.amount2 = 0;
 
         loadRegion("scapegoat");
         updateDescription();
     }
 
     @Override
+    public void triggerOnSealed(AbstractCard card) {
+        amount2 += amount;
+        AbstractDungeon.player.hand.group.forEach(AbstractCard::applyPowers);
+    }
+
+    @Override
     public void onExhaust(AbstractCard card) {
-        AbstractPlayer p = AbstractDungeon.player;
-        addToTop(new ApplyPowerAction(p, p, new ScapegoatBonusPower(p, amount), amount));
+        amount2 += amount;
+        AbstractDungeon.player.hand.group.forEach(AbstractCard::applyPowers);
     }
 
     @Override
