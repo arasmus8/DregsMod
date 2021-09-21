@@ -2,6 +2,7 @@ package dregsmod.vfx;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Interpolation;
@@ -24,11 +25,11 @@ public class VictoryParticleEffect extends AbstractGameEffect {
         duration = startingDuration;
         scale *= Settings.scale;
         halfDuration = duration / 2.0F;
-        color = new Color(MathUtils.random(0.02F, 0.086F), MathUtils.random(0.0F, 0.008F), MathUtils.random(0.047F, 0.259F), 0.0F);
+        color = new Color(MathUtils.random(0.08F, 0.286F), MathUtils.random(0.0F, 0.108F), MathUtils.random(0.247F, 0.459F), 0.0F);
         x = MathUtils.random(0, Settings.WIDTH);
         y = MathUtils.random(0, Settings.HEIGHT);
         renderBehind = MathUtils.randomBoolean();
-        rotation = MathUtils.random(12.0F, 6.0F);
+        rotation = MathUtils.random(-45f, 45f);
 
         x -= (float) img.packedWidth / 2.0F;
         y -= (float) img.packedHeight / 2.0F;
@@ -86,7 +87,7 @@ public class VictoryParticleEffect extends AbstractGameEffect {
 
     public void render(SpriteBatch sb) {
         sb.setColor(color);
-        //sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE);
+        sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE);
         sb.draw(img,
                 x,
                 y + vY,
@@ -97,7 +98,7 @@ public class VictoryParticleEffect extends AbstractGameEffect {
                 scale * 0.6f,
                 scale * 0.6f,
                 rotation);
-        //sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
+        sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
     }
 
     public void dispose() {
