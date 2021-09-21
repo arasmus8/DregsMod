@@ -233,7 +233,7 @@
   },
   "dregsmod:SealedEnergy": {
     "NAME": "Sealed Energy",
-    "DESCRIPTION": "Deal !D! damage. Increase damage by !M! for each dregsmod:Sealed Curse."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Increase damage by !M! for each dregsmod:Sealed Curse."
   },
   "dregsmod:SealingWish": {
     "NAME": "Sealing Wish",
@@ -241,7 +241,7 @@
   },
   "dregsmod:ShiftingSands": {
     "NAME": "Shifting Sands",
-    "DESCRIPTION": "When you draw a Curse, apply !M! Weak on a random enemy."
+    "DESCRIPTION": "When you draw a Curse, apply !M! Weak to a random enemy."
   },
   "dregsmod:TheVault": {
     "NAME": "The Vault",
@@ -372,7 +372,7 @@
   },
   "dregsmod:Inquisition": {
     "NAME": "Inquisition",
-    "DESCRIPTION": "Retain NL Each turn, apply 1 Vulnerable on all combatants. NL dregsmod:Cleanse: Exhaust this !M! times"
+    "DESCRIPTION": "Retain NL Each turn, apply 1 Vulnerable to all combatants. NL dregsmod:Cleanse: Exhaust this !M! times"
   },
   "dregsmod:Dread": {
     "NAME": "Dread",

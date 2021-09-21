@@ -2,8 +2,7 @@ package dregsmod.cards.uncommon;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -16,7 +15,7 @@ public class SealedEnergy extends AbstractDregsCard {
     public static final String ID = DregsMod.makeID(SealedEnergy.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
@@ -29,6 +28,7 @@ public class SealedEnergy extends AbstractDregsCard {
         super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
+        isMultiDamage = true;
     }
 
     @Override
@@ -60,7 +60,7 @@ public class SealedEnergy extends AbstractDregsCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }
 
     @Override
