@@ -29,7 +29,7 @@ public class ChaosTheoryUpgradedPower extends AbstractDregsPower implements Clon
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
     }
 
     @Override

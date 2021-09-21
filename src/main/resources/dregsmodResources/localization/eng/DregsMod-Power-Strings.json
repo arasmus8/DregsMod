@@ -18,7 +18,12 @@
   "dregsmod:ChaosTheoryPower": {
     "NAME": "Chaos Theory",
     "DESCRIPTIONS": [
-      "Add a copy of a random card from your master deck to your hand each turn.",
+      "Add a copy of a random card from your master deck to your hand each turn."
+    ]
+  },
+  "dregsmod:ChaosTheoryUpgradedPower": {
+    "NAME": "Chaos Theory",
+    "DESCRIPTIONS": [
       "Add a copy of a random card from your master deck to your hand each turn and upgrade it."
     ]
   },
