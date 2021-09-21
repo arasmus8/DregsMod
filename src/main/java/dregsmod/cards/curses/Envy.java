@@ -14,7 +14,7 @@ public class Envy extends AbstractCleansingCurse {
     public static final CardColor COLOR = CardColor.CURSE;
 
     private static final int COST = -2;
-    private static final int CLEANSE_AMOUNT = 10;
+    private static final int CLEANSE_AMOUNT = 6;
 
     public Envy() {
         super(ID, COST, TARGET, CLEANSE_AMOUNT);
