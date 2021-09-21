@@ -7,7 +7,7 @@
     <groupId>dregsmod</groupId>
     <artifactId>DregsMod</artifactId>
     <name>DregsMod</name>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <description>
         Adds the Dregs.
         - Cleanse curses to collect cards from other classes
