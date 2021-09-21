@@ -12,7 +12,7 @@
     "DESCRIPTIONS": [
       "Whenever you draw a Curse, #yAwaken a random card.",
       "Awaken",
-      "Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects. NL A card can be Awakened more than once."
+      "Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects. NL A card can be Awakened more than once."
     ]
   },
   "dregsmod:CursedEgg": {
@@ -42,7 +42,7 @@
     "DESCRIPTIONS": [
       "Replaces Curse Brand. Whenever you draw a Curse, #yAwaken a random card in your hand. Draw an additional card each turn.",
       "Awaken",
-      "Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects. NL A card can be Awakened more than once."
+      "Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects. NL A card can be Awakened more than once."
     ]
   },
   "dregsmod:EvilEye": {

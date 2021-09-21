@@ -27,14 +27,14 @@
     "NAMES": [
       "fortitude"
     ],
-    "DESCRIPTION": "Opposite of Vulnerable. Decreases Damage taken by 25%"
+    "DESCRIPTION": "Opposite of Vulnerable. Decreases damage taken by 25%"
   },
   {
     "PROPER_NAME": "Might",
     "NAMES": [
       "might"
     ],
-    "DESCRIPTION": "Opposite of Weak. Increases Damage dealt by 25%"
+    "DESCRIPTION": "Opposite of Weak. Increases damage dealt by 25%"
   },
   {
     "PROPER_NAME": "Sturdiness",
@@ -83,76 +83,76 @@
     "NAMES": [
       "awaken"
     ],
-    "DESCRIPTION": "Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects. NL A card can be Awakened more than once."
+    "DESCRIPTION": "Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects. NL A card can be Awakened more than once."
   },
   {
     "PROPER_NAME": "Awoken",
     "NAMES": [
       "awoken"
     ],
-    "DESCRIPTION": "Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
+    "DESCRIPTION": "Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken II",
     "NAMES": [
       "awoken\u00A0ii"
     ],
-    "DESCRIPTION": "Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
+    "DESCRIPTION": "Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken III",
     "NAMES": [
       "awoken\u00A0iii"
     ],
-    "DESCRIPTION": "Draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
+    "DESCRIPTION": "Draw a card when played. NL Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken IV",
     "NAMES": [
       "awoken\u00A0iv"
     ],
-    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken V",
     "NAMES": [
       "awoken\u00A0v"
     ],
-    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken VI",
     "NAMES": [
       "awoken\u00A0vi"
     ],
-    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken VII",
     "NAMES": [
       "awoken\u00A0vii"
     ],
-    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken VIII",
     "NAMES": [
       "awoken\u00A0viii"
     ],
-    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken IX",
     "NAMES": [
       "awoken\u00A0ix"
     ],
-    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects."
   },
   {
     "PROPER_NAME": "Awoken X",
     "NAMES": [
       "awoken\u00A0x"
     ],
-    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more Damage; awoken skills grant more Block or have more potent effects."
+    "DESCRIPTION": "Recover HP and draw a card when played. NL Awoken attacks deal more damage; awoken skills grant more Block or have more potent effects."
   }
 ]

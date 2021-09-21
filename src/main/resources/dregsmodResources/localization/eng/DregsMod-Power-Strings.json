@@ -31,7 +31,7 @@
   "dregsmod:DefianceAwakenPower": {
     "NAME": "Defiance",
     "DESCRIPTIONS": [
-      "Whenever you are inflicted with #yWeak, #yFrail, or #yVulnerable, #yAwaken #b",
+      "Whenever you are inflicted with #yFrail or #yVulnerable, #yAwaken #b",
       " random card.",
       " random cards."
     ]
@@ -39,7 +39,7 @@
   "dregsmod:DefiancePower": {
     "NAME": "Defiance",
     "DESCRIPTIONS": [
-      "Whenever you are inflicted with #yWeak, #yFrail, or #yVulnerable, gain #b",
+      "Whenever you are inflicted with #yFrail or #yVulnerable, gain #b",
       " #yMight"
     ]
   },
@@ -48,7 +48,7 @@
     "DESCRIPTIONS": [
       "Unplayable #yCurse cards can be played. When you play a #yCurse, gain #b",
       " Block and deal #b",
-      " Damage to all enemies."
+      " damage to all enemies."
     ]
   },
   "dregsmod:ExcessChannelPower": {
