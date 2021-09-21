@@ -35,6 +35,7 @@ public class Pinprick extends AbstractCurseHoldingCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!holdingCurse) {
+            addToBot(new TriggerMarksAction(this));
             return;
         }
         if (upgraded) {
