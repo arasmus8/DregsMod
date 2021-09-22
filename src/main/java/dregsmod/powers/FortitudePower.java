@@ -27,7 +27,10 @@ public class FortitudePower extends AbstractDregsPower implements CloneablePower
 
         loadRegion("fortitude");
         updateDescription();
+    }
 
+    @Override
+    public void onInitialApplication() {
         if (owner.hasPower(VulnerablePower.POWER_ID)) {
             addToBot(new RemoveSpecificPowerAction(owner, owner, VulnerablePower.POWER_ID));
         }

@@ -20,7 +20,7 @@ public class SealedEnergy extends AbstractDregsCard {
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 5;
     private static final int MAGIC = 3;
     private static final int UPGRADE_PLUS_MAGIC = 2;
 
@@ -52,10 +52,10 @@ public class SealedEnergy extends AbstractDregsCard {
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, float damage) {
         super.calculateModifiedCardDamage(player, damage);
-        long sealedCurses = player.discardPile.group.stream()
-                .filter(card -> CardSealed.isSealed.get(card) && card.type == CardType.CURSE)
+        long sealedCards = player.discardPile.group.stream()
+                .filter(card -> CardSealed.isSealed.get(card))
                 .count();
-        return damage + magicNumber * sealedCurses;
+        return damage + magicNumber * sealedCards;
     }
 
     @Override

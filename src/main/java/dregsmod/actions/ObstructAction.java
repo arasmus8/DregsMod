@@ -15,8 +15,8 @@ public class ObstructAction extends AbstractGameAction {
 
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
-    private AbstractPlayer p;
-    private AbstractMonster m;
+    private final AbstractPlayer p;
+    private final AbstractMonster m;
 
     public ObstructAction(AbstractPlayer player, AbstractMonster target, int amount) {
         duration = 0.0F;
@@ -29,7 +29,7 @@ public class ObstructAction extends AbstractGameAction {
     @Override
     public void update() {
         if (m != null && m.getIntentBaseDmg() >= 0) {
-            addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 1, false), 1));
+            addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 2, false), 2));
             addToBot(new ApplyPowerAction(p, p, new SturdinessPower(p, amount), amount));
         } else {
             AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, TEXT[0], true));

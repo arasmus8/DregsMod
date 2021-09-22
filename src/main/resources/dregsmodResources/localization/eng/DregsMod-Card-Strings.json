@@ -149,8 +149,8 @@
   },
   "dregsmod:Excess": {
     "NAME": "Excess",
-    "DESCRIPTION": "Whenever you dregsmod:Seal a Curse, trigger the passive of all your Orbs.",
-    "UPGRADE_DESCRIPTION": "Whenever you dregsmod:Seal a Curse, trigger the passive of all your Orbs, and Channel 1 dregsmod:Sludge Orb."
+    "DESCRIPTION": "Whenever you dregsmod:Seal a card, trigger the passive of all your Orbs.",
+    "UPGRADE_DESCRIPTION": "Whenever you dregsmod:Seal a card, trigger the passive of all your Orbs, and Channel 1 dregsmod:Sludge Orb."
   },
   "dregsmod:Fear": {
     "NAME": "Fear",
@@ -181,7 +181,7 @@
   },
   "dregsmod:LaserFocus": {
     "NAME": "Laser Focus",
-    "DESCRIPTION": "Apply 99 Lock-On. If you're holding a Curse, gain !M! focus. NL Exhaust"
+    "DESCRIPTION": "Apply 99 Lock-On. If you're holding a Curse, gain !M! Focus. NL Exhaust"
   },
   "dregsmod:LostPotential": {
     "NAME": "Lost Potential",
@@ -205,7 +205,7 @@
   },
   "dregsmod:Obstruct": {
     "NAME": "Obstruct",
-    "DESCRIPTION": "If the target intends to Attack, apply Weak and gain !M! dregsmod:Sturdiness."
+    "DESCRIPTION": "If the target intends to Attack, apply 2 Weak and gain !M! dregsmod:Sturdiness."
   },
   "dregsmod:Pinprick": {
     "NAME": "Pinprick",
@@ -233,7 +233,7 @@
   },
   "dregsmod:SealedEnergy": {
     "NAME": "Sealed Energy",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. Increase damage by !M! for each dregsmod:Sealed Curse."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Increase damage by !M! for each dregsmod:Sealed card."
   },
   "dregsmod:SealingWish": {
     "NAME": "Sealing Wish",

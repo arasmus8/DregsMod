@@ -18,9 +18,9 @@ public class Payback extends AbstractCurseHoldingCard {
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 12;
-    private static final int UPGRADE_PLUS_DMG = 3;
-    private static final int MAGIC = 4;
+    private static final int DAMAGE = 8;
+    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int MAGIC = 6;
     private static final int UPGRADE_PLUS_MAGIC = 2;
 
     public Payback() {

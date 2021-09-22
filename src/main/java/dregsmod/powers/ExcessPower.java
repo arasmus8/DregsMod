@@ -28,11 +28,9 @@ public class ExcessPower extends AbstractDregsPower implements TriggerOnSealedPo
 
     @Override
     public void triggerOnSealed(AbstractCard card) {
-        if (card.type == AbstractCard.CardType.CURSE) {
-            flash();
-            for (int i = 0; i < amount; i++) {
-                addToBot(new ImpulseAction());
-            }
+        flash();
+        for (int i = 0; i < amount; i++) {
+            addToBot(new ImpulseAction());
         }
     }
 

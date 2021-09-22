@@ -20,8 +20,8 @@ public class LaserFocus extends AbstractCurseHoldingCard {
 
     private static final int COST = 0;
 
-    private static final int MAGIC = 1;
-    private static final int UPGRADED_MAGIC = 1;
+    private static final int MAGIC = 2;
+    private static final int UPGRADED_MAGIC = 2;
 
     public LaserFocus() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET, DregsCardTags.AWAKEN_SKILL);

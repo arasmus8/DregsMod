@@ -26,7 +26,10 @@ public class SturdinessPower extends AbstractDregsPower implements CloneablePowe
 
         loadRegion("sturdiness");
         updateDescription();
+    }
 
+    @Override
+    public void onInitialApplication() {
         if (owner.hasPower(FrailPower.POWER_ID)) {
             addToBot(new RemoveSpecificPowerAction(owner, owner, FrailPower.POWER_ID));
         }

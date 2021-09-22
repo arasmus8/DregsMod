@@ -28,15 +28,18 @@ public class MightPower extends AbstractDregsPower implements CloneablePowerInte
 
         loadRegion("might");
         updateDescription();
-
-        if (owner.hasPower(WeakPower.POWER_ID)) {
-            addToBot(new RemoveSpecificPowerAction(owner, owner, WeakPower.POWER_ID));
-        }
     }
 
     public MightPower(AbstractCreature owner, int amount, boolean dontRemoveThisTurn) {
         this(owner, amount);
         this.dontRemoveThisTurn = dontRemoveThisTurn;
+    }
+
+    @Override
+    public void onInitialApplication() {
+        if (owner.hasPower(WeakPower.POWER_ID)) {
+            addToBot(new RemoveSpecificPowerAction(owner, owner, WeakPower.POWER_ID));
+        }
     }
 
     @Override

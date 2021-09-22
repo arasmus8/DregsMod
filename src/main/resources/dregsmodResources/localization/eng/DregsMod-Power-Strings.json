@@ -59,7 +59,7 @@
   "dregsmod:ExcessChannelPower": {
     "NAME": "Excess",
     "DESCRIPTIONS": [
-      "When you draw a #yCurse, channel #b",
+      "When you #Seal a card, channel #b",
       " #ySludge Orb.",
       " #ySludge Orbs."
     ]
@@ -67,7 +67,7 @@
   "dregsmod:ExcessPower": {
     "NAME": "Excess",
     "DESCRIPTIONS": [
-      "When you draw a #yCurse, trigger the passive of all your #yOrbs #b",
+      "When you #ySeal a card, trigger the passive of all your #yOrbs #b",
       " time.",
       " times."
     ]

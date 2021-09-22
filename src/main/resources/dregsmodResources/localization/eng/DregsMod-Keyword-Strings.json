@@ -27,21 +27,21 @@
     "NAMES": [
       "fortitude"
     ],
-    "DESCRIPTION": "Opposite of Vulnerable. Decreases damage taken by 25%"
+    "DESCRIPTION": "Opposite of Vulnerable. Decreases damage taken by #b25%"
   },
   {
     "PROPER_NAME": "Might",
     "NAMES": [
       "might"
     ],
-    "DESCRIPTION": "Opposite of Weak. Increases damage dealt by 25%"
+    "DESCRIPTION": "Opposite of Weak. Increases damage dealt by #b25%"
   },
   {
     "PROPER_NAME": "Sturdiness",
     "NAMES": [
       "sturdiness"
     ],
-    "DESCRIPTION": "Opposite of Frail. Increases Block gained by 25%"
+    "DESCRIPTION": "Opposite of Frail. Increases Block gained by #b25%"
   },
   {
     "PROPER_NAME": "Acceptance Stance",
