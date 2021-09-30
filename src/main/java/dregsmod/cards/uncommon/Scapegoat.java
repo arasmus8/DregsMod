@@ -28,7 +28,7 @@ public class Scapegoat extends AbstractDregsCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ScapegoatPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new ScapegoatPower(p, magicNumber, 0), magicNumber));
     }
 
     @Override

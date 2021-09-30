@@ -59,7 +59,7 @@
   "dregsmod:ExcessChannelPower": {
     "NAME": "Excess",
     "DESCRIPTIONS": [
-      "When you #Seal a card, channel #b",
+      "When you #ySeal a card, channel #b",
       " #ySludge Orb.",
       " #ySludge Orbs."
     ]

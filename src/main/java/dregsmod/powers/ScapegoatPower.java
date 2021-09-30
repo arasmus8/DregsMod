@@ -16,12 +16,12 @@ public class ScapegoatPower extends AbstractDregsTwoAmountPower implements Trigg
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public ScapegoatPower(AbstractCreature owner, int amount) {
+    public ScapegoatPower(AbstractCreature owner, int amount, int amount2) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.amount2 = 0;
+        this.amount2 = amount2;
 
         loadRegion("scapegoat");
         updateDescription();
@@ -31,12 +31,14 @@ public class ScapegoatPower extends AbstractDregsTwoAmountPower implements Trigg
     public void triggerOnSealed(AbstractCard card) {
         amount2 += amount;
         AbstractDungeon.player.hand.group.forEach(AbstractCard::applyPowers);
+        updateDescription();
     }
 
     @Override
     public void onExhaust(AbstractCard card) {
         amount2 += amount;
         AbstractDungeon.player.hand.group.forEach(AbstractCard::applyPowers);
+        updateDescription();
     }
 
     @Override
@@ -46,6 +48,6 @@ public class ScapegoatPower extends AbstractDregsTwoAmountPower implements Trigg
 
     @Override
     public AbstractPower makeCopy() {
-        return new ScapegoatPower(owner, amount);
+        return new ScapegoatPower(owner, amount, amount2);
     }
 }
