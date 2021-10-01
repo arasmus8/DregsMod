@@ -20,7 +20,7 @@ public class BrushOff extends AbstractDregsCard {
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 20;
+    private static final int DAMAGE = 16;
     private static final int UPGRADE_PLUS_DMG = 8;
 
     public BrushOff() {

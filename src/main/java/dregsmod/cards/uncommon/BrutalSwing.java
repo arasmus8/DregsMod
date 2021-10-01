@@ -22,7 +22,7 @@ public class BrutalSwing extends AbstractCurseHoldingCard {
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 10;
     private static final int UPGRADE_PLUS_DMG = 3;
 
     public BrutalSwing() {

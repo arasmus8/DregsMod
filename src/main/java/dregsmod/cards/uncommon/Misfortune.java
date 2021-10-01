@@ -22,8 +22,8 @@ public class Misfortune extends AbstractCurseHoldingCard {
     public static final CardColor COLOR = Dregs.Enums.COLOR_BLACK;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 25;
-    private static final int UPGRADE_PLUS_DMG = 8;
+    private static final int DAMAGE = 30;
+    private static final int UPGRADE_PLUS_DMG = 10;
 
     public Misfortune() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
