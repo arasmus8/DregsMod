@@ -32,6 +32,7 @@ public abstract class AbstractCleansingCurse extends AbstractDregsCard {
         if (cleanseAmount > misc + amount) {
             addToBot(new IncreaseMiscAction(uuid, misc, amount));
         } else if (!isCleansed) {
+            isCleansed = true;
             AbstractPlayer p = AbstractDungeon.player;
             p.masterDeck.group.removeIf(c -> c.uuid.equals(uuid));
 
