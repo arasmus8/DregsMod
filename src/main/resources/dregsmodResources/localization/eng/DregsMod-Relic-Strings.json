@@ -78,7 +78,7 @@
     "NAME": "Neow's Hatred",
     "FLAVOR": "It feels like you were brought back just to fail.",
     "DESCRIPTIONS": [
-      "Whenever you enter a Rest Site, add a Curse to your deck."
+      "Whenever you enter a Rest Site, add a Curse that can be cleansed to your deck."
     ]
   },
   "dregsmod:Padlock": {
