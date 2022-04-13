@@ -22,7 +22,7 @@ public class FracturedPrism extends CustomRelic implements CustomSavable<String>
     public String cardId = null;
 
     public FracturedPrism() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
         initializeTips();
