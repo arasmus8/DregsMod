@@ -20,7 +20,7 @@ public class CursedEgg extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("CursedEgg.png"));
 
     public CursedEgg() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
         if (BaseMod.getKeywordProper("dregsmod:cleanse") != null) {
