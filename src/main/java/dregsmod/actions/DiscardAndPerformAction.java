@@ -13,10 +13,9 @@ import java.util.ArrayList;
 
 public class DiscardAndPerformAction extends AbstractGameAction {
     public static ArrayList<AbstractCard> discardedCards = new ArrayList<>();
-    private AbstractGameAction followUpAction;
+    private final AbstractGameAction followUpAction;
     private boolean clearDiscardHistory;
-    private boolean isRandom;
-    private static final AbstractPlayer p = AbstractDungeon.player;
+    private final boolean isRandom;
     private static final float DURATION;
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
@@ -26,6 +25,7 @@ public class DiscardAndPerformAction extends AbstractGameAction {
             boolean random,
             AbstractGameAction action
     ) {
+        AbstractPlayer p = AbstractDungeon.player;
         setValues(p, p, amount);
         actionType = ActionType.DISCARD;
         duration = DURATION;
@@ -51,6 +51,7 @@ public class DiscardAndPerformAction extends AbstractGameAction {
                 return;
             }
 
+            AbstractPlayer p = AbstractDungeon.player;
             if (p.hand.size() <= amount) {
                 discardedCards.addAll(p.hand.group);
                 while (p.hand.size() > 0) {
@@ -94,6 +95,7 @@ public class DiscardAndPerformAction extends AbstractGameAction {
         }
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
+            AbstractPlayer p = AbstractDungeon.player;
             for (AbstractCard card : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 discardedCards.add(card);
                 p.hand.moveToDiscardPile(card);
