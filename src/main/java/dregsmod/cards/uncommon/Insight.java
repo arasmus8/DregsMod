@@ -3,7 +3,7 @@ package dregsmod.cards.uncommon;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
-import dregsmod.actions.JinxAction;
+import dregsmod.actions.InsightAction;
 import dregsmod.cards.AbstractDregsCard;
 import dregsmod.cards.DregsCardTags;
 import dregsmod.characters.Dregs;
@@ -28,7 +28,7 @@ public class Insight extends AbstractDregsCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new JinxAction(m, magicNumber, freeToPlayOnce, energyOnUse));
+        addToBot(new InsightAction(m, magicNumber, freeToPlayOnce, energyOnUse));
     }
 
     @Override

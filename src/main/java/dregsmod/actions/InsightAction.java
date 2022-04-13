@@ -8,13 +8,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-public class JinxAction extends AbstractGameAction {
-    private AbstractCreature m;
-    private AbstractPlayer p;
-    private int energyOnUse;
-    private boolean freeToPlayOnce;
+public class InsightAction extends AbstractGameAction {
+    private final AbstractCreature m;
+    private final AbstractPlayer p;
+    private final int energyOnUse;
+    private final boolean freeToPlayOnce;
 
-    public JinxAction(AbstractCreature target, int amount, boolean freeToPlayOnce, int energyOnUse) {
+    public InsightAction(AbstractCreature target, int amount, boolean freeToPlayOnce, int energyOnUse) {
         m = target;
         p = AbstractDungeon.player;
         this.freeToPlayOnce = freeToPlayOnce;
