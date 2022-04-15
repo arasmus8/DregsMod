@@ -19,7 +19,6 @@ public class Overcome extends AbstractDregsCard {
     private static final int COST = -1;
 
     private static final int MAGIC = 0;
-    private static final int UPGRADED_MAGIC = 1;
 
     public Overcome() {
         super(ID, COST, TYPE, RARITY, TARGET, COLOR, DregsCardTags.CANT_AWAKEN);
@@ -28,14 +27,13 @@ public class Overcome extends AbstractDregsCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new OvercomeAction(magicNumber, freeToPlayOnce, energyOnUse));
+        addToBot(new OvercomeAction(freeToPlayOnce, energyOnUse, upgraded));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_MAGIC);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

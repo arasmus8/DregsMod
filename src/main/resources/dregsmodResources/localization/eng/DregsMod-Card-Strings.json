@@ -54,7 +54,8 @@
   },
   "dregsmod:IcyTouch": {
     "NAME": "Icy Touch",
-    "DESCRIPTION": "Deal !D! damage. If you're holding a Curse, Channel 2 Frost Orbs."
+    "DESCRIPTION": "Deal !D! damage. If you're holding a Curse, Channel 2 Frost Orbs.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Channel 2 Frost Orbs."
   },
   "dregsmod:Improvise": {
     "NAME": "Improvise",
@@ -308,7 +309,7 @@
   "dregsmod:Overcome": {
     "NAME": "Overcome",
     "DESCRIPTION": "Gain X dregsmod:Fortitude, dregsmod:Might, and dregsmod:Sturdiness.",
-    "UPGRADE_DESCRIPTION": "Gain X + 1 dregsmod:Fortitude, dregsmod:Might, and dregsmod:Sturdiness."
+    "UPGRADE_DESCRIPTION": "Gain X dregsmod:Fortitude, dregsmod:Might, dregsmod:Sturdiness, and Strength."
   },
   "dregsmod:PowerUp": {
     "NAME": "Power Up",

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import dregsmod.powers.FortitudePower;
@@ -12,15 +13,17 @@ import dregsmod.powers.MightPower;
 import dregsmod.powers.SturdinessPower;
 
 public class OvercomeAction extends AbstractGameAction {
-    private AbstractPlayer p;
-    private int energyOnUse;
-    private boolean freeToPlayOnce;
+    private final AbstractPlayer p;
+    private final int energyOnUse;
+    private final boolean freeToPlayOnce;
+    private final boolean upgraded;
 
-    public OvercomeAction(int amount, boolean freeToPlayOnce, int energyOnUse) {
+    public OvercomeAction(boolean freeToPlayOnce, int energyOnUse, boolean upgraded) {
         p = AbstractDungeon.player;
         this.freeToPlayOnce = freeToPlayOnce;
         this.energyOnUse = energyOnUse;
-        setValues(p, p, amount);
+        this.upgraded = upgraded;
+        setValues(p, p);
         duration = Settings.ACTION_DUR_XFAST;
         actionType = ActionType.SPECIAL;
     }
@@ -37,12 +40,13 @@ public class OvercomeAction extends AbstractGameAction {
             p.getRelic(ChemicalX.ID).flash();
         }
 
-        effect += amount;
-
         if(effect > 0) {
             addToBot(new ApplyPowerAction(p, p, new FortitudePower(p, effect), effect));
             addToBot(new ApplyPowerAction(p, p, new MightPower(p, effect), effect));
             addToBot(new ApplyPowerAction(p, p, new SturdinessPower(p, effect), effect));
+            if (upgraded) {
+                addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, effect), effect));
+            }
         }
 
         if (!freeToPlayOnce) {

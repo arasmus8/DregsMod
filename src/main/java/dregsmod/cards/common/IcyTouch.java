@@ -3,6 +3,7 @@ package dregsmod.cards.common;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -22,7 +23,6 @@ public class IcyTouch extends AbstractCurseHoldingCard {
 
     private static final int COST = 1;
     private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 3;
 
     public IcyTouch() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -32,7 +32,7 @@ public class IcyTouch extends AbstractCurseHoldingCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        if (holdingCurse) {
+        if (holdingCurse || upgraded) {
             showEvokeValue = true;
             showEvokeOrbCount = 2;
         } else {
@@ -41,9 +41,18 @@ public class IcyTouch extends AbstractCurseHoldingCard {
     }
 
     @Override
+    public void triggerOnGlowCheck() {
+        if (!upgraded) {
+            super.triggerOnGlowCheck();
+        } else {
+            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (holdingCurse) {
+        if (holdingCurse || upgraded) {
             addToBot(new ChannelAction(new Frost()));
             addToBot(new ChannelAction(new Frost()));
         }
@@ -53,7 +62,7 @@ public class IcyTouch extends AbstractCurseHoldingCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
