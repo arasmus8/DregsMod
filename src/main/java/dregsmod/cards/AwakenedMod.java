@@ -288,7 +288,7 @@ public class AwakenedMod extends AbstractCardModifier {
                 card.drawScale * lvlScale,
                 card.angle);
         if (level > 3) {
-            int hpLoss = modifierValues[level - 4];
+            int healAmount = modifierValues[level - 4];
             vec = new Vector2(0, 0);
             vec.scl(card.drawScale * Settings.scale);
             vec.rotate(card.angle);
@@ -312,7 +312,7 @@ public class AwakenedMod extends AbstractCardModifier {
                     hpImg.getHeight(),
                     false,
                     false);
-            String text = "" + hpLoss;
+            String text = "" + healAmount;
             FontHelper.cardEnergyFont_L.getData().setScale(card.drawScale * 0.5f);
             BitmapFont font = FontHelper.cardEnergyFont_L;
             FontHelper.renderRotatedText(sb,

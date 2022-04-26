@@ -2,6 +2,7 @@ package dregsmod.vfx;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Interpolation;
@@ -14,10 +15,10 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class SharpShadowsEffect extends AbstractGameEffect {
     private static TextureAtlas.AtlasRegion img;
-    private float x;
-    private float y;
+    private final float x;
+    private final float y;
     private float t;
-    private float targetScale;
+    private final float targetScale;
     private boolean playedSound;
 
     public SharpShadowsEffect(float x, float y) {
@@ -56,9 +57,9 @@ public class SharpShadowsEffect extends AbstractGameEffect {
     public void render(SpriteBatch sb) {
         sb.setColor(this.color);
         sb.draw(img, this.x, this.y, (float) img.packedWidth, (float) img.packedHeight / 2.0F, (float) img.packedWidth, (float) img.packedHeight, this.scale, this.scale, this.rotation);
-        sb.setBlendFunction(770, 1);
+        sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE);
         sb.draw(img, this.x, this.y, (float) img.packedWidth, (float) img.packedHeight / 2.0F, (float) img.packedWidth, (float) img.packedHeight, this.scale * 1.2f, this.scale * 1.02f, this.rotation);
-        sb.setBlendFunction(770, 771);
+        sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
         // sb.draw(img, this.x, this.y, (float) img.packedWidth / 2.0F, (float) img.packedHeight / 2.0F, (float) img.packedWidth, (float) img.packedHeight, this.scale * MathUtils.random(1.0F, 1.2F), this.scale * MathUtils.random(1.0F, 1.2F), this.rotation);
         // sb.draw(img, this.x, this.y, (float) img.packedWidth / 2.0F, (float) img.packedHeight / 2.0F, (float) img.packedWidth, (float) img.packedHeight, this.scale * MathUtils.random(0.9F, 1.1F), this.scale * MathUtils.random(0.9F, 1.1F), this.rotation);
     }

@@ -2,6 +2,7 @@ package dregsmod.vfx;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Interpolation;
@@ -15,9 +16,9 @@ public class DenialParticleEffect extends AbstractGameEffect {
     private float x;
     private float y;
     private float vX;
-    private float vY;
-    private float dur_div2;
-    private TextureAtlas.AtlasRegion img;
+    private final float vY;
+    private final float dur_div2;
+    private final TextureAtlas.AtlasRegion img;
 
     public DenialParticleEffect() {
         img = ImageMaster.WOBBLY_LINE;
@@ -55,9 +56,9 @@ public class DenialParticleEffect extends AbstractGameEffect {
 
     public void render(SpriteBatch sb) {
         sb.setColor(color);
-        sb.setBlendFunction(770, 1);
+        sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE);
         sb.draw(img, x, y, (float) img.packedWidth / 2.0F, (float) img.packedHeight / 2.0F, (float) img.packedWidth, (float) img.packedHeight, scale * 0.8F, scale * 0.8F, rotation);
-        sb.setBlendFunction(770, 771);
+        sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
     }
 
     public void dispose() {

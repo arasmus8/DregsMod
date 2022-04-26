@@ -2,6 +2,7 @@ package dregsmod.vfx;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Interpolation;
@@ -16,8 +17,8 @@ import dregsmod.stances.DenialStance;
 public class CustomStanceAuraEffect extends AbstractGameEffect {
     private float x;
     private float y;
-    private float vY;
-    private TextureAtlas.AtlasRegion img;
+    private final float vY;
+    private final TextureAtlas.AtlasRegion img;
     public static boolean switcher = true;
 
     public CustomStanceAuraEffect(String stanceId) {
@@ -65,9 +66,9 @@ public class CustomStanceAuraEffect extends AbstractGameEffect {
 
     public void render(SpriteBatch sb) {
         sb.setColor(this.color);
-        sb.setBlendFunction(770, 1);
+        sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE);
         sb.draw(this.img, this.x, this.y, (float) this.img.packedWidth / 2.0F, (float) this.img.packedHeight / 2.0F, (float) this.img.packedWidth, (float) this.img.packedHeight, this.scale, this.scale, this.rotation);
-        sb.setBlendFunction(770, 771);
+        sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
     }
 
     public void dispose() {

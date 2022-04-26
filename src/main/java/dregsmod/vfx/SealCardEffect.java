@@ -18,9 +18,9 @@ public class SealCardEffect extends AbstractGameEffect {
     private static final float ANIM_DUR = 0.5F;
     private static final float ANIM_START_AT = 0.75F;
     private static final float SOUND_AT = 0.25F;
-    private AbstractCard c;
+    private final AbstractCard c;
     private static final float PADDING;
-    private Color drawColor = Color.WHITE.cpy();
+    private final Color drawColor = Color.WHITE.cpy();
     private boolean soundPlayed;
 
     private static int count = 0;
@@ -67,7 +67,7 @@ public class SealCardEffect extends AbstractGameEffect {
     static int botY = 28;
     static int botHeight = 220;
 
-    private int tt = 999;
+    // private int tt = 999;
 
     @Override
     public void render(SpriteBatch sb) {
@@ -78,12 +78,14 @@ public class SealCardEffect extends AbstractGameEffect {
 
             float scale = c.drawScale * Settings.scale;
             float dT = MathUtils.clamp((ANIM_START_AT - duration) / ANIM_DUR, 0f, 1f);
+            /*
             tt += 1;
             if (tt > 40) {
                 // log every 40 frames
                 tt = 0;
                 System.out.println(dT);
             }
+            */
 
             float y = Interpolation.circleOut.apply(topY - 2, -2, dT);
             float a = 1.0f;

@@ -21,7 +21,7 @@ public class BrushOff extends AbstractDregsCard {
 
     private static final int COST = 2;
     private static final int DAMAGE = 16;
-    private static final int UPGRADE_PLUS_DMG = 8;
+    private static final int UPGRADE_PLUS_DMG = 4;
 
     public BrushOff() {
         super(ID, COST, TYPE, RARITY, TARGET, COLOR);
