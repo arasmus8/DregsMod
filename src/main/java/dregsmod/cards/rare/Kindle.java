@@ -1,5 +1,6 @@
 package dregsmod.cards.rare;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
@@ -22,6 +23,15 @@ public class Kindle extends AbstractCurseHoldingCard {
     public Kindle() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         tags.add(DregsCardTags.CANT_AWAKEN);
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if (upgraded) {
+            super.triggerOnGlowCheck();
+        } else {
+            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
     }
 
     @Override
