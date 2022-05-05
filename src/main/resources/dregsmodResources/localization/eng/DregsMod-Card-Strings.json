@@ -230,7 +230,7 @@
   },
   "dregsmod:Scapegoat": {
     "NAME": "Scapegoat",
-    "DESCRIPTION": "For each card you Exhast or dregsmod:Seal, dregsmod:Awoken cards do !M! more damage or Block."
+    "DESCRIPTION": "For each card you Exhaust or dregsmod:Seal, dregsmod:Awoken cards do !M! more damage or Block."
   },
   "dregsmod:SealedEnergy": {
     "NAME": "Sealed Energy",
