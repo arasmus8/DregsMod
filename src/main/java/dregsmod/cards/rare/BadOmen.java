@@ -32,7 +32,9 @@ public class BadOmen extends AbstractDregsCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster target) {
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            addToBot(new VFXAction(new BadOmenEffect(m.hb.cX, m.hb.cY)));
+            if (!m.isDeadOrEscaped()) {
+                addToBot(new VFXAction(new BadOmenEffect(m.hb.cX, m.hb.cY)));
+            }
         }
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }
