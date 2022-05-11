@@ -365,7 +365,7 @@
   },
   "dregsmod:Death": {
     "NAME": "Death",
-    "DESCRIPTION": "Increase this card's cost by 1. At the end of your turn, take 100 damage. NL dregsmod:Cleanse: Spend !M! [E]"
+    "DESCRIPTION": "When played, Increase this card's cost by 1. If this card is in your hand at the end of your turn, take 100 damage. NL dregsmod:Cleanse: Spend !M! [E]"
   },
   "dregsmod:Spire": {
     "NAME": "Spire",
