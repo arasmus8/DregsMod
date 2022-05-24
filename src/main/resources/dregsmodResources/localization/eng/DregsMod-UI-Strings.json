@@ -20,5 +20,10 @@
       "Choose any number of ",
       " cards to "
     ]
+  },
+  "dregsmod:Settings": {
+    "TEXT": [
+      "Allow a curated selection of relics to be used by other characters. (Requires restart)"
+    ]
   }
 }

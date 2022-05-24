@@ -15,6 +15,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -53,7 +54,9 @@ public class DregsMod implements
     private static String modID;
 
     private static final Logger logger = Logger.getLogger(DregsMod.class.getName());
+
     public static SpireConfig config;
+    private static boolean globalRelics = false;
 
     private static final String MODNAME = "TheDregs";
     private static final String AUTHOR = "NotInTheFace";
@@ -188,9 +191,14 @@ public class DregsMod implements
 
     @SuppressWarnings("unused")
     public static void initialize() {
-        logger.info("========================= Initializing Accursed Mod. Hi. =========================");
         DregsMod dregsMod = new DregsMod();
-        logger.info("========================= /Accursed Mod Initialized. Hello World./ =========================");
+        try {
+            config = new SpireConfig("DregsMod", "dregsModConfig");
+            config.load();
+            globalRelics = config.getBool("globalRelics");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -204,6 +212,18 @@ public class DregsMod implements
         logger.info("Added " + Dregs.Enums.DREGS.toString());
     }
 
+    private void saveSettings() {
+        try {
+            // And based on that boolean, set the settings and save them
+            config = new SpireConfig("DregsMod", "dregsModConfig");
+            config.load();
+            config.setBool("globalRelics", globalRelics);
+            config.save();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void receivePostInitialize() {
         logger.info("Loading badge image and mod options");
@@ -213,18 +233,31 @@ public class DregsMod implements
 
         logger.info("Adding mod settings");
 
-
         try {
-            config = new SpireConfig("DregsMod", "dregsConfig");
+            config = new SpireConfig("DregsMod", "dregsModConfig");
             config.load();
-            // PotionbrewerTipTracker.initialize();
+            globalRelics = config.getBool("globalRelics");
         } catch (Exception e) {
             e.printStackTrace();
         }
         logger.info("Done adding mod settings");
 
+        UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("Settings"));
 
         ModPanel panel = new ModPanel();
+
+        ModLabeledToggleButton toggleGlobalRelicsButton = new ModLabeledToggleButton(uiStrings.TEXT[0],
+                375.0f, 500.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                globalRelics,
+                panel,
+                (label) -> {
+                },
+                (button) -> {
+                    globalRelics = button.enabled;
+                    saveSettings();
+                });
+        panel.addUIElement(toggleGlobalRelicsButton);
+
         panel.addUIElement(
                 new ModLabel("Thanks for trying this character! I hope you like it.",
                         350.0F,
@@ -296,10 +329,17 @@ public class DregsMod implements
         UnlockTracker.markRelicAsSeen(NeowsHatred.ID);
         UnlockTracker.markRelicAsSeen(Padlock.ID);
 
-        BaseMod.addRelic(new BananaPeel(), RelicType.SHARED);
-        BaseMod.addRelic(new FracturedPrism(), RelicType.SHARED);
-        BaseMod.addRelic(new StickyBarb(), RelicType.SHARED);
+        if (globalRelics) {
+            BaseMod.addRelic(new BananaPeel(), RelicType.SHARED);
+            BaseMod.addRelic(new FracturedPrism(), RelicType.SHARED);
+            BaseMod.addRelic(new StickyBarb(), RelicType.SHARED);
 
+        } else {
+            BaseMod.addRelicToCustomPool(new BananaPeel(), Dregs.Enums.COLOR_BLACK);
+            BaseMod.addRelicToCustomPool(new FracturedPrism(), Dregs.Enums.COLOR_BLACK);
+            BaseMod.addRelicToCustomPool(new StickyBarb(), Dregs.Enums.COLOR_BLACK);
+
+        }
         UnlockTracker.markRelicAsSeen(BananaPeel.ID);
         UnlockTracker.markRelicAsSeen(FracturedPrism.ID);
         UnlockTracker.markRelicAsSeen(StickyBarb.ID);
