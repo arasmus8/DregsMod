@@ -14,7 +14,9 @@ import dregsmod.relics.NeowsHatred;
 import javassist.CtBehavior;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.logging.Logger;
+import java.util.stream.IntStream;
 
 import static dregsmod.patches.enums.CustomNeowRewardDrawback.DREGS_DRAWBACK;
 
@@ -23,7 +25,27 @@ public class NeowPatches {
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("dregsmod:DregsNeow");
     private static final String[] DREGS_NEOW_TEXT = characterStrings.TEXT;
 
-    @SuppressWarnings({"unchecked"})
+    @SpirePatch2(
+            clz = NeowEvent.class,
+            method = "talk"
+    )
+    public static class DialogReplacePatch {
+        @SpirePrefixPatch
+        public static SpireReturn<Void> Prefix(NeowEvent __instance, @ByRef String[] msg) {
+            if (AbstractDungeon.player.chosenClass == Dregs.Enums.DREGS) {
+                String originalMsg = msg[0];
+                int originalIndexOfMsg = IntStream.range(0, NeowEvent.TEXT.length)
+                        .filter(i -> Objects.equals(originalMsg, NeowEvent.TEXT[i]))
+                        .findFirst()
+                        .orElse(-1);
+                if (originalIndexOfMsg >= 1 && originalIndexOfMsg <= 6) {
+                    msg[0] = DREGS_NEOW_TEXT[originalIndexOfMsg];
+                }
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
     @SpirePatch(
             clz = NeowEvent.class,
             method = "miniBlessing"
@@ -35,7 +57,7 @@ public class NeowPatches {
         public static SpireReturn<Void> Insert(NeowEvent _instance) {
             if (AbstractDungeon.player.chosenClass == Dregs.Enums.DREGS) {
                 ArrayList<NeowReward> rewards;
-                rewards = (ArrayList<NeowReward>) ReflectionHacks.getPrivate(_instance, NeowEvent.class, "rewards");
+                rewards = ReflectionHacks.getPrivate(_instance, NeowEvent.class, "rewards");
                 rewards.clear();
                 rewards.add(new DregsReward(true));
                 rewards.add(new DregsReward(false));
@@ -57,7 +79,6 @@ public class NeowPatches {
         }
     }
 
-    @SuppressWarnings({"unchecked"})
     @SpirePatch(
             clz = NeowEvent.class,
             method = "blessing"
@@ -69,7 +90,7 @@ public class NeowPatches {
         public static SpireReturn<Void> Insert(NeowEvent _instance) {
             if (AbstractDungeon.player.chosenClass == Dregs.Enums.DREGS) {
                 ArrayList<NeowReward> rewards;
-                rewards = (ArrayList<NeowReward>) ReflectionHacks.getPrivate(_instance, NeowEvent.class, "rewards");
+                rewards = ReflectionHacks.getPrivate(_instance, NeowEvent.class, "rewards");
                 rewards.clear();
                 rewards.add(new DregsReward(0));
                 rewards.add(new DregsReward(1));
@@ -120,7 +141,6 @@ public class NeowPatches {
             Logger logger = Logger.getLogger(DregsReward.class.getName());
             NeowReward.NeowRewardDef reward;
             if (isFirst) {
-                type = NeowRewardType.HUNDRED_GOLD;
                 reward = new NeowReward.NeowRewardDef(NeowRewardType.HUNDRED_GOLD, TEXT[8] + 100 + TEXT[9]);
             } else {
                 reward = new NeowReward.NeowRewardDef(NeowReward.NeowRewardType.TEN_PERCENT_HP_BONUS, TEXT[7] +

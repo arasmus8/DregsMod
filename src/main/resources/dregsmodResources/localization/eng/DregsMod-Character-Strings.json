@@ -13,7 +13,13 @@
   "dregsmod:DregsNeow": {
     "NAMES": [],
     "TEXT": [
-      "#rObtain #ra #rcursed #rRelic "
+      "#rObtain #ra #rcursed #rRelic ",
+      "~Not...~ NL ~Again..~",
+      "~Why~ ~do~ ~you~ NL ~Exist...~",
+      "~Be~ NL ~gone...~",
+      "~Failed~ ~again...?~",
+      "~Can't~ ~you...~ ~reach~ NL ~the~ ~first~ ~boss...~",
+      "~Why~ ~not~ ~just...~ ~stay~ ~dead?~"
     ]
   }
 }
