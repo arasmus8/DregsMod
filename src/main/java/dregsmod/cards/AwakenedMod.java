@@ -74,6 +74,14 @@ public class AwakenedMod extends AbstractCardModifier {
             } catch (Exception ignored) {
             }
         }
+        if (usesMagic[0]) {
+            AbstractCard base = card.makeCopy();
+            AbstractCard upgraded = card.makeCopy();
+            upgraded.upgrade();
+            if (upgraded.magicNumber < base.magicNumber) {
+                return false;
+            }
+        }
         return usesMagic[0];
     }
 
@@ -174,11 +182,6 @@ public class AwakenedMod extends AbstractCardModifier {
                 card.baseMagicNumber > 0
         ) {
             int adjustBy = modifierValues[level - 1];
-            AbstractCard upgraded = card.makeStatEquivalentCopy();
-            upgraded.upgrade();
-            if (card.baseMagicNumber > upgraded.baseMagicNumber) {
-                adjustBy *= -1;
-            }
             card.magicNumber = card.baseMagicNumber + adjustBy;
             if (card.magicNumber != card.baseMagicNumber) {
                 card.isMagicNumberModified = true;
