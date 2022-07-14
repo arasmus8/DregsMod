@@ -47,11 +47,11 @@ public class BlightedPower extends AbstractDregsPower implements CloneablePowerI
 
     @Override
     public void stackPower(int stackAmount) {
-        super.stackPower(stackAmount);
         if (AbstractDungeon.player.hasRelic(CursedLocket.ID)) {
             AbstractDungeon.player.getRelic(CursedLocket.ID).flash();
-            amount *= 1.5;
+            stackAmount *= 1.5;
         }
+        super.stackPower(stackAmount);
     }
 
     @Override
