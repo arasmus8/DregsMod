@@ -1,0 +1,98 @@
+{
+  "dregsmod:BananaPeel": {
+    "NAME": "香蕉皮",
+    "FLAVOR": "铺满了卡丁车赛道",
+    "DESCRIPTIONS": [
+      "每当遭受 #y虚弱 ，向全敌施加 1 #y虚弱"
+    ]
+  },
+  "dregsmod:CurseBrand": {
+    "NAME": "诅咒烙印",
+    "FLAVOR": "此印记为失败者和堕落者所拥有。",
+    "DESCRIPTIONS": [
+      "每当抽到诅咒牌， #y唤醒 一张随机牌。",
+      "唤醒",
+      "觉醒的攻击牌能造成更高伤害; 觉醒的技能牌能给予提供格挡和效果。 NL 一张牌能被多次唤醒。"
+    ]
+  },
+  "dregsmod:CursedEgg": {
+    "NAME": "诅咒之卵",
+    "FLAVOR": "别吃!",
+    "DESCRIPTIONS": [
+      "净化 #y诅咒 的奖励牌会被 #y升级"
+    ]
+  },
+  "dregsmod:CursedLocket": {
+    "NAME": "诅咒吊坠",
+    "FLAVOR": "封存着黑暗能量，触摸时有灼热感。",
+    "DESCRIPTIONS": [
+      "增加50%所施加的 #y枯萎 。"
+    ]
+  },
+  "dregsmod:DarksteelHammer": {
+    "NAME": "黑钢之锤",
+    "FLAVOR": "这把铁匠的工具被浸泡在受诅咒的能量中。",
+    "DESCRIPTIONS": [
+      "每当你获得 #y诅咒 ， #y升级 一张随机牌。"
+    ]
+  },
+  "dregsmod:DeathBrand": {
+    "NAME": "死亡烙印",
+    "FLAVOR": "这个烙印用于标记将要被处决之人。",
+    "DESCRIPTIONS": [
+      "替换诅咒烙印。每当抽到诅咒， #y唤醒 1张随机手牌。每回合抽取1张额外牌。",
+      "唤醒",
+      "觉醒的攻击牌能造成更高伤害; 觉醒的技能牌能给予提供格挡和效果。 NL 一张牌能被多次唤醒。"
+    ]
+  },
+  "dregsmod:EvilEye": {
+    "NAME": "邪恶之眼",
+    "FLAVOR": "最喜欢踢小狗。",
+    "DESCRIPTIONS": [
+      "每战结束时，牌组每张 #y诅咒 ，治疗1生命。"
+    ]
+  },
+  "dregsmod:FracturedPrism": {
+    "NAME": "断裂棱镜",
+    "FLAVOR": "断裂的表面创造出五个映像。",
+    "DESCRIPTIONS": [
+      "选择牌组中的一张牌。你的下五次卡牌奖励中都会包含一张此牌的复制品。",
+      "选择一张牌使之出现在下五次卡牌奖励中。"
+    ]
+  },
+  "dregsmod:JadeSeal": {
+    "NAME": "翡翠印章",
+    "FLAVOR": "来自一个被遗忘的帝国的古代制品。",
+    "DESCRIPTIONS": [
+      "每当 #y封存 一张牌，获得 3 #y格挡 。"
+    ]
+  },
+  "dregsmod:LuckyClover": {
+    "NAME": "幸运草",
+    "FLAVOR": "充满魔力，引人欢喜。",
+    "DESCRIPTIONS": [
+      "每战开始，牌组中每张诅咒牌提供1层多层装甲。"
+    ]
+  },
+  "dregsmod:NeowsHatred": {
+    "NAME": "生命之神的恨意",
+    "FLAVOR": "你被拉回来只是为了再输一次。",
+    "DESCRIPTIONS": [
+      "每当你进入休息站，添加一张可被净化的诅咒到牌组。"
+    ]
+  },
+  "dregsmod:Padlock": {
+    "NAME": "挂锁",
+    "FLAVOR": "这把锁曾被用在封住一个邪恶力量的牢笼上。",
+    "DESCRIPTIONS": [
+      "每战开始，你可以从抽牌堆里 #y封存 最多5张牌。"
+    ]
+  },
+  "dregsmod:StickyBarb": {
+    "NAME": "粘性倒钩",
+    "FLAVOR": "蹭到袜子上就拿不掉了。",
+    "DESCRIPTIONS": [
+      "每当遭受 #y易伤 ，向全敌施加1层 #y易伤 。"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "dregsmod:Sludge": {
+    "NAME": "泞泥",
+    "DESCRIPTION": [
+      "#y被动 ：每回合结束，增加此球体的计数 #b",
+      " 点。 NL #y激发 ：抽 #b",
+      " 张牌。",
+      " 张牌。"
+    ]
+  },
+  "dregsmod:DregOrb": {
+    "NAME": "渣滓",
+    "DESCRIPTION": [
+      "#y被动 ：每回合开始，抽 #b",
+      " 张诅咒。 NL #y激发 ： #y唤醒 1张牌。",
+      " 张诅咒 NL #y激发 ： #y唤醒 1张牌。"
+    ]
+  }
+}

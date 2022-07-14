@@ -378,42 +378,50 @@ public class DregsMod implements
     public void receiveEditStrings() {
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
 
+        String lang = "eng";
+
+        if (Settings.language == Settings.GameLanguage.ZHS) {
+            lang = "zhs";
+        }
+
+        logger.info("Loading strings for language: " + lang);
+
 
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/DregsMod-Card-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/DregsMod-Card-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/DregsMod-Power-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/DregsMod-Power-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                getModID() + "Resources/localization/eng/DregsMod-Relic-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/DregsMod-Relic-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(EventStrings.class,
-                getModID() + "Resources/localization/eng/DregsMod-Event-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/DregsMod-Event-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(PotionStrings.class,
-                getModID() + "Resources/localization/eng/DregsMod-Potion-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/DregsMod-Potion-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                getModID() + "Resources/localization/eng/DregsMod-Character-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/DregsMod-Character-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/DregsMod-Orb-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/DregsMod-Orb-Strings.json");
 
         BaseMod.loadCustomStringsFile(UIStrings.class,
-                getModID() + "Resources/localization/eng/DregsMod-UI-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/DregsMod-UI-Strings.json");
 
         BaseMod.loadCustomStringsFile(TutorialStrings.class,
-                getModID() + "Resources/localization/eng/DregsMod-Tutorial-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/DregsMod-Tutorial-Strings.json");
 
         BaseMod.loadCustomStringsFile(StanceStrings.class,
-                getModID() + "Resources/localization/eng/DregsMod-Stance-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/DregsMod-Stance-Strings.json");
 
         logger.info("Done editing strings");
     }
@@ -421,9 +429,17 @@ public class DregsMod implements
     @Override
     public void receiveEditKeywords() {
 
+        String lang = "eng";
+
+        if (Settings.language == Settings.GameLanguage.ZHS) {
+            lang = "zhs";
+        }
+
+        logger.info("Loading keywords for language: " + lang);
+
 
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/DregsMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(getModID() + "Resources/localization/" + lang + "/DregsMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
         if (keywords != null) {

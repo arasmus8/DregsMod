@@ -1,0 +1,14 @@
+{
+  "dregsmod:Acceptance": {
+    "NAME": "接纳姿态",
+    "DESCRIPTION": [
+      "你的攻击牌造成双倍伤害但耗费加1。"
+    ]
+  },
+  "dregsmod:Denial": {
+    "NAME": "否认姿态",
+    "DESCRIPTION": [
+      "进入该姿态时，获得 [E] [E] 。退出该姿态时，立刻结束你的回合。"
+    ]
+  }
+}

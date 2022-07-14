@@ -1,0 +1,29 @@
+{
+  "dregsmod:CleansedCurseAction": {
+    "TEXT": [
+      "选择一张牌永久加入牌组:"
+    ]
+  },
+  "dregsmod:CleansedCurseReward": {
+    "TEXT": [
+      "选择 ",
+      " 牌",
+      " 牌",
+      " 来加入牌组:",
+      "净化诅咒奖励"
+    ]
+  },
+  "dregsmod:SealAndPerformAction": {
+    "TEXT": [
+      "封存：",
+      "选择最多 ",
+      "选择任意数量 ",
+      " 牌 "
+    ]
+  },
+  "dregsmod:Settings": {
+    "TEXT": [
+      "允许某些作者挑选过的遗物被其他职业所用 (需要重开)"
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+[
+  {
+    "PROPER_NAME": "封存",
+    "NAMES": [
+      "封存",
+      "封存的",
+      "sealed"
+    ],
+    "DESCRIPTION": "当你洗牌，封存牌会被留在弃牌堆里，然后解封。封存一张牌时，会触发牌上标明的消耗效果，或被弃置。"
+  },
+  {
+    "PROPER_NAME": "净化",
+    "NAMES": [
+      "净化",
+      "净化的",
+      "cleansed"
+    ],
+    "DESCRIPTION": "当满足牌上的条件时，一些诅咒能被净化，被替换成你选择的其他职业的卡牌"
+  },
+  {
+    "PROPER_NAME": "枯萎",
+    "NAMES": [
+      "枯萎",
+      "blighted"
+    ],
+    "DESCRIPTION": "当枯萎层数超过敌人的当前生命值，杀死它并转化为一张特殊牌。受到枯萎的敌人每回合会治疗 10% 损失的生命。"
+  },
+  {
+    "PROPER_NAME": "刚毅",
+    "NAMES": [
+      "刚毅",
+      "Fortitude"
+    ],
+    "DESCRIPTION": "易伤的反面。减少 #b25% 所受的伤害"
+  },
+  {
+    "PROPER_NAME": "强壮",
+    "NAMES": [
+      "强壮",
+      "Might"
+    ],
+    "DESCRIPTION": "虚弱的反面。增加  #b25% 造成的伤害。"
+  },
+  {
+    "PROPER_NAME": "坚韧",
+    "NAMES": [
+      "坚韧",
+      "sturdiness"
+    ],
+    "DESCRIPTION": "脆弱的反面。 获得的格挡增加 #b25%"
+  },
+  {
+    "PROPER_NAME": "接纳姿态",
+    "NAMES": [
+      "接纳姿态",
+      "acceptance",
+      "接纳"
+    ],
+    "DESCRIPTION": "你的攻击牌造成双倍伤害但花费增加1点。"
+  },
+  {
+    "PROPER_NAME": "否认姿态",
+    "NAMES": [
+      "否认姿态",
+      "denial",
+      "否认"
+    ],
+    "DESCRIPTION": "进入此姿态时，获得 [E] [E] 。退出这个姿态时立刻结束你的回合。"
+  },
+  {
+    "PROPER_NAME": "泞泥球",
+    "NAMES": [
+      "泞泥球"
+    ],
+    "DESCRIPTION": "球体: 每回合增加计数。 #y激发 时，抽牌。"
+  },
+  {
+    "PROPER_NAME": "渣滓球",
+    "NAMES": [
+      "渣滓球"
+    ],
+    "DESCRIPTION": "球体: 每回合抽诅咒牌。  #y激发 时，使一张牌觉醒。"
+  },
+  {
+    "PROPER_NAME": "庇护球体",
+    "NAMES": [
+      "庇护球体",
+      "asylumorbs"
+    ],
+    "DESCRIPTION": "根据被封存牌的稀有度生成各种球体： NL 普通: 闪电球 NL 罕见: 冰霜球 NL 稀有: 等离子球 NL 状态: 泞泥球 NL 诅咒: 渣渣球"
+  },
+  {
+    "PROPER_NAME": "唤醒",
+    "NAMES": [
+      "唤醒",
+      "awaken"
+    ],
+    "DESCRIPTION": "觉醒的攻击牌造成更多伤害。觉醒的技能牌获得更多格挡或效果。 NL 一张牌可被多次唤醒。"
+  },
+  {
+    "PROPER_NAME": "觉醒",
+    "NAMES": [
+      "觉醒",
+      "觉醒的",
+      "awoken"
+    ],
+    "DESCRIPTION": "觉醒的攻击牌造成更多伤害。觉醒的技能牌获得更多格挡或效果。 NL 一张牌可被多次唤醒。"
+  },
+  {
+    "PROPER_NAME": "觉醒 II",
+    "NAMES": [
+      "觉醒\u00A0ii"
+    ],
+    "DESCRIPTION": "觉醒的攻击牌造成更多伤害。觉醒的技能牌获得更多格挡或效果。"
+  },
+  {
+    "PROPER_NAME": "觉醒 III",
+    "NAMES": [
+      "觉醒\u00A0iii"
+    ],
+    "DESCRIPTION": "打出时抽一张牌。 NL 觉醒的攻击牌造成更多伤害。觉醒的技能牌获得更多格挡或效果。"
+  },
+  {
+    "PROPER_NAME": "觉醒 IV",
+    "NAMES": [
+      "觉醒\u00A0iv"
+    ],
+    "DESCRIPTION": "打出时回复生命并抽一张牌。 NL 觉醒的攻击牌造成更多伤害。觉醒的技能牌获得更多格挡或效果。"
+  },
+  {
+    "PROPER_NAME": "觉醒 V",
+    "NAMES": [
+      "觉醒\u00A0v"
+    ],
+    "DESCRIPTION": "打出时回复生命并抽一张牌。 NL 觉醒的攻击牌造成更多伤害。觉醒的技能牌获得更多格挡或效果。"
+  },
+  {
+    "PROPER_NAME": "觉醒 VI",
+    "NAMES": [
+      "觉醒\u00A0vi"
+    ],
+    "DESCRIPTION": "打出时回复生命并抽一张牌。 NL 觉醒的攻击牌造成更多伤害。觉醒的技能牌获得更多格挡或效果。"
+  },
+  {
+    "PROPER_NAME": "觉醒 VII",
+    "NAMES": [
+      "觉醒\u00A0vii"
+    ],
+    "DESCRIPTION": "打出时回复生命并抽一张牌。 NL 觉醒的攻击牌造成更多伤害。觉醒的技能牌获得更多格挡或效果。"
+  },
+  {
+    "PROPER_NAME": "觉醒 VIII",
+    "NAMES": [
+      "觉醒\u00A0viii"
+    ],
+    "DESCRIPTION": "打出时回复生命并抽一张牌。 NL 觉醒的攻击牌造成更多伤害。觉醒的技能牌获得更多格挡或效果。"
+  },
+  {
+    "PROPER_NAME": "觉醒 IX",
+    "NAMES": [
+      "觉醒\u00A0ix"
+    ],
+    "DESCRIPTION": "打出时回复生命并抽一张牌。 NL 觉醒的攻击牌造成更多伤害。觉醒的技能牌获得更多格挡或效果。"
+  },
+  {
+    "PROPER_NAME": "觉醒 X",
+    "NAMES": [
+      "觉醒\u00A0x"
+    ],
+    "DESCRIPTION": "打出时回复生命并抽一张牌。 NL 觉醒的攻击牌造成更多伤害。觉醒的技能牌获得更多格挡或效果。"
+  }
+]

@@ -1,0 +1,419 @@
+{
+  "BASIC": {},
+  "dregsmod:DregsDefend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 格挡。"
+  },
+  "dregsmod:DregsStrike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 伤害。"
+  },
+  "dregsmod:Adaptability": {
+    "NAME": "适应性",
+    "DESCRIPTION": "每当抽到诅咒， 获得 !M! 格挡。",
+    "UPGRADE_DESCRIPTION": "固有 NL 每当抽到诅咒， 获得 !M! 格挡。"
+  },
+  "dregsmod:Jealousy": {
+    "NAME": "Jealousy",
+    "DESCRIPTION": "灵魂绑定 NL dregsmod:封存 一张随机诅咒。",
+    "EXTENDED_DESCRIPTION": [
+      "手上没有其他诅咒牌!"
+    ]
+  },
+  "dregsmod:LashOut": {
+    "NAME": "大肆挥霍",
+    "DESCRIPTION": "丢弃手中所有诅咒。造成 !D! 伤害。没丢弃一张，增加 !M! 伤害。"
+  },
+  "COMMON": {},
+  "dregsmod:AmethystShard": {
+    "NAME": "紫晶碎片",
+    "DESCRIPTION": "从3张普通紫色牌选1张加入手中。 NL 消耗",
+    "UPGRADE_DESCRIPTION": "从3张普通紫色牌选1张加入手中，其本轮耗费变0。 NL 消耗"
+  },
+  "dregsmod:Chomp": {
+    "NAME": "咬牙切齿",
+    "DESCRIPTION": "造成 !D! 伤害。 dregsmod:封存 一张牌。"
+  },
+  "dregsmod:Curate": {
+    "NAME": "展出",
+    "DESCRIPTION": "抽 !M! 牌。 丢弃一张牌。 若丢弃诅咒，获得 !B! 格挡。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。丢弃一张牌。若丢弃一张诅咒, 获得 !B! 格挡。"
+  },
+  "dregsmod:CursedNeedle": {
+    "NAME": "针刺诅咒",
+    "DESCRIPTION": "造成 !D! 伤害。施加 !M! dregsmod:枯萎 。"
+  },
+  "dregsmod:EmeraldShard": {
+    "NAME": "绿宝石碎片",
+    "DESCRIPTION": "从3张普通绿色牌选1张加入手中。 NL 消耗",
+    "UPGRADE_DESCRIPTION": "从3张普通绿色牌选1张加入手中。其本轮耗费变0。 NL 消耗"
+  },
+  "dregsmod:Gash": {
+    "NAME": "深伤",
+    "DESCRIPTION": "造成 !D! 伤害两次。 施加 !M! 易伤 。"
+  },
+  "dregsmod:IcyTouch": {
+    "NAME": "冰霜之触",
+    "DESCRIPTION": "造成 !D! 伤害。若持有诅咒，生成2个冰霜晶球。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 伤害。生成2个冰霜晶球。"
+  },
+  "dregsmod:Improvise": {
+    "NAME": "临时制作",
+    "DESCRIPTION": "造成 !D! 伤害。生成1个 dregsmod:泞泥球 。"
+  },
+  "dregsmod:Misery": {
+    "NAME": "苦难",
+    "DESCRIPTION": "打出另一张手牌并消耗之。"
+  },
+  "dregsmod:Payback": {
+    "NAME": "报复",
+    "DESCRIPTION": "造成 !D! 伤害。手中每张诅咒牌使伤害增加 !M! 。"
+  },
+  "dregsmod:Plague": {
+    "NAME": "瘟疫",
+    "DESCRIPTION": "不可打出 NL 当此牌被 dregsmod:封存 ，每轮对全敌造成 !M! 伤害。"
+  },
+  "dregsmod:Quarantine": {
+    "NAME": "隔离",
+    "DESCRIPTION": "抽 !M! 张牌。 dregsmod:封存 一张牌。"
+  },
+  "dregsmod:RitualJar": {
+    "NAME": "仪式瓮",
+    "DESCRIPTION": "施加 !M! dregsmod:枯萎 。此战中为所有 仪式\u00A0瓮 牌增加3点效力。"
+  },
+  "dregsmod:RubyShard": {
+    "NAME": "红宝石碎片",
+    "DESCRIPTION": "从3张普通红色牌选1张加入手中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "从3张普通红色牌选1张加入手中。其本轮耗费变0。 NL 消耗"
+  },
+  "dregsmod:Ruin": {
+    "NAME": "毁坏",
+    "DESCRIPTION": "造成 !D! 伤害。若目标已 dregsmod:枯萎 ，再次造成伤害。"
+  },
+  "dregsmod:SapphireShard": {
+    "NAME": "蓝宝石碎片",
+    "DESCRIPTION": "从3张普通蓝色牌选1张加入手中。 NL 消耗",
+    "UPGRADE_DESCRIPTION": "从3张普通蓝色牌选1张加入手中。其本轮耗费变0。 NL 消耗"
+  },
+  "dregsmod:ShadowDagger": {
+    "NAME": "影匕",
+    "DESCRIPTION": "造成 !D! 伤害。增加1张 *小刀 到手上。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 伤害。增加2张 *小刀 到手上。"
+  },
+  "dregsmod:ShadowShield": {
+    "NAME": "影盾",
+    "DESCRIPTION": "每有1张其他手牌，获得 !M! 格挡。 NL (获得 !B! 格挡)",
+    "UPGRADE_DESCRIPTION": "每有1张其他手牌和被 dregsmod:封存 的牌，获得 !M! 格挡。 NL (获得 !B! 格挡)"
+  },
+  "dregsmod:ShallowGrave": {
+    "NAME": "浅墓",
+    "DESCRIPTION": "获得 !B! 格挡。获得 !M! dregsmod:坚韧 。"
+  },
+  "dregsmod:SharpShadows": {
+    "NAME": "锋利之影",
+    "DESCRIPTION": "每有1张其他手牌，造成 !D! 伤害。"
+  },
+  "UNCOMMON": {},
+  "dregsmod:Ascetic": {
+    "NAME": "苦行",
+    "DESCRIPTION": "无法打出 NL 当此牌被 dregsmod:封存 ，每轮 dregsmod:唤醒 一张随机牌。",
+    "UPGRADE_DESCRIPTION": "无法打出 NL 当此牌被 dregsmod:封存 ，每轮二级 dregsmod:唤醒 一张随机牌。"
+  },
+  "dregsmod:Asylum": {
+    "NAME": "庇护",
+    "DESCRIPTION": "每轮选一张牌 dregsmod:封存 ，根据该牌的稀有度生成球体。"
+  },
+  "dregsmod:BrushOff": {
+    "NAME": "脱落",
+    "DESCRIPTION": "造成 !D! 伤害。若目标意图进攻，进入 dregsmod:否认姿态 。"
+  },
+  "dregsmod:BrutalSwing": {
+    "NAME": "残暴挥击",
+    "DESCRIPTION": "造成 !D! 伤害。进入 dregsmod:接纳姿态 。若持有一张诅咒，获得 [E] 并抽一张牌。"
+  },
+  "dregsmod:Clarity": {
+    "NAME": "明晰",
+    "DESCRIPTION": "进入 dregsmod:接纳姿态 。此轮末保留剩余能量。"
+  },
+  "dregsmod:CursedScroll": {
+    "NAME": "受诅咒的卷轴",
+    "DESCRIPTION": "目标失去2点力量。施加 !M! dregsmod:枯萎 。 NL 消耗"
+  },
+  "dregsmod:Defiance": {
+    "NAME": "抵抗",
+    "DESCRIPTION": "每当你遭受 脆弱 或 易伤 ，获得 !M! dregsmod:强壮 。",
+    "UPGRADE_DESCRIPTION": "每当你遭受 脆弱 或 易伤 ，获得 !M! dregsmod:强壮 并 dregsmod:唤醒 一张随机牌。"
+  },
+  "dregsmod:EmbraceDarkness": {
+    "NAME": "Embrace Darkness",
+    "DESCRIPTION": "获得 !M! dregsmod:坚韧 。若持有一张诅咒，生成一个黑暗晶球。"
+  },
+  "dregsmod:Excess": {
+    "NAME": "过度",
+    "DESCRIPTION": "每当 dregsmod:封存 一张牌，触发所有球体的被动效果。",
+    "UPGRADE_DESCRIPTION": "每当 dregsmod:封存 一张牌，触发所有球体的被动效果并生成1个 dregsmod:泞泥球 。"
+  },
+  "dregsmod:Fear": {
+    "NAME": "恐惧",
+    "DESCRIPTION": "对全敌造成 !D! 伤害。 dregsmod:封存 此牌。"
+  },
+  "dregsmod:GemHeart": {
+    "NAME": "宝石之心",
+    "DESCRIPTION": "Choose a Color。 Then choose 1 of 3 uncommon cards of that color to add to your hand。 NL 消耗",
+    "UPGRADE_DESCRIPTION": "Choose a Color。 Then choose 1 of 3 uncommon cards of that color to add to your hand。 其本轮耗费变0。 NL 消耗"
+  },
+  "dregsmod:Glare": {
+    "NAME": "瞪眼",
+    "DESCRIPTION": "获得 !B! 格挡。若持有一张诅咒，抽一张牌。"
+  },
+  "dregsmod:Guardian": {
+    "NAME": "守卫",
+    "DESCRIPTION": "获得 !B! 格挡。若封存此牌，获得 !M! 格挡。"
+  },
+  "dregsmod:HardLuck": {
+    "NAME": "倒霉",
+    "DESCRIPTION": "获得 !B! 格挡。牌组中每有一张诅咒，减少1点耗费。",
+    "UPGRADE_DESCRIPTION": "抽一张牌。 NL 获得 !B! 格挡。牌组中每有一张诅咒，减少1点耗费。"
+  },
+  "dregsmod:Insight": {
+    "NAME": "洞察",
+    "DESCRIPTION": "dregsmod:唤醒 X 张随机牌。",
+    "UPGRADE_DESCRIPTION": "dregsmod:唤醒 X+1 张随机牌。"
+  },
+  "dregsmod:LaserFocus": {
+    "NAME": "镭射专注",
+    "DESCRIPTION": "施加 99 跟踪锁定。若持有一张诅咒，获得 !M! 专注 。 NL 消耗"
+  },
+  "dregsmod:LostPotential": {
+    "NAME": "遗落的潜能",
+    "DESCRIPTION": "每当 dregsmod:封存 一张牌, 生成一个闪电晶球。",
+    "UPGRADE_DESCRIPTION": "每当 dregsmod:封存 一张牌, 获得一个球体槽位并生成一个闪电晶球。"
+  },
+  "dregsmod:Malediction": {
+    "NAME": "咒骂",
+    "DESCRIPTION": "dregsmod:封存 X 张随机诅咒。每张封存的诅咒造成 !D! 伤害。"
+  },
+  "dregsmod:MidnightManacles": {
+    "NAME": "午夜镣铐",
+    "DESCRIPTION": "目标于此轮失去 !M! 力量。"
+  },
+  "dregsmod:Misfortune": {
+    "NAME": "厄运",
+    "DESCRIPTION": "造成 !D! 伤害。仅在持有一张诅咒时才能打出。",
+    "EXTENDED_DESCRIPTION": [
+      "我并无持有一张诅咒!"
+    ]
+  },
+  "dregsmod:Obstruct": {
+    "NAME": "阻塞",
+    "DESCRIPTION": "若目标意图进攻，施加 2 虚弱 并获得 !M! dregsmod:坚韧 。"
+  },
+  "dregsmod:Pinprick": {
+    "NAME": "针扎",
+    "DESCRIPTION": "若持有一张诅咒，施加 2 易伤 和 !M! *标记 。 NL 全敌流失等量于 *标记 层数的生命。",
+    "UPGRADE_DESCRIPTION": "若持有一张诅咒，对全敌施加 2 易伤 和 !M! *标记 。 NL 全敌流失等量于 *标记 层数的生命。",
+    "EXTENDED_DESCRIPTION": [
+      "我并无持有一张诅咒!"
+    ]
+  },
+  "dregsmod:Rejection": {
+    "NAME": "拒绝",
+    "DESCRIPTION": "获得 !B! 格挡。进入 dregsmod:否定姿态 。"
+  },
+  "dregsmod:RiteOfPurification": {
+    "NAME": "净化仪式",
+    "DESCRIPTION": "造成 !D! 伤害。消耗一张牌。若消耗了诅咒，抽一张牌并将此牌返回手中。"
+  },
+  "dregsmod:Sarcophagus": {
+    "NAME": "石棺",
+    "DESCRIPTION": "获得 !B! 格挡。 dregsmod:封存 一张牌。"
+  },
+  "dregsmod:Scapegoat": {
+    "NAME": "替罪羊",
+    "DESCRIPTION": "每有一张被消耗或 dregsmod:封存 的牌，使 dregsmod:觉醒 的牌增加 !M! 点伤害或格挡。"
+  },
+  "dregsmod:SealedEnergy": {
+    "NAME": "封存的能量",
+    "DESCRIPTION": "对全敌造成 !D! 伤害。每张被 dregsmod:封存 的牌使伤害增加 !M! 。"
+  },
+  "dregsmod:SealingWish": {
+    "NAME": "封存的愿望",
+    "DESCRIPTION": "对全敌造成 !D! 伤害。 dregsmod:封存 一张随机诅咒。 NL 消耗"
+  },
+  "dregsmod:ShiftingSands": {
+    "NAME": "流沙",
+    "DESCRIPTION": "每抽到一张诅咒，对随机敌人施加 !M! 虚弱 。"
+  },
+  "dregsmod:TheVault": {
+    "NAME": "保险库",
+    "DESCRIPTION": "丢弃诅咒时，改为 dregsmod:封存 之。"
+  },
+  "dregsmod:Torment": {
+    "NAME": "折磨",
+    "DESCRIPTION": "无法打出 NL 当此卡被 dregsmod:封存，每回合获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "无法打出 NL 当此卡被 dregsmod:封存，每回合获得 [E] [E] 。"
+  },
+  "dregsmod:Unlucky": {
+    "NAME": "不幸",
+    "DESCRIPTION": "造成 !D! 伤害。牌组中每有一张诅咒，减少1点耗费。",
+    "UPGRADE_DESCRIPTION": "抽一张牌。 NL 造成 !D! 伤害。牌组中每有一张诅咒，减少1点耗费。"
+  },
+  "dregsmod:WaveOfDarkness": {
+    "NAME": "黑暗浪潮",
+    "DESCRIPTION": "获得 !B! 格挡。 对全敌造成 !D! 伤害。"
+  },
+  "RARE": {},
+  "dregsmod:BadOmen": {
+    "NAME": "坏兆头",
+    "DESCRIPTION": "仅当抽牌堆或弃牌堆里刚好有13张牌时才能打出。 NL 对全敌造成 !D! 伤害。",
+    "UPGRADE_DESCRIPTION": "保留 NL 仅当抽牌堆或弃牌堆里刚好有13张牌时才能打出。 NL 对全敌造成 !D! 伤害。 NL 对全敌造成 !D! 伤害。",
+    "EXTENDED_DESCRIPTION": [
+      "一定得是刚好13张牌.."
+    ]
+  },
+  "dregsmod:ChaosTheory": {
+    "NAME": "混沌理论",
+    "DESCRIPTION": "每回合将牌组中的一张随机牌，复制 !M! 张到手中。",
+    "UPGRADE_DESCRIPTION": "每回合将牌组中的一张随机牌的 !M! 张升级复制品添加到手中。"
+  },
+  "dregsmod:EclipseForm": {
+    "NAME": "黯蚀形态",
+    "DESCRIPTION": "可打出原为不可打出的诅咒牌。每当打诅咒牌，获得 !M! 格挡并对全敌造成 !M! 伤害。"
+  },
+  "dregsmod:Entropy": {
+    "NAME": "熵",
+    "DESCRIPTION": "不可打出 NL 当此牌被 dregsmod:封存 ，每回合获得 !B! 格挡。"
+  },
+  "dregsmod:LastHope": {
+    "NAME": "最后的希望",
+    "DESCRIPTION": "固有 NL 造成 !D! 伤害。从抽牌堆选一张牌，移至顶部。 NL 消耗"
+  },
+  "dregsmod:Incantation": {
+    "NAME": "咒语",
+    "DESCRIPTION": " dregsmod:枯萎 不再使敌人每回合治疗自身，改为承受 !M! 伤害。"
+  },
+  "dregsmod:Indestructible": {
+    "NAME": "金刚不坏",
+    "DESCRIPTION": "获得 !M! 临时生命。 NL 消耗"
+  },
+  "dregsmod:Kindle": {
+    "NAME": "激发",
+    "DESCRIPTION": "选择 dregsmod:唤醒 一张牌。",
+    "UPGRADE_DESCRIPTION": "选择 dregsmod:唤醒 一张牌。 NL 若持有一张诅咒， dregsmod:封存 之并使本牌返回手中。"
+  },
+  "dregsmod:MeanLook": {
+    "NAME": "凶狠面容",
+    "DESCRIPTION": "造成 !D! 伤害。翻倍目标的 dregsmod:枯萎 。 NL 消耗",
+    "UPGRADE_DESCRIPTION": "造成 !D! 伤害。翻倍目标的 dregsmod:枯萎 。"
+  },
+  "dregsmod:Overcome": {
+    "NAME": "克服",
+    "DESCRIPTION": "获得 X dregsmod:坚韧 ， dregsmod:强壮 和 dregsmod:坚韧 。",
+    "UPGRADE_DESCRIPTION": "获得 X dregsmod:坚韧 ， dregsmod:强壮 ， dregsmod:坚韧 和 力量 。"
+  },
+  "dregsmod:PowerUp": {
+    "NAME": "力量激涨",
+    "DESCRIPTION": "造成 !D! 伤害。获得 !M! dregsmod:强壮 。"
+  },
+  "dregsmod:Redemption": {
+    "NAME": "救赎",
+    "DESCRIPTION": "造成 !D! 伤害。 斩杀 ：从牌组永久地移除一张随机诅咒。 NL 消耗"
+  },
+  "dregsmod:Reincarnation": {
+    "NAME": "化身",
+    "DESCRIPTION": "获得1力量。获得 *小刀 和 *奇迹 各1张。激发球体1次。 NL 消耗",
+    "UPGRADE_DESCRIPTION": "获得2力量。获得 *小刀 和 *奇迹 各2张。激发球体2次。 NL 消耗"
+  },
+  "dregsmod:Retribution": {
+    "NAME": "惩罚",
+    "DESCRIPTION": "每当损失生命值，你的下次攻击造成 !M! 额外伤害。"
+  },
+  "dregsmod:Ritual": {
+    "NAME": "仪式",
+    "DESCRIPTION": "向全敌施加 !M! dregsmod:枯萎 。治疗自身50%的已损失生命。 NL 消耗"
+  },
+  "dregsmod:SeeNoEvil": {
+    "NAME": "非礼勿视",
+    "DESCRIPTION": "dregsmod:封存 抽牌堆中任意数量的牌。 NL 消耗",
+    "UPGRADE_DESCRIPTION": "dregsmod:封存 抽牌堆中任意数量的牌。"
+  },
+  "dregsmod:Twilight": {
+    "NAME": "暮色",
+    "DESCRIPTION": "对全敌造成 !D! 伤害。"
+  },
+  "dregsmod:Vivification": {
+    "NAME": "苏醒",
+    "DESCRIPTION": "当遭受致命伤害，回复生命至三分之一，添加一张 #y诅咒 到牌组。每战只生效一次。",
+    "UPGRADE_DESCRIPTION": "当遭受致命伤害，回复生命至二分之一，添加一张 #y诅咒 到牌组。每战只生效一次。"
+  },
+  "CURSE": {},
+  "dregsmod:净化dCurse": {
+    "NAME": "净化诅咒",
+    "DESCRIPTION": "从20张红、绿、蓝、紫、色牌中选择1张，永久地替换此牌。"
+  },
+  "dregsmod:Catastrophe": {
+    "NAME": "大灾难",
+    "DESCRIPTION": "虚无 NL 向全敌施加 !M! dregsmod:枯萎 。"
+  },
+  "dregsmod:Doom": {
+    "NAME": "劫数",
+    "DESCRIPTION": "施加 !M! dregsmod:枯萎 。 NL 消耗"
+  },
+  "dregsmod:Gloom": {
+    "NAME": "消沉",
+    "DESCRIPTION": "施加 !M! dregsmod:枯萎 。 NL 消耗"
+  },
+  "dregsmod:Death": {
+    "NAME": "死亡",
+    "DESCRIPTION": "打出后，增加此牌耗费1点。若回合结束时此牌仍在手上，遭受100伤害。 NL dregsmod:净化 ：花费 !M! [E]"
+  },
+  "dregsmod:Spire": {
+    "NAME": "尖顶",
+    "DESCRIPTION": "固有 NL 保留 NL dregsmod:净化 ：打出 !M! 张牌。"
+  },
+  "dregsmod:Inquisition": {
+    "NAME": "审讯",
+    "DESCRIPTION": "保留 NL 每当保留，对所有角色施加1层 易伤。 NL dregsmod:净化 ：消耗此牌 !M! 次"
+  },
+  "dregsmod:Dread": {
+    "NAME": "畏惧",
+    "DESCRIPTION": "保留 NL 当损失生命时，额外损失2点。 NL dregsmod:净化 ：打出此牌 !M! 次"
+  },
+  "dregsmod:Cower": {
+    "NAME": "退缩",
+    "DESCRIPTION": "保留 NL 每当保留，全敌治疗5点生命。 NL dregsmod:净化 ：击败 !M! 敌人"
+  },
+  "dregsmod:Greed": {
+    "NAME": "贪婪",
+    "DESCRIPTION": "抽到此牌时，丢失5金币。 NL dregsmod:净化 ：抽到此牌 !M! 次"
+  },
+  "dregsmod:Envy": {
+    "NAME": "忌妒",
+    "DESCRIPTION": "保留 NL 当你丢弃此牌，丢弃另一张牌。 NL dregsmod:净化 ：丢弃此牌 !M! 次"
+  },
+  "dregsmod:Infection": {
+    "NAME": "感染",
+    "DESCRIPTION": "打出时，遭受5伤害。 NL 每轮结束时，复制此牌到弃牌堆。 NL dregsmod:净化 ：打出此牌 !M! 次 NL 消耗"
+  },
+  "dregsmod:WeakPoint": {
+    "NAME": "弱点",
+    "DESCRIPTION": "保留 NL 保留时，一名随机敌人获得2点暂时力量。 NL dregsmod:净化 ：获得 !M! 格挡"
+  },
+  "SPECIAL": {},
+  "dregsmod:Blue": {
+    "NAME": "选择蓝色",
+    "DESCRIPTION": "选择一张缺陷机器人牌。"
+  },
+  "dregsmod:Green": {
+    "NAME": "选择绿色",
+    "DESCRIPTION": "选择一张静默刺客牌。"
+  },
+  "dregsmod:Purple": {
+    "NAME": "选择紫色",
+    "DESCRIPTION": "选择一张观者牌。"
+  },
+  "dregsmod:Red": {
+    "NAME": "选择红色",
+    "DESCRIPTION": "选择一张铁甲战士牌。"
+  }
+}

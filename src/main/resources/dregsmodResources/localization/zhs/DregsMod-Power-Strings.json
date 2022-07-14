@@ -1,0 +1,157 @@
+{
+  "dregsmod:AdaptabilityPower": {
+    "NAME": "适应性",
+    "DESCRIPTIONS": [
+      "每当抽到一张诅咒，获得 #b",
+      " 格挡。"
+    ]
+  },
+  "dregsmod:AsylumPower": {
+    "NAME": "庇护",
+    "DESCRIPTIONS": [
+      "每回合，选择 #b",
+      " 张牌",
+      " 张牌",
+      " 来封存。基于被  #y封存 的牌 #y生成 球体。"
+    ]
+  },
+  "dregsmod:ChaosTheoryPower": {
+    "NAME": "混沌理论",
+    "DESCRIPTIONS": [
+      "每回合从你的牌组中随机复制一张牌到你的手上。"
+    ]
+  },
+  "dregsmod:ChaosTheoryUpgradedPower": {
+    "NAME": "混沌理论",
+    "DESCRIPTIONS": [
+      "每回合从你的牌组中随机复制一张牌到你的手上并升级之。"
+    ]
+  },
+  "dregsmod:BlightedPower": {
+    "NAME": "枯萎",
+    "DESCRIPTIONS": [
+      "每回合开始，此角色回复 10% 已损失生命值。如果 #y枯萎 层数超过了它的生命值，杀死它并转化为一张诅咒。"
+    ]
+  },
+  "dregsmod:DefianceAwakenPower": {
+    "NAME": "抵抗",
+    "DESCRIPTIONS": [
+      "每当被施加 #y脆弱 或 #y易伤 ， #y唤醒 #b",
+      " 张随机牌。",
+      " 张随机牌。"
+    ]
+  },
+  "dregsmod:DefiancePower": {
+    "NAME": "抵抗",
+    "DESCRIPTIONS": [
+      "每当被施加 #y脆弱 或 #y易伤 ，获得 #b",
+      " #y强壮"
+    ]
+  },
+  "dregsmod:EclipseFormPower": {
+    "NAME": "黯蚀形态",
+    "DESCRIPTIONS": [
+      "可打出原为无法打出的 #y诅咒牌 。当你打出一张 #y诅咒牌 ，获得 #b",
+      " 格挡 并对全敌造成 #b",
+      " 伤害。"
+    ]
+  },
+  "dregsmod:ExcessChannelPower": {
+    "NAME": "过量",
+    "DESCRIPTIONS": [
+      "每当 #y封存 一张牌，生成 #b",
+      " #y泞泥 球体。",
+      " #y泞泥 球体。"
+    ]
+  },
+  "dregsmod:ExcessPower": {
+    "NAME": "过量",
+    "DESCRIPTIONS": [
+      "每当 #y封存 一张牌，触发所有 #y球体 的被动效果 #b",
+      " 次。",
+      " 次。"
+    ]
+  },
+  "dregsmod:IncantationPower": {
+    "NAME": "咒语",
+    "DESCRIPTIONS": [
+      "替代治疗效果， #y被诅咒的 敌人 每轮遭受 #b",
+      " 伤害。"
+    ]
+  },
+  "dregsmod:LostPotentialPower": {
+    "NAME": "遗失的潜能",
+    "DESCRIPTIONS": [
+      "每当你 #y封存 一张 #y诅咒 ，生成 #b",
+      " 闪电球体",
+      " 闪电球体",
+      " 同时获得一个球体槽位"
+    ]
+  },
+  "dregsmod:RetributionPower": {
+    "NAME": "报复",
+    "DESCRIPTIONS": [
+      "每当你失去生命，你的下一次攻击造成 #b",
+      " 额外伤害。"
+    ]
+  },
+  "dregsmod:ScapegoatBonusPower": {
+    "NAME": "替罪羊的额外奖励",
+    "DESCRIPTIONS": [
+      "下一张打出的 #y觉醒 牌的伤害和格挡增加 #b",
+      " 点。"
+    ]
+  },
+  "dregsmod:ScapegoatPower": {
+    "NAME": "替罪羊",
+    "DESCRIPTIONS": [
+      "每当 #y消耗 或 #y封存 一张牌，你的 #y觉醒 牌的伤害和格挡增加 #b",
+      " 点。"
+    ]
+  },
+  "dregsmod:ShiftingSandsPower": {
+    "NAME": "流沙",
+    "DESCRIPTIONS": [
+      "每当抽取一张 #y诅咒 ，对一个随机敌人施加 #b",
+      " #y虚弱 "
+    ]
+  },
+  "dregsmod:TheVaultPower": {
+    "NAME": "保险库",
+    "DESCRIPTIONS": [
+      "每当你丢弃一张 #y诅咒 ，改为 #y封存 它。"
+    ]
+  },
+  "dregsmod:FortitudePower": {
+    "NAME": "刚毅",
+    "DESCRIPTIONS": [
+      "易伤的反面。减少 #b25% 所受的伤害。持续 #b",
+      " 轮。",
+      " 轮。"
+    ]
+  },
+  "dregsmod:VivificationPower": {
+    "NAME": "苏醒",
+    "DESCRIPTIONS": [
+      "当遭受致命伤害，回复生命至三分之一，添加一张 #y诅咒 到牌组。每战只生效一次。",
+      "当遭受致命伤害，回复生命至二分之一，添加一张 #y诅咒 到牌组。每战只生效一次。",
+      "已耗尽。此战中不会再触发。"
+    ]
+  },
+  "dregsmod:MightPower": {
+    "NAME": "强壮",
+    "DESCRIPTIONS": [
+      "虚弱的反面。增加  #b25% 造成的伤害。持续 #b",
+      " 轮。",
+      " 轮。"
+    ]
+  },
+  "dregsmod:SturdinessPower": {
+    "NAME": "坚韧",
+    "DESCRIPTIONS": [
+      "脆弱的反面。 获得的格挡增加 #b25% 。持续 #b",
+      " 轮。",
+      " 轮。"
+    ]
+  }
+}
