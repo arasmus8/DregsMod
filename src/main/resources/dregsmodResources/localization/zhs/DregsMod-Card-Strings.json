@@ -14,7 +14,7 @@
     "UPGRADE_DESCRIPTION": "固有 NL 每当抽到诅咒， 获得 !M! 格挡。"
   },
   "dregsmod:Jealousy": {
-    "NAME": "Jealousy",
+    "NAME": "妒恨",
     "DESCRIPTION": "灵魂绑定 NL dregsmod:封存 一张随机诅咒。",
     "EXTENDED_DESCRIPTION": [
       "手上没有其他诅咒牌!"
@@ -145,7 +145,7 @@
     "UPGRADE_DESCRIPTION": "每当你遭受 脆弱 或 易伤 ，获得 !M! dregsmod:强壮 并 dregsmod:唤醒 一张随机牌。"
   },
   "dregsmod:EmbraceDarkness": {
-    "NAME": "Embrace Darkness",
+    "NAME": "拥抱黑暗",
     "DESCRIPTION": "获得 !M! dregsmod:坚韧 。若持有一张诅咒，生成一个黑暗晶球。"
   },
   "dregsmod:Excess": {
@@ -159,8 +159,8 @@
   },
   "dregsmod:GemHeart": {
     "NAME": "宝石之心",
-    "DESCRIPTION": "Choose a Color。 Then choose 1 of 3 uncommon cards of that color to add to your hand。 NL 消耗",
-    "UPGRADE_DESCRIPTION": "Choose a Color。 Then choose 1 of 3 uncommon cards of that color to add to your hand。 其本轮耗费变0。 NL 消耗"
+    "DESCRIPTION": "选择一种颜色，从3张该颜色的罕见牌中选1张牌加入手中。 NL 消耗",
+    "UPGRADE_DESCRIPTION": "选择一种颜色，从3张该颜色的罕见牌中选1张牌加入手中。其本轮耗费变0。 NL 消耗"
   },
   "dregsmod:Glare": {
     "NAME": "瞪眼",
@@ -218,7 +218,7 @@
   },
   "dregsmod:Rejection": {
     "NAME": "拒绝",
-    "DESCRIPTION": "获得 !B! 格挡。进入 dregsmod:否定姿态 。"
+    "DESCRIPTION": "获得 !B! 格挡。进入 dregsmod:否认姿态 。"
   },
   "dregsmod:RiteOfPurification": {
     "NAME": "净化仪式",
@@ -250,8 +250,8 @@
   },
   "dregsmod:Torment": {
     "NAME": "折磨",
-    "DESCRIPTION": "无法打出 NL 当此卡被 dregsmod:封存，每回合获得 [E] 。",
-    "UPGRADE_DESCRIPTION": "无法打出 NL 当此卡被 dregsmod:封存，每回合获得 [E] [E] 。"
+    "DESCRIPTION": "无法打出 NL 当此卡被 dregsmod:封存 ，每回合获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "无法打出 NL 当此卡被 dregsmod:封存 ，每回合获得 [E] [E] 。"
   },
   "dregsmod:Unlucky": {
     "NAME": "不幸",
@@ -343,11 +343,11 @@
   },
   "dregsmod:Vivification": {
     "NAME": "苏醒",
-    "DESCRIPTION": "当遭受致命伤害，回复生命至三分之一，添加一张 #y诅咒 到牌组。每战只生效一次。",
-    "UPGRADE_DESCRIPTION": "当遭受致命伤害，回复生命至二分之一，添加一张 #y诅咒 到牌组。每战只生效一次。"
+    "DESCRIPTION": "当遭受致命伤害，回复生命至三分之一，添加一张诅咒到牌组。每战只生效一次。",
+    "UPGRADE_DESCRIPTION": "当遭受致命伤害，回复生命至二分之一，添加一张诅咒到牌组。每战只生效一次。"
   },
   "CURSE": {},
-  "dregsmod:净化dCurse": {
+  "dregsmod:CleansedCurse": {
     "NAME": "净化诅咒",
     "DESCRIPTION": "从20张红、绿、蓝、紫、色牌中选择1张，永久地替换此牌。"
   },

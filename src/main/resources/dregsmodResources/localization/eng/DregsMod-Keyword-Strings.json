@@ -20,7 +20,7 @@
     "NAMES": [
       "blighted"
     ],
-    "DESCRIPTION": "When Blighted exceeds an enemy's current HP, it will be killed and transformed into a special card. Blighted enemies will heal 10% of their missing HP each turn."
+    "DESCRIPTION": "When Blighted exceeds an enemy's current HP, it will be killed and transformed into a special curse that will be added to your deck. Blighted enemies will heal 10% of their missing HP each turn."
   },
   {
     "PROPER_NAME": "Fortitude",
