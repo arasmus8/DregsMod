@@ -29,7 +29,10 @@ public class Dread extends AbstractCleansingCurse {
         if(suspendDamage) {
             suspendDamage = false;
         } else if(AbstractDungeon.player.hand.contains(this)) {
-            suspendDamage = true;
+            AbstractDungeon.player.hand.group.stream()
+                    .filter(c -> c instanceof Dread)
+                    .map(c -> (Dread) c)
+                    .forEach(c -> c.suspendDamage = true);
             addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, 2, DamageInfo.DamageType.HP_LOSS)));
         }
     }
