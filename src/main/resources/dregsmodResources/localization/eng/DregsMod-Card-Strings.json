@@ -155,7 +155,7 @@
   },
   "dregsmod:Fear": {
     "NAME": "Fear",
-    "DESCRIPTION": "Deal !D! damage to all enemies. dregsmod:Seal this card."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. dregsmod:Seal this card."
   },
   "dregsmod:GemHeart": {
     "NAME": "Gem Heart",
@@ -238,7 +238,7 @@
   },
   "dregsmod:SealingWish": {
     "NAME": "Sealing Wish",
-    "DESCRIPTION": "Deal !D! damage to all enemies. dregsmod:Seal a random Curse. NL Exhaust"
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. dregsmod:Seal a random Curse. NL Exhaust"
   },
   "dregsmod:ShiftingSands": {
     "NAME": "Shifting Sands",
@@ -260,13 +260,13 @@
   },
   "dregsmod:WaveOfDarkness": {
     "NAME": "Wave of Darkness",
-    "DESCRIPTION": "Gain !B! Block. Deal !D! damage to all enemies."
+    "DESCRIPTION": "Gain !B! Block. Deal !D! damage to ALL enemies."
   },
   "RARE": {},
   "dregsmod:BadOmen": {
     "NAME": "Bad Omen",
-    "DESCRIPTION": "Can only be used if either your draw or discard pile contains exactly 13 cards. NL Deal !D! damage to all enemies.",
-    "UPGRADE_DESCRIPTION": "Retain NL Can only be used if either your draw or discard pile contains exactly 13 cards. NL Deal !D! damage to all enemies.",
+    "DESCRIPTION": "Can only be used if either your draw or discard pile contains exactly 13 cards. NL Deal !D! damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Retain NL Can only be used if either your draw or discard pile contains exactly 13 cards. NL Deal !D! damage to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
       "Must have exactly 13 cards..."
     ]
@@ -278,7 +278,7 @@
   },
   "dregsmod:EclipseForm": {
     "NAME": "Eclipse Form",
-    "DESCRIPTION": "Unplayable Curse cards can be played. When you play a Curse, gain !M! Block and deal !M! damage to all enemies."
+    "DESCRIPTION": "Unplayable Curse cards can be played. When you play a Curse, gain !M! Block and deal !M! damage to ALL enemies."
   },
   "dregsmod:Entropy": {
     "NAME": "Entropy",
@@ -330,7 +330,7 @@
   },
   "dregsmod:Ritual": {
     "NAME": "Ritual",
-    "DESCRIPTION": "Apply !M! dregsmod:Blighted to all enemies. Heal 50% of your missing HP. NL Exhaust"
+    "DESCRIPTION": "Apply !M! dregsmod:Blighted to ALL enemies. Heal 50% of your missing HP. NL Exhaust"
   },
   "dregsmod:SeeNoEvil": {
     "NAME": "See No Evil",
@@ -339,7 +339,7 @@
   },
   "dregsmod:Twilight": {
     "NAME": "Twilight",
-    "DESCRIPTION": "Deal !D! damage to all enemies."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
   },
   "dregsmod:Vivification": {
     "NAME": "Vivification",
@@ -353,7 +353,7 @@
   },
   "dregsmod:Catastrophe": {
     "NAME": "Catastrophe",
-    "DESCRIPTION": "Ethereal NL Apply !M! dregsmod:Blighted to all enemies."
+    "DESCRIPTION": "Ethereal NL Apply !M! dregsmod:Blighted to ALL enemies."
   },
   "dregsmod:Doom": {
     "NAME": "Doom",
@@ -373,7 +373,7 @@
   },
   "dregsmod:Inquisition": {
     "NAME": "Inquisition",
-    "DESCRIPTION": "Retain NL When Retained, apply 1 Vulnerable to all combatants. NL dregsmod:Cleanse: Exhaust this !M! times"
+    "DESCRIPTION": "Retain NL When Retained, apply 1 Vulnerable to ALL combatants. NL dregsmod:Cleanse: Exhaust this !M! times"
   },
   "dregsmod:Dread": {
     "NAME": "Dread",
