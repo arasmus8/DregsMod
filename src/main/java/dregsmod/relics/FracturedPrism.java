@@ -19,6 +19,8 @@ public class FracturedPrism extends CustomRelic implements CustomSavable<String>
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("FracturedPrism.png"));
 
     private boolean cardSelected;
+    private boolean interruptingScreen = false;
+    private AbstractRoom.RoomPhase previousPhase;
     public String cardId = null;
 
     public FracturedPrism() {
@@ -38,13 +40,23 @@ public class FracturedPrism extends CustomRelic implements CustomSavable<String>
             AbstractDungeon.previousScreen = AbstractDungeon.screen;
         }
 
+        previousPhase = AbstractDungeon.getCurrRoom().phase;
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
         AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck, 1, DESCRIPTIONS[1], false, false, false, false);
+        interruptingScreen = true;
     }
 
     @Override
     public void update() {
         super.update();
+        if (cardId != null) {
+            cardSelected = true;
+            if (interruptingScreen) {
+                interruptingScreen = false;
+                AbstractDungeon.getCurrRoom().phase = previousPhase;
+            }
+            return;
+        }
         if (!cardSelected && AbstractDungeon.gridSelectScreen.selectedCards.size() == 1) {
             cardSelected = true;
             cardId = AbstractDungeon.gridSelectScreen.selectedCards.get(0).cardID;
@@ -66,5 +78,20 @@ public class FracturedPrism extends CustomRelic implements CustomSavable<String>
     @Override
     public void onLoad(String s) {
         cardId = s;
+        if (cardId == null && counter > 0) {
+            if (AbstractDungeon.isScreenUp) {
+                AbstractDungeon.dynamicBanner.hide();
+                AbstractDungeon.overlayMenu.cancelButton.hide();
+                AbstractDungeon.previousScreen = AbstractDungeon.screen;
+            }
+
+            cardSelected = false;
+            previousPhase = AbstractDungeon.getCurrRoom().phase;
+            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
+            AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck, 1, DESCRIPTIONS[1], false, false, false, false);
+            interruptingScreen = true;
+        } else {
+            cardSelected = true;
+        }
     }
 }
