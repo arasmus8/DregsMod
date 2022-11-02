@@ -151,7 +151,7 @@
   "dregsmod:Excess": {
     "NAME": "Excess",
     "DESCRIPTION": "Whenever you dregsmod:Seal a card, trigger the passive of all your Orbs.",
-    "UPGRADE_DESCRIPTION": "Whenever you dregsmod:Seal a card, trigger the passive of all your Orbs, and Channel 1 dregsmod:Sludge Orb."
+    "UPGRADE_DESCRIPTION": "Whenever you dregsmod:Seal a card, trigger the passive of all your Orbs. If it's a curse, Channel 1 dregsmod:Sludge Orb."
   },
   "dregsmod:Fear": {
     "NAME": "Fear",
