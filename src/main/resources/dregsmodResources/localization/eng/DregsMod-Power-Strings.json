@@ -82,7 +82,7 @@
   "dregsmod:LostPotentialPower": {
     "NAME": "Lost Potential",
     "DESCRIPTIONS": [
-      "Whenever you #ySeal a #yCurse, channel #b",
+      "Whenever you #ySeal a #yCard, channel #b",
       " Lightning Orb.",
       " Lightning Orbs.",
       " Also gain an Orb Slot."
