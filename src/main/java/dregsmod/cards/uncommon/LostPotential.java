@@ -1,6 +1,7 @@
 package dregsmod.cards.uncommon;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import dregsmod.DregsMod;
@@ -27,7 +28,10 @@ public class LostPotential extends AbstractDregsCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new LostPotentialPower(p, magicNumber, upgraded), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new LostPotentialPower(p, magicNumber), magicNumber));
+        if (upgraded) {
+            addToBot(new IncreaseMaxOrbAction(2));
+        }
     }
 
     @Override

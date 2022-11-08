@@ -186,8 +186,8 @@
   },
   "dregsmod:LostPotential": {
     "NAME": "Lost Potential",
-    "DESCRIPTION": "Whenever you dregsmod:Seal a card, Channel a Lightning Orb.",
-    "UPGRADE_DESCRIPTION": "Whenever you dregsmod:Seal a card, Gain an Orb Slot, and Channel a Lightning Orb."
+    "DESCRIPTION": "Whenever you dregsmod:Seal a card, Channel 1 Lightning Orb.",
+    "UPGRADE_DESCRIPTION": "Gain 2 Orb Slots. NL Whenever you dregsmod:Seal a card, Channel 1 Lightning Orb."
   },
   "dregsmod:Malediction": {
     "NAME": "Malediction",
