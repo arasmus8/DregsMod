@@ -26,7 +26,7 @@ public class SeeNoEvil extends AbstractDregsCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SealAndPerformAction(
-                -1,
+                10,
                 false,
                 p.drawPile,
                 null,

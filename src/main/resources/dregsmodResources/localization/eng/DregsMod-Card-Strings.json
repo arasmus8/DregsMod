@@ -334,8 +334,8 @@
   },
   "dregsmod:SeeNoEvil": {
     "NAME": "See No Evil",
-    "DESCRIPTION": "dregsmod:Seal any number of cards in your draw pile. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "dregsmod:Seal any number of cards in your draw pile."
+    "DESCRIPTION": "dregsmod:Seal up to 10 cards in your draw pile. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "dregsmod:Seal up to 10 cards in your draw pile."
   },
   "dregsmod:Twilight": {
     "NAME": "Twilight",
