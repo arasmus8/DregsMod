@@ -25,5 +25,10 @@
     "TEXT": [
       "Allow a curated selection of relics to be used by other characters. (Requires restart)"
     ]
+  },
+  "dregsmod:KindleAction": {
+    "TEXT": [
+      "Choose a card to Awaken"
+    ]
   }
 }

@@ -111,7 +111,7 @@ public class AwakenedMod extends AbstractCardModifier {
 
     public static void awakenCard(AbstractCard card) {
         ArrayList<AbstractCardModifier> modifiers = CardModifierManager.getModifiers(card, ID);
-        if (modifiers.size() > 0) {
+        if (!modifiers.isEmpty()) {
             AwakenedMod m = (AwakenedMod) modifiers.get(0);
             m.level = MathUtils.clamp(m.level + 1, 1, modifierValues.length - 1);
         } else {
@@ -132,7 +132,7 @@ public class AwakenedMod extends AbstractCardModifier {
 
     public static Optional<AwakenedMod> getForCard(AbstractCard card) {
         ArrayList<AbstractCardModifier> modifiers = CardModifierManager.getModifiers(card, ID);
-        if (modifiers.size() > 0) {
+        if (!modifiers.isEmpty()) {
             AwakenedMod m = (AwakenedMod) modifiers.get(0);
             return Optional.of(m);
         } else {

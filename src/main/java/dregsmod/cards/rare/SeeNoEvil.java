@@ -27,9 +27,8 @@ public class SeeNoEvil extends AbstractDregsCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SealAndPerformAction(
                 10,
-                false,
                 p.drawPile,
-                null,
+                true,
                 null
         ));
     }

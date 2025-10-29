@@ -28,6 +28,7 @@ public class SealAndPerformAction extends AbstractGameAction {
     private final AbstractGameAction followUpAction;
     private boolean clearSealHistory;
     private final boolean isRandom;
+    private boolean alwaysSelect;
     private static AbstractPlayer p;
     private static final float DURATION;
     private static final UIStrings uiStrings;
@@ -45,6 +46,7 @@ public class SealAndPerformAction extends AbstractGameAction {
         duration = DURATION;
         followUpAction = action;
         isRandom = random;
+        alwaysSelect = false;
         clearSealHistory = true;
     }
 
@@ -62,6 +64,17 @@ public class SealAndPerformAction extends AbstractGameAction {
         this(amount, random, action);
         this.group = group;
         this.filterCriteria = filterCriteria;
+    }
+
+    public SealAndPerformAction(
+            int amount,
+            CardGroup group,
+            boolean alwaysSelect,
+            AbstractGameAction action
+    ) {
+        this(amount, action);
+        this.alwaysSelect = alwaysSelect;
+        this.group = group;
     }
 
     public SealAndPerformAction(AbstractCard cardToSeal, AbstractGameAction action) {
@@ -98,14 +111,24 @@ public class SealAndPerformAction extends AbstractGameAction {
             }
             ArrayList<AbstractCard> filteredList = group.group.stream().filter(filterCriteria).collect(Collectors.toCollection(ArrayList::new));
 
-            if (filteredList.size() <= amount) {
+            if (!alwaysSelect && filteredList.size() <= amount) {
                 sealedCards.addAll(filteredList);
                 p.hand.applyPowers();
                 endActionWithFollowUp();
                 return;
             }
 
-            if (!isRandom) {
+            if (isRandom) {
+                AbstractCard card;
+                CardGroup filtered = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+                filtered.group.addAll(filteredList);
+                for (int i = 0; i < amount; ++i) {
+                    card = filtered.getRandomCard(AbstractDungeon.cardRandomRng);
+                    filtered.removeCard(card);
+                    sealedCards.add(card);
+                }
+                endActionWithFollowUp();
+            } else {
                 if (group == p.hand) {
                     if (amount < 0) {
                         AbstractDungeon.handCardSelectScreen.open(TEXT[0], 99, true, true);
@@ -131,16 +154,6 @@ public class SealAndPerformAction extends AbstractGameAction {
                     tickDuration();
                     return;
                 }
-            } else {
-                AbstractCard card;
-                CardGroup filtered = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-                filtered.group.addAll(filteredList);
-                for (int i = 0; i < amount; ++i) {
-                    card = filtered.getRandomCard(AbstractDungeon.cardRandomRng);
-                    filtered.removeCard(card);
-                    sealedCards.add(card);
-                }
-                endActionWithFollowUp();
             }
         }
 
@@ -153,7 +166,7 @@ public class SealAndPerformAction extends AbstractGameAction {
                 endActionWithFollowUp();
             }
         } else {
-            if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
+            if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
                 sealedCards.addAll(AbstractDungeon.gridSelectScreen.selectedCards);
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();
                 p.hand.refreshHandLayout();
