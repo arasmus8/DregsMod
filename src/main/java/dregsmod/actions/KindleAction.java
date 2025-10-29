@@ -4,12 +4,10 @@ import com.evacipated.cardcrawl.mod.stslib.actions.common.MultiGroupSelectAction
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.sun.org.apache.xpath.internal.operations.Mult;
 import dregsmod.DregsMod;
 import dregsmod.cards.AwakenedMod;
 
@@ -17,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class KindleAction extends AbstractGameAction {
 
