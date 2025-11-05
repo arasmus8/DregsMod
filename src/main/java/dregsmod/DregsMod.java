@@ -6,7 +6,6 @@ import basemod.devcommands.ConsoleCommand;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -14,9 +13,11 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
@@ -29,16 +30,14 @@ import dregsmod.patches.enums.CustomRewardItem;
 import dregsmod.potions.InsightPotion;
 import dregsmod.relics.*;
 import dregsmod.util.AssetLoader;
-import dregsmod.util.IDCheckDontTouchPls;
 import dregsmod.util.TextureLoader;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @SpireInitializer
@@ -48,6 +47,7 @@ public class DregsMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
+        StartGameSubscriber,
         PostInitializeSubscriber,
         CustomSavable<Integer> {
 
@@ -130,8 +130,7 @@ public class DregsMod implements
         BaseMod.subscribe(this);
 
 
-        setModID("dregsmod");
-
+        modID = "dregsmod";
 
         logger.info("Done subscribing");
 
@@ -152,41 +151,8 @@ public class DregsMod implements
         logger.info("Done adding mod savable fields");
     }
 
-    public static void setModID(String ID) {
-        Gson coolG = new Gson();
-
-        InputStream in = DregsMod.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json");
-        IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class);
-        logger.info("You are attempting to set your mod ID as: " + ID);
-        if (ID.equals(EXCEPTION_STRINGS.DEFAULTID)) {
-            throw new RuntimeException(EXCEPTION_STRINGS.EXCEPTION);
-        } else if (ID.equals(EXCEPTION_STRINGS.DEVID)) {
-            modID = EXCEPTION_STRINGS.DEFAULTID;
-        } else {
-            modID = ID;
-        }
-        logger.info("Success! ID is " + modID);
-    }
-
     public static String getModID() {
         return modID;
-    }
-
-    private static void pathCheck() {
-        Gson coolG = new Gson();
-
-        InputStream in = DregsMod.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json");
-        IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class);
-        String packageName = DregsMod.class.getPackage().getName();
-        FileHandle resourcePathExists = Gdx.files.internal(getModID() + "Resources");
-        if (!modID.equals(EXCEPTION_STRINGS.DEVID)) {
-            if (!packageName.equals(getModID())) {
-                throw new RuntimeException(EXCEPTION_STRINGS.PACKAGE_EXCEPTION + getModID());
-            }
-            if (!resourcePathExists.exists()) {
-                throw new RuntimeException(EXCEPTION_STRINGS.RESOURCE_FOLDER_EXCEPTION + getModID() + "Resources");
-            }
-        }
     }
 
     @SuppressWarnings("unused")
@@ -197,7 +163,7 @@ public class DregsMod implements
             config.load();
             globalRelics = config.getBool("globalRelics");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Error loading settings from config", e);
         }
     }
 
@@ -220,7 +186,7 @@ public class DregsMod implements
             config.setBool("globalRelics", globalRelics);
             config.save();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Error saving settings to config", e);
         }
     }
 
@@ -238,7 +204,7 @@ public class DregsMod implements
             config.load();
             globalRelics = config.getBool("globalRelics");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Error loading settings from config", e);
         }
         logger.info("Done adding mod settings");
 
@@ -352,8 +318,6 @@ public class DregsMod implements
     public void receiveEditCards() {
         logger.info("Adding variables");
 
-        pathCheck();
-
         logger.info("Add variables");
 
         logger.info("Adding cards");
@@ -466,5 +430,23 @@ public class DregsMod implements
     public void onLoad(Integer value) {
         int randomCount = Optional.ofNullable(value).orElse(0);
         cleansedCurseRng = new Random(Settings.seed, randomCount);
+    }
+
+    // If the player somehow avoids the Neow choice, give them the relic on floor 1
+    @Override
+    public void receiveStartGame() {
+        if (AbstractDungeon.player.chosenClass.equals(Dregs.Enums.DREGS)) {
+            AbstractDungeon.actionManager.addToNextCombat(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    isDone = true;
+                    if (AbstractDungeon.floorNum == 1) {
+                        if (AbstractDungeon.player.relics.stream().noneMatch(r -> r.relicId.equals(NeowsHatred.ID))) {
+                            AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new NeowsHatred().makeCopy());
+                        }
+                    }
+                }
+            });
+        }
     }
 }
