@@ -9,17 +9,13 @@ import java.util.Arrays;
 
 public class CleanseCurseLibrary {
     private static final ArrayList<AbstractCard> cleanseCurses = new ArrayList<>(Arrays.asList(
-            new Catastrophe(),
             new Cower(),
             new Death(),
-            new Doom(),
             new Dread(),
             new Envy(),
-            new Gloom(),
             new Greed(),
             new Infection(),
             new Inquisition(),
-            new Jealousy(),
             new Spire(),
             new WeakPoint()
     ));
