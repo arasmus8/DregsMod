@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import dregsmod.CardList;
+import dregsmod.CleanseCurseLibrary;
 import dregsmod.DregsMod;
 import dregsmod.util.TextureLoader;
 
@@ -33,7 +33,7 @@ public class NeowsHatred extends CustomRelic {
     public void justEnteredRoom(AbstractRoom room) {
         if(room instanceof RestRoom) {
             flash();
-            AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(CardList.getRandomCleanseCurse(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
+            AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(CleanseCurseLibrary.getRandomCleanseCurse(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
         }
     }
 

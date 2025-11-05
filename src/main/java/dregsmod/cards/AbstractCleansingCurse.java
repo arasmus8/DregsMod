@@ -16,7 +16,7 @@ public abstract class AbstractCleansingCurse extends AbstractDregsCard {
     public boolean isCleansed = false;
 
     public AbstractCleansingCurse(String id, int cost, CardTarget target, int cleanseAmount) {
-        super(id, cost, CardType.CURSE, CardRarity.CURSE, target, CardColor.CURSE, CLEANSE_CURSE);
+        super(id, cost, CardType.CURSE, CardRarity.SPECIAL, target, CardColor.CURSE, CLEANSE_CURSE);
         this.cleanseAmount = cleanseAmount;
         baseMagicNumber = magicNumber = cleanseAmount - misc;
     }
