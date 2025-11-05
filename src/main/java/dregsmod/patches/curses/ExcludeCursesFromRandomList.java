@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+@SuppressWarnings({"unused"})
 public class ExcludeCursesFromRandomList {
 
     private static final ArrayList<String> dregsCurseIds = new ArrayList<>(Arrays.asList(
@@ -39,16 +40,18 @@ public class ExcludeCursesFromRandomList {
         @Override
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             Matcher methodCallMatcher = new Matcher.MethodCallMatcher(HashMap.class, "get");
-            return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), methodCallMatcher);
+            return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), methodCallMatcher);
         }
     }
 
+    @SuppressWarnings({"unused"})
     @SpirePatch2(
             clz = CardLibrary.class,
             method = "getCurse",
             paramtypez = {}
     )
     private static class PatchNoParamsGetCurse {
+        @SuppressWarnings({"unused"})
         @SpireInsertPatch(
                 locator = BeforeReturn.class,
                 localvars = {"tmp"}
@@ -59,12 +62,14 @@ public class ExcludeCursesFromRandomList {
         }
     }
 
+    @SuppressWarnings({"unused"})
     @SpirePatch2(
             clz = CardLibrary.class,
             method = "getCurse",
             paramtypez = {AbstractCard.class, Random.class}
     )
     private static class PatchTwoParamsGetCurse {
+        @SuppressWarnings({"unused"})
         @SpireInsertPatch(
                 locator = BeforeReturn.class,
                 localvars = {"tmp"}
@@ -75,43 +80,4 @@ public class ExcludeCursesFromRandomList {
         }
     }
 
-    /*
-    @SpirePatch(
-            clz = CardLibrary.class,
-            method = "getCurse",
-            paramtypez = {}
-    )
-    public static class WithNoParams {
-        public static AbstractCard Postfix(AbstractCard _returned) {
-            if (
-                    _returned.cardID.equals(Jealousy.ID) ||
-                            _returned.cardID.equals(Catastrophe.ID) ||
-                            _returned.cardID.equals(Doom.ID) ||
-                            _returned.cardID.equals(Gloom.ID)
-            ) {
-                return CardList.getRandomCleanseCurse();
-            }
-            return _returned;
-        }
-    }
-
-    @SpirePatch(
-            clz = CardLibrary.class,
-            method = "getCurse",
-            paramtypez = {AbstractCard.class, Random.class}
-    )
-    public static class WithParams {
-        public static AbstractCard Postfix(AbstractCard _returned, AbstractCard prohibitedCard, Random rng) {
-            if (
-                    _returned.cardID.equals(Jealousy.ID) ||
-                            _returned.cardID.equals(Catastrophe.ID) ||
-                            _returned.cardID.equals(Doom.ID) ||
-                            _returned.cardID.equals(Gloom.ID)
-            ) {
-                return CardList.getRandomCleanseCurse();
-            }
-            return _returned;
-        }
-    }
-     */
 }
