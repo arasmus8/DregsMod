@@ -207,11 +207,16 @@ public class AwakenedMod extends AbstractCardModifier {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        if (level == 1) {
-            return rawDescription + " NL dregsmod:Awoken";
-        } else {
-            return rawDescription + " NL dregsmod:Awoken\u00A0" + roman[level];
+        String keyword = "dregsmod:Awoken";
+        if (Settings.language == Settings.GameLanguage.KOR) {
+            keyword = "dregsmod:각성";
+        } else if (Settings.language == Settings.GameLanguage.ZHS) {
+            keyword = "dregsmod:觉醒";
         }
+        if (level > 1) {
+            keyword = keyword + "\u00A0" + roman[level];
+        }
+        return rawDescription + " NL " + keyword;
     }
 
     @Override

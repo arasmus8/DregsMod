@@ -1,0 +1,34 @@
+{
+  "dregsmod:CleansedCurseAction": {
+    "TEXT": [
+      "카드 1 장을 선택하여 영구적으로 덱에 추가합니다 :"
+    ]
+  },
+  "dregsmod:CleansedCurseReward": {
+    "TEXT": [
+      "카드 ",
+      " 장을",
+      " 장을",
+      " 선택하여 영구적으로 덱에 추가합니다 :",
+      "정화된 저주 카드 보상"
+    ]
+  },
+  "dregsmod:SealAndPerformAction": {
+    "TEXT": [
+      "봉인:",
+      "카드를 ",
+      "원하는 만큼 카드를 선택해 ",
+      " 장 선택해 "
+    ]
+  },
+  "dregsmod:Settings": {
+    "TEXT": [
+      "다른 캐릭터도 이 모드의 일부 유물들을 사용할 수 있도록 합니다 (재시작 필요)"
+    ]
+  },
+  "dregsmod:KindleAction": {
+    "TEXT": [
+      "선택한 카드를 각성 시킵니다"
+    ]
+  }
+}

@@ -33,10 +33,7 @@ import dregsmod.util.AssetLoader;
 import dregsmod.util.TextureLoader;
 
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -252,6 +249,7 @@ public class DregsMod implements
 
         // Console Commands
         ConsoleCommand.addCommand("cleanse", CleanseCursesConsoleCommand.class);
+        ConsoleCommand.addCommand("awaken", AwakenConsoleCommand.class);
 
         // Events
 
@@ -346,6 +344,8 @@ public class DregsMod implements
 
         if (Settings.language == Settings.GameLanguage.ZHS) {
             lang = "zhs";
+        } else if (Settings.language == Settings.GameLanguage.KOR) {
+            lang = "kor";
         }
 
         logger.info("Loading strings for language: " + lang);
@@ -397,6 +397,8 @@ public class DregsMod implements
 
         if (Settings.language == Settings.GameLanguage.ZHS) {
             lang = "zhs";
+        } else if (Settings.language == Settings.GameLanguage.KOR) {
+            lang = "kor";
         }
 
         logger.info("Loading keywords for language: " + lang);

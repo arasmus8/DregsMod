@@ -1,0 +1,10 @@
+{
+  "dregsmod:InsightPotion": {
+    "NAME": "견식 포션",
+    "DESCRIPTIONS": [
+      "손패의 카드를 #b",
+      " 번 #y각성 합니다.",
+      " 번 #y각성 합니다."
+    ]
+  }
+}

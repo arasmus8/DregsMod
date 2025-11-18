@@ -17,7 +17,7 @@ public class CleanseCursesConsoleCommand extends ConsoleCommand {
     @Override
     protected void execute(String[] tokens, int depth) {
         if (AbstractDungeon.player == null) {
-            DevConsole.log("Cannot generate card - player is null");
+            DevConsole.log("Cannot cleanse card - player is null");
         } else {
             AbstractDungeon.player.hand.group.stream()
                     .filter(c -> c instanceof AbstractCleansingCurse)

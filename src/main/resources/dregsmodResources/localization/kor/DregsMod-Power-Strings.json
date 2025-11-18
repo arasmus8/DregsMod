@@ -1,0 +1,156 @@
+{
+  "dregsmod:AdaptabilityPower": {
+    "NAME": "적응력",
+    "DESCRIPTIONS": [
+      "저주 카드를 뽑을 때마다, 방어도를 #b",
+      " 얻습니다"
+    ]
+  },
+  "dregsmod:AsylumPower": {
+    "NAME": "수용소",
+    "DESCRIPTIONS": [
+      "매 턴마다, 카드를 #b",
+      " 장",
+      " 장",
+      " 선택해 봉인합니다. #y봉인 하는 카드의 등급에 따른 #y구체 를 #y영창 합니다."
+    ]
+  },
+  "dregsmod:ChaosTheoryPower": {
+    "NAME": "카오스 이론",
+    "DESCRIPTIONS": [
+      "매 턴 시작시, 현재 내 덱에 존재하는 무작위 카드의 복사본을 얻습니다."
+    ]
+  },
+  "dregsmod:ChaosTheoryUpgradedPower": {
+    "NAME": "카오스 이론",
+    "DESCRIPTIONS": [
+      "매 턴 시작시, 현재 내 덱에 존재하는 무작위 카드의 강화된 복사본 을 얻습니다."
+    ]
+  },
+  "dregsmod:BlightedPower": {
+    "NAME": "마름병",
+    "DESCRIPTIONS": [
+      "매 턴 시작시, 이 적은 잃은 체력의 10% 만큼 체력을 회복합니다. #y마름병 중첩이 현재 체력보다 많다면, 이 적은 즉사하고 특별한 저주 카드로 변화합니다."
+    ]
+  },
+  "dregsmod:DefianceAwakenPower": {
+    "NAME": "반항",
+    "DESCRIPTIONS": [
+      "#y손상 또는 #y취약 효과를 받을 때마다, 무작위 카드 #b",
+      " 장을 #y각성 시킵니다.",
+      " 장을 #y각성 시킵니다."
+    ]
+  },
+  "dregsmod:DefiancePower": {
+    "NAME": "반항",
+    "DESCRIPTIONS": [
+      "#y손상 또는 #y취약 효과를 받을 때마다, #y강력 을 #b",
+      " 얻습니다."
+    ]
+  },
+  "dregsmod:EclipseFormPower": {
+    "NAME": "일식의 형상",
+    "DESCRIPTIONS": [
+      "이제 사용불가 #y저주 카드를 사용할 수 있습니다. #y저주 카드를 사용할 때마다, 방어도를 #b",
+      " 얻고 적 전체에게 피해를 #b",
+      " 줍니다."
+    ]
+  },
+  "dregsmod:ExcessChannelPower": {
+    "NAME": "과잉",
+    "DESCRIPTIONS": [
+      "#y저주 카드를 #y봉인 할 때마다, #y침전물 구체를 #b",
+      " 번 영창합니다.",
+      " 번 영창합니다."
+    ]
+  },
+  "dregsmod:ExcessPower": {
+    "NAME": "과잉",
+    "DESCRIPTIONS": [
+      "카드를 #y봉인 할 때마다, 모든 구체의 지속 효과를 #b",
+      " 번 발동합니다.",
+      " 번 발동합니다."
+    ]
+  },
+  "dregsmod:IncantationPower": {
+    "NAME": "요술",
+    "DESCRIPTIONS": [
+      "이제 #y마름병 효과가 적의 체력을 회복시키지 않고 매 턴 피해를 #b",
+      " 줍니다."
+    ]
+  },
+  "dregsmod:LostPotentialPower": {
+    "NAME": "잃어버린 잠재력",
+    "DESCRIPTIONS": [
+      "#y카드를 #y봉인 할 때마다, 전기 구체 를 #b",
+      " 번 영창 합니다.",
+      " 번 영창 합니다."
+    ]
+  },
+  "dregsmod:RetributionPower": {
+    "NAME": "응보",
+    "DESCRIPTIONS": [
+      "체력을 잃을 때마다, 다음에 사용하는 공격 카드의 피해량이 #b",
+      " 증가합니다."
+    ]
+  },
+  "dregsmod:ScapegoatBonusPower": {
+    "NAME": "희생양 보너스",
+    "DESCRIPTIONS": [
+      "다음에 사용하는 #y각성 카드의 피해량 또는 방어도 획득량이 #b",
+      " 증가합니다."
+    ]
+  },
+  "dregsmod:ScapegoatPower": {
+    "NAME": "희생양",
+    "DESCRIPTIONS": [
+      "카드를 #y소멸 시키거나 #y봉인 할 때마다, #y각성 카드들의 피해량과 방어도 획득량이 #b",
+      " 증가합니다."
+    ]
+  },
+  "dregsmod:ShiftingSandsPower": {
+    "NAME": "변화형 모래",
+    "DESCRIPTIONS": [
+      "#y저주 카드를 뽑을 때마다, 무작위 적에게 #y약화 를 #b",
+      " 부여합니다."
+    ]
+  },
+  "dregsmod:TheVaultPower": {
+    "NAME": "금고",
+    "DESCRIPTIONS": [
+      "#y저주 카드를 버릴 때마다, 대신 #y봉인 합니다."
+    ]
+  },
+  "dregsmod:FortitudePower": {
+    "NAME": "불굴",
+    "DESCRIPTIONS": [
+      "#y취약 의 버프 버전입니다. #b",
+      " 턴 동안 받는 피해량이 25% 감소합니다.",
+      " 턴 동안 받는 피해량이 25% 감소합니다."
+    ]
+  },
+  "dregsmod:VivificationPower": {
+    "NAME": "생동감",
+    "DESCRIPTIONS": [
+      "죽게 된다면, 죽는 대신 최대 체력의 1/3 만큼 체력을 회복하고 무작위 저주 카드를 덱에 추가합니다. 이 효과는 전투에서 1 번만 발동합니다.",
+      "죽게 된다면, 죽는 대신 최대 체력의 1/2 만큼 체력을 회복하고 무작위 저주 카드를 덱에 추가합니다. 이 효과는 전투에서 1 번만 발동합니다.",
+      "이 효과는 이미 발동했습니다. 이 전투에서 다시 발동할 수 없습니다."
+    ]
+  },
+  "dregsmod:MightPower": {
+    "NAME": "강력",
+    "DESCRIPTIONS": [
+      "#y약화 의 버프 버전입니다. #b",
+      " 턴 동안 공격 카드의 피해량이 25% 증가합니다.",
+      " 턴 동안 공격 카드의 피해량이 25% 증가합니다."
+    ]
+  },
+  "dregsmod:SturdinessPower": {
+    "NAME": "견고",
+    "DESCRIPTIONS": [
+      "#y손상 의 버프 버전입니다. #b",
+      " 턴 동안 카드로 얻는 방어도 획득량이 25% 증가합니다.",
+      " 턴 동안 카드로 얻는 방어도 획득량이 25% 증가합니다."
+    ]
+  }
+}
